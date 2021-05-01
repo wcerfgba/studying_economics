@@ -1,0 +1,37 @@
+* open the data set
+use wilcox
+
+* output results
+log using wilcox.log, replace
+
+* define the data as time series
+tsset time
+
+* generate ln retail sales
+* and ln oasi payments
+gen retail_sales_ln=ln(retail)
+gen oasi_ln=ln(oasi)
+
+* generate lags of both
+gen retail_sales_ln_1=retail_sales_ln[_n-1]
+gen oasi_ln_1=oasi_ln[_n-1]
+
+* test for whether retail sales is a random walk
+reg retail_sales_ln retail_sales_ln_1
+test retail_sales_ln_1=1
+
+* generate 1st differences in ln(retail sales)
+* and ln(oasi)
+
+gen d_retail_sales_ln=retail_sales_ln-retail_sales_ln_1
+gen d_oasi_ln=oasi_ln-oasi_ln_1
+
+* generate a lag of d_oasi_ln
+gen d_oasi_ln_1=d_oasi_ln[_n-1]
+
+* regress 1st diff in ln(retail) on 1st diff in
+* oasi and lag
+reg d_retail_sales_ln d_oasi_ln d_oasi_ln_1
+test d_oasi_ln d_oasi_ln_1
+estat dwatson
+ 

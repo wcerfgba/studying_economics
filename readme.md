@@ -8,8 +8,12 @@ This workspace includes the standard Foam [[getting-started]] page and documenta
 
 Some of the things you can find in this workspace include:
 
-* [[syllabus]]es for various topics, and copies of syllabi for courses at various universities.
+* [[syllabus]]es for various topics, and copies of syllabi for [[course]]s at various universities.
 * [[project]]s and [[problem-set]]s.
 * [[book]]s such as textbooks.
 * Influential [[paper]]s.
 * [[tool]]s for managing bibliographies, finding other resources, and working on projects.
+* An [[encyclopedia]] of terms and ideas relevant to different economic disciplines.
+* Some thoughts on [[pedagogy]] to help you structure your learning.
+
+Relevant pages are linked to the above 'tag' pages to create a knowledge graph which can be explored in Foam. For example, you can open the Foam graph,
