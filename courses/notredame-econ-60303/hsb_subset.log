@@ -1,0 +1,248 @@
+-------------------------------------------------------------------------------------------------------------------------------
+       log:  d:\d_drive\classes\fall2010\hsb_subset.log
+  log type:  text
+ opened on:  19 Sep 2010, 12:23:59
+
+. *read in stata data file;
+. use hsb_subset;
+
+. desc;
+
+Contains data from hsb_subset.dta
+  obs:         4,980                          
+ vars:            27                          23 Aug 2006 11:20
+ size:       194,220 (99.6% of memory free)
+-------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+-------------------------------------------------------------------------------
+soph_scr        float  %9.0g                  scaled test score
+age             byte   %9.0g                  age in years
+female          byte   %9.0g                  d.v., =1 if female
+siblings        byte   %9.0g                  number of siblings at home
+black           byte   %9.0g                  d.v.,=1 if black
+hispanic        byte   %9.0g                  d.v.,=1 if hispanic
+schoolid        int    %9.0g                  unique school id
+parent_ed0      byte   %9.0g                  d.v., =1 if parents education
+                                                missing
+parent_ed1      byte   %9.0g                  d.v., =1 if parents educ is <
+                                                high school
+parent_ed2      byte   %9.0g                  d.v., =1 if parents educ is
+                                                high school
+parent_ed3      byte   %9.0g                  d.v., =1 if parents educ is
+                                                some college
+parent_ed4      byte   %9.0g                  d.v., =1 if parents educ is
+                                                college degree
+family_inc0     byte   %9.0g                  d.v., =1 if fgamily income
+                                                missing
+family_inc1     byte   %9.0g                  d.v., =1 if family income < $7K
+family_inc2     byte   %9.0g                  d.v., =1 if family income
+                                                $7k-$12K
+family_inc3     byte   %9.0g                  d.v., =1 if family income
+                                                $12K-$16K
+family_inc4     byte   %9.0g                  d.v., =1 if family income
+                                                $16K-$20K
+family_inc5     byte   %9.0g                  d.v., =1 if family income
+                                                $20K-$25K
+family_inc6     byte   %9.0g                  d.v., =1 if family income
+                                                $25K-$38K
+family_inc7     byte   %9.0g                  d.v., =1 if family income >$38K
+both_parents    byte   %9.0g                  d.v., =1 if liove with both
+                                                parents
+cath_sch        byte   %9.0g                  d.v., =1 if catholic school
+midwest         byte   %9.0g                  d.v., =1 if live in midwst
+west            byte   %9.0g                  d.v., =1 if live in west
+south           byte   %9.0g                  d.v., =1 if live in south
+urban           byte   %9.0g                  d.v.  =1 if live in urban area
+rural           byte   %9.0g                  d.v., =1 if live in rural area
+-------------------------------------------------------------------------------
+Sorted by:  
+
+. * run ols model of test score on only school characteristics;
+. * this is a model similar to the one discussed in Kloeck, econometrica, 1981;
+. reg soph_scr west south midwest urban rural cath_sch;
+
+      Source |       SS       df       MS              Number of obs =    4980
+-------------+------------------------------           F(  6,  4973) =   35.18
+       Model |  49572.2704     6  8262.04507           Prob > F      =  0.0000
+    Residual |  1167963.28  4973  234.860905           R-squared     =  0.0407
+-------------+------------------------------           Adj R-squared =  0.0396
+       Total |  1217535.55  4979  244.534154           Root MSE      =  15.325
+
+------------------------------------------------------------------------------
+    soph_scr |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        west |  -3.263414   .7233481    -4.51   0.000    -4.681495   -1.845332
+       south |  -6.059277   .6110637    -9.92   0.000    -7.257231   -4.861322
+     midwest |  -1.612765   .6232546    -2.59   0.010    -2.834618   -.3909106
+       urban |  -3.330204   .5867591    -5.68   0.000    -4.480511   -2.179897
+       rural |  -1.482626   .5146652    -2.88   0.004    -2.491596   -.4736546
+    cath_sch |   2.806002   .6108596     4.59   0.000     1.608447    4.003556
+       _cons |   29.64833   .5442222    54.48   0.000     28.58142    30.71525
+------------------------------------------------------------------------------
+
+. * now run a random effects model.  two things to notice.  First, the;
+. * estimate rho is the fraction of the variance explained in the error;
+. * explained by the school effects and this is an estimate of the ICC;
+. * note that rho=0.14 and therefore the OLS variance is overstated by;
+. * bias=1-rho(m-1) where in this case, m=10 so bias=2.26.  Stdnard errors;
+. * are biased by sqrt(2.26) or 1.5.  Notice that the standard errors;
+. * in the are random effect model are all 1.5 times the standard errors;
+. * in the OLS model;
+. xtreg soph_scr west south midwest urban rural cath_sch, i(schoolid) re;
+
+Random-effects GLS regression                   Number of obs      =      4980
+Group variable: schoolid                        Number of groups   =       498
+
+R-sq:  within  = 0.0000                         Obs per group: min =        10
+       between = 0.1595                                        avg =      10.0
+       overall = 0.0407                                        max =        10
+
+Random effects u_i ~ Gaussian                   Wald chi2(6)       =     93.19
+corr(u_i, X)       = 0 (assumed)                Prob > chi2        =    0.0000
+
+------------------------------------------------------------------------------
+    soph_scr |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        west |  -3.263414   1.088594    -3.00   0.003    -5.397019   -1.129809
+       south |  -6.059277    .919613    -6.59   0.000    -7.861685   -4.256868
+     midwest |  -1.612765   .9379595    -1.72   0.086    -3.451131    .2256022
+       urban |  -3.330204   .8830361    -3.77   0.000    -5.060923   -1.599485
+       rural |  -1.482626   .7745392    -1.91   0.056    -3.000694    .0354435
+    cath_sch |   2.806002   .9193059     3.05   0.002     1.004195    4.607808
+       _cons |   29.64833   .8190206    36.20   0.000     28.04308    31.25358
+-------------+----------------------------------------------------------------
+     sigma_u |  5.7411139
+     sigma_e |  14.223856
+         rho |  .14009098   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+
+. * run OLS, Random effect and OLS with clustered standard errors;
+. * in this case, add in the variables that vary by individual;
+. *ols;
+. reg soph_scr age female siblings both_parents parent_ed0-parent_ed3
+> family_inc0-family_inc6 west south midwest urban rural cath_sch;
+
+      Source |       SS       df       MS              Number of obs =    4980
+-------------+------------------------------           F( 21,  4958) =   63.48
+       Model |  258005.388    21  12285.9709           Prob > F      =  0.0000
+    Residual |  959530.165  4958  193.531699           R-squared     =  0.2119
+-------------+------------------------------           Adj R-squared =  0.2086
+       Total |  1217535.55  4979  244.534154           Root MSE      =  13.912
+
+------------------------------------------------------------------------------
+    soph_scr |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -4.173808   .3370733   -12.38   0.000    -4.834621   -3.512995
+      female |  -.7241844   .4015277    -1.80   0.071    -1.511356    .0629876
+    siblings |  -.3527671   .1060639    -3.33   0.001    -.5606993   -.1448349
+both_parents |   2.406411   .4539216     5.30   0.000     1.516523    3.296298
+  parent_ed0 |  -10.87352   .7362839   -14.77   0.000    -12.31696   -9.430078
+  parent_ed1 |  -10.81247    .747801   -14.46   0.000     -12.2785   -9.346454
+  parent_ed2 |  -8.210177   .6071862   -13.52   0.000     -9.40053   -7.019823
+  parent_ed3 |  -4.182546   .6313563    -6.62   0.000    -5.420284   -2.944808
+ family_inc0 |   -4.84008   .8744374    -5.54   0.000    -6.554365   -3.125796
+ family_inc1 |  -7.389207   1.113248    -6.64   0.000    -9.571666   -5.206748
+ family_inc2 |  -3.009337    .957035    -3.14   0.002    -4.885549   -1.133125
+ family_inc3 |  -.2590361   .8692061    -0.30   0.766    -1.963065    1.444993
+ family_inc4 |  -.4138351   .8618274    -0.48   0.631    -2.103398    1.275728
+ family_inc5 |   .7148654   .8658874     0.83   0.409    -.9826572    2.412388
+ family_inc6 |   1.976493   .9057179     2.18   0.029     .2008852    3.752101
+        west |  -2.881145   .6589987    -4.37   0.000    -4.173074   -1.589216
+       south |  -4.898036   .5592678    -8.76   0.000    -5.994448   -3.801624
+     midwest |  -1.596428   .5695045    -2.80   0.005    -2.712909   -.4799468
+       urban |  -1.507207   .5377651    -2.80   0.005    -2.561464    -.452949
+       rural |  -.1409438    .473725    -0.30   0.766    -1.069654    .7877669
+    cath_sch |   .9375695   .5611435     1.67   0.095      -.16252    2.037659
+       _cons |   109.1613   5.956614    18.33   0.000     97.48372    120.8389
+------------------------------------------------------------------------------
+
+. *random effects;
+. xtreg soph_scr age female siblings both_parents parent_ed0-parent_ed3
+> family_inc0-family_inc6 west south midwest urban rural cath_sch, re i(schoolid);
+
+Random-effects GLS regression                   Number of obs      =      4980
+Group variable: schoolid                        Number of groups   =       498
+
+R-sq:  within  = 0.1288                         Obs per group: min =        10
+       between = 0.4853                                        avg =      10.0
+       overall = 0.2116                                        max =        10
+
+Random effects u_i ~ Gaussian                   Wald chi2(21)      =   1109.65
+corr(u_i, X)       = 0 (assumed)                Prob > chi2        =    0.0000
+
+------------------------------------------------------------------------------
+    soph_scr |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -4.064159   .3347123   -12.14   0.000    -4.720183   -3.408135
+      female |  -.7981668   .4016643    -1.99   0.047    -1.585414   -.0109193
+    siblings |  -.3652668   .1061941    -3.44   0.001    -.5734033   -.1571302
+both_parents |   2.098775    .449338     4.67   0.000     1.218089    2.979461
+  parent_ed0 |  -10.27774   .7255932   -14.16   0.000    -11.69987   -8.855602
+  parent_ed1 |   -9.99016   .7448706   -13.41   0.000    -11.45008    -8.53024
+  parent_ed2 |  -7.643747    .602842   -12.68   0.000    -8.825295   -6.462198
+  parent_ed3 |  -3.819483   .6223863    -6.14   0.000    -5.039338   -2.599629
+ family_inc0 |  -4.366835   .8667088    -5.04   0.000    -6.065553   -2.668117
+ family_inc1 |  -6.594771   1.102642    -5.98   0.000    -8.755909   -4.433634
+ family_inc2 |  -2.306771   .9487274    -2.43   0.015    -4.166242   -.4472993
+ family_inc3 |   .0816369   .8598926     0.09   0.924    -1.603722    1.766995
+ family_inc4 |  -.0255679    .851348    -0.03   0.976    -1.694179    1.643044
+ family_inc5 |   .8613943   .8554132     1.01   0.314    -.8151849    2.537973
+ family_inc6 |   2.253102   .8924909     2.52   0.012     .5038518    4.002352
+        west |  -2.908171   .8219749    -3.54   0.000    -4.519212    -1.29713
+       south |  -4.985356   .6964747    -7.16   0.000    -6.350422   -3.620291
+     midwest |  -1.568362   .7095959    -2.21   0.027    -2.959144   -.1775793
+       urban |  -1.648092   .6693946    -2.46   0.014    -2.960081   -.3361027
+       rural |  -.2348173   .5888268    -0.40   0.690    -1.388897    .9192619
+    cath_sch |   1.081526   .6979434     1.55   0.121    -.2864183    2.449469
+       _cons |    106.762   5.929101    18.01   0.000      95.1412    118.3829
+-------------+----------------------------------------------------------------
+     sigma_u |  3.4597054
+     sigma_e |   13.29233
+         rho |  .06344663   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+
+. * ols with standard errros clustered on the school;
+. reg soph_scr age female siblings both_parents parent_ed0-parent_ed3
+> family_inc0-family_inc6 west south midwest urban rural cath_sch, cluster(schoolid);
+
+Linear regression                                      Number of obs =    4980
+                                                       F( 21,   497) =   63.22
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.2119
+                                                       Root MSE      =  13.912
+
+                             (Std. Err. adjusted for 498 clusters in schoolid)
+------------------------------------------------------------------------------
+             |               Robust
+    soph_scr |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -4.173808   .3414544   -12.22   0.000     -4.84468   -3.502936
+      female |  -.7241844   .4481749    -1.62   0.107    -1.604735    .1563667
+    siblings |  -.3527671   .1106503    -3.19   0.002    -.5701672    -.135367
+both_parents |   2.406411   .4817098     5.00   0.000     1.459972    3.352849
+  parent_ed0 |  -10.87352   .7804322   -13.93   0.000    -12.40687   -9.340168
+  parent_ed1 |  -10.81247   .7449822   -14.51   0.000    -12.27618   -9.348772
+  parent_ed2 |  -8.210177   .6388018   -12.85   0.000    -9.465261   -6.955092
+  parent_ed3 |  -4.182546   .6541097    -6.39   0.000    -5.467707   -2.897385
+ family_inc0 |   -4.84008   .9691073    -4.99   0.000    -6.744133   -2.936028
+ family_inc1 |  -7.389207   1.216615    -6.07   0.000    -9.779549   -4.998865
+ family_inc2 |  -3.009337   1.021491    -2.95   0.003    -5.016311   -1.002363
+ family_inc3 |  -.2590361   .9166212    -0.28   0.778    -2.059966    1.541894
+ family_inc4 |  -.4138351   .8735537    -0.47   0.636    -2.130149    1.302478
+ family_inc5 |   .7148654   .9087452     0.79   0.432    -1.070591    2.500321
+ family_inc6 |   1.976493   .9953871     1.99   0.048     .0208077    3.932179
+        west |  -2.881145   .8337582    -3.46   0.001     -4.51927   -1.243019
+       south |  -4.898036   .7529495    -6.51   0.000    -6.377392   -3.418679
+     midwest |  -1.596428     .72656    -2.20   0.028    -3.023936   -.1689199
+       urban |  -1.507207   .7550337    -2.00   0.046    -2.990658   -.0237551
+       rural |  -.1409438   .5804158    -0.24   0.808    -1.281315    .9994273
+    cath_sch |   .9375695   .8329641     1.13   0.261    -.6989956    2.574135
+       _cons |   109.1613   5.956884    18.33   0.000     97.45754    120.8651
+------------------------------------------------------------------------------
+
+. log close;
+       log:  d:\d_drive\classes\fall2010\hsb_subset.log
+  log type:  text
+ closed on:  19 Sep 2010, 12:24:01
+-------------------------------------------------------------------------------------------------------------------------------

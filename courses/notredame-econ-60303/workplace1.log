@@ -1,0 +1,627 @@
+-------------------------------------------------------------------------------
+       log:  c:\bill\spring2011\workplace1.log
+  log type:  text
+ opened on:  21 Mar 2011, 19:02:46
+
+. * use the workplace data set;
+. use workplace1;
+
+. * print out variable labels;
+. desc;
+
+Contains data from workplace1.dta
+  obs:        16,258                          
+ vars:            10                          28 Oct 2004 05:27
+ size:       390,192 (96.9% of memory free)
+-------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+-------------------------------------------------------------------------------
+smoker          byte   %9.0g                  is current smoking
+worka           byte   %9.0g                  has workplace smoking bans
+age             byte   %9.0g                  age in years
+male            byte   %9.0g                  male
+black           byte   %9.0g                  black
+hispanic        byte   %9.0g                  hispanic
+incomel         float  %9.0g                  log income
+hsgrad          byte   %9.0g                  is hs graduate
+somecol         byte   %9.0g                  has some college
+college         float  %9.0g                  
+-------------------------------------------------------------------------------
+Sorted by:  
+
+. * get summary statistics;
+. sum;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+      smoker |     16258      .25163     .433963          0          1
+       worka |     16258    .6851396    .4644745          0          1
+         age |     16258    38.54742    11.96189         18         87
+        male |     16258    .3947595     .488814          0          1
+       black |     16258    .1119449    .3153083          0          1
+-------------+--------------------------------------------------------
+    hispanic |     16258    .0607086    .2388023          0          1
+     incomel |     16258    10.42097    .7624525   6.214608   11.22524
+      hsgrad |     16258    .3355271    .4721889          0          1
+     somecol |     16258    .2685447    .4432161          0          1
+     college |     16258    .3293763    .4700012          0          1
+
+. * run a linear probability model for comparison purposes;
+. * estimate white standard errors to control for heteroskedasticity;
+. reg smoker age incomel male black hispanic 
+> hsgrad somecol college worka, robust;
+
+Linear regression                                      Number of obs =   16258
+                                                       F(  9, 16248) =   99.26
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.0488
+                                                       Root MSE      =  .42336
+
+------------------------------------------------------------------------------
+             |               Robust
+      smoker |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -.0004776   .0002806    -1.70   0.089    -.0010276    .0000725
+     incomel |  -.0287361   .0047823    -6.01   0.000      -.03811   -.0193621
+        male |   .0168615   .0069542     2.42   0.015     .0032305    .0304926
+       black |  -.0356723   .0110203    -3.24   0.001    -.0572732   -.0140714
+    hispanic |   -.070582   .0136691    -5.16   0.000     -.097375    -.043789
+      hsgrad |  -.0661429   .0162279    -4.08   0.000    -.0979514   -.0343345
+     somecol |  -.1312175   .0164726    -7.97   0.000    -.1635056   -.0989293
+     college |  -.2406109   .0162568   -14.80   0.000     -.272476   -.2087459
+       worka |   -.066076   .0074879    -8.82   0.000     -.080753    -.051399
+       _cons |   .7530714   .0494255    15.24   0.000     .6561919    .8499509
+------------------------------------------------------------------------------
+
+. * run probit model;
+. probit smoker age incomel male black hispanic 
+> hsgrad somecol college worka;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood =  -8764.068
+Iteration 2:   log likelihood = -8761.7211
+Iteration 3:   log likelihood = -8761.7208
+
+Probit regression                                 Number of obs   =      16258
+                                                  LR chi2(9)      =     819.44
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -8761.7208                       Pseudo R2       =     0.0447
+
+------------------------------------------------------------------------------
+      smoker |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -.0012684   .0009316    -1.36   0.173    -.0030943    .0005574
+     incomel |   -.092812   .0151496    -6.13   0.000    -.1225047   -.0631193
+        male |   .0533213   .0229297     2.33   0.020     .0083799    .0982627
+       black |  -.1060518    .034918    -3.04   0.002      -.17449   -.0376137
+    hispanic |  -.2281468   .0475128    -4.80   0.000    -.3212701   -.1350235
+      hsgrad |  -.1748765   .0436392    -4.01   0.000    -.2604078   -.0893453
+     somecol |   -.363869   .0451757    -8.05   0.000    -.4524118   -.2753262
+     college |  -.7689528   .0466418   -16.49   0.000     -.860369   -.6775366
+       worka |  -.2093287   .0231425    -9.05   0.000    -.2546873   -.1639702
+       _cons |    .870543    .154056     5.65   0.000     .5685989    1.172487
+------------------------------------------------------------------------------
+
+. * ask for marginal effects/treatment effects;
+. mfx compute;
+
+Marginal effects after probit
+      y  = Pr(smoker) (predict)
+         =  .24093439
+------------------------------------------------------------------------------
+variable |      dy/dx    Std. Err.     z    P>|z|  [    95% C.I.   ]      X
+---------+--------------------------------------------------------------------
+     age |  -.0003951      .00029   -1.36   0.173  -.000964  .000174   38.5474
+ incomel |  -.0289139      .00472   -6.13   0.000   -.03816 -.019668    10.421
+    male*|   .0166757       .0072    2.32   0.021   .002568  .030783    .39476
+   black*|  -.0320621      .01023   -3.13   0.002  -.052111 -.012013   .111945
+hispanic*|  -.0658551      .01259   -5.23   0.000  -.090536 -.041174   .060709
+  hsgrad*|   -.053335      .01302   -4.10   0.000   -.07885  -.02782   .335527
+ somecol*|  -.1062358      .01228   -8.65   0.000  -.130308 -.082164   .268545
+ college*|  -.2149199      .01146  -18.76   0.000  -.237378 -.192462   .329376
+   worka*|  -.0668959      .00756   -8.84   0.000   -.08172 -.052072    .68514
+------------------------------------------------------------------------------
+(*) dy/dx is for discrete change of dummy variable from 0 to 1
+
+. * the same type of variables can be produced with;
+. * prchange.  this command is however more flexible;
+. * in that you can change the reference individual;
+. prchange, help;
+
+probit: Changes in Predicted Probabilities for smoker
+
+          min->max      0->1     -+1/2    -+sd/2  MargEfct
+     age   -0.0269   -0.0004   -0.0004   -0.0047   -0.0004
+ incomel   -0.1589   -0.0361   -0.0289   -0.0220   -0.0289
+    male    0.0167    0.0167    0.0166    0.0081    0.0166
+   black   -0.0321   -0.0321   -0.0330   -0.0104   -0.0330
+hispanic   -0.0659   -0.0659   -0.0710   -0.0170   -0.0711
+  hsgrad   -0.0533   -0.0533   -0.0544   -0.0257   -0.0545
+ somecol   -0.1062   -0.1062   -0.1130   -0.0502   -0.1134
+ college   -0.2149   -0.2149   -0.2366   -0.1123   -0.2396
+   worka   -0.0669   -0.0669   -0.0652   -0.0303   -0.0652
+
+              0       1
+Pr(y|x)  0.7591  0.2409
+
+             age   incomel      male     black  hispanic    hsgrad   somecol
+    x=   38.5474    10.421    .39476   .111945   .060709   .335527   .268545
+sd(x)=   11.9619   .762452   .488814   .315308   .238802   .472189   .443216
+
+         college     worka
+    x=   .329376    .68514
+sd(x)=   .470001   .464475
+
+ Pr(y|x): probability of observing each y for specified x values
+Avg|Chg|: average of absolute value of the change across categories
+Min->Max: change in predicted probability as x changes from its minimum to
+          its maximum
+    0->1: change in predicted probability as x changes from 0 to 1
+   -+1/2: change in predicted probability as x changes from 1/2 unit below
+          base value to 1/2 unit above
+  -+sd/2: change in predicted probability as x changes from 1/2 standard
+          dev below base to 1/2 standard dev above
+MargEfct: the partial derivative of the predicted probability/rate with
+          respect to a given independent variable
+
+. * get marginal effect/treatment effects for specific person;
+. * male, age 40, college educ, white, without workplace smoking ban;
+. * if a variable is not specified, its value is assumed to be;
+. * the sample mean.  in this case, the only variable i am not;
+. * listing is mean log income;
+. prchange, x(male=1 age=40 black=0 hispanic=0 hsgrad=0 somecol=0 worka=0);
+
+probit: Changes in Predicted Probabilities for smoker
+
+          min->max      0->1     -+1/2    -+sd/2  MargEfct
+     age   -0.0327   -0.0005   -0.0005   -0.0057   -0.0005
+ incomel   -0.1807   -0.0314   -0.0348   -0.0266   -0.0349
+    male    0.0198    0.0198    0.0200    0.0098    0.0200
+   black   -0.0390   -0.0390   -0.0398   -0.0126   -0.0398
+hispanic   -0.0817   -0.0817   -0.0855   -0.0205   -0.0857
+  hsgrad   -0.0634   -0.0634   -0.0656   -0.0310   -0.0657
+ somecol   -0.1257   -0.1257   -0.1360   -0.0605   -0.1367
+ college   -0.2685   -0.2685   -0.2827   -0.1351   -0.2888
+   worka   -0.0753   -0.0753   -0.0785   -0.0365   -0.0786
+
+              0       1
+Pr(y|x)  0.6358  0.3642
+
+             age   incomel      male     black  hispanic    hsgrad   somecol
+    x=        40    10.421         1         0         0         0         0
+sd(x)=   11.9619   .762452   .488814   .315308   .238802   .472189   .443216
+
+         college     worka
+    x=   .329376         0
+sd(x)=   .470001   .464475
+
+.  * get marginal effects using dprobit;
+. dprobit smoker age incomel male black hispanic 
+> hsgrad somecol college worka;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood =  -8764.068
+Iteration 2:   log likelihood = -8761.7211
+Iteration 3:   log likelihood = -8761.7208
+
+Probit regression, reporting marginal effects           Number of obs =  16258
+                                                        LR chi2(9)    = 819.44
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -8761.7208                             Pseudo R2     = 0.0447
+
+------------------------------------------------------------------------------
+  smoker |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+     age |  -.0003951   .0002902    -1.36   0.173   38.5474  -.000964  .000174
+ incomel |  -.0289139   .0047173    -6.13   0.000    10.421   -.03816 -.019668
+    male*|   .0166757   .0071979     2.33   0.020    .39476   .002568  .030783
+   black*|  -.0320621   .0102295    -3.04   0.002   .111945  -.052111 -.012013
+hispanic*|  -.0658551   .0125926    -4.80   0.000   .060709  -.090536 -.041174
+  hsgrad*|   -.053335    .013018    -4.01   0.000   .335527   -.07885  -.02782
+ somecol*|  -.1062358   .0122819    -8.05   0.000   .268545  -.130308 -.082164
+ college*|  -.2149199   .0114584   -16.49   0.000   .329376  -.237378 -.192462
+   worka*|  -.0668959   .0075634    -9.05   0.000    .68514   -.08172 -.052072
+---------+--------------------------------------------------------------------
+  obs. P |     .25163
+ pred. P |   .2409344  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. *predict probability of smoking;
+. predict pred_prob_smoke;
+(option pr assumed; Pr(smoker))
+
+. * get detailed descriptive data about predicted prob;
+. sum pred_prob, detail;
+
+                         Pr(smoker)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%     .0959301       .0615221
+ 5%     .1155022       .0622963
+10%     .1237434       .0633929       Obs               16258
+25%     .1620851       .0733495       Sum of Wgt.       16258
+
+50%     .2569962                      Mean           .2516653
+                        Largest       Std. Dev.      .0960007
+75%     .3187975       .5619798
+90%     .3795704       .5655878       Variance       .0092161
+95%     .4039573       .5684112       Skewness       .1520254
+99%     .4672697       .6203823       Kurtosis       2.149247
+
+. * predict binary outcome with 50% cutoff;
+. gen pred_smoke1=pred_prob_smoke>=.5;
+
+. label variable pred_smoke1 "predicted smoking, 50% cutoff";
+
+. * compare actual values;
+. tab smoker pred_smoke1, row col cell;
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+|  row percentage   |
+| column percentage |
+|  cell percentage  |
++-------------------+
+
+           |  predicted smoking,
+is current |      50% cutoff
+   smoking |         0          1 |     Total
+-----------+----------------------+----------
+         0 |    12,153         14 |    12,167 
+           |     99.88       0.12 |    100.00 
+           |     74.93      35.90 |     74.84 
+           |     74.75       0.09 |     74.84 
+-----------+----------------------+----------
+         1 |     4,066         25 |     4,091 
+           |     99.39       0.61 |    100.00 
+           |     25.07      64.10 |     25.16 
+           |     25.01       0.15 |     25.16 
+-----------+----------------------+----------
+     Total |    16,219         39 |    16,258 
+           |     99.76       0.24 |    100.00 
+           |    100.00     100.00 |    100.00 
+           |     99.76       0.24 |    100.00 
+
+
+. * using a wald test, test the null hypothesis that;
+. * all the education coefficients are zero;
+. test hsgrad somecol college;
+
+ ( 1)  hsgrad = 0
+ ( 2)  somecol = 0
+ ( 3)  college = 0
+
+           chi2(  3) =  504.78
+         Prob > chi2 =    0.0000
+
+. * how to run the same tets with a -2 log like test;
+. * estimate the unresticted model and save the estimates ;
+. * in urmodel;
+. probit smoker age incomel male black hispanic 
+> hsgrad somecol college worka;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood =  -8764.068
+Iteration 2:   log likelihood = -8761.7211
+Iteration 3:   log likelihood = -8761.7208
+
+Probit regression                                 Number of obs   =      16258
+                                                  LR chi2(9)      =     819.44
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -8761.7208                       Pseudo R2       =     0.0447
+
+------------------------------------------------------------------------------
+      smoker |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -.0012684   .0009316    -1.36   0.173    -.0030943    .0005574
+     incomel |   -.092812   .0151496    -6.13   0.000    -.1225047   -.0631193
+        male |   .0533213   .0229297     2.33   0.020     .0083799    .0982627
+       black |  -.1060518    .034918    -3.04   0.002      -.17449   -.0376137
+    hispanic |  -.2281468   .0475128    -4.80   0.000    -.3212701   -.1350235
+      hsgrad |  -.1748765   .0436392    -4.01   0.000    -.2604078   -.0893453
+     somecol |   -.363869   .0451757    -8.05   0.000    -.4524118   -.2753262
+     college |  -.7689528   .0466418   -16.49   0.000     -.860369   -.6775366
+       worka |  -.2093287   .0231425    -9.05   0.000    -.2546873   -.1639702
+       _cons |    .870543    .154056     5.65   0.000     .5685989    1.172487
+------------------------------------------------------------------------------
+
+. estimates store urmodel;
+
+. * estimate the restricted model.  save results in rmodel;
+. probit smoker age incomel male black hispanic 
+> worka;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood = -9022.2473
+Iteration 2:   log likelihood = -9022.1031
+
+Probit regression                                 Number of obs   =      16258
+                                                  LR chi2(6)      =     298.68
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -9022.1031                       Pseudo R2       =     0.0163
+
+------------------------------------------------------------------------------
+      smoker |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0003514   .0009163     0.38   0.701    -.0014445    .0021473
+     incomel |  -.1802868   .0143242   -12.59   0.000    -.2083617    -.152212
+        male |  -.0117546   .0223519    -0.53   0.599    -.0555635    .0320543
+       black |  -.0650982   .0345516    -1.88   0.060    -.1328181    .0026217
+    hispanic |   -.152071   .0465132    -3.27   0.001    -.2432351   -.0609069
+       worka |  -.2501544   .0227794   -10.98   0.000    -.2948012   -.2055076
+       _cons |    1.37729   .1472574     9.35   0.000      1.08867    1.665909
+------------------------------------------------------------------------------
+
+. estimates store rmodel;
+
+. lrtest urmodel rmodel;
+
+Likelihood-ratio test                                  LR chi2(3)  =    520.76
+(Assumption: rmodel nested in urmodel)                 Prob > chi2 =    0.0000
+
+. * run logit model;
+. logit smoker age incomel male black hispanic 
+> hsgrad somecol college worka;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood = -8770.6512
+Iteration 2:   log likelihood = -8760.9282
+Iteration 3:   log likelihood = -8760.9112
+
+Logistic regression                               Number of obs   =      16258
+                                                  LR chi2(9)      =     821.06
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -8760.9112                       Pseudo R2       =     0.0448
+
+------------------------------------------------------------------------------
+      smoker |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -.0026236   .0015594    -1.68   0.092    -.0056799    .0004327
+     incomel |  -.1518663   .0251899    -6.03   0.000    -.2012376    -.102495
+        male |   .0942472   .0390171     2.42   0.016     .0177751    .1707192
+       black |   -.196468   .0598366    -3.28   0.001    -.3137456   -.0791904
+    hispanic |  -.4024453   .0825043    -4.88   0.000    -.5641507   -.2407399
+      hsgrad |  -.2906189   .0707661    -4.11   0.000     -.429318   -.1519199
+     somecol |  -.6092455    .073822    -8.25   0.000    -.7539339   -.4645571
+     college |  -1.325203   .0780572   -16.98   0.000    -1.478192   -1.172214
+       worka |  -.3508271   .0389286    -9.01   0.000    -.4271257   -.2745285
+       _cons |   1.467936    .255991     5.73   0.000     .9662025    1.969669
+------------------------------------------------------------------------------
+
+. * ask for marginal effects/treatment effects;
+. * logit model;
+. mfx compute;
+
+Marginal effects after logit
+      y  = Pr(smoker) (predict)
+         =  .23812502
+------------------------------------------------------------------------------
+variable |      dy/dx    Std. Err.     z    P>|z|  [    95% C.I.   ]      X
+---------+--------------------------------------------------------------------
+     age |   -.000476      .00028   -1.68   0.092   -.00103  .000078   38.5474
+ incomel |  -.0275518      .00457   -6.03   0.000    -.0365 -.018604    10.421
+    male*|   .0171866      .00715    2.40   0.016   .003174    .0312    .39476
+   black*|  -.0342102      .00998   -3.43   0.001  -.053765 -.014655   .111945
+hispanic*|  -.0661959      .01217   -5.44   0.000  -.090044 -.042347   .060709
+  hsgrad*|  -.0513887      .01219   -4.22   0.000  -.075278   -.0275   .335527
+ somecol*|   -.102284      .01141   -8.97   0.000  -.124644 -.079924   .268545
+ college*|  -.2120833       .0108  -19.64   0.000  -.233248 -.190919   .329376
+   worka*|  -.0657566       .0075   -8.76   0.000  -.080464  -.05105    .68514
+------------------------------------------------------------------------------
+(*) dy/dx is for discrete change of dummy variable from 0 to 1
+
+. * run dprobit model;
+. dprobit smoker worka age incomel male black hispanic 
+> hsgrad somecol college;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood =  -8764.068
+Iteration 2:   log likelihood = -8761.7211
+Iteration 3:   log likelihood = -8761.7208
+
+Probit regression, reporting marginal effects           Number of obs =  16258
+                                                        LR chi2(9)    = 819.44
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -8761.7208                             Pseudo R2     = 0.0447
+
+------------------------------------------------------------------------------
+  smoker |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+   worka*|  -.0668959   .0075634    -9.05   0.000    .68514   -.08172 -.052072
+     age |  -.0003951   .0002902    -1.36   0.173   38.5474  -.000964  .000174
+ incomel |  -.0289139   .0047173    -6.13   0.000    10.421   -.03816 -.019668
+    male*|   .0166757   .0071979     2.33   0.020    .39476   .002568  .030783
+   black*|  -.0320621   .0102295    -3.04   0.002   .111945  -.052111 -.012013
+hispanic*|  -.0658551   .0125926    -4.80   0.000   .060709  -.090536 -.041174
+  hsgrad*|   -.053335    .013018    -4.01   0.000   .335527   -.07885  -.02782
+ somecol*|  -.1062358   .0122819    -8.05   0.000   .268545  -.130308 -.082164
+ college*|  -.2149199   .0114584   -16.49   0.000   .329376  -.237378 -.192462
+---------+--------------------------------------------------------------------
+  obs. P |     .25163
+ pred. P |   .2409344  (at x-bar)
+------------------------------------------------------------------------------
+(*) dF/dx is for discrete change of dummy variable from 0 to 1
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. * run probit model;
+. probit smoker worka age incomel male black hispanic 
+> hsgrad somecol college;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood =  -8764.068
+Iteration 2:   log likelihood = -8761.7211
+Iteration 3:   log likelihood = -8761.7208
+
+Probit regression                                 Number of obs   =      16258
+                                                  LR chi2(9)      =     819.44
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -8761.7208                       Pseudo R2       =     0.0447
+
+------------------------------------------------------------------------------
+      smoker |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.2093287   .0231425    -9.05   0.000    -.2546873   -.1639702
+         age |  -.0012684   .0009316    -1.36   0.173    -.0030943    .0005574
+     incomel |   -.092812   .0151496    -6.13   0.000    -.1225047   -.0631193
+        male |   .0533213   .0229297     2.33   0.020     .0083799    .0982627
+       black |  -.1060518    .034918    -3.04   0.002      -.17449   -.0376137
+    hispanic |  -.2281468   .0475128    -4.80   0.000    -.3212701   -.1350235
+      hsgrad |  -.1748765   .0436392    -4.01   0.000    -.2604078   -.0893453
+     somecol |   -.363869   .0451757    -8.05   0.000    -.4524118   -.2753262
+     college |  -.7689528   .0466418   -16.49   0.000     -.860369   -.6775366
+       _cons |    .870543    .154056     5.65   0.000     .5685989    1.172487
+------------------------------------------------------------------------------
+
+. * this subroutine generates the marginal effects for a probit model;
+. * the notation follows greene so beta is (k x 1) and xbar is (k x 1);
+. * so beta1`xbar is a scalar;
+. probit smoker worka age incomel male black hispanic  hsgrad somecol college;
+
+Iteration 0:   log likelihood =  -9171.443
+Iteration 1:   log likelihood =  -8764.068
+Iteration 2:   log likelihood = -8761.7211
+Iteration 3:   log likelihood = -8761.7208
+
+Probit regression                                 Number of obs   =      16258
+                                                  LR chi2(9)      =     819.44
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -8761.7208                       Pseudo R2       =     0.0447
+
+------------------------------------------------------------------------------
+      smoker |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.2093287   .0231425    -9.05   0.000    -.2546873   -.1639702
+         age |  -.0012684   .0009316    -1.36   0.173    -.0030943    .0005574
+     incomel |   -.092812   .0151496    -6.13   0.000    -.1225047   -.0631193
+        male |   .0533213   .0229297     2.33   0.020     .0083799    .0982627
+       black |  -.1060518    .034918    -3.04   0.002      -.17449   -.0376137
+    hispanic |  -.2281468   .0475128    -4.80   0.000    -.3212701   -.1350235
+      hsgrad |  -.1748765   .0436392    -4.01   0.000    -.2604078   -.0893453
+     somecol |   -.363869   .0451757    -8.05   0.000    -.4524118   -.2753262
+     college |  -.7689528   .0466418   -16.49   0.000     -.860369   -.6775366
+       _cons |    .870543    .154056     5.65   0.000     .5685989    1.172487
+------------------------------------------------------------------------------
+
+. matrix betat=e(b);
+
+.     * get beta from probit (1 x k);
+. matrix beta=betat';
+
+. matrix covp=e(V);
+
+.      * get v/c matric from probit (k x k);
+. * get means of x -- call it xbar (k x 1);
+. * must be the same order as in the probit statement;
+. matrix accum zz = worka age incomel male black hispanic  hsgrad somecol colle
+> ge, means(xbart);
+(obs=16258)
+
+. matrix xbar=xbart';
+
+.                  * transpose beta;
+.  matrix xbeta=beta'*xbar;
+
+.             * get xbeta (scalar);
+. matrix pdf=normalden(xbeta[1,1]);
+
+.    * evaluate std normal pdf at xbarbeta;
+. matrix k=rowsof(beta);
+
+.               * get number of covariates;
+. matrix Ik=I(k[1,1]);
+
+.                 * construct I(k);
+. matrix G=Ik-xbeta*beta*xbar';
+
+.        * construct G;
+. matrix v_c=(pdf*pdf)*G*covp*G';
+
+.       * get v-c matrix of marginal effects;
+. matrix me= beta*pdf;
+
+.                 * get marginal effects;
+. matrix se_me1=cholesky(diag(vecdiag(v_c)));
+
+.   * get square root of main diag;
+. matrix se_me=vecdiag(se_me1)';
+
+.       *take diagonal values;
+. matrix z_score=vecdiag(diag(me)*inv(diag(se_me)))';
+
+.   * get z score;
+. matrix results=me,se_me,z_score;
+
+.     *  construct results matrix;
+. matrix colnames results=marg_eff std_err z_score;
+
+.      * define column names;
+. matrix list results;
+
+results[10,3]
+            marg_eff     std_err     z_score
+   worka  -.06521255   .00720374  -9.0525984
+     age  -.00039515   .00029023  -1.3615156
+ incomel  -.02891389   .00471728   -6.129356
+    male   .01661127   .00714305   2.3255154
+   black  -.03303852    .0108782  -3.0371321
+hispanic  -.07107496   .01479806  -4.8029926
+  hsgrad  -.05447959   .01359844  -4.0063111
+ somecol  -.11335675   .01408096  -8.0503576
+ college  -.23955322    .0144803  -16.543383
+   _cons    .2712018   .04808183   5.6404217
+
+.                 * list results;
+. * this is an example of a marginal effect for a dichotomous outcome;
+. * in this case, set the 1st variable worka as 1 or 0;
+. matrix x1=xbar;
+
+. matrix x1[1,1]=1;
+
+. matrix x0=xbar;
+
+. matrix x0[1,1]=0;
+
+. matrix xbeta1=beta'*x1;
+
+. matrix xbeta0=beta'*x0;
+
+. matrix prob1=normal(xbeta1[1,1]);
+
+. matrix prob0=normal(xbeta0[1,1]);
+
+. matrix me_1=prob1-prob0;
+
+. matrix pdf1=normalden(xbeta1[1,1]);
+
+. matrix pdf0=normalden(xbeta0[1,1]);
+
+. matrix G1=pdf1*x1 - pdf0*x0;
+
+. matrix v_c1=G1'*covp*G1;
+
+. matrix se_me_1=sqrt(v_c1[1,1]);
+
+. * marginal effect of workplace bans;
+. matrix list me_1;
+
+symmetric me_1[1,1]
+            c1
+r1  -.06689591
+
+. * standard error of workplace a;
+. matrix list se_me_1;
+
+symmetric se_me_1[1,1]
+           c1
+r1  .00756336
+
+. log close;
+       log:  c:\bill\spring2011\workplace1.log
+  log type:  text
+ closed on:  21 Mar 2011, 19:02:58
+-------------------------------------------------------------------------------

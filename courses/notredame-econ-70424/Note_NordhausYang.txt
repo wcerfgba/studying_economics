@@ -1,0 +1,18 @@
+Nordhaus and Yang AER 1996.
+
+Introduces RICE model. DICE is like a planner's problem. Climate
+change is costly to the world. RICE calibrates the production and
+climate part to six regions of the world--USA, Japan, China, EU, FSR, ROW>
+Therefore, there are 6 decision makers, playing non-cooperatively (Nash). 
+Three policy scenerios examined.
+1. BAU (they call this market policies). No controls (no policies)
+2. Cooperative. Policies enacted to be globally efficient.
+3. Noncooperative (Nash)
+
+Estimates cooperative SCC to be $6/ton (2000 USD),
+and 24 cents in noncooperative. Also, economic losses from 
+global warming is only 1 to 2 percent of global
+income over the next century. 
+
+China, Japan, and EU benefit most from cooperative strategy.
+Probably why the US doesn't want to play. 

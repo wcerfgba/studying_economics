@@ -1,0 +1,661 @@
+-----------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ opened on:   7 Feb 2019, 14:28:18
+
+. use affairs.dta
+
+. reg affair yrsmarr age vryhap vryrel
+
+      Source |       SS           df       MS      Number of obs   =       601
+-------------+----------------------------------   F(4, 596)       =      8.73
+       Model |  6.22993724         4  1.55748431   Prob > F        =    0.0000
+    Residual |  106.332459       596  .178410166   R-squared       =    0.0553
+-------------+----------------------------------   Adj R-squared   =    0.0490
+       Total |  112.562396       600  .187603993   Root MSE        =    .42239
+
+------------------------------------------------------------------------------
+      affair |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     yrsmarr |   .0161081   .0049764     3.24   0.001     .0063347    .0258816
+         age |  -.0059052   .0029653    -1.99   0.047     -.011729   -.0000815
+      vryhap |  -.1436799   .0365902    -3.93   0.000    -.2155413   -.0718184
+      vryrel |  -.0761452   .0546054    -1.39   0.164    -.1833876    .0310972
+       _cons |   .3740355   .0747993     5.00   0.000     .2271332    .5209377
+------------------------------------------------------------------------------
+
+. ** use stata to predict fitted values (the y-hats)
+
+. predict affairhat
+(option xb assumed; fitted values)
+
+. sum affairhat
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+   affairhat |        601     .249584    .1018981  -.0696469   .4266901
+
+. sort affairhat
+
+. reg affair yrsmarr age vryhap vryrel male kids
+
+      Source |       SS           df       MS      Number of obs   =       601
+-------------+----------------------------------   F(6, 594)       =      6.40
+       Model |  6.83888282         6   1.1398138   Prob > F        =    0.0000
+    Residual |  105.723513       594  .177985712   R-squared       =    0.0608
+-------------+----------------------------------   Adj R-squared   =    0.0513
+       Total |  112.562396       600  .187603993   Root MSE        =    .42188
+
+------------------------------------------------------------------------------
+      affair |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     yrsmarr |    .015348   .0055871     2.75   0.006     .0043751    .0263209
+         age |  -.0069885    .003079    -2.27   0.024    -.0130355   -.0009414
+      vryhap |  -.1370624   .0367996    -3.72   0.000    -.2093356   -.0647892
+      vryrel |  -.0744481   .0545502    -1.36   0.173    -.1815828    .0326865
+        male |   .0535019   .0359076     1.49   0.137    -.0170193    .1240231
+        kids |    .046233   .0469967     0.98   0.326     -.046067     .138533
+       _cons |    .354152   .0776554     4.56   0.000     .2016395    .5066646
+------------------------------------------------------------------------------
+
+. predict affairhat2
+(option xb assumed; fitted values)
+
+. sum affairhat affairhat2
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+   affairhat |        601     .249584    .1018981  -.0696469   .4266901
+  affairhat2 |        601     .249584    .1067621  -.0743498   .4604766
+
+. ** that was a linear probability model
+
+. ** now, dummies as independent variables
+
+. use gpa2.dta, clear
+
+. reg colgpa sat female
+
+      Source |       SS           df       MS      Number of obs   =     4,137
+-------------+----------------------------------   F(2, 4134)      =    506.10
+       Model |  352.897728         2  176.448864   Prob > F        =    0.0000
+    Residual |  1441.29795     4,134  .348644883   R-squared       =    0.1967
+-------------+----------------------------------   Adj R-squared   =    0.1963
+       Total |  1794.19567     4,136  .433799728   Root MSE        =    .59046
+
+------------------------------------------------------------------------------
+      colgpa |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         sat |   .0020576   .0000667    30.87   0.000     .0019269    .0021883
+      female |   .2306707   .0186762    12.35   0.000     .1940552    .2672862
+       _cons |   .4289542   .0710525     6.04   0.000     .2896531    .5682553
+------------------------------------------------------------------------------
+
+. ** females have an intercept that is 0.23 higher
+
+. use nbasalary.dta
+
+. gen center=0
+
+. replace center=1 if forward==0 & guard==0
+(18 real changes made)
+
+. count
+  56
+
+. gen lsalary=log(salary)
+
+. reg lsalary avgpnts center forward guard
+note: guard omitted because of collinearity
+
+      Source |       SS           df       MS      Number of obs   =        56
+-------------+----------------------------------   F(3, 52)        =      4.47
+       Model |  1.51516267         3  .505054224   Prob > F        =    0.0072
+    Residual |  5.86918977        52  .112869034   R-squared       =    0.2052
+-------------+----------------------------------   Adj R-squared   =    0.1593
+       Total |  7.38435244        55  .134260953   Root MSE        =    .33596
+
+------------------------------------------------------------------------------
+     lsalary |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     avgpnts |   .0311356   .0086002     3.62   0.001      .013878    .0483932
+      center |   .2905852   .1329052     2.19   0.033     .0238914    .5572791
+     forward |   .0792159   .1119352     0.71   0.482    -.1453986    .3038304
+       guard |          0  (omitted)
+       _cons |   6.653268   .2013391    33.05   0.000     6.249251    7.057284
+------------------------------------------------------------------------------
+
+. ** oops! violated no perfect collinearity
+
+. reg lsalary avgpnts center forward
+
+      Source |       SS           df       MS      Number of obs   =        56
+-------------+----------------------------------   F(3, 52)        =      4.47
+       Model |  1.51516267         3  .505054224   Prob > F        =    0.0072
+    Residual |  5.86918977        52  .112869034   R-squared       =    0.2052
+-------------+----------------------------------   Adj R-squared   =    0.1593
+       Total |  7.38435244        55  .134260953   Root MSE        =    .33596
+
+------------------------------------------------------------------------------
+     lsalary |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     avgpnts |   .0311356   .0086002     3.62   0.001      .013878    .0483932
+      center |   .2905852   .1329052     2.19   0.033     .0238914    .5572791
+     forward |   .0792159   .1119352     0.71   0.482    -.1453986    .3038304
+       _cons |   6.653268   .2013391    33.05   0.000     6.249251    7.057284
+------------------------------------------------------------------------------
+
+. reg lsalary avgpnts guard forward
+
+      Source |       SS           df       MS      Number of obs   =        56
+-------------+----------------------------------   F(3, 52)        =      4.47
+       Model |  1.51516267         3  .505054224   Prob > F        =    0.0072
+    Residual |  5.86918977        52  .112869034   R-squared       =    0.2052
+-------------+----------------------------------   Adj R-squared   =    0.1593
+       Total |  7.38435244        55  .134260953   Root MSE        =    .33596
+
+------------------------------------------------------------------------------
+     lsalary |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     avgpnts |   .0311356   .0086002     3.62   0.001      .013878    .0483932
+       guard |  -.2905852   .1329052    -2.19   0.033    -.5572791   -.0238914
+     forward |  -.2113693   .1179639    -1.79   0.079    -.4480811    .0253425
+       _cons |   6.943853   .1433516    48.44   0.000     6.656197    7.231509
+------------------------------------------------------------------------------
+
+. ** guards make 29% less than centers, c.p.
+
+. use wage1.dta
+no; data in memory would be lost
+r(4);
+
+. use wage1.dta, clear
+
+. do "G:\My Drive\Policy_Eval_2019\stata\wagekids.do"
+
+. ***wagekids.do, used in dummy variables lecture
+. ***use wage1.dta
+. 
+. gen kids=0
+
+. replace kids=1 if numdep>0
+(274 real changes made)
+
+. sum kids
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+        kids |        526    .5209125     .500038          0          1
+
+. 
+. gen malekids=0
+
+. replace malekids=1 if (female==0 & kids==1)
+(132 real changes made)
+
+. gen malenokids=0
+
+. replace malenokids=1 if (female==0 & kids==0)
+(142 real changes made)
+
+. gen femkids=0
+
+. replace femkids=1 if (female==1 & kids==1)
+(142 real changes made)
+
+. gen femnokids=0
+
+. replace femnokids=1 if (female==1 & kids==0)
+(110 real changes made)
+
+. 
+end of do-file
+
+. reg lwage educ malekids femkids femnokids
+
+      Source |       SS           df       MS      Number of obs   =       526
+-------------+----------------------------------   F(4, 521)       =     59.20
+       Model |  46.3528916         4  11.5882229   Prob > F        =    0.0000
+    Residual |   101.97687       521  .195732956   R-squared       =    0.3125
+-------------+----------------------------------   Adj R-squared   =    0.3072
+       Total |  148.329762       525   .28253288   Root MSE        =    .44242
+
+------------------------------------------------------------------------------
+       lwage |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        educ |   .0761932   .0070444    10.82   0.000     .0623544    .0900321
+    malekids |   .1151424   .0535344     2.15   0.032     .0099726    .2203122
+     femkids |  -.3590074   .0529691    -6.78   0.000    -.4630667   -.2549481
+   femnokids |  -.2372767   .0562025    -4.22   0.000     -.347688   -.1268654
+       _cons |   .7837167   .0984029     7.96   0.000     .5904014     .977032
+------------------------------------------------------------------------------
+
+. ** or do w/interaction:
+
+. reg lwage educ female kids femkids
+
+      Source |       SS           df       MS      Number of obs   =       526
+-------------+----------------------------------   F(4, 521)       =     59.20
+       Model |  46.3528916         4  11.5882229   Prob > F        =    0.0000
+    Residual |   101.97687       521  .195732956   R-squared       =    0.3125
+-------------+----------------------------------   Adj R-squared   =    0.3072
+       Total |  148.329762       525   .28253288   Root MSE        =    .44242
+
+------------------------------------------------------------------------------
+       lwage |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        educ |   .0761932   .0070444    10.82   0.000     .0623544    .0900321
+      female |  -.2372767   .0562025    -4.22   0.000     -.347688   -.1268654
+        kids |   .1151424   .0535344     2.15   0.032     .0099726    .2203122
+     femkids |  -.2368731   .0776785    -3.05   0.002    -.3894746   -.0842715
+       _cons |   .7837167   .0984029     7.96   0.000     .5904014     .977032
+------------------------------------------------------------------------------
+
+. log close
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ closed on:   7 Feb 2019, 15:17:04
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ opened on:  12 Feb 2019, 14:18:53
+
+. use wage1.dta
+
+. gen femexp=female * exper
+
+. reg lwage educ exper female femexp
+
+      Source |       SS           df       MS      Number of obs   =       526
+-------------+----------------------------------   F(4, 521)       =     75.71
+       Model |   54.524407         4  13.6311018   Prob > F        =    0.0000
+    Residual |  93.8053547       521  .180048665   R-squared       =    0.3676
+-------------+----------------------------------   Adj R-squared   =    0.3627
+       Total |  148.329762       525   .28253288   Root MSE        =    .42432
+
+------------------------------------------------------------------------------
+       lwage |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        educ |   .0938976   .0070856    13.25   0.000     .0799778    .1078173
+       exper |   .0142622   .0019882     7.17   0.000     .0103563    .0181682
+      female |  -.1780102   .0600149    -2.97   0.003    -.2959111   -.0601093
+      femexp |   -.009671   .0027477    -3.52   0.000    -.0150689   -.0042731
+       _cons |    .362356   .1092066     3.32   0.001     .1478167    .5768953
+------------------------------------------------------------------------------
+
+. ** this model allows for the effect of experience to be different for men and for
+>  women.  We reject the null that the effect of experience is the same for the two
+>  groups
+
+. log close
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ closed on:  12 Feb 2019, 14:46:04
+-----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ opened on:  13 Feb 2019, 10:57:41
+
+. ** homework problem C4 from Chapter 7
+
+. use gpa2.dta
+
+. * part i)
+
+. * Answers vary, but I would expect the coefficient on sat to be positive, the coefficient on hsperc to be negative, and I don't have a strong prior beli
+> ef on the others.
+
+. * part ii)
+
+. reg colgpa hsize hsizesq hsperc sat female athlete
+
+      Source |       SS           df       MS      Number of obs   =     4,137
+-------------+----------------------------------   F(6, 4130)      =    284.59
+       Model |  524.819305         6  87.4698842   Prob > F        =    0.0000
+    Residual |  1269.37637     4,130  .307355053   R-squared       =    0.2925
+-------------+----------------------------------   Adj R-squared   =    0.2915
+       Total |  1794.19567     4,136  .433799728   Root MSE        =     .5544
+
+------------------------------------------------------------------------------
+      colgpa |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       hsize |  -.0568543   .0163513    -3.48   0.001    -.0889117   -.0247968
+     hsizesq |   .0046754   .0022494     2.08   0.038     .0002654    .0090854
+      hsperc |  -.0132126   .0005728   -23.07   0.000    -.0143355   -.0120896
+         sat |   .0016464   .0000668    24.64   0.000     .0015154    .0017774
+      female |   .1548814   .0180047     8.60   0.000     .1195826    .1901802
+     athlete |   .1693064   .0423492     4.00   0.000     .0862791    .2523336
+       _cons |   1.241365   .0794923    15.62   0.000     1.085517    1.397212
+------------------------------------------------------------------------------
+
+. ** Remember that "report results in the usual form" means using the coefficients.  colgpa(hat) = 1.2414 -.0569*hsize +.0047*hsize^2 - .0132*hsperc + .0016
+> *sat + .1549*female +.1693*athlete
+
+. ** The estimated difference in the coefficients between athletes and nonathletes is 0.17, and it is statistically significant at the 1% level.  Athletes
+>  are predicted to have GPAs that are 0.17 higher than non-athletes, c.p.
+
+. * part iii)
+
+. reg colgpa hsize hsizesq hsperc female athlete
+
+      Source |       SS           df       MS      Number of obs   =     4,137
+-------------+----------------------------------   F(5, 4131)      =    191.92
+       Model |  338.217123         5  67.6434247   Prob > F        =    0.0000
+    Residual |  1455.97855     4,131   .35245184   R-squared       =    0.1885
+-------------+----------------------------------   Adj R-squared   =    0.1875
+       Total |  1794.19567     4,136  .433799728   Root MSE        =    .59368
+
+------------------------------------------------------------------------------
+      colgpa |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       hsize |  -.0534038   .0175092    -3.05   0.002    -.0877313   -.0190763
+     hsizesq |   .0053228   .0024086     2.21   0.027     .0006007     .010045
+      hsperc |  -.0171365   .0005892   -29.09   0.000    -.0182916   -.0159814
+      female |   .0581231   .0188162     3.09   0.002     .0212333     .095013
+     athlete |   .0054487   .0447871     0.12   0.903    -.0823582    .0932556
+       _cons |   3.047698   .0329148    92.59   0.000     2.983167    3.112229
+------------------------------------------------------------------------------
+
+. * Now, being an athlete is predicted to have a very small effect on gpa, ceteris paribus, and the coefficient is not statistically significant.  Here, s
+> at is an important omitted variable.  Because the coefficient on sat is positive, and sat is negatively correlated with athlete, the coefficient on athl
+> ete is negatively biased by the omission of sat.
+
+. * part iv)
+
+. ** There are two ways to do this. First, you could create the dummy categories and leave either women athletes or women non-athletes as the base case:
+
+. gen femath=female*athlete
+
+. gen male=0
+
+. replace male=1 if female==0
+(2,277 real changes made)
+
+. gen maleath=male*athlete
+
+. gen noath=0
+
+. replace noath=1 if athlete==0
+(3,943 real changes made)
+
+. gen malenoath=male*noath
+
+. reg colgpa hsize hsizesq hsperc sat femath maleath malenoath
+
+      Source |       SS           df       MS      Number of obs   =     4,137
+-------------+----------------------------------   F(7, 4129)      =    243.88
+       Model |  524.821272         7  74.9744674   Prob > F        =    0.0000
+    Residual |   1269.3744     4,129  .307429015   R-squared       =    0.2925
+-------------+----------------------------------   Adj R-squared   =    0.2913
+       Total |  1794.19567     4,136  .433799728   Root MSE        =    .55446
+
+------------------------------------------------------------------------------
+      colgpa |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       hsize |  -.0568006   .0163671    -3.47   0.001    -.0888889   -.0247124
+     hsizesq |   .0046699   .0022507     2.07   0.038     .0002573    .0090825
+      hsperc |  -.0132114    .000573   -23.06   0.000    -.0143349    -.012088
+         sat |   .0016462   .0000669    24.62   0.000     .0015151    .0017773
+      femath |   .1751106   .0840258     2.08   0.037     .0103748    .3398464
+     maleath |   .0128034   .0487395     0.26   0.793    -.0827523    .1083591
+   malenoath |  -.1546151   .0183122    -8.44   0.000    -.1905168   -.1187133
+       _cons |    1.39619   .0755581    18.48   0.000     1.248055    1.544324
+------------------------------------------------------------------------------
+
+
+. * From this, we see that female athletes are predicted to have GPAs that are .175 higher than female non-athletes (the base case), c.p.
+
+. * The coefficient is statistically significant at 5%.
+
+. * Second, we could create the interaction between male and athlete:
+
+. reg colgpa hsize hsizesq hsperc sat male athlete maleath
+
+      Source |       SS           df       MS      Number of obs   =     4,137
+-------------+----------------------------------   F(7, 4129)      =    243.88
+       Model |  524.821272         7  74.9744674   Prob > F        =    0.0000
+    Residual |   1269.3744     4,129  .307429015   R-squared       =    0.2925
+-------------+----------------------------------   Adj R-squared   =    0.2913
+       Total |  1794.19567     4,136  .433799728   Root MSE        =    .55446
+
+------------------------------------------------------------------------------
+      colgpa |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       hsize |  -.0568006   .0163671    -3.47   0.001    -.0888889   -.0247124
+     hsizesq |   .0046699   .0022507     2.07   0.038     .0002573    .0090825
+      hsperc |  -.0132114    .000573   -23.06   0.000    -.0143349    -.012088
+         sat |   .0016462   .0000669    24.62   0.000     .0015151    .0017773
+        male |  -.1546151   .0183122    -8.44   0.000    -.1905168   -.1187133
+     athlete |   .1751106   .0840258     2.08   0.037     .0103748    .3398464
+     maleath |  -.0076921   .0961748    -0.08   0.936    -.1962466    .1808623
+       _cons |    1.39619   .0755581    18.48   0.000     1.248055    1.544324
+------------------------------------------------------------------------------
+
+. * With this specification, the only difference between female athletes and female non-athletes is in the "athlete" coefficient.  Again, we get that fema
+> le athletes are predicted to have GPAs that are .175 higher than female non-athletes, c.p., and it is statistically significant at 5%.
+
+. * part v)
+
+. * To test this hypothesis, we need to create and use an interaction between sat and female.
+
+. gen femsat=female*sat
+
+. reg colgpa hsize hsizesq hsperc athlete sat female femsat
+
+      Source |       SS           df       MS      Number of obs   =     4,137
+-------------+----------------------------------   F(7, 4129)      =    243.91
+       Model |  524.867644         7   74.981092   Prob > F        =    0.0000
+    Residual |  1269.32803     4,129  .307417784   R-squared       =    0.2925
+-------------+----------------------------------   Adj R-squared   =    0.2913
+       Total |  1794.19567     4,136  .433799728   Root MSE        =    .55445
+
+------------------------------------------------------------------------------
+      colgpa |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       hsize |  -.0569121   .0163537    -3.48   0.001    -.0889741   -.0248501
+     hsizesq |   .0046864   .0022498     2.08   0.037     .0002757    .0090972
+      hsperc |   -.013225   .0005737   -23.05   0.000    -.0143497   -.0121003
+     athlete |   .1677568   .0425334     3.94   0.000     .0843684    .2511452
+         sat |   .0016255   .0000852    19.09   0.000     .0014585    .0017924
+      female |   .1023066   .1338023     0.76   0.445    -.1600179    .3646311
+      femsat |   .0000512   .0001291     0.40   0.692     -.000202    .0003044
+       _cons |   1.263743   .0974952    12.96   0.000       1.0726    1.454887
+------------------------------------------------------------------------------
+
+. * The coefficient on the interaction term is small and is not statistically significant at conventional levels.  We cannot reject the null hypothesis th
+> at sat score has the same effect on colgpa for men and for women (H0: b7 = 0).
+
+. log close
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ closed on:  13 Feb 2019, 11:11:20
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ opened on:   5 Mar 2019, 13:59:13
+
+. use pntsprd
+
+. desc favwin spread
+
+              storage   display    value
+variable name   type    format     label      variable label
+-----------------------------------------------------------------------------------
+favwin          byte    %9.0g                 =1 if favored team wins
+spread          float   %9.0g                 Las Vegas spread
+
+. reg favwin spread, r
+
+Linear regression                               Number of obs     =        553
+                                                F(1, 551)         =     101.54
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1107
+                                                Root MSE          =     .40168
+
+------------------------------------------------------------------------------
+             |               Robust
+      favwin |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      spread |   .0193655   .0019218    10.08   0.000     .0155905    .0231405
+       _cons |   .5769492   .0316568    18.23   0.000     .5147664    .6391321
+------------------------------------------------------------------------------
+
+. predict yhatOLS
+(option xb assumed; fitted values)
+
+. scatter yhatOLS spread
+
+. log close
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ closed on:   5 Mar 2019, 15:16:30
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ opened on:   7 Mar 2019, 13:59:52
+
+. use pntsprd
+
+. reg favwin spread, r
+
+Linear regression                               Number of obs     =        553
+                                                F(1, 551)         =     101.54
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1107
+                                                Root MSE          =     .40168
+
+------------------------------------------------------------------------------
+             |               Robust
+      favwin |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      spread |   .0193655   .0019218    10.08   0.000     .0155905    .0231405
+       _cons |   .5769492   .0316568    18.23   0.000     .5147664    .6391321
+------------------------------------------------------------------------------
+
+. predict yhatOLS
+(option xb assumed; fitted values)
+
+. scatter yhatOLS spread
+
+. ** that was a linear probability model, gave predictions outside [0,1]
+
+. sum yhatOLS
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     yhatOLS |        553    .7631103    .1415726   .5963148   1.332204
+
+. ** do with probit instead
+
+. probit favwin spread, r
+
+Iteration 0:   log pseudolikelihood = -302.74988  
+Iteration 1:   log pseudolikelihood = -264.91454  
+Iteration 2:   log pseudolikelihood = -263.56319  
+Iteration 3:   log pseudolikelihood = -263.56219  
+Iteration 4:   log pseudolikelihood = -263.56219  
+
+Probit regression                               Number of obs     =        553
+                                                Wald chi2(1)      =      62.20
+                                                Prob > chi2       =     0.0000
+Log pseudolikelihood = -263.56219               Pseudo R2         =     0.1294
+
+------------------------------------------------------------------------------
+             |               Robust
+      favwin |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      spread |    .092463   .0117244     7.89   0.000     .0694836    .1154424
+       _cons |  -.0105926   .1021644    -0.10   0.917    -.2108311    .1896458
+------------------------------------------------------------------------------
+
+. ** to get stata to report marginal effects, use dprobit
+
+. dprobit favwin spread, r
+
+Iteration 0:   log pseudolikelihood = -302.74988
+Iteration 1:   log pseudolikelihood = -266.49244
+Iteration 2:   log pseudolikelihood = -263.62542
+Iteration 3:   log pseudolikelihood = -263.56223
+Iteration 4:   log pseudolikelihood = -263.56219
+
+Probit regression, reporting marginal effects           Number of obs =    553
+                                                        Wald chi2(1)  =  62.20
+                                                        Prob > chi2   = 0.0000
+Log pseudolikelihood = -263.56219                       Pseudo R2     = 0.1294
+
+------------------------------------------------------------------------------
+         |               Robust
+  favwin |      dF/dx   Std. Err.      z    P>|z|     x-bar  [    95% C.I.   ]
+---------+--------------------------------------------------------------------
+  spread |   .0250833   .0028336     7.89   0.000   9.61302    .01953  .030637
+---------+--------------------------------------------------------------------
+  obs. P |   .7631103
+ pred. P |   .8100975  (at x-bar)
+------------------------------------------------------------------------------
+    z and P>|z| correspond to the test of the underlying coefficient being 0
+
+. ** interpret:  a one point increase in spread is associated with a 0.025 increase
+>  in probability favorite won
+
+. ** do logit instead
+
+. predict yhatBRM
+(option pr assumed; Pr(favwin))
+
+. scatter yhatBRM spread
+
+. ** do logit:
+
+. logit favwin spread, r
+
+Iteration 0:   log pseudolikelihood = -302.74988  
+Iteration 1:   log pseudolikelihood = -267.55868  
+Iteration 2:   log pseudolikelihood = -263.93987  
+Iteration 3:   log pseudolikelihood = -263.90133  
+Iteration 4:   log pseudolikelihood = -263.90131  
+
+Logistic regression                             Number of obs     =        553
+                                                Wald chi2(1)      =      59.30
+                                                Prob > chi2       =     0.0000
+Log pseudolikelihood = -263.90131               Pseudo R2         =     0.1283
+
+------------------------------------------------------------------------------
+             |               Robust
+      favwin |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      spread |    .163226   .0211967     7.70   0.000     .1216812    .2047708
+       _cons |  -.0711567   .1686841    -0.42   0.673    -.4017715    .2594581
+------------------------------------------------------------------------------
+
+. mfx compute
+
+Marginal effects after logit
+      y  = Pr(favwin) (predict)
+         =  .81726676
+------------------------------------------------------------------------------
+variable |      dy/dx    Std. Err.     z    P>|z|  [    95% C.I.   ]      X
+---------+--------------------------------------------------------------------
+  spread |   .0243765      .00262    9.30   0.000   .019242  .029511   9.61302
+------------------------------------------------------------------------------
+
+. ** mfx compute gives marginal effects after logit
+
+. log close
+      name:  <unnamed>
+       log:  G:\My Drive\Policy_Eval_2019\stata\ch7.log
+  log type:  text
+ closed on:   7 Mar 2019, 14:27:45
+-----------------------------------------------------------------------------------

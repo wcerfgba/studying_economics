@@ -1,0 +1,131 @@
+-------------------------------------------------------------------------------------------------------------------------------
+       log:  d:\d_drive\classes\fall2010\boostrap_example.log
+  log type:  text
+ opened on:  19 Sep 2010, 13:30:08
+
+. 
+. * read in raw data from comma delimited data
+. use cps87
+
+. 
+. * describe what is in the data set
+. describe
+
+Contains data from cps87.dta
+  obs:        19,906                          
+ vars:             7                          12 Aug 2008 13:05
+ size:       318,496 (88.6% of memory free)
+-------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+-------------------------------------------------------------------------------
+age             byte   %8.0g                  age in years
+race            byte   %8.0g                  =1 if white non-Hisp, =2 if
+                                                black non-Hisp, =3 if Hispanic
+years_educ      byte   %8.0g                  years of competed education
+union_status    byte   %8.0g                  =1 if in union, =2 otherwise
+smsa_size       byte   %8.0g                  =1 if largest 19 smsa, =2 if
+                                                other smsa, =3 not in smsa
+region          byte   %8.0g                  =1 if northeast, =2 if midwest,
+                                                =3 if south, =4 if west
+weekly_earn     int    %8.0g                  usual weekly earnings, up to
+                                                $999
+-------------------------------------------------------------------------------
+Sorted by:  race
+
+. 
+. * generate new variab;es
+. gen age2=age*age
+
+. gen ln_weekly_earn=ln(weekly_earn)
+
+. gen union=union_status==1
+
+. gen nonwhite=race>1
+
+. 
+. label var age2 "age squared"
+
+. label var ln_weekly_earn "log earnings per week"
+
+. label var union "1=in union, 0 otherwise"
+
+. label var nonwhite "=1 if nonwhite, =0 otherwise"
+
+. 
+. 
+. 
+. *run simple regression
+. reg ln_weekly_earn age age2 years_educ nonwhite union
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F(  5, 19900) = 1775.70
+       Model |  1616.39963     5  323.279927           Prob > F      =  0.0000
+    Residual |  3622.93905 19900  .182057239           R-squared     =  0.3085
+-------------+------------------------------           Adj R-squared =  0.3083
+       Total |  5239.33869 19905  .263217216           Root MSE      =  .42668
+
+------------------------------------------------------------------------------
+ln_weekly_~n |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0679808   .0020033    33.93   0.000     .0640542    .0719075
+        age2 |  -.0006778   .0000245   -27.69   0.000    -.0007258   -.0006299
+  years_educ |    .069219   .0011256    61.50   0.000     .0670127    .0714252
+    nonwhite |  -.1716133   .0089118   -19.26   0.000    -.1890812   -.1541453
+       union |   .1301547   .0072923    17.85   0.000     .1158612    .1444481
+       _cons |   3.630805   .0394126    92.12   0.000     3.553553    3.708057
+------------------------------------------------------------------------------
+
+. 
+. * now boostrap the data.  takes N obs with replacement
+. * save results in stata file bs-results.dta
+. 
+. bootstrap, saving(bs-results.dta, replace) rep(999) : regress ln_weekly_earn age age2 years_educ union
+(running regress on estimation sample)
+(note: file bs-results.dta not found)
+
+Bootstrap replications (999)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+..................................................    50
+..................................................   100
+..................................................   150
+..................................................   200
+..................................................   250
+..................................................   300
+..................................................   350
+..................................................   400
+..................................................   450
+..................................................   500
+..................................................   550
+..................................................   600
+..................................................   650
+..................................................   700
+..................................................   750
+..................................................   800
+..................................................   850
+..................................................   900
+..................................................   950
+.................................................
+
+Linear regression                               Number of obs      =     19906
+                                                Replications       =       999
+                                                Wald chi2(4)       =   8181.87
+                                                Prob > chi2        =    0.0000
+                                                R-squared          =    0.2956
+                                                Adj R-squared      =    0.2955
+                                                Root MSE           =    0.4306
+
+------------------------------------------------------------------------------
+             |   Observed   Bootstrap                         Normal-based
+ln_weekly_~n |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0677261   .0020929    32.36   0.000     .0636241    .0718281
+        age2 |   -.000671   .0000256   -26.24   0.000    -.0007211   -.0006209
+  years_educ |   .0737998   .0011444    64.49   0.000     .0715569    .0760427
+       union |   .1275683   .0067367    18.94   0.000     .1143646    .1407721
+       _cons |   3.545902   .0399948    88.66   0.000     3.467513     3.62429
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+

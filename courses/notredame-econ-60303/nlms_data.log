@@ -1,0 +1,407 @@
+------------------------------------------------------------------------------
+       log:  c:\bill\jpsm\nlms_data.log
+  log type:  text
+ opened on:  27 May 2006, 08:44:05
+
+. * load up sas data set;
+. use c:\bill\jpsm\nlms_data;
+
+. * get contents of data file;
+. desc;
+
+Contains data from c:\bill\jpsm\nlms_data.dta
+  obs:        40,715                          
+ vars:            10                          15 Apr 2006 14:34
+ size:     1,791,460 (91.5% of memory free)
+------------------------------------------------------------------------------
+> -
+              storage  display     value
+variable name   type   format      label      variable label
+------------------------------------------------------------------------------
+> -
+followh         float  %9.0g                  days of followup for husband
+followw         float  %9.0g                  days of followup for wife
+age             float  %9.0g                  age of husband
+educ            float  %9.0g                  husband, 0-8, 9-11, 12, 13-15,
+                                                16+
+income          float  %9.0g                  family inc, top group is $50k+
+raceh1          float  %9.0g                  white, non hispanic
+raceh2          float  %9.0g                  black, non hispanic
+deathh          float  %9.0g                  =1 if husband died during
+                                                followup
+deathw          float  %9.0g                  =1 if wife died during followup
+hhid            float  %9.0g                  household ID
+------------------------------------------------------------------------------
+> -
+Sorted by:  
+
+. * get summary statistics;
+. sum;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+     followh |     40715    3005.135    723.6469          2       3288
+     followw |     40715    3173.552    469.8656          8       3288
+         age |     40715    59.16623    5.807821         50         70
+        educ |     40715    2.808817    1.335242          1          5
+      income |     40715    4.313717     1.72004          1          7
+-------------+--------------------------------------------------------
+      raceh1 |     40715    .9188997    .2729925          0          1
+      raceh2 |     40715    .0611323    .2395757          0          1
+      deathh |     40715    .1818494    .3857251          0          1
+      deathw |     40715    .0795776    .2706414          0          1
+        hhid |     40715    125273.2    72259.65          7     249994
+
+. * define the duration data in the analysis;
+. stset followh, failure(deathh) id(hhid);
+
+                id:  hhid
+     failure event:  deathh != 0 & deathh < .
+obs. time interval:  (followh[_n-1], followh]
+ exit on or before:  failure
+
+------------------------------------------------------------------------------
+    40715  total obs.
+        0  exclusions
+------------------------------------------------------------------------------
+    40715  obs. remaining, representing
+    40715  subjects
+     7404  failures in single failure-per-subject data
+ 1.22e+08  total analysis time at risk, at risk from t =         0
+                             earliest observed entry t =         0
+                                  last observed exit t =      3288
+
+. * graph the kaplan-meier functions;
+. * output the graphs to a file;
+. sts  graph;
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+. graph save c:\bill\jpsm\nlms_graph1.gph, replace;
+(file c:\bill\jpsm\nlms_graph1.gph saved)
+
+. * graph the hazards;
+. sts  graph, hazard;
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+. graph save c:\bill\jpsm\nlms_graph2.gph, replace;
+(file c:\bill\jpsm\nlms_graph2.gph saved)
+
+. * you can draw graphs for various subgroups;
+. * output the graphs to a file;
+. sts  graph, by(educ);
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+. graph save c:\bill\jpsm\nlms_graph3.gph, replace;
+(file c:\bill\jpsm\nlms_graph3.gph saved)
+
+. * graph the hazards;
+. * output the graphs to a file;
+. sts  graph, hazard by(educ);
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+. graph save c:\bill\jpsm\nlms_graph4.gph, replace;
+(file c:\bill\jpsm\nlms_graph4.gph saved)
+
+. * run a duration model where the hazard varies across;
+. * people.  first, ask stata to print out the raw;
+. * coefficients (nohr option), then do default;
+. * show weibull first, then exponential;
+. * first, construct dummies for the income and;
+. * education categories.  in the regression statement;
+. * _Ie star include all variables beginning with _Ie;
+. * and _Ii star includes all variables starting with;
+. * _Ii;
+. xi i.income i.educ;
+i.income          _Iincome_1-7        (naturally coded; _Iincome_1 omitted)
+i.educ            _Ieduc_1-5          (naturally coded; _Ieduc_1 omitted)
+
+. streg age raceh1 raceh2 _Ie* _Ii*, d(weibull) nohr;
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+Fitting constant-only model:
+
+Iteration 0:   log likelihood = -26131.995
+Iteration 1:   log likelihood = -26062.776
+Iteration 2:   log likelihood =  -26062.48
+Iteration 3:   log likelihood =  -26062.48
+
+Fitting full model:
+
+Iteration 0:   log likelihood =  -26062.48  
+Iteration 1:   log likelihood = -24936.109  
+Iteration 2:   log likelihood = -24764.151  
+Iteration 3:   log likelihood = -24763.897  
+Iteration 4:   log likelihood = -24763.897  
+
+Weibull regression -- log relative-hazard form 
+
+No. of subjects =        40715                     Number of obs   =     40715
+No. of failures =         7404
+Time at risk    =    122354067
+                                                   LR chi2(13)     =   2597.17
+Log likelihood  =   -24763.897                     Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+          _t |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0770805   .0022274    34.61   0.000     .0727148    .0814462
+      raceh1 |   .2191812   .0922558     2.38   0.018     .0383632    .3999993
+      raceh2 |   .3462384   .1004901     3.45   0.001     .1492813    .5431954
+    _Ieduc_2 |    .036706   .0344257     1.07   0.286    -.0307672    .1041791
+    _Ieduc_3 |  -.1245817   .0315895    -3.94   0.000     -.186496   -.0626674
+    _Ieduc_4 |  -.0743026   .0437755    -1.70   0.090    -.1601009    .0114957
+    _Ieduc_5 |  -.2715017   .0464355    -5.85   0.000    -.3625137   -.1804897
+  _Iincome_2 |  -.1199924   .0472621    -2.54   0.011    -.2126245   -.0273603
+  _Iincome_3 |  -.2577632   .0480422    -5.37   0.000    -.3519242   -.1636023
+  _Iincome_4 |  -.3768464   .0522829    -7.21   0.000     -.479319   -.2743738
+  _Iincome_5 |  -.4700834   .0544088    -8.64   0.000    -.5767227    -.363444
+  _Iincome_6 |  -.5893131   .0528025   -11.16   0.000    -.6928042   -.4858221
+  _Iincome_7 |  -.8204638   .0783839   -10.47   0.000    -.9740933   -.6668342
+       _cons |  -15.49301   .2042763   -75.84   0.000    -15.89338   -15.09264
+-------------+----------------------------------------------------------------
+       /ln_p |   .1546417   .0112594    13.73   0.000     .1325737    .1767097
+-------------+----------------------------------------------------------------
+           p |    1.16724   .0131424                      1.141763    1.193285
+         1/p |   .8567221   .0096462                       .838023    .8758384
+------------------------------------------------------------------------------
+
+.  * now get the hazard ratios where all coefs are raised to;
+. * exp(b1);
+. streg age raceh1 raceh2 _Ie* _Ii*, d(weibull);
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+Fitting constant-only model:
+
+Iteration 0:   log likelihood = -26131.995
+Iteration 1:   log likelihood = -26062.776
+Iteration 2:   log likelihood =  -26062.48
+Iteration 3:   log likelihood =  -26062.48
+
+Fitting full model:
+
+Iteration 0:   log likelihood =  -26062.48  
+Iteration 1:   log likelihood = -24936.109  
+Iteration 2:   log likelihood = -24764.151  
+Iteration 3:   log likelihood = -24763.897  
+Iteration 4:   log likelihood = -24763.897  
+
+Weibull regression -- log relative-hazard form 
+
+No. of subjects =        40715                     Number of obs   =     40715
+No. of failures =         7404
+Time at risk    =    122354067
+                                                   LR chi2(13)     =   2597.17
+Log likelihood  =   -24763.897                     Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+          _t | Haz. Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   1.080129   .0024059    34.61   0.000     1.075424    1.084855
+      raceh1 |   1.245057   .1148637     2.38   0.018     1.039109    1.491824
+      raceh2 |    1.41374   .1420669     3.45   0.001        1.161    1.721499
+    _Ieduc_2 |   1.037388   .0357128     1.07   0.286     .9697013    1.109799
+    _Ieduc_3 |   .8828661   .0278893    -3.94   0.000     .8298619    .9392559
+    _Ieduc_4 |   .9283907   .0406407    -1.70   0.090     .8520578    1.011562
+    _Ieduc_5 |    .762234   .0353947    -5.85   0.000     .6959248    .8348612
+  _Iincome_2 |   .8869272   .0419181    -2.54   0.011     .8084597    .9730106
+  _Iincome_3 |   .7727782    .037126    -5.37   0.000     .7033335    .8490797
+  _Iincome_4 |   .6860214   .0358672    -7.21   0.000     .6192049    .7600479
+  _Iincome_5 |   .6249502   .0340028    -8.64   0.000     .5617363    .6952776
+  _Iincome_6 |   .5547082     .02929   -11.16   0.000     .5001715    .6151912
+  _Iincome_7 |   .4402274   .0345067   -10.47   0.000     .3775345    .5133311
+-------------+----------------------------------------------------------------
+       /ln_p |   .1546417   .0112594    13.73   0.000     .1325737    .1767097
+-------------+----------------------------------------------------------------
+           p |    1.16724   .0131424                      1.141763    1.193285
+         1/p |   .8567221   .0096462                       .838023    .8758384
+------------------------------------------------------------------------------
+
+.  * for compairson purposes, look at results from an exponential;
+. streg age raceh1 raceh2 _Ie* _Ii*, d(exp) nohr;
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+Iteration 0:   log likelihood = -26131.995  
+Iteration 1:   log likelihood =  -25019.46  
+Iteration 2:   log likelihood = -24853.611  
+Iteration 3:   log likelihood = -24853.379  
+Iteration 4:   log likelihood = -24853.379  
+
+Exponential regression -- log relative-hazard form 
+
+No. of subjects =        40715                     Number of obs   =     40715
+No. of failures =         7404
+Time at risk    =    122354067
+                                                   LR chi2(13)     =   2557.23
+Log likelihood  =   -24853.379                     Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+          _t |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0764285   .0022266    34.33   0.000     .0720645    .0807924
+      raceh1 |   .2162895   .0922556     2.34   0.019     .0354718    .3971071
+      raceh2 |   .3419901   .1004905     3.40   0.001     .1450324    .5389477
+    _Ieduc_2 |   .0364837   .0344255     1.06   0.289     -.030989    .1039564
+    _Ieduc_3 |   -.122847   .0315915    -3.89   0.000    -.1847651   -.0609289
+    _Ieduc_4 |  -.0730123   .0437762    -1.67   0.095    -.1588121    .0127876
+    _Ieduc_5 |  -.2689059   .0464407    -5.79   0.000    -.3599281   -.1778838
+  _Iincome_2 |  -.1179315   .0472617    -2.50   0.013    -.2105628   -.0253003
+  _Iincome_3 |  -.2538099   .0480417    -5.28   0.000      -.34797   -.1596498
+  _Iincome_4 |  -.3719436   .0522828    -7.11   0.000     -.474416   -.2694712
+  _Iincome_5 |  -.4644896   .0544095    -8.54   0.000    -.5711302    -.357849
+  _Iincome_6 |  -.5833879   .0528056   -11.05   0.000    -.6868851   -.4798908
+  _Iincome_7 |  -.8136957   .0783879   -10.38   0.000    -.9673332   -.6600583
+       _cons |  -14.11064   .1730746   -81.53   0.000    -14.44986   -13.77142
+------------------------------------------------------------------------------
+
+.  streg age raceh1 raceh2 _Ie* _Ii*, d(exp);
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+Iteration 0:   log likelihood = -26131.995  
+Iteration 1:   log likelihood =  -25019.46  
+Iteration 2:   log likelihood = -24853.611  
+Iteration 3:   log likelihood = -24853.379  
+Iteration 4:   log likelihood = -24853.379  
+
+Exponential regression -- log relative-hazard form 
+
+No. of subjects =        40715                     Number of obs   =     40715
+No. of failures =         7404
+Time at risk    =    122354067
+                                                   LR chi2(13)     =   2557.23
+Log likelihood  =   -24853.379                     Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+          _t | Haz. Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   1.079425   .0024034    34.33   0.000     1.074725    1.084146
+      raceh1 |   1.241462   .1145318     2.34   0.019     1.036108    1.487515
+      raceh2 |   1.407746   .1414651     3.40   0.001     1.156077    1.714202
+    _Ieduc_2 |   1.037157   .0357046     1.06   0.289     .9694863    1.109552
+    _Ieduc_3 |    .884399   .0279394    -3.89   0.000     .8312995    .9408902
+    _Ieduc_4 |   .9295894   .0406939    -1.67   0.095     .8531566     1.01287
+    _Ieduc_5 |   .7642151   .0354907    -5.79   0.000     .6977265    .8370397
+  _Iincome_2 |   .8887569   .0420042    -2.50   0.013     .8101282    .9750171
+  _Iincome_3 |   .7758393   .0372727    -5.28   0.000     .7061201    .8524422
+  _Iincome_4 |   .6893931   .0360434    -7.11   0.000     .6222483    .7637833
+  _Iincome_5 |   .6284558    .034194    -8.54   0.000     .5648866    .6991787
+  _Iincome_6 |   .5580047   .0294658   -11.05   0.000     .5031409     .618851
+  _Iincome_7 |    .443217   .0347429   -10.38   0.000     .3800953    .5168212
+------------------------------------------------------------------------------
+
+. * un cox proportional hazards model;
+. stcox age raceh1 raceh2 _Ie* _Ii*;
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+Iteration 0:   log likelihood = -77870.803
+Iteration 1:   log likelihood = -76593.885
+Iteration 2:   log likelihood = -76566.752
+Iteration 3:   log likelihood =  -76566.71
+Iteration 4:   log likelihood =  -76566.71
+Refining estimates:
+Iteration 0:   log likelihood =  -76566.71
+
+Cox regression -- Breslow method for ties
+
+No. of subjects =        40715                     Number of obs   =     40715
+No. of failures =         7404
+Time at risk    =    122354067
+                                                   LR chi2(13)     =   2608.19
+Log likelihood  =    -76566.71                     Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+          _t | Haz. Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   1.080333   .0024067    34.69   0.000     1.075627    1.085061
+      raceh1 |   1.245519   .1149061     2.38   0.017     1.039494    1.492376
+      raceh2 |   1.414956   .1421888     3.45   0.001     1.161999    1.722979
+    _Ieduc_2 |   1.037417   .0357138     1.07   0.286     .9697289    1.109831
+    _Ieduc_3 |   .8823358   .0278711    -3.96   0.000      .829366    .9386886
+    _Ieduc_4 |   .9281931   .0406331    -1.70   0.089     .8518745    1.011349
+    _Ieduc_5 |   .7615854   .0353637    -5.87   0.000     .6953344    .8341488
+  _Iincome_2 |   .8866648   .0419057    -2.55   0.011     .8082206    .9727227
+  _Iincome_3 |   .7722259   .0370996    -5.38   0.000     .7028304    .8484732
+  _Iincome_4 |    .685404   .0358353    -7.22   0.000      .618647    .7593647
+  _Iincome_5 |   .6242297   .0339635    -8.66   0.000     .5610889    .6944759
+  _Iincome_6 |   .5540265   .0292542   -11.18   0.000     .4995565    .6144358
+  _Iincome_7 |    .439497   .0344497   -10.49   0.000     .3769077    .5124798
+------------------------------------------------------------------------------
+
+. stsplit bereavement, after(time=followw) at(0);
+(2771 observations (episodes) created)
+
+. recode bereavement -1=0 0=1;
+(bereavement: 43486 changes made)
+
+. stcox age raceh1 raceh2 _Ie* _Ii* bereavement;
+
+         failure _d:  deathh
+   analysis time _t:  followh
+                 id:  hhid
+
+Iteration 0:   log likelihood = -77870.803
+Iteration 1:   log likelihood = -76585.228
+Iteration 2:   log likelihood = -76552.951
+Iteration 3:   log likelihood = -76552.883
+Iteration 4:   log likelihood = -76552.883
+Refining estimates:
+Iteration 0:   log likelihood = -76552.883
+
+Cox regression -- Breslow method for ties
+
+No. of subjects =        40715                     Number of obs   =     43486
+No. of failures =         7404
+Time at risk    =    122354067
+                                                   LR chi2(14)     =   2635.84
+Log likelihood  =   -76552.883                     Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+          _t | Haz. Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   1.079492   .0024106    34.25   0.000     1.074778    1.084227
+      raceh1 |   1.240377   .1144358     2.33   0.020     1.035196    1.486225
+      raceh2 |   1.403174   .1410254     3.37   0.001      1.15229    1.708681
+    _Ieduc_2 |   1.038709   .0357596     1.10   0.270     .9709336    1.111215
+    _Ieduc_3 |   .8835838   .0279117    -3.92   0.000     .8305371    .9400187
+    _Ieduc_4 |   .9275845    .040601    -1.72   0.086     .8513257    1.010674
+    _Ieduc_5 |   .7632188   .0354458    -5.82   0.000     .6968144    .8359514
+  _Iincome_2 |   .8860515    .041878    -2.56   0.010     .8076592    .9720527
+  _Iincome_3 |   .7732764   .0371528    -5.35   0.000     .7037818    .8496333
+  _Iincome_4 |   .6885298   .0360055    -7.14   0.000     .6214563    .7628426
+  _Iincome_5 |   .6270364    .034122    -8.58   0.000     .5636016     .697611
+  _Iincome_6 |   .5570053   .0294192   -11.08   0.000     .5022289     .617756
+  _Iincome_7 |   .4420974   .0346619   -10.41   0.000     .3791237    .5155313
+ bereavement |   1.318605    .066781     5.46   0.000     1.194004     1.45621
+------------------------------------------------------------------------------
+
+. log close;
+       log:  c:\bill\jpsm\nlms_data.log
+  log type:  text
+ closed on:  27 May 2006, 08:44:45
+------------------------------------------------------------------------------

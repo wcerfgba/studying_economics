@@ -1,0 +1,354 @@
+-------------------------------------------------------------------------------
+       log:  c:\bill\spring2011\matching1.log
+  log type:  text
+ opened on:  21 Apr 2011, 11:47:07
+
+. * use the workplace data set;
+. use workplace1;
+
+. * print out variable labels;
+. desc;
+
+Contains data from workplace1.dta
+  obs:        16,258                          
+ vars:            10                          28 Oct 2004 05:27
+ size:       390,192 (96.9% of memory free)
+-------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+-------------------------------------------------------------------------------
+smoker          byte   %9.0g                  is current smoking
+worka           byte   %9.0g                  has workplace smoking bans
+age             byte   %9.0g                  age in years
+male            byte   %9.0g                  male
+black           byte   %9.0g                  black
+hispanic        byte   %9.0g                  hispanic
+incomel         float  %9.0g                  log income
+hsgrad          byte   %9.0g                  is hs graduate
+somecol         byte   %9.0g                  has some college
+college         float  %9.0g                  
+-------------------------------------------------------------------------------
+Sorted by:  
+
+. * get summary statistics;
+. sum;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+      smoker |     16258      .25163     .433963          0          1
+       worka |     16258    .6851396    .4644745          0          1
+         age |     16258    38.54742    11.96189         18         87
+        male |     16258    .3947595     .488814          0          1
+       black |     16258    .1119449    .3153083          0          1
+-------------+--------------------------------------------------------
+    hispanic |     16258    .0607086    .2388023          0          1
+     incomel |     16258    10.42097    .7624525   6.214608   11.22524
+      hsgrad |     16258    .3355271    .4721889          0          1
+     somecol |     16258    .2685447    .4432161          0          1
+     college |     16258    .3293763    .4700012          0          1
+
+. * run the propensity score;
+. probit worka age incomel male black hispanic hsgrad somecol college;
+
+Iteration 0:   log likelihood = -10127.669
+Iteration 1:   log likelihood =  -9985.844
+Iteration 2:   log likelihood = -9985.7717
+Iteration 3:   log likelihood = -9985.7717
+
+Probit regression                                 Number of obs   =      16258
+                                                  LR chi2(8)      =     283.79
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -9985.7717                       Pseudo R2       =     0.0140
+
+------------------------------------------------------------------------------
+       worka |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0013188    .000883     1.49   0.135    -.0004119    .0030495
+     incomel |   .0276337   .0145951     1.89   0.058    -.0009722    .0562395
+        male |  -.2569399   .0214589   -11.97   0.000    -.2989986   -.2148812
+       black |   .1426001    .033821     4.22   0.000     .0763121    .2088881
+    hispanic |   .1124684   .0441496     2.55   0.011     .0259367        .199
+      hsgrad |   .0717211   .0435543     1.65   0.100    -.0136438    .1570861
+     somecol |    .223591   .0448887     4.98   0.000     .1356107    .3115713
+     college |   .3568508   .0453148     7.87   0.000     .2680354    .4456663
+       _cons |   .0273529   .1483982     0.18   0.854    -.2635021     .318208
+------------------------------------------------------------------------------
+
+. predict pscore, pr;
+
+. * trim the sample to have common support;
+. * the span of the propensity scores is the same for;
+. * treatment=1 and treatment=0;
+. gen ps_y1=pscore;
+
+. replace ps_y1=. if worka==0;
+(5119 real changes made, 5119 to missing)
+
+. gen ps_y0=pscore;
+
+. replace ps_y0=. if worka==1;
+(11139 real changes made, 11139 to missing)
+
+. egen ps1max=max(ps_y1);
+
+. egen ps1min=min(ps_y1);
+
+. egen ps0max=max(ps_y0);
+
+. egen ps0min=min(ps_y0);
+
+. drop if pscore<max(ps1min,ps0min);
+(1 observation deleted)
+
+. drop if pscore>min(ps1max,ps0max);
+(1 observation deleted)
+
+. * generate weights;
+. * ipw1 is the original weight;
+. gen ipw1=1;
+
+. replace ipw1=(1-worka)*pscore/(1-pscore) if worka==0;
+(5118 real changes made)
+
+. * now construct ipw2 -- re-weight so that the;
+. * new weights sum to the number of observations;
+. * in the comparison sample;
+. egen ipw1s=sum(ipw1) if worka==0;
+(11138 missing values generated)
+
+. egen nobs_y0=sum(1-worka) if worka==0;
+(11138 missing values generated)
+
+. gen ipw2=ipw1;
+
+. replace ipw2=nobs_y0*ipw1/ipw1s if worka==0;
+(5118 real changes made)
+
+. sort worka;
+
+. by worka: sum ipw1 ipw2;
+
+-------------------------------------------------------------------------------
+-> worka = 0
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        ipw1 |      5118    2.178971    .6443429   1.020956   5.388466
+        ipw2 |      5118           1    .2957097   .4685496   2.472941
+
+-------------------------------------------------------------------------------
+-> worka = 1
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        ipw1 |     11138           1           0          1          1
+        ipw2 |     11138           1           0          1          1
+
+
+. *  check whether covariates are balanced;
+. * use ipw2 as the weight
+> by worka: sum age incomel male black hispanic hsgrad somecol college [aw=ipw]
+> ;
+. reg age worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.11
+                                                       Prob > F      =  0.7347
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =   11.92
+
+------------------------------------------------------------------------------
+             |               Robust
+         age |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |    .069888   .2061983     0.34   0.735    -.3342833    .4740593
+       _cons |   38.53776   .1727399   223.10   0.000     38.19917    38.87635
+------------------------------------------------------------------------------
+
+. reg incomel worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.13
+                                                       Prob > F      =  0.7198
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .75702
+
+------------------------------------------------------------------------------
+             |               Robust
+     incomel |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |   .0046041   .0128357     0.36   0.720    -.0205553    .0297634
+       _cons |   10.42955   .0106119   982.81   0.000     10.40875    10.45036
+------------------------------------------------------------------------------
+
+. reg male worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.08
+                                                       Prob > F      =  0.7823
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .48205
+
+------------------------------------------------------------------------------
+             |               Robust
+        male |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |   .0022377   .0080973     0.28   0.782    -.0136339    .0181094
+       _cons |   .3656021   .0066848    54.69   0.000     .3524992     .378705
+------------------------------------------------------------------------------
+
+. reg black worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.35
+                                                       Prob > F      =  0.5538
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .32371
+
+------------------------------------------------------------------------------
+             |               Robust
+       black |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.0035784   .0060442    -0.59   0.554    -.0154257     .008269
+       _cons |   .1213733   .0052155    23.27   0.000     .1111503    .1315963
+------------------------------------------------------------------------------
+
+. reg hispanic worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.16
+                                                       Prob > F      =  0.6925
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .24256
+
+------------------------------------------------------------------------------
+             |               Robust
+    hispanic |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.0017523   .0044313    -0.40   0.693    -.0104381    .0069335
+       _cons |   .0639717   .0037943    16.86   0.000     .0565344     .071409
+------------------------------------------------------------------------------
+
+. reg hsgrad worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.02
+                                                       Prob > F      =  0.8979
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .46501
+
+------------------------------------------------------------------------------
+             |               Robust
+      hsgrad |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |   .0009977   .0077754     0.13   0.898    -.0142428    .0162383
+       _cons |   .3154864   .0064056    49.25   0.000     .3029307    .3280421
+------------------------------------------------------------------------------
+
+. reg somecol worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.00
+                                                       Prob > F      =  0.9768
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .44555
+
+------------------------------------------------------------------------------
+             |               Robust
+     somecol |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |   .0002264   .0077766     0.03   0.977    -.0150165    .0154693
+       _cons |   .2728927   .0065306    41.79   0.000      .260092    .2856933
+------------------------------------------------------------------------------
+
+. reg college worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =    0.08
+                                                       Prob > F      =  0.7791
+                                                       R-squared     =  0.0000
+                                                       Root MSE      =  .47734
+
+------------------------------------------------------------------------------
+             |               Robust
+     college |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.0024063   .0085786    -0.28   0.779    -.0192213    .0144087
+       _cons |   .3527385   .0072908    48.38   0.000     .3384478    .3670293
+------------------------------------------------------------------------------
+
+. * run propensity score by ipw1, ask for robust std errors;
+. reg smoker worka [aw=ipw1], robust;
+(sum of wgt is   2.2290e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =   70.79
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.0053
+                                                       Root MSE      =  .43591
+
+------------------------------------------------------------------------------
+             |               Robust
+      smoker |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.0638802   .0075925    -8.41   0.000    -.0787624    -.048998
+       _cons |   .2890552   .0064792    44.61   0.000     .2763553    .3017552
+------------------------------------------------------------------------------
+
+. * run propensity score by ipw1, ask for robust std errors;
+. reg smoker worka [aw=ipw2], robust;
+(sum of wgt is   1.6256e+04)
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  1, 16254) =   70.79
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.0048
+                                                       Root MSE      =  .42926
+
+------------------------------------------------------------------------------
+             |               Robust
+      smoker |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.0638802   .0075925    -8.41   0.000    -.0787624    -.048998
+       _cons |   .2890552   .0064792    44.61   0.000     .2763553    .3017552
+------------------------------------------------------------------------------
+
+. * just for fun, compare to the OLS estimates;
+. reg smoker worka  age incomel male black hispanic hsgrad somecol college, rob
+> ust;
+
+Linear regression                                      Number of obs =   16256
+                                                       F(  9, 16246) =   99.49
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.0488
+                                                       Root MSE      =   .4233
+
+------------------------------------------------------------------------------
+             |               Robust
+      smoker |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       worka |  -.0660522    .007488    -8.82   0.000    -.0807296   -.0513749
+         age |  -.0004822   .0002806    -1.72   0.086    -.0010322    .0000679
+     incomel |  -.0286429   .0047855    -5.99   0.000    -.0380231   -.0192628
+        male |   .0168994    .006954     2.43   0.015     .0032687    .0305301
+       black |  -.0362384   .0110089    -3.29   0.001    -.0578169   -.0146598
+    hispanic |  -.0716197   .0136384    -5.25   0.000    -.0983525    -.044887
+      hsgrad |  -.0659464   .0162323    -4.06   0.000    -.0977635   -.0341293
+     somecol |   -.131036   .0164769    -7.95   0.000    -.1633324   -.0987395
+     college |  -.2406974   .0162577   -14.81   0.000    -.2725643   -.2088306
+       _cons |   .7522002   .0494735    15.20   0.000     .6552268    .8491737
+------------------------------------------------------------------------------
+
+. log close;
+       log:  c:\bill\spring2011\matching1.log
+  log type:  text
+ closed on:  21 Apr 2011, 11:47:07
+-------------------------------------------------------------------------------

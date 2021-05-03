@@ -1,0 +1,235 @@
+------------------------------------------------------------------------------
+       log:  c:\bill\jpsm\travel_choice_example.log
+  log type:  text
+ opened on:  27 May 2006, 07:42:17
+
+. * load up sas data set;
+. use c:\bill\jpsm\travel_choice_example;
+
+. * get contents of data file;
+. desc;
+
+Contains data from c:\bill\jpsm\travel_choice_example.dta
+  obs:           840                          
+ vars:             7                          17 May 2006 14:08
+ size:        11,760 (99.9% of memory free)
+------------------------------------------------------------------------------
+> -
+              storage  display     value
+variable name   type   format      label      variable label
+------------------------------------------------------------------------------
+> -
+hhid            int    %8.0g                  household ID
+mode            byte   %8.0g                  1=air, 2=train, 3=bus, 4=car
+choice          byte   %8.0g                  =1 if choice, =0 otherwise
+time            int    %8.0g                  travel time in minutes
+costs           int    %8.0g                  travel costs in dollars
+hhinc           byte   %8.0g                  household income (x1000)
+groupsize       byte   %8.0g                  # of people in traveling party
+------------------------------------------------------------------------------
+> -
+Sorted by:  
+
+. * get summary statistics;
+. sum;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        hhid |       840      1105.5    60.65721       1001       1210
+        mode |       840         2.5      1.1187          1          4
+      choice |       840         .25    .4332707          0          1
+        time |       840    520.7548    294.0959         80       1440
+       costs |       840    110.8798    47.97835         30        269
+-------------+--------------------------------------------------------
+       hhinc |       840    34.54762    19.67604          2         72
+   groupsize |       840    1.742857     1.01035          1          6
+
+. * get freqency of options;
+. tab choice;
+
+      =1 if |
+ choice, =0 |
+  otherwise |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        630       75.00       75.00
+          1 |        210       25.00      100.00
+------------+-----------------------------------
+      Total |        840      100.00
+
+. * construct dummy variables for intercepts;
+. * with j choices, need j-1 options;
+. gen air=mode==1;
+
+. gen train=mode==2;
+
+. gen bus=mode==3;
+
+. gen car=mode==4;
+
+. * interact hhinc and group size with choice dummies;
+. gen hhinc_air=air*hhinc;
+
+. gen hhinc_train=train*hhinc;
+
+. gen hhinc_bus=bus*hhinc;
+
+. * if mode of transportation is a car, costs are costs;
+. * if mode is bus/train/air, costs are grp_size x costs;
+. gen group_costs=car*costs+(1-car)*groupsize*costs;
+
+.  * get means by choices;
+. sum time group_costs if mode==1;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        time |       210     194.719    53.04284         80        397
+ group_costs |       210    174.1905    100.7172         58        495
+
+. sum time group_costs if mode==2;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        time |       210    643.9762    255.2972        265       1148
+ group_costs |       210    237.1667    195.2864         42       1015
+
+. sum time group_costs if mode==3;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        time |       210     671.119    236.9175        255       1150
+ group_costs |       210    212.3952     172.224         45        910
+
+. sum time group_costs if mode==4;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        time |       210    573.2048    274.8547        180       1440
+ group_costs |       210    95.41429    46.82743         30        238
+
+. * run mcfaddens choice model.  for covariates add;
+. * a) j-1 option dummies;
+. * c) variables that vary by choice;
+. clogit choice air train bus time group_costs, group(hhid);
+
+Iteration 0:   log likelihood = -285.42711
+Iteration 1:   log likelihood = -255.73852
+Iteration 2:   log likelihood = -255.30797
+Iteration 3:   log likelihood = -255.30702
+
+Conditional (fixed-effects) logistic regression   Number of obs   =        840
+                                                  LR chi2(5)      =      71.63
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -255.30702                       Pseudo R2       =     0.1230
+
+------------------------------------------------------------------------------
+      choice |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         air |  -1.114283   .4147401    -2.69   0.007    -1.927158   -.3014072
+       train |   .9277308   .2453474     3.78   0.000     .4468587    1.408603
+         bus |    .210805   .2726815     0.77   0.439    -.3236409    .7452509
+        time |  -.0036435   .0007372    -4.94   0.000    -.0050885   -.0021985
+ group_costs |   -.004498   .0012417    -3.62   0.000    -.0069316   -.0020644
+------------------------------------------------------------------------------
+
+. * run another model but add;
+. * c) income and interacted w/ choice dummies;
+. clogit choice air train bus time group_costs hhinc_*, group(hhid);
+
+Iteration 0:   log likelihood = -278.40471
+Iteration 1:   log likelihood = -241.20995
+Iteration 2:   log likelihood = -240.05638
+Iteration 3:   log likelihood = -240.04567
+Iteration 4:   log likelihood = -240.04567
+
+Conditional (fixed-effects) logistic regression   Number of obs   =        840
+                                                  LR chi2(8)      =     102.15
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -240.04567                       Pseudo R2       =     0.1754
+
+------------------------------------------------------------------------------
+      choice |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         air |  -1.393948   .6314865    -2.21   0.027    -2.631639   -.1562576
+       train |   2.371822   .4460489     5.32   0.000     1.497582    3.246062
+         bus |   1.147733   .5159572     2.22   0.026     .1364751     2.15899
+        time |  -.0036407   .0007603    -4.79   0.000    -.0051308   -.0021506
+ group_costs |  -.0036817   .0013058    -2.82   0.005    -.0062411   -.0011224
+   hhinc_air |   .0058589   .0106655     0.55   0.583    -.0150451     .026763
+ hhinc_train |  -.0492424   .0119151    -4.13   0.000    -.0725956   -.0258892
+   hhinc_bus |  -.0290673   .0131363    -2.21   0.027    -.0548141   -.0033206
+------------------------------------------------------------------------------
+
+. * print out odds ratios;
+. listcoef;
+
+clogit (N=840): Factor Change in Odds 
+
+  Odds of: 1 vs 0
+
+--------------------------------------------------
+      choice |      b         z     P>|z|    e^b  
+-------------+------------------------------------
+         air |  -1.39395   -2.207   0.027   0.2481
+       train |   2.37182    5.317   0.000  10.7169
+         bus |   1.14773    2.224   0.026   3.1510
+        time |  -0.00364   -4.789   0.000   0.9964
+ group_costs |  -0.00368   -2.820   0.005   0.9963
+   hhinc_air |   0.00586    0.549   0.583   1.0059
+ hhinc_train |  -0.04924   -4.133   0.000   0.9520
+   hhinc_bus |  -0.02907   -2.213   0.027   0.9714
+--------------------------------------------------
+
+. * in this section we simulate the change in the;
+. * choices if we increase the travel time;
+. * by car by 30 minutes;
+. * get the predicted probabilities given original;
+. * values of Xs;
+. predict pred0;
+(option pc1 assumed; conditional probability for single outcome within group)
+
+. * for mode=4, add 30 minutes;
+. replace time=time+30 if mode==4;
+(210 real changes made)
+
+. * get new predicted probabilities with new time;
+. predict pred30;
+(option pc1 assumed; conditional probability for single outcome within group)
+
+. * change in probabilities;
+. gen change_p=pred30-pred0;
+
+. * get means of change in probs;
+. sum change_p if mode==1;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+    change_p |       210    .0082737    .0067304   .0001624    .025726
+
+. sum change_p if mode==2;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+    change_p |       210    .0066953    .0040927   .0000587   .0167974
+
+. sum change_p if mode==3;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+    change_p |       210     .003702    .0020761   .0000603   .0099314
+
+. sum change_p if mode==4;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+    change_p |       210    -.018671    .0066724  -.0272969    -.00295
+
+. * before you forget, change time back to;
+. * original value;
+. replace time=time-30 if mode==4;
+(210 real changes made)
+
+. log close;
+       log:  c:\bill\jpsm\travel_choice_example.log
+  log type:  text
+ closed on:  27 May 2006, 07:42:17
+------------------------------------------------------------------------------

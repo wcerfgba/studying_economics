@@ -1,0 +1,324 @@
+-------------------------------------------------------------------------------
+       log:  d:\bill\stata\cps87.log
+  log type:  text
+ opened on:  12 Aug 2008, 13:04:04
+
+. 
+. * read in raw data from comma delimited data
+. insheet using cps87.csv, comma
+(7 vars, 19906 obs)
+
+. 
+. * label the variables
+. label var age "age in years"
+
+. label var race "=1 if white non-Hisp, =2 if black non-Hisp, =3 if Hispanic"
+
+. label var years_educ "years of competed education"
+
+. label var union_status "=1 if in union, =2 otherwise"
+
+. label var smsa_size "=1 if largest 19 smsa, =2 if other smsa, =3 not in smsa"
+
+. label var region "=1 if northeast, =2 if midwest, =3 if south, =4 if west"
+
+. label var weekly_earn "usual weekly earnings, up to $999"
+
+. * describe what is in the data set
+. describe
+
+Contains data
+  obs:        19,906                          
+ vars:             7                          
+ size:       318,496 (88.6% of memory free)
+-------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+-------------------------------------------------------------------------------
+age             byte   %8.0g                  age in years
+race            byte   %8.0g                  =1 if white non-Hisp, =2 if
+                                                black non-Hisp, =3 if Hispanic
+years_educ      byte   %8.0g                  years of competed education
+union_status    byte   %8.0g                  =1 if in union, =2 otherwise
+smsa_size       byte   %8.0g                  =1 if largest 19 smsa, =2 if
+                                                other smsa, =3 not in smsa
+region          byte   %8.0g                  =1 if northeast, =2 if midwest,
+                                                =3 if south, =4 if west
+weekly_earn     int    %8.0g                  usual weekly earnings, up to
+                                                $999
+-------------------------------------------------------------------------------
+Sorted by:  
+     Note:  dataset has changed since last saved
+
+. 
+. 
+. * generate new variables
+. * lines 1-2 illustrate basic math functoins
+. * line 3 line illustrates a logical operator
+. * line 4 illustrate the OR statement
+. * line 5 illustrates the AND statement
+. 
+. gen age2=age*age
+
+. gen ln_weekly_earn=ln(weekly_earn)
+
+. gen union=union_status==1
+
+. gen nonwhite=((race==2)|(race==3))
+
+. gen big_ne=((region==1)&(smsa==1))
+
+. 
+. label var age2 "age squared"
+
+. label var ln_weekly_earn "log earnings per week"
+
+. label var union "1=in union, 0 otherwise"
+
+. label var nonwhite "1=nonwhite, 0=white" 
+
+. label var big_ne "1= live in big smsa from northeast, 0=otherwsie"
+
+. 
+. * get descriptive statistics for all variables
+. sum
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+         age |     19906    37.96619    11.15348         21         64
+        race |     19906    1.199136     .525493          1          3
+  years_educ |     19906    13.16126    2.795234          0         18
+union_status |     19906    1.769065    .4214418          1          2
+   smsa_size |     19906    1.908369    .7955814          1          3
+-------------+--------------------------------------------------------
+      region |     19906    2.462373    1.079514          1          4
+ weekly_earn |     19906     488.264    236.4713         60        999
+        age2 |     19906    1565.826    912.4383        441       4096
+ln_weekly_~n |     19906    6.067307     .513047   4.094345   6.906755
+       union |     19906    .2309354    .4214418          0          1
+-------------+--------------------------------------------------------
+    nonwhite |     19906    .1408118    .3478361          0          1
+      big_ne |     19906    .1409625    .3479916          0          1
+
+. 
+. * get statistics for only a subset of variables
+. sum age years_educ
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+         age |     19906    37.96619    11.15348         21         64
+  years_educ |     19906    13.16126    2.795234          0         18
+
+. 
+. * get detailed descriptics for a subset of variables
+. sum weekly_earn age, detail
+
+              usual weekly earnings, up to $999
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%          128             60
+ 5%          178             60
+10%          210             60       Obs               19906
+25%          300             63       Sum of Wgt.       19906
+
+50%          449                      Mean            488.264
+                        Largest       Std. Dev.      236.4713
+75%          615            999
+90%          865            999       Variance        55918.7
+95%          999            999       Skewness        .668646
+99%          999            999       Kurtosis       2.632356
+
+                        age in years
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%           21             21
+ 5%           23             21
+10%           24             21       Obs               19906
+25%           29             21       Sum of Wgt.       19906
+
+50%           36                      Mean           37.96619
+                        Largest       Std. Dev.      11.15348
+75%           46             64
+90%           55             64       Variance       124.4001
+95%           59             64       Skewness       .4571929
+99%           63             64       Kurtosis       2.224794
+
+. 
+. * to get means across different subgroups in the
+. * sample, first sort the data, then generate
+. * summary statistics by subgroup
+. 
+. sort race
+
+. by race: sum weekly_earn
+
+-------------------------------------------------------------------------------
+-> race = 1
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+ weekly_earn |     17103    506.4874    237.2567         60        999
+
+-------------------------------------------------------------------------------
+-> race = 2
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+ weekly_earn |      1642     383.095    196.2224         90        999
+
+-------------------------------------------------------------------------------
+-> race = 3
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+ weekly_earn |      1161    368.5512    200.6758         66        999
+
+
+. 
+. * get weekly earnings for only those with a 
+. * high school education
+. sum weekly_earn if years_educ>=12
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+ weekly_earn |     17129    509.6206    238.1675         60        999
+
+. 
+. * get frequencies of discrete variables
+. tabulate race
+
+=1 if white |
+  non-Hisp, |
+=2 if black |
+  non-Hisp, |
+      =3 if |
+   Hispanic |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |     17,103       85.92       85.92
+          2 |      1,642        8.25       94.17
+          3 |      1,161        5.83      100.00
+------------+-----------------------------------
+      Total |     19,906      100.00
+
+. 
+. * get two-way table of frequencies
+. tabulate region smsa, row column
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+|  row percentage   |
+| column percentage |
++-------------------+
+
+     =1 if |
+northeast, |
+     =2 if |
+  midwest, |
+     =3 if |   =1 if largest 19 smsa, =2 if
+ south, =4 |    other smsa, =3 not in smsa
+   if west |         1          2          3 |     Total
+-----------+---------------------------------+----------
+         1 |     2,806      1,349        842 |     4,997 
+           |     56.15      27.00      16.85 |    100.00 
+           |     38.46      18.89      15.39 |     25.10 
+-----------+---------------------------------+----------
+         2 |     1,501      1,742      1,592 |     4,835 
+           |     31.04      36.03      32.93 |    100.00 
+           |     20.58      24.40      29.10 |     24.29 
+-----------+---------------------------------+----------
+         3 |     1,501      2,542      1,904 |     5,947 
+           |     25.24      42.74      32.02 |    100.00 
+           |     20.58      35.60      34.80 |     29.88 
+-----------+---------------------------------+----------
+         4 |     1,487      1,507      1,133 |     4,127 
+           |     36.03      36.52      27.45 |    100.00 
+           |     20.38      21.11      20.71 |     20.73 
+-----------+---------------------------------+----------
+     Total |     7,295      7,140      5,471 |    19,906 
+           |     36.65      35.87      27.48 |    100.00 
+           |    100.00     100.00     100.00 |    100.00 
+
+
+. 
+. * test whether means are the same across two subsamples
+. ttest weekly_earn, by(union)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+       0 |   15309    480.1503    2.017734    249.6532    476.1953    484.1053
+       1 |    4597    515.2845    2.705061    183.4063    509.9813    520.5878
+---------+--------------------------------------------------------------------
+combined |   19906     488.264    1.676048    236.4713    484.9788    491.5492
+---------+--------------------------------------------------------------------
+    diff |           -35.13423    3.969334               -42.91446     -27.354
+------------------------------------------------------------------------------
+    diff = mean(0) - mean(1)                                      t =  -8.8514
+Ho: diff = 0                                     degrees of freedom =    19904
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 1.0000
+
+. 
+. *run simple regression
+. reg ln_weekly_earn age age2 years_educ nonwhite union
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F(  5, 19900) = 1775.70
+       Model |  1616.39963     5  323.279927           Prob > F      =  0.0000
+    Residual |  3622.93905 19900  .182057239           R-squared     =  0.3085
+-------------+------------------------------           Adj R-squared =  0.3083
+       Total |  5239.33869 19905  .263217216           Root MSE      =  .42668
+
+------------------------------------------------------------------------------
+ln_weekly_~n |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0679808   .0020033    33.93   0.000     .0640542    .0719075
+        age2 |  -.0006778   .0000245   -27.69   0.000    -.0007258   -.0006299
+  years_educ |    .069219   .0011256    61.50   0.000     .0670127    .0714252
+    nonwhite |  -.1716133   .0089118   -19.26   0.000    -.1890812   -.1541453
+       union |   .1301547   .0072923    17.85   0.000     .1158612    .1444481
+       _cons |   3.630805   .0394126    92.12   0.000     3.553553    3.708057
+------------------------------------------------------------------------------
+
+. 
+. * run regression adding smsa, region and race fixed-effects
+. xi: reg ln_weekly_earn age age2 years_educ union i.race i.region i.smsa
+i.race            _Irace_1-3          (naturally coded; _Irace_1 omitted)
+i.region          _Iregion_1-4        (naturally coded; _Iregion_1 omitted)
+i.smsa_size       _Ismsa_size_1-3     (naturally coded; _Ismsa_size_1 omitted)
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F( 11, 19894) =  920.86
+       Model |  1767.66908    11  160.697189           Prob > F      =  0.0000
+    Residual |  3471.66961 19894  .174508375           R-squared     =  0.3374
+-------------+------------------------------           Adj R-squared =  0.3370
+       Total |  5239.33869 19905  .263217216           Root MSE      =  .41774
+
+------------------------------------------------------------------------------
+ln_weekly_~n |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |    .070194   .0019645    35.73   0.000     .0663435    .0740446
+        age2 |  -.0007052    .000024   -29.37   0.000    -.0007522   -.0006581
+  years_educ |   .0643064   .0011285    56.98   0.000     .0620944    .0665184
+       union |   .1131485    .007257    15.59   0.000     .0989241    .1273729
+    _Irace_2 |  -.2329794   .0110958   -21.00   0.000     -.254728   -.2112308
+    _Irace_3 |  -.1795253   .0134073   -13.39   0.000    -.2058047   -.1532458
+  _Iregion_2 |  -.0088962   .0085926    -1.04   0.301    -.0257383     .007946
+  _Iregion_3 |  -.0281747    .008443    -3.34   0.001    -.0447238   -.0116257
+  _Iregion_4 |   .0318053   .0089802     3.54   0.000     .0142034    .0494071
+_Ismsa_siz~2 |  -.1225607   .0072078   -17.00   0.000    -.1366886   -.1084328
+_Ismsa_siz~3 |  -.2054124   .0078651   -26.12   0.000    -.2208287   -.1899961
+       _cons |    3.76812   .0391241    96.31   0.000     3.691434    3.844807
+------------------------------------------------------------------------------
+
+. 
+. * close log file
+. log close
+       log:  d:\bill\stata\cps87.log
+  log type:  text
+ closed on:  12 Aug 2008, 13:04:05
+-------------------------------------------------------------------------------

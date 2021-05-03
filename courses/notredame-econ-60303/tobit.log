@@ -1,0 +1,278 @@
+-------------------------------------------------------------------------------
+       log:  c:\bill\econ626\stata\tobit.log
+  log type:  text
+ opened on:  19 Nov 2006, 20:49:01
+
+. *read in STATA data;
+. use c:\bill\econ626\stata\tobit;
+
+. *describe what is in data set;
+. desc;
+
+Contains data from c:\bill\econ626\stata\tobit.dta
+  obs:        19,906                          
+ vars:             7                          19 Nov 2006 20:42
+ size:       318,496 (97.7% of memory free)
+-------------------------------------------------------------------------------
+              storage  display     value
+variable name   type   format      label      variable label
+-------------------------------------------------------------------------------
+age             byte   %9.0g                  age in years
+race            byte   %9.0g                  1=white, non-hisp, 2=black,
+                                                n.h, 3=hisp
+educ            byte   %9.0g                  years of education
+unionm          byte   %9.0g                  1=union member, 2=otherwise
+smsa            byte   %9.0g                  1=live in 19 largest smsa,
+                                                2=other smsa, 3=non smsa
+region          byte   %9.0g                  1=east, 2=midwest, 3=south,
+                                                4=west
+earnwke         int    %9.0g                  usual weekly earnings
+-------------------------------------------------------------------------------
+Sorted by:  
+
+. * construct some new variables then label them;
+. * after you construct new variables, compress the data;
+. gen age2=age*age;
+
+. gen earnwkl=ln(earnwke);
+
+. gen union=unionm==1;
+
+. gen topcode=earnwke==999;
+
+. gen black=race==2;
+
+. gen hispanic=race==3;
+
+. label var age2 "age squared";
+
+. label var earnwkl "log earnings per week";
+
+. label var topcode "=1 if earnwkl is topcoded";
+
+. label var union "1=in union, 0 otherwise";
+
+. label var black "=1 if black, =0 otherwise";
+
+. label var hispanic "=1 if hispanic, =0 otherwise";
+
+. * get frequencie of topcode;
+. tabulate topcode;
+
+      =1 if |
+ earnwkl is |
+   topcoded |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |     18,474       92.81       92.81
+          1 |      1,432        7.19      100.00
+------------+-----------------------------------
+      Total |     19,906      100.00
+
+. *run simple regression on topcoded data;
+. reg earnwkl age age2 educ black hispanic union;
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F(  6, 19899) = 1489.17
+       Model |  1623.55109     6  270.591849           Prob > F      =  0.0000
+    Residual |  3615.78759 19899     .181707           R-squared     =  0.3099
+-------------+------------------------------           Adj R-squared =  0.3097
+       Total |  5239.33869 19905  .263217216           Root MSE      =  .42627
+
+------------------------------------------------------------------------------
+     earnwkl |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0679296   .0020014    33.94   0.000     .0640067    .0718525
+        age2 |  -.0006766   .0000245   -27.67   0.000    -.0007245   -.0006287
+        educ |   .0700605   .0011325    61.86   0.000     .0678408    .0722803
+       black |  -.2129746   .0110786   -19.22   0.000    -.2346897   -.1912596
+    hispanic |  -.1096402   .0132986    -8.24   0.000    -.1357066   -.0835739
+       union |   .1315714   .0072887    18.05   0.000     .1172849    .1458579
+       _cons |   3.619195   .0394181    91.82   0.000     3.541933    3.696458
+------------------------------------------------------------------------------
+
+. * run tobit model;
+. * here, ul specifies that the dependent variable is;
+. * topcoded above (upper censoring);
+. tobit earnwkl age age2 educ black hispanic union, ul;
+
+Tobit regression                                  Number of obs   =      19906
+                                                  LR chi2(6)      =    7309.06
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -13207.534                       Pseudo R2       =     0.2167
+
+------------------------------------------------------------------------------
+     earnwkl |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0703864     .00214    32.89   0.000     .0661919     .074581
+        age2 |  -.0006948   .0000262   -26.55   0.000    -.0007461   -.0006435
+        educ |   .0757658   .0012172    62.25   0.000       .07338    .0781515
+       black |  -.2200147    .011795   -18.65   0.000    -.2431339   -.1968954
+    hispanic |  -.1058161   .0141638    -7.47   0.000    -.1335783   -.0780539
+       union |   .1191111   .0077791    15.31   0.000     .1038634    .1343588
+       _cons |   3.499009   .0421806    82.95   0.000     3.416332    3.581686
+-------------+----------------------------------------------------------------
+      /sigma |   .4530426   .0023983                      .4483418    .4577434
+------------------------------------------------------------------------------
+  Obs. summary:          0  left-censored observations
+                     18474     uncensored observations
+                      1432 right-censored observations at earnwkl>=6.906755
+
+. * construct quick fix for topcoded wages;
+. * replace ln(999) with ln(e[y|y>=999]);
+. * estimate e[y|y>=999] assuming tail of income;
+. * distribution is pareto. if income above A is;
+. * pareto and q is the fraction of wages above T;
+. * then the pareto parameter is ln(q)/(ln(A) - ln(T));
+. * and e[y|y>=t] = alpha x T/(alpha-1);
+. * in this case, A=750;
+. * fraction of people with income>=750 with topcoded;
+. * wages -- attach mean to all topcoded wages;
+. egen q=mean(topcode) if earnwke>=750;
+(16629 missing values generated)
+
+. gen alpha=ln(q)/(ln(750) - ln(999));
+(16629 missing values generated)
+
+. gen ey_y999=999*alpha/(alpha-1);
+(16629 missing values generated)
+
+. sum q alpha ey_y999;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+           q |      3277     .436985           0    .436985    .436985
+       alpha |      3277    2.887721           0   2.887721   2.887721
+     ey_y999 |      3277     1528.21           0    1528.21    1528.21
+
+. gen earnwkl2=earnwkl;
+
+. replace earnwkl2=ln(ey_y999) if topcode==1;
+(1432 real changes made)
+
+. * run regression on model with quick fix for top coded wages;
+. reg earnwkl2 age age2 educ black hispanic union;
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F(  6, 19899) = 1449.58
+       Model |  1977.39803     6  329.566338           Prob > F      =  0.0000
+    Residual |  4524.10842 19899  .227353556           R-squared     =  0.3041
+-------------+------------------------------           Adj R-squared =  0.3039
+       Total |  6501.50644 19905  .326626799           Root MSE      =  .47682
+
+------------------------------------------------------------------------------
+    earnwkl2 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0723265   .0022387    32.31   0.000     .0679385    .0767146
+        age2 |  -.0007102   .0000274   -25.96   0.000    -.0007638   -.0006565
+        educ |   .0795662   .0012668    62.81   0.000     .0770833    .0820492
+       black |  -.2252238   .0123923   -18.17   0.000    -.2495137   -.2009339
+    hispanic |  -.1049172   .0148755    -7.05   0.000    -.1340744     -.07576
+       union |   .1078131    .008153    13.22   0.000     .0918326    .1237937
+       _cons |   3.416525   .0440921    77.49   0.000     3.330101    3.502949
+------------------------------------------------------------------------------
+
+. * artifically topcode wages at 750;
+. gen top750=earnwke>=750;
+
+. gen earnwkl3=top750*ln(750) + (1-top750)*ln(earnwke);
+
+. * run regression on model with artifically topcoded wages;
+. reg earnwkl3 age age2 educ black hispanic union;
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F(  6, 19899) = 1441.89
+       Model |  1337.98211     6  222.997018           Prob > F      =  0.0000
+    Residual |  3077.49351 19899  .154655687           R-squared     =  0.3030
+-------------+------------------------------           Adj R-squared =  0.3028
+       Total |  4415.47561 19905  .221827461           Root MSE      =  .39326
+
+------------------------------------------------------------------------------
+    earnwkl3 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0635063   .0018464    34.39   0.000     .0598872    .0671255
+        age2 |  -.0006402   .0000226   -28.38   0.000    -.0006844    -.000596
+        educ |   .0614236   .0010448    58.79   0.000     .0593757    .0634714
+       black |  -.2013383   .0102208   -19.70   0.000    -.2213719   -.1813048
+    hispanic |  -.1151175   .0122688    -9.38   0.000    -.1391654   -.0910696
+       union |   .1493169   .0067243    22.21   0.000     .1361367    .1624972
+       _cons |   3.809177   .0363658   104.75   0.000     3.737897    3.880457
+------------------------------------------------------------------------------
+
+. * run tobit model on data artifically topcoded at $750;
+. tobit earnwkl3 age age2 educ black hispanic union, ul;
+
+Tobit regression                                  Number of obs   =      19906
+                                                  LR chi2(6)      =    7209.84
+                                                  Prob > chi2     =     0.0000
+Log likelihood = -13454.559                       Pseudo R2       =     0.2113
+
+------------------------------------------------------------------------------
+    earnwkl3 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |    .070423   .0021624    32.57   0.000     .0661845    .0746615
+        age2 |  -.0006967   .0000265   -26.31   0.000    -.0007486   -.0006448
+        educ |   .0754495   .0012445    60.63   0.000     .0730102    .0778887
+       black |  -.2211167   .0118248   -18.70   0.000    -.2442943   -.1979391
+    hispanic |  -.1053432   .0142227    -7.41   0.000    -.1332209   -.0774655
+       union |   .1317701   .0078637    16.76   0.000     .1163566    .1471836
+       _cons |   3.501928   .0426914    82.03   0.000      3.41825    3.585607
+-------------+----------------------------------------------------------------
+      /sigma |   .4517843   .0025613                      .4467639    .4568047
+------------------------------------------------------------------------------
+  Obs. summary:          0  left-censored observations
+                     16629     uncensored observations
+                      3277 right-censored observations at earnwkl3>=6.6200733
+
+. * do quick fix.  set A=600, calculate the;
+. * fraction of people with income>=600 with topcoded;
+. * wages -- attach mean to all topcoded wages;
+. egen q1=mean(top750) if earnwke>=600;
+(14049 missing values generated)
+
+. gen alpha1=ln(q1)/(ln(600) - ln(750));
+(14049 missing values generated)
+
+. gen ey_y750=750*alpha1/(alpha1-1);
+(14049 missing values generated)
+
+. sum q1 alpha1 ey_y750;
+
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+          q1 |      5857    .5595015           0   .5595015   .5595015
+      alpha1 |      5857    2.602401           0   2.602401   2.602401
+     ey_y750 |      5857    1218.047           0   1218.047   1218.047
+
+. gen earnwkl4=earnwkl3;
+
+. replace earnwkl4=ln(ey_y750) if top750==1;
+(3277 real changes made)
+
+. * run regression on model with quick fix for top coded wages;
+. reg earnwkl4 age age2 educ black hispanic union;
+
+      Source |       SS       df       MS              Number of obs =   19906
+-------------+------------------------------           F(  6, 19899) = 1441.76
+       Model |  2094.08729     6  349.014548           Prob > F      =  0.0000
+    Residual |   4817.0545 19899  .242075205           R-squared     =  0.3030
+-------------+------------------------------           Adj R-squared =  0.3028
+       Total |  6911.14179 19905   .34720632           Root MSE      =  .49201
+
+------------------------------------------------------------------------------
+    earnwkl4 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0749687   .0023101    32.45   0.000     .0704408    .0794966
+        age2 |  -.0007379   .0000282   -26.14   0.000    -.0007932   -.0006825
+        educ |   .0816755   .0013071    62.48   0.000     .0791134    .0842375
+       black |   -.232585   .0127872   -18.19   0.000    -.2576489    -.207521
+    hispanic |  -.1052735   .0153495    -6.86   0.000    -.1353599   -.0751872
+       union |   .1160798   .0084128    13.80   0.000       .09959    .1325697
+       _cons |   3.349876   .0454972    73.63   0.000     3.260697    3.439054
+------------------------------------------------------------------------------
+
+. * close log file;
+. log close;
+       log:  c:\bill\econ626\stata\tobit.log
+  log type:  text
+ closed on:  19 Nov 2006, 20:49:04
+-------------------------------------------------------------------------------
