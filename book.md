@@ -7,12 +7,14 @@
 
 ### [[econometrics]]
 
-* Introductory Econometrics by Wooldridge.
+* Introductory Econometrics by [Wooldridge](http://econ.msu.edu/faculty/wooldridge/).
+* [Mastering 'Metrics](https://www.masteringmetrics.com/) by Angrist and Pischke.
 
 ## [[graduate]]
 
 ### [[macroeconomics]]
 
+* Econometrics Analysis of Cross Section and Panel Data by [Wooldridge](http://econ.msu.edu/faculty/wooldridge/)
 * [Intermediate Macroeconomics](https://www3.nd.edu/~esims1/gls_textbook.html) by Sims, Garín and Lester is freely available online.
 
 ### [[econometrics]]
