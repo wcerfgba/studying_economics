@@ -17,5 +17,8 @@
 
     // Spell checking for text, markdown and latex
     "ban.spellright",
+
+    // Display PDFs
+    "tomoki1207.pdf"
   ]
 }
