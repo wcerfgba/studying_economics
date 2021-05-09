@@ -1,0 +1,909 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+
+\title{Theoretical Tools of Public Finance \\ (Chapter 2 in Gruber's textbook)} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OUTLINE}
+%\end{center}
+%
+%2.1 Constrained Utility Maximization
+%
+%2.2 Putting the Tools to Work: TANF and Labor Supply Among Single Mothers
+%
+%2.3 Equilibrium and Social Welfare
+%
+%2.4 Welfare Implications of Benefit Reductions: The TANF Example Continued
+%
+%2.5 Conclusion
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf THEORETICAL AND EMPIRICAL TOOLS}
+\end{center}
+
+{\bf Theoretical tools}:
+The set of
+tools designed to understand
+the mechanics behind economic decision making.
+
+Economists model individuals' choices using the concepts of utility function maximization subject
+to budget constraint
+
+Narrow view of human behavior that works reasonably well for consumption choices but likely less
+well for work behavior
+
+{\bf Empirical tools}:
+The set of
+tools designed to analyze data
+and answer questions raised by theoretical analysis.
+
+\end{slide}
+
+%2.1 Constrained Utility Maximization
+
+%\begin{slide}
+%\begin{center}
+%{\bf CONSTRAINED UTILITY MAXIMIZATION}
+%\end{center}
+%
+%Economists model individuals' choices using the concepts of utility function maximization subject
+%to budget constraint.
+%
+%{\bf Utility function}:
+%A mathematical function representing an individual's set of preferences, which translates her well-being from different consumption bundles into units that can be compared in order to determine choice.
+%
+%{\bf Constrained utility maximization}:
+%The process of maximizing the well-being (utility) of an individual, subject to her resources (budget constraint).
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf UTILITY MAPPING OF PREFERENCES}
+\end{center}
+
+\textbf{Utility function:} A utility function is some mathematical function translating consumption into utility:
+$$U = u(X_1, X_2, X_3,...) $$
+where $X_1, X_2, X_3,$ and so on are the quantity of goods 1,2,3,... consumed by the individual 
+
+
+Example with two goods: $u(X_1,X_2) = \sqrt{X_1 \cdot X_2}$ with $X_1$ quantity of food, $X_2$ quantity of drink
+
+Individual utility increases with the level of consumption of each good
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf PREFERENCES AND INDIFFERENCE CURVES}
+\end{center}
+
+{\bf Indifference curve:}
+A graphical
+representation of all bundles of goods that make an individual
+equally well off
+
+Mathematically, indifference curve giving utility level $\underline{U}$ is given by the set of bundles $(X_1,X_2)$
+such that $u(X_1,X_2)=\underline{U}$
+
+Indifference curves have two essential properties, both of which follow naturally from the more-is-better assumption:
+
+1. Consumers prefer higher indifference curves.
+
+2. Indifference curves are always downward sloping.
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={21-22}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf MARGINAL UTILITY}
+\end{center}
+
+{\bf Marginal utility}:
+The additional
+increment to utility obtained by
+consuming an additional unit of
+a good:
+
+Marginal utility of good $1$ is defined as:
+\[MU_1=\frac{ \partial u}{\partial X_1} \simeq \frac{u(X_1+dX_1,X_2)- u(X_1,X_2)}{dX_1} \]
+It is the derivative of utility with respect to $X_1$ keeping $X_2$ constant (called the partial derivative)
+
+Example: \[ u(X_1,X_2) = \sqrt{X_1 \cdot X_2} \Rightarrow \frac{ \partial u}{\partial X_1}= \frac{ \sqrt {X_2}}
+{ 2\sqrt{X_1}} \]
+
+This utility function described exhibits the important principle of \textbf{diminishing marginal utility}: $\partial u/ \partial X_1$ decreases with $X_1$: the consumption of each additional unit of a good gives less extra utility than the consumption of the previous unit
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={3}]{Gruber2e_ch02_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MARGINAL RATE OF SUBSTITUTION}
+\end{center}
+
+{\bf Marginal rate of substitution (MRS)}:
+The $MRS$ is equal to (minus) the slope of the indifference curve, the rate at which the consumer will trade the good on the vertical axis for the good on the horizontal axis.
+
+Marginal rate of substitution between good 1 and good 2 is:
+\[ MRS_{1,2} = \frac{MU_1}{MU_2}    \]
+Individual is indifferent between 1 unit of good 1 ($MU_1$) and $MRS_{1,2}$ units of good 2 ($MRS_{1,2} \cdot MU_2$)
+
+Example:
+\[ u(X_1,X_2) = \sqrt{X_1 \cdot X_2} \Rightarrow MRS_{1,2}= \frac{X_2}{X_1} \]
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={23}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BUDGET CONSTRAINT}
+\end{center}
+
+{\bf Budget constraint}:
+A mathematical representation of all the combinations of goods an individual can afford to buy if she spends her entire income.
+\[ p_1 X_1 + p_2 X_2 = Y\]
+with $p_i$ price of good $i$, and $Y$ disposable income.
+
+Budget constraint defines a linear set of bundles the consumer can purchase with its disposable income $Y$
+\[ X_2 = \frac{Y}{p_2} - \frac{p_1}{p_2} X_1 \]
+
+
+The slope of the budget constraint is $-p_1/p_2$
+%If the consumer gives up 1 unit of good 1, it has
+%$p_1$ more to spend, and can buy $p_1/p_2$ units of good 2.
+
+%{\bf Opportunity cost}:
+%The cost of
+%any purchase is the next best
+%alternative use of that money,
+%or the forgone opportunity.
+
+%When a person's budget is fixed, if he buys one thing he is, by definition, reducing the money he has to spend on other things. Indirectly, this purchase has the same effect as a direct good-for-good trade.
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={24-25}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf UTILITY MAXIMIZATION}
+\end{center}
+Individual maximizes utility subject to budget constraint:
+\[ \max_{X_1,X_2} u(X_1,X_2) \quad \text{subject to} \quad p_1 X_1 + p_2 X_2 = Y \]
+\[ \textbf{Solution:} \quad MRS_{1,2} = \frac{p_1}{p_2} \]
+
+\small
+Proof: Budget implies that $X_2=(Y-p_1X_1)/p_2$
+
+Individual chooses $X_1$ to
+maximize $u(X_1,(Y-p_1X_1)/p_2)$
+
+The first order condition (FOC) is:
+\[ \frac{ \partial u}{\partial X_1} - \frac{p_1}{p_2} \cdot \frac{ \partial u}{\partial X_2} =0. \]
+\normalsize
+
+At the optimal choice, the individual is indifferent between buying 1 extra unit  of good 1 for \$ $p_1$ and
+buying $p_1/p_2$ extra units of good 2  (also for \$ $p_1$).
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={26-30}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf INCOME AND SUBSTITUTION EFFECTS}
+\end{center}
+Let us denote by $p=(p_1,p_2)$ the price vector
+
+Individual maximization generates demand functions $X_1(p,Y)$ and $X_2(p,Y)$
+
+How does $X_1(p,Y)$ vary with $Y$ and $p$?
+
+Those are called income effects and price effects
+
+\small
+
+Example: $u(X_1,X_2)= \sqrt{X_1 \cdot X_2}$ then $MRS_{1,2}=X_2/X_1$.  
+
+Utility maximization implies $X_2/X_1=p_1/p_2$ and hence $p_1 X_1 = p_2 X_2$
+
+Budget constraint $p_1 X_1+p_2 X_2 = Y$ implies $p_1 X_1 = p_2 X_2 = Y/2$
+
+Demand functions: $X_1(p,Y)=Y/(2 p_1)$ and $X_2(p,Y)=Y/(2 p_2)$
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={31-34}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf INCOME EFFECTS}
+\end{center}
+Income effect is the effect of giving extra income $Y$ on the demand for goods:
+How does $X_1(p,Y)$ vary with $Y$?
+
+{\bf Normal goods}:
+Goods for which demand increases as income $Y$ rises: $X_1(p,Y)$ increases with $Y$
+(most goods are normal)
+
+{\bf Inferior goods}:
+Goods for which demand falls as income $Y$ rises:  $X_1(p,Y)$ decreases with $Y$
+(example: you use public transportation less when you get
+rich enough to buy a car)
+
+Quiz example: (leisure=non-work time, disposable). You work 20h/week at library while a student.
+Do you work more, less, the same if University gives you a fellowship of \$10K?
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf PRICE EFFECTS}
+\end{center}
+How does $X_1(p_1,p_2,Y)$ vary with $p_1$?
+
+Changing $p_1$ affects the slope of the budget constraint and can be decomposed into
+2 effects:
+
+{\bf 1) Substitution effect}:
+Holding
+utility constant, a relative rise in
+the price of a good will always
+cause an individual to choose
+less of that good
+
+{\bf 2) Income effect}:
+A rise in the
+price of a good will typically
+cause an individual to choose
+less of all goods because her
+income can purchase less than
+before
+
+For normal goods, an increase in $p_1$ reduces $X_1(p_1,p_2,Y)$ through both substitution
+and income effects
+
+\small
+Quiz example: (leisure=non-work time, disposable). Your wage working at library goes up
+from \$15/hour to \$20/hour. Do you work more, less, or the same?
+
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={35-38}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\includepdf[pages={11}]{Gruber2e_ch02_attach.pdf}
+%\end{slide}
+
+%2.3 Equilibrium and Social Welfare
+
+%\begin{slide}
+%\begin{center}
+%{\bf EQUILIBRIUM AND SOCIAL WELFARE}
+%\end{center}
+%
+%{\bf Welfare economics:}
+%The study
+%of the determinants of wellbeing,
+%or welfare, in society.
+%
+%{\bf Demand curves:}
+%A curve showing the quantity of a good
+%demanded by individuals at
+%each price.
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={7}]{tools_ch02_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf AGGREGATE DEMAND}
+\end{center}
+Each individual has a demand for each good that depends on the price $p$ of the good.
+Aggregating across all individuals, we get
+aggregate demand $D(p)$ for the good
+
+%Demand graph: quantity on X-axis, price on Y-axis
+
+Basic rationalization: consumers maximize $v(Q)- p \cdot Q$ where $v(Q)$ is utility of consuming $Q$ units (increasing and concave): First order condition $v'(Q)=p$ defines $Q=D(p)$.
+
+At price $p$, demand is $D(p)$ and $p$ is the \$ value for consumers of the marginal
+(last) unit consumed
+
+First unit consumed generates utility $v'(0)=D^{-1}(0)$ and hence surplus $D^{-1}(0) - p$, last (marginal) unit consumed generates surplus $v'(Q)-p=0$ 
+
+$\Rightarrow$ Consumer surplus can be measured as area below the demand curve
+and above the price horizontal line
+
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={16}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ELASTICITY OF DEMAND}
+\end{center}
+\textbf{Elasticity of demand =} The \% change in demand caused by a 1\% change in the price of that good:
+\bigskip
+\[ \varepsilon^D=\frac{\mbox{\% change in quantity demanded}}{\mbox{\% change in price}}=\frac{\Delta D/D}{\Delta p/p}= \frac{p}{D} \frac{dD}{dp} \]
+
+Elasticities are widely used because they are \textbf{unit free}
+
+$\varepsilon^D=p D'(p)/D(p)$ is a function of $p$ and hence can vary with $p$ along the demand
+curve
+
+When $D(p)=D_0 \cdot p^{\varepsilon}$ with $D_0, \varepsilon$ fixed parameters,
+then $\varepsilon^D = \varepsilon$ is constant (called iso-elastic demand function)
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf PROPERTIES OF ELASTICITY OF DEMAND}
+\end{center}
+
+1) Typically negative, since quantity demanded typically falls as price rises.
+
+2) Typically not constant along a demand curve.
+
+3) With vertical demand curve, demand is \textbf{perfectly inelastic} ($\varepsilon=0$).
+
+4) With horizontal demand curve, demand is \textbf{perfectly elastic} ($\varepsilon=-\infty$).
+
+5) The effect of one good's prices on the demand for another good is the \textbf{cross-price} elasticity. Typically, not zero.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf PRODUCERS}
+\end{center}
+
+Producers (typically firms) use technology to transform inputs (labor and capital) into outputs (consumption goods)
+
+Narrow economic view: Goal of producers is to maximize profits = sales of outputs minus costs of inputs
+
+Production decisions (for given prices) define supply functions
+
+Simple case:  Profits $ \Pi = p \cdot Q - c(Q)$ where $c(Q)$ is cost of producing quantity $Q$.
+$c(Q)$ is increasing and convex (means that $c'(Q)$ increases with $Q$).
+
+Profit maximization: $\max_Q  [ p \cdot Q - c(Q)]$
+
+$\Rightarrow$  $c'(Q) = p$:
+marginal cost of production equals price
+
+Defines the supply curve $Q=S(p)$.
+
+
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf SUPPLY CURVES}
+\end{center}
+
+
+%{\bf Supply curve}:
+%A curve showing the quantity of a good that firms in aggregate are willing to supply at each price:
+
+%{\bf Marginal productivity}:
+%The impact of a one unit change in any input, holding other inputs constant, on the firm's output.
+
+
+
+\textbf{Supply curve $S(p)$} is the quantity that firms in aggregate are willing to supply at each price:
+ typically upward sloping with price due to decreasing returns to scale
+
+At price $p$, producers produce quantity $S(p)$, and the \$ cost of producing the marginal (last) unit is $p$
+
+Elasticity of supply $\varepsilon_S$ is defined as
+\[ \varepsilon_S=\frac{\mbox{\% change in quantity supplied}}{\mbox{\% change in price}}=\frac{\Delta S/S}{\Delta p/p}= \frac{p}{S} \frac{dS}{dp} \]
+
+$\varepsilon^S=p S'(p)/S(p)$ is a function of $p$ and hence can vary with $p$ along the supply
+curve
+
+
+When $S(p)=S_0 \cdot p^{\varepsilon}$ with $S_0, \varepsilon$ fixed parameters,
+then $\varepsilon^S = \varepsilon$ is constant (called iso-elastic supply function)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={39}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MARKET EQUILIBRIUM}
+\end{center}
+
+Consumers (demand side) and producers (supply side) interact on markets
+
+{\bf Market equilibrium}: The equilibrium is the price $p^*$ such that $D(p^*)=S(p^*)$
+
+In the simple diagram, $p^*$ is unique if $D(p)$ decreases with $p$ and $S(p)$ increases with $p$
+
+If $p>p^*$, then supply exceeds demand, and price needs to fall to equilibrate supply and demand
+
+If $p<p^*$, then demand exceeds supply, and price needs to increase to equilibrate supply and demand
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={18}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ECONOMIC SURPLUS}
+\end{center}
+
+Economic surplus represents the net gains to society from all trades that are made in a particular market, and it consists of two components: consumer and producer surplus.
+
+{\bf Consumer surplus}:
+The benefit that consumers derive from consuming a good, above and beyond the price they paid for the good = area below demand curve and above market price
+
+{\bf Producer surplus}:
+The benefit producers derive from selling a good, above and beyond the cost of producing that good =
+area above supply curve and below market price
+
+{\bf Total economic surplus}:
+Consumer
+surplus + producer surplus = area above supply curve and below demand curve
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={19}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\includepdf[pages={9}]{tools_ch02_new_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={10}]{tools_ch02_new_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={11}]{tools_ch02_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Competitive Equilibrium Maximizes Economic Surplus}
+\end{center}
+
+{\bf First Fundamental Theorem of Welfare Economics}:\\
+The
+competitive equilibrium where
+supply equals demand, maximizes
+total economic surplus (sometimes called ``efficiency'')
+
+Economic surplus just counts dollars regardless of who gets them
+(\$1 to rich producer better than \$.99 to poor consumer) $\Rightarrow$
+1st welfare theorem is blind to distributional aspects
+
+{\bf Deadweight loss}:
+The reduction in economic surplus from denying
+trades for which benefits
+exceed costs when quantity differs from the efficient quantity
+
+Key rule: Deadweight loss triangle points to the efficient allocation, and grows outward from there
+
+The simple efficiency result from the 1-good diagram can be generalized into
+the first welfare theorem (Arrow-Debreu, 1940s), most important result in economics
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={20}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Generalization: 1st Welfare Theorem}
+\end{center}
+%Most important result in economics (=markets work)
+
+{\bf 1st Welfare Theorem:} If (1) no externalities, (2) perfect
+competition [individuals and firms are price takers], (3) perfect information, (4) agents are rational,
+then private market equilibrium is \textbf{Pareto efficient}
+
+\textbf{Pareto efficient:} Impossible to find a technologically feasible allocation that improves
+everybody's welfare
+
+Pareto efficiency is desirable but a very weak requirement (a single
+person consuming everything is Pareto efficient)
+
+Government intervention may be particularly desirable if the assumptions of
+the 1st welfare theorem fail, i.e., when there are market failures $\Rightarrow$
+Govt intervention can potentially improve everybody's welfare
+
+Second part of class considers such market failure situations
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf 2nd Welfare Theorem}
+\end{center}
+
+Even with no market failures, free market outcome might generate
+substantial inequality. Inequality is seen as one of the biggest issue
+with market economies.
+
+{\bf 2nd Welfare Theorem:} Any Pareto Efficient allocation can be
+reached by
+
+(1) Suitable redistribution of initial endowments
+[individualized {\bf lump-sum} taxes based on individual
+characteristics and not behavior]
+
+(2) Then letting markets work
+freely
+
+$\Rightarrow$ No conflict between efficiency and equity
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf 2nd Welfare Theorem fallacy}
+\end{center}
+
+In reality, 2nd welfare theorem does not work because redistribution of initial endowments is not feasible
+(because initial endowments cannot be observed by the government)
+
+$\Rightarrow$ govt needs to use {\bf distortionary} taxes
+and transfers based on economic outcomes  (such as income or working situation)
+
+$\Rightarrow$ Conflict between
+efficiency and equity: \textbf{Equity-Efficiency trade-off}
+
+First part of class considers policies that trade-off equity and efficiency
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Illustration of 2nd Welfare Theorem Fallacy}
+\end{center}
+Suppose economy is populated 50\% with disabled people unable to work (hence they earn \$0) and 50\% with able people
+who can work and earn \$100
+
+\textbf{Free market outcome:} disabled have \$0, able have \$100
+
+\textbf{2nd welfare theorem:} govt is able to tell apart the disabled from the able [even if the able do not work] 
+
+\small
+$\Rightarrow$
+can tax the able by \$50 [regardless of whether they work or not] to give \$50 to each disabled person $\Rightarrow$ the able keep working [otherwise they'd have zero income and still have to pay \$50]
+
+\normalsize 
+ 
+\textbf{Real world:} govt can't tell apart disabled from non working able
+
+\small
+$\Rightarrow$ \$50 tax on workers + \$50 transfer on non workers destroys all incentives to work $\Rightarrow$ govt can no longer do full redistribution $\Rightarrow$ Trade-off between equity and size of the pie
+
+\small
+
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf SOCIAL WELFARE FUNCTIONS}
+\end{center}
+
+Economists incorporate distributional aspects using \textbf{social welfare functions} (instead of just adding
+\$ of economic surplus)
+
+{\bf Social welfare function (SWF)}:
+A function that combines the utility functions of all individuals into an overall social utility function
+
+
+General idea is that one dollar to a disadvantaged person might count more than one dollar to a rich person
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf UTILITARIAN SOCIAL WELFARE FUNCTION}
+\end{center}
+
+With a utilitarian social welfare function, society's goal is to maximize the sum of individual utilities:
+$$SWF=U_1+U_2+...+U_N$$
+The utilities of all individuals are given equal weight, and summed to get total social welfare
+
+If marginal utility of money decreases with income (satiation), utilitarian criterion values redistribution
+from rich to poor
+
+
+Taking \$1 for a rich person decreases his utility by a small amount, giving the \$1 to a poor person increases
+his utility by a large amount 
+
+$\Rightarrow$ Transfers from rich to poor increase total utility
+
+\normalsize
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={40}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf RAWLSIAN SOCIAL WELFARE FUNCTION}
+\end{center}
+
+Rawls (1971) proposed that society's goal should be to maximize the well-being of its worst-off member. The Rawlsian SWF has the form:
+$$SWF=\min(U_1,U_2,...,U_N)$$
+
+Since social welfare is determined by the minimum utility in society, social welfare is maximized by maximizing the well-being of the worst-off person in society (=maxi-min)
+
+Rawlsian criterion is even more redistributive than utilitarian criterion: society wants to extract as much tax
+revenue as possible from the middle and rich to make transfers to the poor as large as possible
+
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf OTHER SOCIAL JUSTICE PRINCIPLES}
+\end{center}
+
+Standard welfarist approach is based on individual utilities. This fails to capture important
+elements of actual debates on redistribution and fairness
+
+{\bf 1) Just deserts}: Individuals should receive compensation congruent with their contributions
+(libertarian). 
+
+\small
+
+$\Rightarrow$ Taxes should be tailored to government benefits received 
+
+\normalsize
+
+\vspace{-3pt}
+%Taxes should be based on benefits received.
+
+{\bf 2) Commodity egalitarianism}:
+Society should ensure that individuals meet a set of basic needs (seen as rights) 
+%but that beyond that point income distribution is irrelevant
+
+\small
+
+$\Rightarrow$ Rich countries today consider free education, universal health care, retirement/disability
+benefits as rights
+
+\normalsize
+
+{\bf 3) Equality of opportunity}: Society should
+ensure that all individuals have equal opportunities for success 
+
+\small
+
+$\Rightarrow$ Individuals should be compensated for inequalities they are not responsible for (e.g., family background,
+inheritance, intrinsic ability) but not for inequalities they are responsible for (being hard working vs. loving
+leisure)
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf TESTING PEOPLE SOCIAL PREFERENCES}
+\end{center}
+Saez-Stantcheva '16 survey people online (using Amazon MTurk) by asking hypothetical questions
+to elicit social preferences. Key findings:
+
+1) People typically do not have ``utilitarian'' social justice principles (consumption lover not seen as more
+deserving than frugal person)
+
+2) People put weight on whether income has been earned through effort vs. not (hard working
+vs. leisure lover)
+
+3) People put a lot of weight of what people would have done absent the government intervention
+(deserving poor vs. free loaders)
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={12-14}]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={15},scale=.9]{tools_ch02_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf ACTUAL SOCIAL PREFERENCES}
+\end{center}
+\textbf{General conclusion:} People favor redistribution if they feel inequalities are ``unfair''  but views on what is fair differ
+
+$\Rightarrow$  Redistribution supported when people don't have control [education for children, health insurance for the sick, retirement/disability benefits for the elderly/disabled unable to work]
+
+$\Rightarrow$  Less support when people have some or full control [unemployment, being low income]
+
+$\Rightarrow$  Less support when people don't ``belong'' (us vs. them)
+
+Conservatives tend to frame things: individuals have control (personal responsibility), govt should just enforce rules
+
+\vspace{-10pt}
+
+Liberals tend to frame things: many forces in society beyond individuals' control (``we are all in this together''), society
+should provide nurturing
+
+\vspace{-5pt}
+\small See Lakoff (1996) for how liberals and conservative think
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={17}]{Gruber2e_ch02_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf THE TANF EXAMPLE CONTINUED: EQUITY}
+%\end{center}
+%
+%Governments have programs such as TANF because their citizens care not only about efficiency but also about equity, the fair distribution of resources in society.
+%
+%For many specifications of social welfare, the competitive equilibrium, while being the social efficiency-maximizing point, may not be the social welfare-maximizing point.
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf CONCLUSION}
+%\end{center}
+%
+%This chapter has shown both the power and the limitations of the theoretical tools of economics.
+%
+%On the one hand, by making relatively straightforward assumptions about how individuals and firms behave, we are able to address complicated questions such as how TANF benefits affect the labor supply of single mothers, and the implications of that response for social welfare.
+%
+%On the other hand, while we have answered these questions in a general sense, we have been very imprecise about the potential size of the changes that occur in response to changes in TANF benefits.
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Conclusion: Two General Rules for Govt Intervention}
+\end{center}
+
+\textbf{1) Market Failures:} Government intervention can help
+if there are market failures
+
+\textbf{2) Redistribution:} Free market generates inequality. Govt taxes
+and spending can reduce inequality 
+
+First part of course will analyze 2), second part of course will analyze 1) 
+
+[we are inverting the ordering relative to Gruber's texbook so as to cover topics related to Professor Saez'
+research first].
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf PROFESSOR SAEZ' RESEARCH}
+%\end{center}
+%
+%Most of my research (available on my webpage) is in public economics:
+%
+%1) Design of optimal tax policies and optimal transfer programs (theory, normative)
+%
+%2) Analysis of the effects of taxes and transfers on individual behavior (empirical, positive)
+%
+%3) Analysis of inequality overtime and across countries (empirical, descriptive)
+%
+%I will discuss some of my research in this course when we cover the relevant topics
+%
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Gruber, Jonathan, Public Finance and Public Policy, 2016 Worth Publishers, Chapter 2
+
+Lakoff, George, 1996. \emph{Moral Politics: How Liberals and Conservatives Think}, 2nd edition 2010.
+\href{https://georgelakoff.com/} {(web)}
+
+Rawls, John, \emph{A Theory of Justice}, 1971, revised in 1999, Cambridge: Harvard University Press
+
+Saez, Emmanuel and Stefanie Stantcheva ``Generalized Social Marginal Welfare Weights for Optimal Tax Theory,'' American Economic Review 2016. \href{http://eml.berkeley.edu/~saez/saez-stantchevaAER16.pdf} {(web)}
+
+}
+\end{slide}
+
+
+\end{document}
+

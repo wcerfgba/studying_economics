@@ -1,0 +1,940 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+\title{Health Insurance} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf MOTIVATION}
+\end{center}
+Health care is costly (modern medicine is hi-tech) and everybody needs it (widely perceived as a right)
+
+Advanced economies spend about 9\% of their GDP on health care [up from 2-3\% in 1950]
+
+Low income families would not be able to afford health care insurance on their own
+
+$\Rightarrow$ In all countries, government plays major role in funding health care
+
+U.S. health care system has significant issues: 
+
+(a) US
+health care is very expensive (17\% of GDP relative to 9\% on average in other OECD countries)
+
+%(b) growing too fast
+
+(b) significant fraction of population ($\simeq$ 10\%) is uninsured
+
+%There are enormous disparities in medical outcomes across demographic groups in the US
+
+%Before Obamacare, the United States was the only major industrialized nation that did not provide universal access to health care for its citizens
+
+%Recent Obamacare law has reduced the fraction number of uninsured from 50m (in 2013) to 30m (in 2018+)
+
+\end{slide}
+
+
+%15.1 An Overview of Health Care in the United States
+
+\begin{slide}
+\includepdf[pages={32}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={35}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={27}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf UNIVERSAL HEALTH INSURANCE}
+\end{center}
+
+All OECD countries (except the US) provide universal health care insurance funded by taxation:
+
+Individuals who get sick can have health care paid for by the government
+
+Government either directly controls doctors/hospitals (like National Health Service in the UK)
+or government reimburses private health care providers (like in France or Germany)
+
+Government controls costs and limits health-care over-consumption through:
+
+1) Regulation (govt picks allowed treatments based on cost effectiveness, bargains for prices, rations care in some cases)
+
+2) Patient co-payments (patients share part of the cost)
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf US HEALTH INSURANCE}
+\end{center}
+US has a mix of public and private insurance: As of 2018
+\href{http://kff.org/other/state-indicator/total-population/}{(web)}
+
+\textbf{1) Government provided insurance [35\% of population]}
+
+(a) Medicare for the elderly (65+) = 14\% of pop \\
+(b) Medicaid for the poor = 20\% of pop \\
+(c) Other (mostly veterans benefits) = 1\% of pop
+
+\textbf{2) Privately provided insurance [55\% of population]}
+
+(a) Employer provided health insurance = 49\%  \\
+(b) Individual purchases (mostly Obamacare exchanges) = 6\% \\
+
+\textbf{3) Uninsured [9\% of pop.]} (15-16\% before Obamacare)
+
+%In the US, health insurance solely restricts treatments on effectiveness (not cost effectiveness) $\Rightarrow$ Huge incentives for health providers to supply new expensive treatments
+
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={3}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf EMPLOYER PROVIDED INSURANCE}
+\end{center}
+Covers half of the US population (mandatory for large employers since Obamacare). Started after WW2 when health care costs were low.
+
+Employer level insurance allows risk pooling across employees
+
+But cost has grown enormously: \$13K/covered worker in 2017
+
+Workers ultimately bear the cost in the form of reduced wages
+[as employers care about total labor cost = wage + benefits]
+
+This is like a ``privatized poll tax'' on workers as the secretary pays as much as the executive 
+$\Rightarrow$ Regressive not sustainable (Saez and Zucman 2019)
+
+On Obamacare exchanges, individual purchase is subsidized based on family income (see below)
+
+%{\bf 1) Risk pooling}: The goal of all insurers is to create \emph{large insurance pools with a predictable distribution of medical risk.} 
+%
+%%The statistical law of large numbers states that as the size of the pool grows, the odds that the insurer will be unable to predict the average health outcome of the pool falls.
+%
+%{\bf 2) Tax incentive:} employer provided health insurance is a non-taxable form of compensation for employees
+%(not subject to payroll taxes or individual income tax) 
+%
+%$\Rightarrow$ Fiscally advantageous to get insurance through employer
+%(non-taxable) than to purchase it directly as an individual (with after-tax income)
+%
+%\small
+%Note: Now with Obamacare, individual purchase is subsidized based on family income (see below)
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={34}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf NONGROUP INSURANCE}
+\end{center}
+{\bf Nongroup direct insurance market}:
+The market through which individuals or families buy insurance directly rather than through a group, such as the workplace.
+
+The nongroup insurance market was not a well-functioning market before Obamacare
+
+Those in the worst health (pre-existing conditions) were often unable to obtain coverage (or could only obtain it at an incredibly high price)
+
+Even without pre-existing conditions, there was \textbf{adverse selection}
+
+Obamacare (through its exchanges) is changing drastically the nongroup market by forbidding pricing/discrimination
+based on preexisting conditions and mandating health insurance (but the fine for non-coverage repealed in 2019+)
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MEDICARE}
+\end{center}
+
+Started in 1965 as a universal health insurance system for the elderly and nonelderly on disability insurance.
+
+Federal program that provides health insurance to all people over age 65 or disabled
+
+Every citizen who has worked for 10 years (or their spouse) is eligible
+
+Financed with an uncapped payroll tax totaling 2.9\% (along with general revenue)
+
+Physician reimbursement fairly generous (but not as high as private insurance)
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MEDICAID}
+\end{center}
+Provides health care for the poor (means-tested benefit) 
+
+Financed from general revenues by both Fed and State 
+
+Targets welfare recipients, low income kids and elderly (for non-Medicare costs such as long-term care)
+
+70\% of recipients are mothers/kids but 66\% of expenditure goes to long-term care for elderly/disabled.
+
+Doctor reimbursement low $\Rightarrow$ some docs refuse Medicaid 
+
+Big variation across states in Medicaid generosity (costs are shared between state/feds)
+
+Program eligibility criteria have been expanded over time (higher incomes allowed): 
+Obamacare substantially expands Medicaid to reduce the fraction uninsured [but not all states do it]
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={6}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OBAMACARE (Affordable Care Act of 2010, ACA)}
+\end{center}
+Three tier system starts in 2014 %(follows the Romney Care model of Massachusetts):
+
+1) Bans pre-existing conditions exclusion, health-based pricing
+%Cost depends on family size, age, and state.
+
+2) Mandate: forces individuals (and large employers with 50+ employees starting in 2015/6) 
+to buy health insurance [else they pay a fine]. Individual fine gone in 2019+
+
+3) Free/subsidized insurance for low-income families: (a) Medicaid expansion up to 138\% of poverty line paid by Feds at 90\% and (b)
+subsidized health insurance purchases in Obamacare exchanges up to 400\% of poverty line [high deductibles and copays
+in exchanges while none on Medicaid]
+
+Funded primarily with surtax on rich
+
+Starts trying to control costs [indeed costs increases have slowed down in recent years]
+
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={29-30}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf LEGAL CHALLENGES TO OBAMACARE}
+\end{center}
+1) Is the mandate constitutional? [July 2012]
+
+Ruling: yes, but Feds cannot force States to expand Medicaid $\Rightarrow$ Many states (including TX, FL) decided to opt-out of the Medicaid expansion [even though Fed govt pays 90\%]
+
+Consequence: Coverage gap because people below 100\% of poverty cannot access subsidized Obamacare exchanges
+
+States moving slowly to accept Medicaid expansion through referenda, 14 holdouts as of 2020,
+\href{https://www.kff.org/medicaid/issue-brief/status-of-state-medicaid-expansion-decisions-interactive-map/}{(web)} 
+
+
+2) Can the Feds set up exchanges if states don't do it themselves? [Ruling: yes, July 2015]
+
+%Consequence: If Supreme court rules no then subsidized exchanges disappear in many states $\Rightarrow$ Many people are priced out, only sick will buy, adverse selection death spiral 
+
+3) There are still pending court challenges to Obamacare 
+%(Trump administration won't defend Obamacare in court)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={24}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={30-31}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf THE UNINSURED}
+\end{center}
+Fraction of individuals uninsured should fall by 50\% with Obamacare [from 15\% of population in 2013 down to 9\% in 2017, 10-11\% in 2020?]. 
+Three groups of uninsured:
+
+\small
+1) Undocumented immigrants (no access to Medicaid or Obamacare subsidized exchanges) $\simeq$ 10m
+
+2) Low income people who don't qualify for Medicaid and Obamacare insurance subsidies in states that did not expand Medicaid [possible that more states will expand]
+
+3) People who did not sign up for Obamacare exchange (used to pay the fine, no fine in 2019+), poor people who qualify for Medicaid but haven't taken up benefits
+\normalsize
+
+Key issue: uninsured face prohibitive health care costs [price gouging from hospitals] so don't get care or go bankrupt with health care debt
+[no market serving uninsured has arisen]
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={33}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={26}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Is Universal Health Care Desirable?}
+\end{center}
+Health care is expensive (even in countries which control costs) $\Rightarrow$ Poor cannot afford health care on their own and need help
+
+People face difference health risks (pre-existing conditions)
+$\Rightarrow$ Those facing high health risks face very high insurance
+costs in private market
+
+Should the government insure people for health risks? Yes if health risks outside people's control (age, genetics).
+Not necessarily if health risks due to choices (diet, exercise)
+
+Virtually all OECD countries answer yes and provide universal
+health care
+
+\small
+
+Not providing universal health care creates another big issue: \textbf{adverse selection} if private insurers cannot observe risks
+or cannot charge based on risks $\Rightarrow$ Even those with low risks cannot get actuarially fair insurance
+
+In all cases (private and public), health insurance needs to deal with moral hazard (over-provision, over-consumption)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Medicare for All Debate in the US}
+\end{center}
+%Among democrats, debate on Medicare for All vs. improving Obamacare
+
+\textbf{Medicare of All} is universal health care with low copays/deductibles funded by taxes (as in other OECD countries)
+
+Key advantages: everybody is covered, govt controls costs better, sustainable burden for all (big gain for middle class),
+but requires a huge shift (doing away with health insurance industry and employer coverage)
+
+\textbf{Improving Obamacare} starts from existing system and patches the holes: nudge more states into Medicaid expansion,
+improve Obamacare exchanges (more subsidies, lower deductibles, public option, etc.)
+
+More feasible but keeps employer coverage system where workers pay full price regardless of earnings and
+less ability to control costs
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={34}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Universal vs. Means-Tested Health Insurance}
+\end{center}
+
+Consider an economy in which average income is \$50,000 but with much income inequality and where health insurance costs \$10,000 per person. To provide health insurance for all, two possible policies are proposed.
+
+A.  Universal health insurance for all including the rich, financed by a 20-percent flat tax on income with no exemption.
+
+B.  Health insurance is subsidized for the poor (they contribute only up to 20\% of their income in premia) but people with income above \$50,000 have to pay for it in full (\$10,000). Subsidies for the poor are financed by a tax of 20 percent on income above \$50,000.
+
+Which option strikes you as the most redistributive?
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Optimal Health Insurance: Consumer Side}
+%\end{center}
+%As with other insurance, optimal generosity determined by the trade off between consumption-smoothing benefit and moral hazard cost.
+%
+%Consumption when sick $=c_s < c_h=$ consumption when healthy
+%
+%Insurance raises $c_s$ and lowers $c_h$  $\Rightarrow$ higher expected utility if risk averse.
+%
+%Moral hazard: overconsumption of healthcare because insured individual pays only a fraction of health care costs
+%when he/she is sick. Fraction paid by individual is called the \textbf{co-payment}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={8}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf How Elastic Is the Demand for Medical Care? \\ The RAND Health Insurance Experiment}
+%\end{center}
+%
+%The best evidence on the elasticity of demand for medical care comes from one of the most ambitious social experiments in U.S. history: the RAND Health Insurance Experiment (HIE) in late 1970s
+%
+%\$150m expenditure involving 6000 people tracked over 3 years
+%
+%Random assignment of health plans with different co-payment parameters: Copayment rates from 0\% to 95\%.
+%
+%All families given \$1000 to participate, so no one was made worse off from the experiment.
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf The RAND Health Insurance Experiment: Results}
+%\end{center}
+%
+%Medical care demand is somewhat price sensitive: individuals who were in the free care plan used 46\% more care than those paying 95\% of their medical costs.
+%
+%Overall, 10\% rise in the price of medical care to individuals $\Rightarrow$ use 2\% less care (elasticity = .2). Medical utilization not
+%very sensitive to price but distortion still large due to very low co-payment rates in most insurance programs
+%
+%Those who used more health care due to the lower price did not, on average, see a significant improvement in their health.
+%
+%For those who are chronically ill and don't have sufficient income to easily cover co-payments, there was some deterioration in health.
+%\end{slide}
+%
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Consumption-Smoothing Benefits}
+%\end{center}
+%
+%Consumption-smoothing benefits bigger for large shocks
+%
+%\small
+%Some events, like a check-up, are minor and predictable
+%
+%Others, like a heart attack, are expensive and unpredictable.
+%
+%Insurance is much more valuable for expensive, unpredictable events
+%
+%Small shocks lead to small fluctuations in marginal utility
+%
+%\normalsize
+%Also less moral hazard for large, unpredictable shocks
+%
+%$\Rightarrow$ Optimal policy: large deductibles and very generous coverage for ``catastrophes''
+%
+%But Obamacare exchanges experience shows that people dislike plans with high deductibles (such as \$3K/year) in part bc they don't have much control on health expenses
+%
+%Brot-Goldberg et al. (2017) show that high deductible plan leads to large and likely inefficient cuts in health care utilization
+%
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Application: Medicare Prescription Drug Benefit}
+%\end{center}
+%
+%Starting in 2006, Medicare ``Part D'' covers drug expenses.
+%
+%In return for a monthly premium, this program pays for
+%
+%\small
+%0\% of the drug costs up to \$250
+%
+%75\% of the costs for the next \$2,250
+%
+%0\% of the costs for the next \$3,600 (``donut hole'')
+%
+%95\% of the costs above \$5,100
+%
+%%Numbers indexed for inflation
+%
+%
+%\normalsize
+%Middle bracket with 75\% refund: exactly opposite of optimal design!
+%
+%Rationale: political. Help the most people in this way (but do not maximize expected welfare).
+%
+%Obamacare eliminated the ``donut hole''
+%
+%Einav, Finkelstein, Schrimpf (2013) show that individuals bunch at kink where 75\% subsidy stops $\Rightarrow$ 
+%Moral hazard response
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={21}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Estimating Health Benefits}
+%\end{center}
+%
+%Another approach of evaluating benefits of a health insurance program: look directly at health outcomes instead of consumption-smoothing benefit
+%
+%How to implement this?
+%
+%\small
+%Simply comparing those enrolled in Medicaid to those not enrolled will suffer from bias.
+%
+%Factors such as income and health status will bias the results.
+%
+%\normalsize
+%Series of studies by Currie and Gruber: use Medicaid expansions and diff-in-diff strategy to evaluate value of programs
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={13}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Effect of Medicaid Expansions on Health}
+%\end{center}
+%
+%Currie and Gruber find that these reductions in the number of uninsured had positive effects on health outcomes in pregnancies
+%
+%1) Utilization of health services increased: Early prenatal care visits rose by more than 50\%
+%
+%2) Health care outcomes improved: Infant mortality declined by 8.5\% due to the expansions in Medicaid for pregnant women.
+%
+%$\Rightarrow$ Highly cost-effective policy.
+%
+%\normalsize
+%%Series of studies by Currie and Gruber: use Medicaid expansions and diff-in-diff strategy to evaluate value of programs
+%\end{slide}
+%
+%
+%
+%
+%\begin{slide}
+%\includepdf[pages={14}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Effect of Health Care on Utilization and Health: \\ Oregon Medicaid Health Insurance Experiment}
+\end{center}
+
+$\bullet$ In 2008, Oregon had a limited Medicaid budget $\Rightarrow$ used lottery to select individuals on waitlist to be given a chance to apply for Medicaid insurance coverage
+
+$\bullet$ 30,000 ``lottery winners'' (treatment group) out of 90,000 participants (lottery losers are control group)
+
+\small
+Not all winners received coverage. Some non-winners later received insurance on their own.
+
+But it is still the case that winning the lottery increases probability of having health insurance by 29 percentage
+points
+
+\normalsize
+$\bullet$ Finkelstein et al. (2012) use lottery as instrument to estimate causal effect of insurance coverage itself
+
+\small
+Two way to report the results:
+
+ITT (intention to treat): just compare winners and losers
+
+LATE (local average treatment effect):
+Inflate estimates by 1/[difference in fraction insured between winners and losers]=1/.29=3.5
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Oregon Medicaid Health Insurance Experiment}
+\end{center}
+
+$\bullet$  Data sources: admin data from hospitals, credit reporting data, and survey responses regarding utilization, health, and financial outcomes
+
+$\bullet$ Key results: winning the Medicaid lottery leads to:
+
+1) higher health care utilization (including primary and preventive care as
+well as hospitalizations)
+
+2) lower out-of-pocket medical expenditures and medical
+debt (including fewer bills sent to collection agencies for unpaid debt)
+
+3) better self-reported physical and mental health
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={9-12}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Effect of Medicare on Health}
+\end{center}
+Medicare becomes available when you turn 65 $\Rightarrow$ Can do a \textbf{regression discontinuity design}
+to see what happens when you cross age 65 threshold. Two papers use this strategy:
+
+1) Card-Dobkin-Maestas ``The Impact of Nearly Universal Insurance Coverage on Health Care Utilization and
+Health: Evidence from Medicare'' AER 2008
+
+\small
+Examines impacts across groups; with an interest in evaluating impacts on
+inequality in utilization
+
+\normalsize
+2) Card-Dobkin-Maestas ``Does Medicare Save Lives?'' QJE'09
+
+\small
+Examines impacts on outcomes (mortality following emergency hospital admission for diagnoses
+with same admission rates before and after 65)
+
+\normalsize
+Basic idea is to draw graphs of outcomes based on age for various groups
+
+\small
+The discontinuity at 65 captures \textbf{short-term} changes in health care utilization and
+mortality from shift from $<65$ to $>65$
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={15-17}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Effects of Medicare on Health}
+\end{center}
+
+1) Big increase in health insurance coverage, especially for disadvantaged groups
+
+2) Big increase in health care utilization
+
+3) Visible decrease in mortality after admission for conditions requiring Emergency Room (ER) immediate hospitalization
+(so that likelihood of going to hospital is the same before 65 and after 65)
+
+$\Rightarrow$ Medicare health insurance does save lives
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Effects of Insurance on Health Outcomes}
+%\end{center}
+%
+%Medicaid and Medicare results contrast with those of RAND experiment, which found no impact on health outcomes?
+%
+%How to reconcile the two results?
+%
+%1) The studies examine different parts of the ``medical effectiveness curve.''
+%
+%2) Moving individuals from uninsured to having some insurance has an important positive effect on health
+%
+%3) Adding to the generosity of current insurance, does not seem to cause significant changes on health
+%
+%US health insurance system leaves many uninsured but provides overly generous care to the insured
+%\end{slide}
+%
+%
+%
+%
+%\begin{slide}
+%\includepdf[pages={18}]{health_ch1516_new_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Health Insurance: Provider Side}
+\end{center}
+
+Preceding analysis of optimal insurance assumes patient makes entire healthcare decision:
+
+This assumed a passive doctor, in the sense that doctor provides whatever treatment patient requested
+
+Clearly reality is closer to the opposite: docs choose treatment and may respond to financial incentives
+
+Incorporating supply side issues is critical in understanding health insurance
+
+Question: choice of payment schemes for physician
+
+Retrospective (fee-for-service) vs. prospective (diagnosis based fixed payments)
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Optimal Health Insurance: Provider Side}
+%\end{center}
+%
+%Intuition: if patient doesn't choose level of care, healthcare may be inefficiently high
+%
+%If physician is compensated for all costs $\Rightarrow$ it is in his interest to do lots of procedures
+%(e.g. too many C-section births)
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Health Insurance: Provider Side Model}
+\end{center}
+Payment for physician services is $P = \alpha + \beta \cdot c$
+
+$\alpha$=fixed cost payment for a given \textbf{diagnosis}
+
+$\beta$=payment for proportional costs $c$ (tests, nurses)
+
+
+
+Various methods of payment $(\alpha, \beta)$:
+
+
+
+1. Fee-for-service $(\alpha=0, \beta>1)$: No fixed payment for practice, but insurance company pays full cost of all visits to doctor + a surcharge.
+
+%2. Salary $(\alpha>0, \beta=1)$: practice costs paid for as well as marginal costs of treatment.
+
+2. Diagnosis based payment  $(\alpha>0, \beta=0)$: varying by type and \# of patients but not services rendered
+
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Health Insurance: Provider Side}
+\end{center}
+General trend has been toward higher $\alpha$, lower $\beta$
+
+Private market has shifted from FFS to HMO (Health Maintenance Organizations) capitation schemes [where insurer pays a fixed
+amount per patient regardless of treatment provided]. 
+
+Example, Kaiser receives a flat amount per person enrolled based on age/gender
+
+Medicare/Medicaid shifted in 1980s to a prospective payment scheme.
+
+Tradeoff: lower $\beta$ provides incentives for doctors to provide less services. But they may provide too little!
+
+$\Rightarrow$ Lower costs, but complaints of lower quality of care
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Evidence: Payment Schemes and Physician Behavior}
+\end{center}
+1) In 1983, Medicare moved from retrospective reimbursement to prospective reimbursement.
+
+2) \textbf{Prospective payment system (PPS)} is Medicare's system for reimbursing hospitals based on nationally standardized payments for specific diagnoses.
+
+All diagnoses for hospital admissions were grouped into Diagnosis Related Groups (DRGs).
+
+Government reimbursed a fixed amount per DRG. More severe DRGs received higher reimbursement.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Evidence: Payment Schemes and Physician Behavior}
+\end{center}
+Cutler (1993) finds that PPS led to:
+
+1. A reduction in treatment intensity. For example, the average length of hospital stay for elderly patients fell by 1.3 days.
+
+2. No adverse impact on patient outcomes despite the reduction in treatment intensity.
+
+Evidence that doctors put some weight on profits
+
+Suggests they are practicing ``flat of the curve'' medicine: too much treatment before.
+
+3. Cost growth slowed dramatically in the five years after PPS but then accelerated again.\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Evidence: Payment Schemes and Physician Behavior}
+%\end{center}
+%Why did costs accelerate? PPS not a perfect capitation scheme:
+%
+%1) DRG creep: although the price per diagnosis was fixed, hospitals reacted by changing the DRG categorization (``upcoding'')
+%
+%2) The design of the DRGs used actual treatments (e.g., a person with heart trouble might be assigned the DRG ``pacemaker implantation'' or ``coronary bypass'').
+%
+%3) This effectively creates a retrospective reimbursement system
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Biggest failure of US health care: Opioid Epidemic}
+\end{center}
+
+Late 1990s, big pharma pushed opioid pain killers aggressively 
+
+Encouraged doctors to prescribe them (patients love them in the short-run
+but often get addicted)
+
+$\Rightarrow$ Led to misuse and addicted then turned to heroin and
+fantanyl (80\% of current addicts started with prescription opioids). US now has 
+1.5m opioid addicts.
+
+70K people/year die from overdoses (5\% death rate/year for addicts).
+10 times more deaths than in EU relative to pop
+
+$\Rightarrow$ US is slowly shifting from ``addiction is a crime'' to ``addiction is a health 
+care problem''
+
+\small 
+$\Rightarrow$ Overdose death rates vary tremendously from 6/million in Portugal, 60/million in UK or Sweden, up to 250/million in the US \href{http://www.emcdda.europa.eu/countries/} {(web)}
+
+$\Rightarrow$  Portugal decriminalized drugs and deployed health care solution $\Rightarrow$ drop in overdose deaths (more modest decrease in addiction rate)
+
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={28}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Technology Growth and Health Care Growth}
+\end{center}
+
+1) Health care technology contributes to rising life expectancy %(many examples)
+
+2) Many new technologies have modest health effects and are very
+costly and yet are adopted because Medicare/Private insurance accept any
+health effective treatment %(with little regard for cost)
+
+\small
+$\Rightarrow$ fuels the development of new technologies, especially testing which
+leads to growing costs and over-treatment
+
+\normalsize
+3) Countries which are the most successful at containing costs choose to use
+only the cost effective new treatments: reduces costs while having very little effect
+on health outcomes
+
+4) US health care system spends too much on the insured
+(where marginal value of care is small) and spends too little on the uninsured (where
+marginal value of care is high)
+
+Key US health policy challenges is to: (a) cover more of the uninsured, (b) reduce non-cost effective
+health spending %(c) solve the opioid epidemic (fueled by opioid pain killers)
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={1}]{health_ch1516_new_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OBAMACARE}
+%\end{center}
+%Three tier system (follows the Romney Care model of Massachussets):
+%
+%1) Bans pre-existing conditions exclusion, health-based pricing
+%
+%2) Mandate: forces individuals (and large employers with 50+ employees) 
+%to buy health insurance [else they pay a tax]
+%
+%3) Free/subsidized insurance for low-income families [=Medicaid expansion and
+%subsidized health insurance up to 400\% of poverty line]
+%
+%Starts trying to control costs [indeed costs increases have slowed down in recent years]
+%
+%\end{slide}
+%
+
+%\begin{slide}
+%\begin{center}
+%{\bf OBAMACARE}
+%\end{center}
+%2010 Affordable Care Act tries to remedy the issue of non-insurance following the Romneycare model of
+%Massachussets
+%
+%1) Expands Medicaid and provides heavily subsidized coverage up to 400\% of poverty line
+%
+%2) Forces all large employers to provide insurance (or pay \$2000 per employee), gives tax credits to small
+%employers
+%
+%3) Creates health care exchanges for individual purchase of health insurance:
+%forbids denying/stoping coverage due to pre-existing conditions
+%
+%4) Mandate: All individuals need to get insurance or pay a small fine
+%
+%5) Starts trying to control costs [indeed costs have slowed down in recent years]
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber, Public Finance and Public Policy, Fourth Edition, 2019 Worth Publishers, Chapter 15 and Chapter 16
+
+Brot-Goldberg, Zarek C.,  Amitabh Chandra, Benjamin R. Handel, Jonathan T. Kolstad (2017) ``What Does a Deductible Do? The Impact of Cost-Sharing on Health Care Prices, Quantities, and Spending Dynamic'', forthcoming \emph{Quarterly Journal of Economics}. \href{http://elsa.berkeley.edu/~saez/course131/brotetalQJE17.pdf}{(web)}
+
+Card, David, Carlos Dobkin, and Nicole Maestas. ``The impact of nearly universal insurance coverage on health care utilization and health: evidence from Medicare.'' American Economic Review 98.5 (2008): 2242-2258.\href{http://elsa.berkeley.edu/~saez/course131/Card-Dobkin-Maestas08.pdf}{(web)}
+
+Card, David, Carlos Dobkin, and Nicole Maestas. ``Does Medicare save lives?.'' Quarterly Journal of Economics 124.2 (2009): 597-636.\href{http://elsa.berkeley.edu/~saez/course131/Card-Dobkin-Maestas09.pdf}{(web)}
+
+Case, Anne and Angus Deaton.  ``Rising morbidity and mortality in midlife among white non-Hispanic Americans in the 21st century'',  PNAS 112(49), 2015. \href{http://www.pnas.org/content/112/49/15078.full.pdf} {(web)}
+
+Case, Anne and Angus Deaton.  ``Mortality and morbidity in the 21st century'',  Brookings Papers in Economic Activity, 2017. \href{http://elsa.berkeley.edu/~saez/course131/casedeatonBrook17.pdf} {(web)}
+
+Currie, Janet, and Jonathan Gruber. ``The technology of birth: Health insurance, medical interventions, and infant health.'' No. w5985. National Bureau of Economic Research, 1997.\href{http://www.nber.org/papers/w5985.pdf}{(web)}
+
+Cutler, David M. ``The incidence of adverse medical outcomes under prospective payments.'' No. w4300. National Bureau of Economic Research, 1993.\href{http://www.nber.org/papers/w4300.pdf}{(web)}
+
+Einav, Liran, Amy Finkelstein, Paul Schrimpf ``The Response of Drug Expenditures to non-linear Contract Design:
+Evidence from Medicare Part D,'' NBER Working Paper 19393, 2013.
+\href{http://www.nber.org/papers/w19393.pdf}{(web)}
+
+Finkelstein, Amy, Sarah Taubman, Bill Wright, Mira Bernstein, Jonathan Gruber, Joseph P. Newhouse, Heidi Allen, and Katherine Baicker. ``The Oregon Health Insurance Experiment: Evidence from the First Year.'' The Quarterly Journal of Economics 127, no. 3 (2012): 1057-1106.\href{http://elsa.berkeley.edu/~saez/course131/Finkelstein12.pdf}{(web)}
+
+Saez, Emmanuel and Gabriel Zucman. The Triumph of Injustice: How the Rich Dodge Taxes and How to Make them Pay, New York: W.W. Norton, 2019. 
+\href{http://www.taxjusticenow.org} {(web)}
+
+
+}
+
+
+\end{slide}
+
+\end{document}

@@ -1,0 +1,413 @@
+1                                                          The SAS System                             23:59 Tuesday, October 7, 2014
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M0) 
+      Licensed to UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R, Site 70081487.
+NOTE: This session is executing on the Linux 3.2.0-68-generic (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 12.3 (maintenance)
+      SAS/ETS 12.3 (maintenance)
+      SAS/OR 12.3 (maintenance)
+      SAS/IML 12.3 (maintenance)
+      SAS/QC 12.3 (maintenance)
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.2.0-68-generic #102-Ubuntu SMP Tue Aug 12 22:02:15 UTC 2014 x86_64 Unrecognized Linux Distribution 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.11 seconds
+      cpu time            0.04 seconds
+      
+1          options ls=130 nocenter nofmterr;
+2          
+3          libname here '.';
+NOTE: Libref HERE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /accounts/fac/card/gradlab/250a/ps4
+4          
+5          
+6          * set up to put out residual covariances of indicators and single y outcome;
+7          * Plus the var-cov matrix of the residual covariances;
+8          
+9          * main output = rescov2.dat ( 36 row vector of residual covariances (LTR format) ;
+10         *               vrescov2.dat = 36*36 matrix output in vec format (1 column) ;
+11         
+12         
+13         
+14         data one;
+2 The SAS System                                                                                    23:59 Tuesday, October 7, 2014
+
+15         set here.newwagedata;
+16         
+17         
+18         *** next 2 lines change for males n=22124;
+19         
+20         %let n=22124;
+21         
+22         
+23         array cexp (*) exp1-exp8;
+24         array cexpsq (*) expsq1-expsq8;
+25         array cexpcu (*) expcu1-expcu8;
+26         
+27         
+28         do i=1 to 8;
+29         cexpsq(i)=cexp(i)**2;
+30         cexpcu(i)=cexp(i)**3;
+31         end;
+32         
+
+NOTE: There were 22124 observations read from the data set HERE.NEWWAGEDATA.
+NOTE: The data set WORK.ONE has 22124 observations and 59 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.06 seconds
+      
+
+33         proc means;
+34         var w1-w9 exp1-exp8 expsq1-expsq8 expcu1-expcu8 meaneduc ;
+ERROR: Variable W9 not found.
+35         
+36         *step 1 = get residuals from indicators and y var (last in list);
+37         
+38         
+39         
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+40         proc reg;
+41         model w1=meaneduc exp1 expsq1 expcu1 ;
+42         output out=new
+43          r=r1;
+44         
+
+NOTE: The data set WORK.NEW has 22124 observations and 60 variables.
+NOTE: The PROCEDURE REG printed page 1.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.12 seconds
+      
+
+45         proc reg;
+46         model w2=meaneduc exp2 expsq2 expcu2 ;
+47         output out=new
+3 The SAS System                                                                                    23:59 Tuesday, October 7, 2014
+
+48          r=r2;
+49         
+
+NOTE: The data set WORK.NEW has 22124 observations and 61 variables.
+NOTE: The PROCEDURE REG printed page 2.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.10 seconds
+      
+
+50         proc reg;
+51         model w3=meaneduc exp3 expsq3 expcu3 ;
+52         output out=new
+53          r=r3;
+54         
+
+NOTE: The data set WORK.NEW has 22124 observations and 62 variables.
+NOTE: The PROCEDURE REG printed page 3.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.19 seconds
+      cpu time            0.09 seconds
+      
+
+55         proc reg;
+56         model w4=meaneduc exp4 expsq4 expcu4 ;
+57         output out=new
+58          r=r4;
+59         
+
+NOTE: The data set WORK.NEW has 22124 observations and 63 variables.
+NOTE: The PROCEDURE REG printed page 4.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.20 seconds
+      cpu time            0.10 seconds
+      
+
+60         proc reg;
+61         model w5=meaneduc exp5 expsq5 expcu5 ;
+62         output out=new
+63          r=r5;
+64         
+
+NOTE: The data set WORK.NEW has 22124 observations and 64 variables.
+NOTE: The PROCEDURE REG printed page 5.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.42 seconds
+      cpu time            0.09 seconds
+      
+
+65         proc reg;
+66         model w6=meaneduc exp6 expsq6 expcu6 ;
+67         output out=new
+68          r=r6;
+69         
+
+NOTE: The data set WORK.NEW has 22124 observations and 65 variables.
+NOTE: The PROCEDURE REG printed page 6.
+NOTE: PROCEDURE REG used (Total process time):
+4 The SAS System                                                                                    23:59 Tuesday, October 7, 2014
+
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+      
+
+70         proc reg;
+71         model w7=meaneduc exp7 expsq7 expcu7 ;
+72         output out=new
+73          r=r7;
+74         
+
+NOTE: The data set WORK.NEW has 22124 observations and 66 variables.
+NOTE: The PROCEDURE REG printed page 7.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.45 seconds
+      cpu time            0.09 seconds
+      
+
+75         proc reg;
+76         model w8=meaneduc exp8 expsq8 expcu8 ;
+77         output out=new
+78          r=r8;
+79         
+80         
+
+NOTE: The data set WORK.NEW has 22124 observations and 67 variables.
+NOTE: The PROCEDURE REG printed page 8.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.10 seconds
+      
+
+81         proc corr cov;
+82         var r1-r8;
+83         
+84         *step 2: construct m = ltr format  residual covariance elements;
+85         
+
+NOTE: The PROCEDURE CORR printed pages 9-10.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+86         data covs;
+87         set new (keep=r1-r8);
+88         array res (*) r1-r8;
+89         array m (*) m1-m36;
+90         
+91         index=1;
+92         do j=1 to 8;
+93         do k=1 to j;
+94          m(index)=res(k)*res(j);
+95          index=index+1;
+96         end;
+97         end;
+98         
+
+NOTE: There were 22124 observations read from the data set WORK.NEW.
+5 The SAS System                                                                                    23:59 Tuesday, October 7, 2014
+
+NOTE: The data set WORK.COVS has 22124 observations and 47 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+99         proc means n mean stderr;
+100        var m1-m36;
+101        output out=m2
+102        mean=;
+103        
+
+NOTE: There were 22124 observations read from the data set WORK.COVS.
+NOTE: The data set WORK.M2 has 1 observations and 38 variables.
+NOTE: The PROCEDURE MEANS printed page 11.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.06 seconds
+      
+
+104        data m2b;
+105        set m2;
+106        keep m1-m36;
+107        
+
+NOTE: There were 1 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2B has 1 observations and 36 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+108        proc transpose data=m2b out=m2t;
+
+NOTE: There were 1 observations read from the data set WORK.M2B.
+NOTE: The data set WORK.M2T has 36 observations and 2 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+109        proc print data=m2t;
+110        var col1;  /*this is now a row vector of the LTR mean residual covariances*/
+111        
+112        
+113        *step 3: construct outer product  Sum { m(i) m(i)'} / N  = var-cov of m;
+114        
+115        
+116        
+
+NOTE: There were 36 observations read from the data set WORK.M2T.
+NOTE: The PROCEDURE PRINT printed page 12.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+117        proc corr cov nocorr nosimple data=covs outp=m4;
+6 The SAS System                                                                                    23:59 Tuesday, October 7, 2014
+
+118        var m1-m36;
+119        
+
+NOTE: The data set WORK.M4 has 39 observations and 38 variables.
+NOTE: The PROCEDURE CORR printed pages 13-16.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.05 seconds
+      
+
+120        data m4b;
+121        set m4;
+122        if _type_="COV";
+123        id=_n_;
+124        keep id m1-m36;
+125        
+
+NOTE: There were 39 observations read from the data set WORK.M4.
+NOTE: The data set WORK.M4B has 36 observations and 37 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+126        data check;
+127        set m4b;
+128        array m (*) m1-m36;
+129        
+130        se=sqrt( m(id)/&n. );
+131        keep id  se;
+132        
+133        *check of calculations - note df = N;
+
+NOTE: There were 36 observations read from the data set WORK.M4B.
+NOTE: The data set WORK.CHECK has 36 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+134        proc print data=check;
+135        
+136        
+137        *step 4: output the res-covs and their var-cov matrix;
+138        
+
+NOTE: There were 36 observations read from the data set WORK.CHECK.
+NOTE: The PROCEDURE PRINT printed page 17.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+139        data o1;
+140        set m2t;
+141        file '~/rescov2.dat';
+142        put col1 12.9;
+143        
+7 The SAS System                                                                                    23:59 Tuesday, October 7, 2014
+
+
+NOTE: The file '~/rescov2.dat' is:
+      Filename=/accounts/fac/card/rescov2.dat,
+      Owner Name=card,Group Name=regfac,
+      Access Permission=-rw-r--r--,
+      Last Modified=Tue Oct  7 23:59:09 2014
+
+NOTE: 36 records were written to the file '~/rescov2.dat'.
+      The minimum record length was 12.
+      The maximum record length was 12.
+NOTE: There were 36 observations read from the data set WORK.M2T.
+NOTE: The data set WORK.O1 has 36 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+144        data o2;
+145        set m4b;
+146        file '~/vrescov2.dat';
+147        array m (*) m1-m36;
+148        do j=1 to 36;
+149         y=m(j)/&n. ;
+150         put y 12.9;
+151        end;
+152        
+153        
+
+NOTE: The file '~/vrescov2.dat' is:
+      Filename=/accounts/fac/card/vrescov2.dat,
+      Owner Name=card,Group Name=regfac,
+      Access Permission=-rw-r--r--,
+      Last Modified=Tue Oct  7 23:59:09 2014
+
+NOTE: 1296 records were written to the file '~/vrescov2.dat'.
+      The minimum record length was 12.
+      The maximum record length was 12.
+NOTE: There were 36 observations read from the data set WORK.M4B.
+NOTE: The data set WORK.O2 has 36 observations and 39 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+ERROR: Errors printed on page 2.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2.22 seconds
+      cpu time            1.15 seconds
+      

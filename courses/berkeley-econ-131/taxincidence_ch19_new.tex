@@ -1,0 +1,1019 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+\title{Incidence and Efficiency Costs of Taxation \\ (Chapters 19-20 of Gruber's textbook)}
+\onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OUTLINE}
+%\end{center}
+%Chapters 19-20
+%
+%
+%19.1 The Three Rules of Tax Incidence
+%
+%19.2 Tax Incidence Extensions
+%
+%19.3 General Equilibrium Tax Incidence
+%
+%19.4 The Incidence of Taxation in the United States
+%
+%20.1 Efficiency Costs of Taxation
+%
+%20.2 Optimal Commodity Taxation
+%
+%
+%\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={1}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf TAX INCIDENCE}
+\end{center}
+
+Tax incidence is the study of the effects of tax policies on prices
+and the economic welfare of individuals
+
+What happens to market prices when a tax is introduced or changed?
+
+
+Example: what happens when impose \$1 per pack tax on cigarettes?
+
+Effect on price $\Rightarrow$ distributional effects on smokers,
+profits of producers, shareholders, farmers, etc.
+
+
+This is positive analysis: typically the first step in policy
+evaluation; it is an input to later thinking about what policy maximizes
+social welfare.
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf TAX INCIDENCE}
+\end{center}
+
+Tax incidence is not an accounting exercise but an analytical
+characterization of changes in economic equilibria when taxes are changed.
+
+Key point: Taxes can be shifted: taxes affect directly prices, 
+which affect quantities because of behavioral responses, which affect
+indirectly the price of other goods.
+
+If prices are constant economic incidence would be the same as
+legislative incidence.
+
+\small
+Example: Liberals favor capital income taxation because capital income
+is concentrated at the high end of the income distribution. Taxing capital
+means taxing disproportionately the rich.
+
+Conservatives respond: if
+people save less because of capital taxes, capital stock may go down driving
+also the wages down and hurting workers. The capital tax might be shifted partly on
+workers.
+
+
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf TAX INCIDENCE}
+%\end{center}
+%
+%Ideally, we want to know the effect of a tax change on utility levels
+%of all agents in the economy.
+%
+%Realistically, we usually look at impacts on prices or income, rather
+%than utility
+%
+%Useful simplification is to aggregate economic agents into a few
+%groups. Examples:
+%
+%\small
+%1)  gas tax: producers vs consumers
+%
+%2) income tax: rich vs poor
+%
+%3) property tax: region or county
+%
+%4) social security: across generations
+%
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Partial Equilibrium Tax Incidence}
+\end{center}
+
+Partial Equilibrium Model:
+
+Simple model goes a long way to showing main results.
+
+Government levies an excise tax on good $x$
+
+Excise means it is levied on a quantity (gallon, pack, ton, ...).
+Typically fixed in nominal terms (e.g, \$1 per pack) \
+
+[ad-valorem tax is a fraction of prices (e.g. 5\% sales tax)]
+ 
+Let $p$ denote the pretax price of $x$ (producer price)
+
+Let $p^c=p+t$ denote the tax
+inclusive price of $x$ (consumer price) 
+
+Draw graph on blackboard
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={41-43}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf TAX INCIDENCE}
+\end{center}
+Demand for good $x$ is $D(p^c)$ decreases with $p^c=p+t$
+
+Supply for good $x$ is $S(p)$ increases with $p$
+
+Equilibrium condition with tax $t$: $Q=S(p)=D(p+t)$
+
+Start from $t=0$ and $S(p)=D(p)$
+
+We want the effect of a small tax $dt$ on
+price $p$: $dp/dt$:
+
+Change $dt$ generates change $dp$ so that equilibrium holds:
+\small
+\[ S(p+dp)=D(p+dp+dt) \Rightarrow \] \[ S(p)+S'(p)dp = D(p)+D'(p)(dp+dt) \Rightarrow \]
+\[  S'(p)dp = D'(p)(dp+dt) \Rightarrow \]
+\normalsize
+\[
+\frac{dp}{dt}=\frac{D'(p)}{S'(p)-D'(p)}
+\]
+
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAX INCIDENCE FOR SMALL TAX $dt$}
+\end{center}
+Elasticities useful in economics because they are
+unit free
+
+\textbf{Elasticity:} percentage change in quantity when price changes by one
+percent
+
+$\varepsilon _{D}= \frac{ p^c} {D} \frac{ dD} {dp^c} = \frac{p^c D'(p^c)}{D(p^c)}<0$ denotes
+the price elasticity of demand
+
+%(consumer faces price $q=p+t$)
+
+$\varepsilon _{S}=\frac{ p} {S} \frac{ dS} {dp} =  \frac{pS'(p)}{S(p)}>0$ denotes
+the price elasticity of supply
+\[
+\frac{dp}{dt}=\frac{D'(p)}{S'(p)-D'(p)} = \frac{pD'(p)/D(p)}{pS'(p)/S(p)-pD'(p)/D(p)}  = \frac{\varepsilon _{D}}{\varepsilon _{S}-\varepsilon _{D}}
+\]
+\[ -1 \leq \frac{dp}{dt} \leq 0 \quad \text{and} \quad 0 \leq \frac{dp^c}{dt}=1+\frac{dp}{dt} \leq 1\]
+
+\end{slide}
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf TAX INCIDENCE}
+\end{center}
+\[
+\frac{dp}{dt}=\frac{\varepsilon _{D}}{\varepsilon _{S}-\varepsilon _{D}}
+\]
+When do consumers bear the entire burden of the tax? ($dp/dt=0$ and $dp^c/dt=1$)
+
+\small
+1) $\varepsilon _{D}=0$ [inelastic demand]
+
+example: short-run demand for gasoline inelastic (need to drive to work)
+
+2) $\varepsilon _{S}=\infty $ [perfectly elastic supply]
+
+example: perfectly competitive industry
+
+\normalsize
+When do producers bear the entire burden of the tax? ($dp/dt=-1$ and $dp^c/dt=0$)
+
+\small
+1) $\varepsilon _{S}=0$ [inelastic supply]
+
+example: fixed quantity supplied
+
+2) $\varepsilon _{D}=-\infty $ [perfectly elastic demand]
+
+example: there is a close substitute, and demand shifts to this
+substitute if price changes.
+
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={3,4,5}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAX INCIDENCE: KEY RESULTS}
+\end{center}
+1) statutory incidence not equal to economic incidence
+
+2) equilibrium is independent of who nominally pays the tax
+
+3) more inelastic factor bears more of the tax
+
+These are robust conclusions that hold with more complicated models
+
+\end{slide}
+
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf TAX INCIDENCE: EXTENSIONS}
+%\end{center}
+%
+%1) Market rigidities (suppose there is a minimum or maximum price) then
+%standard analysis does not carry over
+%
+%\small
+%Example: minimum wage. Social security taxes 7.65\% on employer and
+%7.65\% on employee. In principle the share of each should not matter as long
+%as total is constant but minimum wage is computed on net wage (gross wage -
+%employer tax = net wage + employee tax).
+%\normalsize
+%
+%
+%%2) Monopolistic competition $\Rightarrow$ Changes basic incidence analysis
+%
+%2) Effects on other markets:
+%
+%\small
+%Example: Suppose tax on cigarettes increases, if people substitute
+%cigarettes for cigars then price of cigars increases and part of the burden
+%is shifted to the cigar market and cigarette demand curves will move.
+%
+%Revenue effects on other markets: tax increases, I am poorer, I have
+%less to spend on other markets.
+%
+%For small, narrow markets such as cigarettes, partial eq. analysis is a
+%reasonable approximation (although effects on substitutes could be
+%important).
+%
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={7}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Efficiency Costs of Taxation}
+%\end{center}
+%Thus far, we have focused on the incidence of government policies:
+%how price interventions affect equilibrium prices and factors returns:
+%how policies affect the \textbf{distribution} of the pie
+%
+%A second general set of questions is how taxes affect the \textbf{size} of the
+%pie.
+%
+%Example: income taxation
+%
+%Government raises taxes to raise revenue to finance public goods or
+%to redistribute income from rich to poor.
+%
+%But raising tax revenue generally has an efficiency cost: to generate \$1
+%of revenue, need to reduce welfare of the taxed individuals by more
+%than \$1
+%
+%Efficiency costs come from distortion of behavior
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Efficiency Costs of Taxation}
+\end{center}
+
+Deadweight burden (also called excess burden) of taxation is defined
+as the welfare loss (measured in dollars) created by a tax over and above
+the tax revenue generated by the tax
+
+In the simple supply and demand diagram, welfare is measured by the sum
+of the consumer surplus and producer surplus
+
+The welfare loss of taxation is measured as change in consumer+producer surplus
+minus tax collected: it is the triangle on the figure
+
+\small
+The inefficiency of any tax is determined by the extent to which consumers and producers change their behavior to avoid the tax; deadweight loss is caused by individuals and firms making inefficient consumption and production choices in order to avoid taxation.
+
+If there is no change in quantities consumed, the tax has no efficiency costs
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={44}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Efficiency Costs of Taxation}
+\end{center}
+Deadweight burden (or deadweight loss) of small tax $dt$ (starting from zero tax) is measured
+by the \textbf{Harberger Triangle}: \\ \smallskip
+\[ DWB = \frac{1}{2} dQ \cdot dt =  \frac{1}{2} S'(p) \cdot  dp \cdot dt =  \frac{1}{2} \frac{pS'(p)}{S(p)} \cdot  \frac{Q}{p} \cdot dp \cdot  dt \]
+\smallskip [recall that $Q=S(p)$ and hence $dQ=S'(p)dp$]
+
+Recall that $dp/dt=\varepsilon_{D}/(\varepsilon _{S}-\varepsilon _{D})$, hence:
+\[ DWB = \frac{1}{2}  \cdot \frac{\varepsilon_S \cdot \varepsilon_D }{\varepsilon _{S}-\varepsilon _{D}} \cdot \frac{Q}{p} (dt)^2 \]
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Efficiency Costs of Taxation}
+\end{center}
+\[ DWB = \frac{1}{2}  \cdot \frac{\varepsilon_S \cdot \varepsilon_D }{\varepsilon _{S}-\varepsilon _{D}} \cdot \frac{Q}{p} (dt)^2 \]
+1) $DWB$ increases with the absolute size of elasticities $\varepsilon _{S}>0$ and
+$-\varepsilon _{D}>0$
+
+\small $\Rightarrow$ More efficient to tax relatively inelastic goods \normalsize
+
+2) $DWB$ increases with the square of the tax rate $t$: small taxes have relatively small efficiency costs, large taxes
+have relatively large efficiency costs
+
+\small
+$\Rightarrow$ Better to spread taxes across all goods to keep each tax rate low
+
+$\Rightarrow$ Better to fund large one time govt expense (such as a war) with debt and repay slowly afterwards
+than have very high taxes only during war
+
+ \normalsize
+3) Pre-existing distortions (such as an existing tax) makes the cost
+of taxation higher: move from the triangle to trapezoid
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={9,10}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Application: Optimal Commodity Taxation}
+\end{center}
+Ramsey (1927) asked by Pigou to solve the following problem:
+
+Consider one consumer who consumes $K$ different goods
+
+What are the tax rates $t_1,..,t_K$ of each good that raise a given amount of revenue while minimizing
+the welfare loss to the individual?
+
+Uniform tax rates $t=t_1=..=t_K$ is not optimal if the individual has more elastic demand for some goods than
+for others
+
+Optimum is called the \textbf{Ramsey tax rule}: optimal tax rates are such that the marginal DWB for last dollar of tax
+collected is the same across
+all goods 
+
+$\Rightarrow$ Tax more the goods that have inelastic demands [and tax less the goods that have elastic demands]
+
+\small
+Note: this abstracts from redistribution and focuses solely on efficiency
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Tax Incidence: Empirical Application}
+\end{center}
+
+European countries have large taxes on consumption: Value Added Tax (VAT)
+
+Normal VAT rates are high (15-25\%) but some goods/services have lower rates (or are exempt)
+
+Benzarti et al. (2020) study the effects of VAT rates $\uparrow$ and $\downarrow$
+
+Nice illustrative case study: hairdressers in Finland got a VAT cut of 14 points in Jan 2007 that was repealed in Jan 2012
+
+Provide a basic graphical \textbf{difference-in-difference} analysis of prices of hairdressers (treatment) with beauty salons (control)
+
+\small
+
+$\Rightarrow$ Find that tax decreases are only 50\% passed on consumers while tax increases are almost fully passed on consumers. 
+
+Most likely explanation: producers pocket tax cut bc consumers are inattentive to taxes.
+Producers pass tax increase because they can justify the price increase to consumers.
+
+$\Rightarrow$ Price determination does not work like basic model 
+ 
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={45}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Tax Incidence: Empirical Application}
+%\end{center}
+%
+%Doyle and Sampatharank (2008) study the Gas Tax Holidays in Indiana (IN) and Illinois (IL).
+%
+%%Does it make sense to cut gas taxes to help families in recessions?
+%
+%Are gas tax cuts passed through to consumers? or do producers pocket the
+%tax cut and leave consumer price unchanged?
+%
+%Study this question using state-level gas tax reforms
+%
+%\small
+%Gas prices spike above \$2.00 in 2000
+%
+%IN suspends 5\% gas tax on July 1. Reinstated on Oct 30.
+%
+%IL suspends 5\% gas tax on July 1. Reinstated on Dec 31.
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Tax Incidence: Empirical Application}
+%\end{center}
+%
+%Empirical approach in paper: difference-in-difference (DD), compare treated states with
+%neighboring states (MI, OH, MO, IA, WI) before and after tax change
+%
+%Graphical evidence is most transparent. Findings:
+%
+%1) 10 cent increase in gas tax $\Rightarrow$ 7 cent increase in price paid by consumers
+%
+%2) Consumers bear 70\% of incidence of the gas tax (and conversely, get 70\% of the benefit of a gas tax cut)
+%
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={12-14}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={21,23}]{HoynesLec1-Tax-Incidence.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Tax Incidence: Empirical Application}
+%\end{center}
+%
+%
+%
+%3) Test predictions of incidence theory further by checking if incidence on consumers is higher in areas near borders between states
+%
+%Idea: demand more elastic in border towns $\Rightarrow$ expect higher incidence of gas tax on suppliers near border.
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={19}]{Chetty_lec_1_2012.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Difference-in-Difference (DD) methodology}
+\end{center}
+
+Two groups: Treatment group (T) which faces a change [hairdressers] and control group (C) which does not [beauty salons]
+
+Compare the evolution of T group (before and after change) to the evolution of the C group (before and after change)
+
+DD identifies the \textbf{treatment effect} if the parallel trend assumption holds:
+
+Absent the change, $T$ and $C$ would have evolved in parallel 
+
+DD most convincing when groups are very similar to start with
+
+Should always test DD using data from more periods and plot the two time
+series to check parallel trend assumption
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={49-51}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf General Equilibrium Tax Incidence}
+\end{center}
+Examples so far have focused on \textbf{partial equilibrium} incidence which considers impact of a tax on one market in isolation
+
+\textbf{General equilibrium} models consider the effects on related markets of a tax imposed on one market
+
+E.g. imposition of a tax on cars may reduce demand for steel $\Rightarrow$ additional effects on prices in equilibrium beyond car market.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf General Equilibrium Tax Incidence:\\ Example: Soda Tax in Berkeley}
+\end{center}
+
+Consider the market for Soda beverages in Berkeley 
+
+Berkeley imposes a Soda tax since 2015: \$.01 per ounce (=\$.12/can)
+
+Goal was to reduce soda consumption for better health (people overdrink).
+See Allcott et al. '18 for merits of soda tax. 
+
+Here narrower question: Who bears the incidence?
+
+If soda demand in Berkeley is inelastic, consumers bear burden 
+
+Demand for Soda in Berkeley is likely to be elastic: if price of Soda in Berkeley goes up, you consume less Soda [intention of the tax] or you buy Soda elsewhere
+
+Consider extreme case of perfectly elastic demand 
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={16}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf General Equilibrium Tax Incidence: \\ Example: Soda Tax}
+\end{center}
+If Soda demand perfectly elastic then:
+
+1) Berkeley Soda sellers (supermarkets, restaurants) cannot charge more and hence bear the full burden of the tax.
+
+2) But Soda sellers are not self-contained entities
+
+\small
+Companies are just a technology for combining capital and labor to produce an output.
+
+Capital: land, physical inputs like building, kitchen equipment, etc.
+
+Labor: cashier staff, cooks, waitstaff, etc.
+\normalsize
+
+3) Ultimately, these two factors (capital or labor) must bear the loss in profits due to the tax
+[if consumer demand is perfectly elastic]
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf General Equilibrium Tax Incidence: \\ Example: Soda Tax}
+\end{center}
+
+Incidence is ``shifted backward'' to capital and labor.
+
+Assume that labor supply is perfectly elastic because Berkeley restaurant/supermarket workers can always go and work in Oakland if they get paid less in Berkeley
+
+Capital, in contrast, is perfectly inelastic in short-run: you cannot pick up the shop and move it in the short run.
+
+In short run, capital bears tax because it is completely inelastic $\Rightarrow$ Soda business owners lose (not consumers or workers)
+
+In the longer-run, the supply of capital is also likely to be highly elastic: Investors can close or sell the shop, take their money, and invest it elsewhere.
+
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={17}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf General Equilibrium Tax Incidence: \\ Example: Soda Tax}
+%\end{center}
+%
+%In short run, capital bears tax because it is completely inelastic $\Rightarrow$ Soda tax owners lose (not consumers or workers)
+%
+%In the longer-run, the supply of capital is also likely to be highly elastic.
+%
+%Investors can close or sell the shop, take their money, and invest it elsewhere.
+%
+%%There are many good substitutes for investing in a particular restaurant in a particular town.
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf General Equilibrium Tax Incidence: Long-run effects}
+\end{center}
+
+If both labor and capital are highly elastic in the long run, who bears the tax?
+
+The one additional inelastic factor is land.
+
+%\small
+The supply is clearly fixed.
+
+When both labor and capital can avoid the tax, the only way Soda sellers will remain in Berleley is if they pay a lower rent on their land.
+%\normalsize
+
+$\Rightarrow$ Soda tax ends up hurting Berkeley landowners in general equilibrium [if Soda demand,
+labor and capital are fully elastic]
+
+This is of course an idealized example, in practice, demand, labor, and capital are not fully elastic
+so that incidence is shared 
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Asset Price Approach to Incidence}
+%\end{center}
+%
+%General Equilibrium Incidence is hard to calculate empirically because of large number of effects in equilibrium
+%
+%One potential solution: look at asset prices, e.g. the value of stocks or houses (¨°capitalization¨®)
+%
+%Consider an increase in tax on car companies
+%
+%Incidence could partly be shifted to consumers, workers, etc.
+%
+%Can easily summarize overall net effect on GM by looking at how its stock price changes when tax is announced.
+%
+%Limitation of asset price approach: can only be used for capital owners (Applications: corporate tax, environmental policy)
+%
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Asset Price Approach to Incidence \\ Empirical Application: Costs of Crime}
+%\end{center}
+%Rockoff and Linden (2008) apply asset price incidence approach to estimate costs of crime
+%
+%Idea: look at how house prices change when a registered sex offender moves into a neighborhood
+%
+%Data: public records on offender's addresses and property values in North Carolina.
+%
+%
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={20-22}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Asset Price Approach to Incidence \\ Empirical Application: Costs of Crime}
+%\end{center}
+%Finding: house prices fall by 4\% (\$5500) when a sex offender is located within 0.1 miles of a house
+%
+%Implied cost of an offense (given probabilities of repeat offense): \$1.2 mil.
+%
+%$\Rightarrow$  Suggests that cost of such crimes is far higher than what is used by Department of Justice
+%
+%Caveats: are you really measuring cost of the crime or a psychological overreaction?
+%Why does price fall only within 0.1 mile radius?
+%
+%\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Mandated Benefits}
+%\end{center}
+%
+%Now consider incidence of a mandated benefit instead of a tax
+%
+%\small
+%Examples: (a) requirement that employers pay for healthcare (employers
+%with 50+ employees are required to do that under Obamacare or pay a fine),
+%(b) workers compensation benefits [for injuries on the job]
+%\normalsize
+%
+%Affects firms like a tax
+%
+%But effect of mandated benefits on equilibrium wages and employment differ from a tax (Summers 1989)
+%because workers value the mandated benefit
+%
+%Suppose workers value \$1 of mandated benefit at \$ $\alpha \geq 0$
+%
+%\small
+%Could have $\alpha<1$ if benefit not as valuable as cash
+%
+%Could have $\alpha>1$ if benefit more valuable than cash (e.g., can't buy
+%health insurance on individual market)
+%\normalsize
+%
+%If $\alpha=1$ then no change in employment
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={23-25}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Tax Salience: A  New Theory}
+\end{center}
+
+Traditional model assumes that all individuals are fully aware of taxes that they pay
+
+Is this true in practice? May be not be because many taxes are not fully salient.
+
+\small
+Do you know your exact marginal income tax rate?
+Do you think about it when choosing a job?
+
+Do you know the sales tax you have to pay in addition to posted prices at cash register?
+
+\normalsize
+
+Chetty, Looney, Kroft AER '09: test this assumption in the context of commodity taxes
+and develop a theory of taxation with inattentive consumers
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Tax Salience: A  New Theory}
+\end{center}
+Chetty, Looney, Kroft AER'09 develop two empirical strategies to test whether
+salience matters for sales tax incidence
+
+Sales tax is paid at the cash register and not displayed on price tags in stores
+
+\textbf{1) Randomized field experiment} with  supermarket stores
+
+\small
+In one treatment store: they display new price tags
+showing the level of sales tax and total price 
+on a \textbf{subset} of products
+
+Compare shopping behavior for treated products vs. control products in treated store, before and
+after new tags are implemented (this is called difference-in-difference [DD] strategy)
+
+Repeat the analysis in control stores as a placebo DD strategy
+\normalsize
+
+
+\textbf{2) Policy experiment} using changes in beer excise and sales taxes across states
+
+\small
+Excise tax is salient because built into posted price while sales tax is not salient because
+it is not included in posted price
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={26, 27,28,29,30}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Tax Salience: A  New Theory}
+\end{center}
+Key Empirical Result: \textbf{Salience matters}
+
+1) Posting sales taxes reduces demand for those goods
+
+2) Beer consumption is elastic to excise tax rate (built in posted price)
+but not to the sales tax rate (not built in the posted price)
+
+$\Rightarrow$ If tax is not salient to consumers, they are less elastic,
+and hence more likely to bear the tax burden 
+
+A number of recent empirical studies show that individuals are not fully
+informed and fully rational and this has large consequences for policy
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf TAX PROGRESSIVITY IN THE US}
+\end{center}
+Saez-Zucman (2019) distribute taxes by factor. At \href{https://taxjusticenow.org/}{Taxjusticenow.org}, you can explore
+changing the current tax system.
+
+1) Labor taxes (payroll taxes and individual income taxes) assigned to corresponding workers (whether tax remitted by the workers or employers)
+
+2) Consumption taxes (excise and sales) assigned to corresponding consumers 
+
+3) Capital taxes (corporate tax, property tax, taxes on capital income) assigned to corresponding owners of the capital assets
+
+This distribution by factor does not capture ultimate incidence nor DWB if taxes are shifted through incidence
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={48, 46, 47}]{taxincidence_ch19_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf US TAX PROGRESSIVITY BY TYPE OF TAX}
+\end{center}
+
+1. \textbf{Individual Income tax} is progressive (exempts the bottom 50\% and increasing rates by brackets)
+
+2. \textbf{Payroll taxes} on earnings are a constant tax rate of 15\% but only up to \$137K of earnings $\Rightarrow$ Regressive at the
+top
+
+3. \textbf{Excise and sales taxes} are regressive because share of income devoted to consumption of goods falls with income
+
+4. \textbf{Corporate tax} is progressive because corporate owners tend to be at the top (\textbf{property tax} somewhat progressive)
+
+5. \textbf{Estate tax} on large fortunes at death progressive but small
+
+Federal taxes are more progressive than state+local taxes. Official stats from CBO focus on federal taxes only
+
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Is Distribution by Factor Close to True Incidence? }
+\end{center}
+1) Labor taxes borne by workers if wages set as in  competitive model and
+labor supply less elastic than labor demand
+
+\small
+In practice, wages are rigid in short-run so employer vs. employee payroll tax don't
+have the same effect (evidence from France and Greece). In long-run incidence likely
+on wages (as employer payroll taxes haven't reduced macro capital share)
+\normalsize
+
+2) Consumption taxes borne by consumers if prices set competitively
+and demand for goods less elastic than supply 
+
+\small
+VAT evidence and salience evidence show non-standard incidence in short and medium-run
+but long-run incidence likely on consumers
+\normalsize
+
+3) Capital taxes borne by owners of capital if supply of capital (savings) less elastic
+than demand for capital (investment) 
+
+\small
+Evidence here is most disputed. Official CBO statistics shift 1/4 of corporate tax on workers without
+much evidence (see corp tax lecture)
+
+\normalsize
+
+%Bottom line: standard economic model does not do a great job at predicting the incidence
+%of tax changes at least in short and medium-run
+
+
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf CBO TAX INCIDENCE ASSUMPTIONS}
+%\end{center}
+%
+%The Congressional Budget Office (CBO) analysis considers the incidence of the full set of taxes levied by the \emph{federal government}. Their key assumptions follow:
+%
+%1. \textbf{Individual Income taxes} are borne fully by the households that pay them.
+%
+%2. \textbf{Payroll taxes} are borne fully by workers, regardless of whether these taxes are paid by the workers or by the firm
+%
+%3. \textbf{Excise taxes} are fully shifted to prices and so are borne by individuals in proportion to their consumption of the taxed item.
+%
+%4. \textbf{Corporate taxes} are allocated 75\% to owners of capital (not only shareholders but owners of capital in general) in proportion to capital income
+%and 25\% to labor in proportion to labor income [controversial and to be discussed later]
+%
+%\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={31-32}]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={35, 33, 34}, scale=.9]{taxincidence_ch19_new_attach.pdf}
+%\end{slide}
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber, Public Finance and Public Policy, Fifth Edition, 2019 Worth Publishers, Chapter 19
+
+Allcott, Hunt, Benjamin B. Lockwood, and Dmitry Taubinsky. ``Should We Tax Soda?
+An Overview of Theory and Evidence'', forthcoming Journal of Economic Perspectives, 2019.
+\href{http://elsa.berkeley.edu/~saez/course131/AllcottetalJEPSodaTax.pdf}{(web)}
+
+Benzarti, Youssef, Dorian Carloni, Jarkko Harju, and Tuomas Kosonen. ``What Goes Up May Not Come Down: Asymmetric Incidence of Value-Added Taxes.'' Journal of Political Economy 128(12), 2020.\href{http://elsa.berkeley.edu/~saez/course131/benzartietalJPE2020VAT.pdf}{(web)}
+
+Bozio, Antoine, Thomas Breda, Julien Grenet. 2019 ``Does Tax-Benefit Linkage Matter for the Incidence of
+Social Security Contributions? Evidence from France''. \href{http://elsa.berkeley.edu/~saez/course131/bozioetal19payrolltax.pdf}{(web)} 
+
+Chetty, Raj, Adam Looney, and Kory Kroft. 2009. ``Salience and Taxation: Theory and Evidence.'' American Economic Review 99(4): 1145-1177.\href{http://www.jstor.org/stable/pdfplus/25592504.pdf}{(web)}
+
+Doyle Jr, Joseph J., and Krislert Samphantharak ``\$2.00 Gas! Studying the effects of a gas tax mobratorium.'' Journal of Public Economics 92.3 (2008): 869-884.\href{http://www.nber.org/papers/w12266.pdf}{(web)}
+
+ITEP (Institute on Taxation and Economic Policy). 2018. ``Who Pays: A Distributional Analysis of the Tax Systems in All 50 States'', 6th edition. 
+\href{https://itep.org/whopays/}{(web)}
+
+%Linden, Leigh, and Jonah E. Rockoff. ``Estimates of the impact of crime risk on property values from Megan's laws.'' The American Economic Review 98.3 (2008): 1103-1127.\href{http://www.jstor.org/stable/pdfplus/29730108.pdf}{(web)}
+
+Piketty, Thomas, Emmanuel Saez, and Gabriel Zucman,  ``Distributional National Accounts:
+Methods and Estimates for the United States'', Quarterly Journal of Economics, 133(2), 553-609, 2018
+\href{https://eml.berkeley.edu/~saez/PSZ2018QJE.pdf} {(web)}
+
+Ramsey, Frank P. ``A Contribution to the Theory of Taxation.'' The Economic Journal 37.145 (1927): 47-61.\href{http://elsa.berkeley.edu/~saez/course131/Ramsey27.pdf}{(web)}
+
+Saez, Emmanuel, Manos Matsaganis, and Panos Tsakloglou. ``Earnings determination and taxes: Evidence from a cohort-based payroll tax reform in Greece.'' The Quarterly Journal of Economics 127, no. 1 (2012): 493-533.\href{https://eml.berkeley.edu/~saez/saez-matsaganis-tsakloglouQJE11greecetax.pdf}{(web)}
+ 
+Saez, Emmanuel and Gabriel Zucman. The Triumph of Injustice: How the Rich Dodge Taxes and How to Make them Pay, New York: W.W. Norton, 2019. 
+\href{http://www.taxjusticenow.org} {(web)}
+
+%Summers, Lawrence H. ``Some simple economics of mandated benefits.'' The American Economic Review 79.2 (1989): 177-183.\href{http://elsa.berkeley.edu/~saez/course131/Summers89.pdf}{(web)}
+
+US Congressional Budget Office, 2016. ``The Distribution of Household Income and Federal Taxes, 2013''
+\href{http://elsa.berkeley.edu/~saez/course131/CBOtaxincidence.pdf}{(web)}
+
+}
+
+\end{slide}
+\end{document}

@@ -1,0 +1,1323 @@
+1                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+NOTE: Copyright (c) 2002-2010 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.3 (TS1M0) 
+      Licensed to UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R, Site 70081487.
+NOTE: This session is executing on the Linux 3.2.0-43-generic (LIN X64) platform.
+
+
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+      
+1          1                                                          The SAS System                          23:17 Tuesday,
+           _
+           180
+1        ! September 24, 2013
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+2          
+3          NOTE: Copyright (c) 2002-2010 by SAS Institute Inc., Cary, NC, USA.
+4          NOTE: SAS (r) Proprietary Software 9.3 (TS1M0)
+5                Licensed to UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R, Site 70081487.
+WARNING: Apparent symbolic reference R not resolved.
+6          NOTE: This session is executing on the Linux 3.2.0-43-generic (LIN X64) platform.
+7          
+8          
+9          
+10         You are running SAS 9. Some SAS 8 files will be automatically converted
+11         by the V9 engine;
+
+11       !                   others are incompatible.  Please see
+                             ______
+                             180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+12         http://support.sas.com/rnd/migration/planning/platform/64bit.html
+13         
+14         PROC MIGRATE will preserve current SAS file attributes and is
+15         recommended for converting all your SAS libraries from any
+16         SAS 8 release to SAS 9.  For details and examples, please see
+17         http://support.sas.com/rnd/migration/index.html
+2                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+18         
+19         
+20         This message is contained in the SAS news file, and is presented upon
+21         initialization.  Edit the file "news" in the "misc/base" directory to
+22         display site-specific news and information in the program log.
+23         The command line option "-nonews" will prevent this display.
+24         
+25         
+26         
+27         
+28         NOTE: SAS initialization used:
+29               real time           0.07 seconds
+30               cpu time            0.04 seconds
+31         
+32         1          * extract2.sas - follows read2.sas, 2012 march cps, ages 18-70;
+
+33         2          options linesize = 130 nocenter;
+           _
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+34         3
+           _
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+35         4          libname cps '/var/tmp/';
+
+36         NOTE: Libref CPS was successfully assigned as follows:
+                 ______
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+37               Engine:        V9
+38               Physical Name: /var/tmp
+39         5          libname here '~/gradlab/data/';
+
+40         NOTE: Libref HERE was successfully assigned as follows:
+                 ______
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+41               Engine:        V9
+42               Physical Name: /accounts/fac/card/gradlab/data
+43         6
+44         7
+45         8          data here.cps2012;
+
+46         9          set cps.extract2012;
+           _
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+47         10
+           __
+           180
+3                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+48         11         if (24<=age<=64);
+
+49         12
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+50         13
+51         14         title1 'ages 24-64 ONLY';
+
+52         15
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+53         16         psupwgt=psupwgt/160924;
+
+53       !                                     /*mean of 1 */
+54         17
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+55         18         if imm=1 then gen2=0;
+
+56         19          else if (momcob>100) or (dadcob>100) then gen2=1;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+57         20          else gen2=0;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+58         21
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+59         22         poor=(povstat=1);
+
+60         23
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+61         2 The SAS System                                                                                 23:17 Tuesday,
+61       ! September 24, 2013
+62         
+63         24         workly=(annhrs>0);
+
+64         25
+           __
+4                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+65         26         if alloc_v=1 or alloc_e=1 then alloc_ws=1;
+
+65       !                                                       else alloc_ws=0;
+                                                                 ____
+                                                                 180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+66         27
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+67         28         wage=earnhr;
+
+68         29
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+69         30         twage=wage;
+
+70         31         trim=0;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+71         32         if wage=. then trim=.;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+72         33
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+73         34         if wage ne . then do;
+
+74         35          if wage<4 then do;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+75         36             trim=1;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+76         37             twage=4;
+           __
+5                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+77         38             end;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+78         39          else if wage >400 then do;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+79         40             trim=2;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+80         41             twage=400;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+81         42             end;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+82         43         end;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+83         44
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+84         45         trimmed=(trim>0);
+
+85         46
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+86         47         logwage=log(twage);
+
+87         48
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+6                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+
+88         49         female=(sex=2);
+
+89         50
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+90         51         exp=age-educ-5;
+
+91         52         if exp<0 then exp=0;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+92         53         exp2=exp*exp;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+93         54         exp3=exp2*exp;
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+94         55
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+95         56         famearn=famwagesal;
+
+96         57
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+97         58
+98         59         length fedwkr statewkr localwkr selfemp cbsa1-cbsa6 3;
+
+99         60
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+100        61         fedwkr=(classly=2);
+
+101        62         statewkr=(classly=3);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+102        63         localwkr=(classly=4);
+           __
+7                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+103        64         selfemp=(classly in (5,6));
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+104        65
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+105        66         cbsa1=(cbsa_size=2);
+
+106        67         cbsa2=(cbsa_size=3);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+107        68         cbsa3=(cbsa_size=4);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+108        69         cbsa4=(cbsa_size=5);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+109        70         cbsa5=(cbsa_size=6);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+110        71         cbsa6=(cbsa_size=7);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+111        72
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+112        73
+113        74         keep female wagesal annhrs wage twage logwage alloc_ws trim trimmed
+114        75             famkind relhead hhdfxm numjobs weeksu
+115        76             wage_ogr wkpay earnwk fedwkr statewkr localwkr selfemp collplus maplus phd
+116        77             educ higrad age exp exp2 exp3 white black asian imm
+117        78             hispanic imm gen2 cbsa_size cbsa1-cbsa6
+8                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+118        79             psupwgt race ethnic weeksly hrswkly classly numjobs
+119        80             occ1ly ind1ly mover selfinc farminc health division
+120        81             state workly famearn cbsa_size hhnum famnum;
+
+121        3 The SAS System                                                                                 23:17 Tuesday,
+            _
+            180
+121      ! September 24, 2013
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+122        
+123        82         	
+124        83
+125        84
+126        
+127        WARNING: The variable division in the DROP, KEEP, or RENAME list has never been referenced.
+128        NOTE: Missing values were generated as a result of performing an operation on missing values.
+129              Each place is given by: (Number of times) at (Line):(Column).
+130              23412 at 47:9
+131        NOTE: There were 151337 observations read from the data set CPS.EXTRACT2012.
+132        NOTE: The data set HERE.CPS2012 has 107130 observations and 60 variables.
+133        NOTE: DATA statement used (Total process time):
+134              real time           5.17 seconds
+135              cpu time            0.31 seconds
+136        
+137        
+138        85         proc freq;
+
+139        86         tables female*famkind*relhead
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+140        87              female*workly hispanic*imm educ*female classly*female
+141        88                 numjobs*female occ1ly*female ind1ly*female
+142        89                 mover health*female;
+
+143        90
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+144        91
+145        
+146        NOTE: There were 107130 observations read from the data set HERE.CPS2012.
+147        NOTE: The PROCEDURE FREQ printed pages 1-13.
+148        NOTE: PROCEDURE FREQ used (Total process time):
+149              real time           0.57 seconds
+150              cpu time            0.36 seconds
+151        
+152        
+153        92         proc means;
+
+154        93         where (female=0);
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+9                                                          The SAS System                          23:18 Tuesday, September 24, 2013
+
+
+155        94         title2 'men';
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+156        95
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+157        
+158        NOTE: There were 51272 observations read from the data set HERE.CPS2012.
+159              WHERE female=0;
+
+160        NOTE: The PROCEDURE MEANS printed pages 14-15.
+                 ___
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+161        NOTE: PROCEDURE MEANS used (Total process time):
+162              real time           0.07 seconds
+163              cpu time            0.20 seconds
+164        
+165        
+166        96         proc means;
+
+167        97         where (female=0 and famkind=1 and relhead in (1,3) );
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+168        98         title2 'men, in dual-head families, husband of pair';
+           __
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+169        99
+           __
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+170        100
+171        
+172        NOTE: There were 30991 observations read from the data set HERE.CPS2012.
+173              WHERE (female=0) and (famkind=1) and relhead in (1, 3);
+
+174        NOTE: The PROCEDURE MEANS printed pages 16-17.
+                 ___
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+175        NOTE: PROCEDURE MEANS used (Total process time):
+176              real time           0.06 seconds
+177              cpu time            0.13 seconds
+10                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+178        
+179        
+180        101        proc means;
+
+181        4 The SAS System                                                                                 23:17 Tuesday,
+            _
+            180
+181      ! September 24, 2013
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+182        
+183        102        title2 'women';
+
+184        103        where (female=1);
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+185        104
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+186        
+187        NOTE: There were 55858 observations read from the data set HERE.CPS2012.
+188              WHERE female=1;
+
+189        NOTE: The PROCEDURE MEANS printed pages 18-19.
+                 ___
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+190        NOTE: PROCEDURE MEANS used (Total process time):
+191              real time           0.07 seconds
+192              cpu time            0.19 seconds
+193        
+194        
+195        105        proc means;
+
+196        106        where (female=1 and famkind=1 and relhead in (1,4) );
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+197        107        title2 'women, in dual-head families, wife of pair';
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+198        108
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+199        109
+11                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+200        110
+201        
+202        NOTE: There were 32314 observations read from the data set HERE.CPS2012.
+203              WHERE (female=1) and (famkind=1) and relhead in (1, 4);
+
+204        NOTE: The PROCEDURE MEANS printed pages 20-21.
+                 ___
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+205        NOTE: PROCEDURE MEANS used (Total process time):
+206              real time           0.06 seconds
+207              cpu time            0.14 seconds
+208        
+209        
+210        111        data husbands;
+
+211        112        set here.cps2012 (where=(female=0 and famkind=1 and relhead in (1,3)) ) ;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+212        113        himm=imm;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+213        114        hgen2=gen2;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+214        115        heduc=educ;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+215        116        htwage=twage;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+216        117        hannhrs=annhrs;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+217        118        hfamearn=famearn;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+12                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+
+218        119        h_age=age;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+219        120        hrace=race;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+220        121        hwagesal=wagesal;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+221        122        hwage_ogr=wage_ogr;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+222        123        hselfinc=selfinc;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+223        124        hfarminc=farminc;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+224        125        hclassly=classly;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+225        126        keep hhnum famnum heduc htwage hannhrs hfamearn h_age hrace hwagesal hwage_ogr
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+226        127             hselfinc hfarminc hclassly himm hgen2;
+
+227        128
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+228        
+229        NOTE: There were 30991 observations read from the data set HERE.CPS2012.
+230              WHERE (female=0) and (famkind=1) and relhead in (1, 3);
+13                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+
+231        NOTE: The data set WORK.HUSBANDS has 30991 observations and 15 variables.
+                 ___
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+232        NOTE: DATA statement used (Total process time):
+233              real time           0.05 seconds
+234              cpu time            0.05 seconds
+235        
+236        
+237        129        proc means;
+
+238        130        title2 'husbands' ;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+239        131
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+240        
+241        5 The SAS System                                                                                 23:17 Tuesday,
+241      ! September 24, 2013
+242        
+243        NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+244        NOTE: The PROCEDURE MEANS printed page 22.
+245        NOTE: PROCEDURE MEANS used (Total process time):
+246              real time           0.02 seconds
+247              cpu time            0.05 seconds
+248        
+249        
+250        132        proc freq;
+
+251        133        tables hclassly heduc / missing;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+252        134
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+253        135
+254        136
+255        
+256        NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+257        NOTE: The PROCEDURE FREQ printed page 23.
+258        NOTE: PROCEDURE FREQ used (Total process time):
+259              real time           0.01 seconds
+260              cpu time            0.01 seconds
+261        
+262        
+14                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+263        137        data wives;
+
+264        138        set here.cps2012 (where=(female=1 and famkind=1 and relhead in (1,4)) ) ;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+265        139        wimm=imm;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+266        140        wgen2=gen2;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+267        141        weduc=educ;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+268        142        wtwage=twage;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+269        143        wannhrs=annhrs;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+270        144        wfamearn=famearn;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+271        145        w_age=age;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+272        146        wrace=race;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+273        147        wwagesal=wagesal;
+           ___
+15                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+274        148        wwage_ogr=wage_ogr;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+275        149        wselfinc=selfinc;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+276        150        wfarminc=farminc;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+277        151        wclassly=classly;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+278        152        wweeksly=weeksly;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+279        153        whrswkly=hrswkly;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+280        154
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+281        155        keep hhnum famnum weduc wtwage wannhrs wfamearn w_age wrace wwagesal wwage_ogr
+282        156             wselfinc wfarminc wclassly wimm wgen2 wweeksly whrswkly;
+
+283        157
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+284        
+285        NOTE: There were 32314 observations read from the data set HERE.CPS2012.
+286              WHERE (female=1) and (famkind=1) and relhead in (1, 4);
+
+287        NOTE: The data set WORK.WIVES has 32314 observations and 17 variables.
+16                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+                 ___
+                 180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+288        NOTE: DATA statement used (Total process time):
+289              real time           0.05 seconds
+290              cpu time            0.06 seconds
+291        
+292        
+293        158        proc means;
+
+294        159        title2 'wives' ;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+295        160
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+296        
+297        NOTE: There were 32314 observations read from the data set WORK.WIVES.
+298        NOTE: The PROCEDURE MEANS printed page 24.
+299        NOTE: PROCEDURE MEANS used (Total process time):
+300              real time           0.02 seconds
+301        6 The SAS System                                                                                 23:17 Tuesday,
+301      ! September 24, 2013
+302        
+303              cpu time            0.03 seconds
+304        
+305        
+306        161        proc freq;
+
+307        162        tables wclassly weduc / missing;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+308        163
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+309        164
+310        
+311        NOTE: There were 32314 observations read from the data set WORK.WIVES.
+312        NOTE: The PROCEDURE FREQ printed page 25.
+313        NOTE: PROCEDURE FREQ used (Total process time):
+314              real time           0.01 seconds
+315              cpu time            0.02 seconds
+316        
+317        
+318        165        proc sort data=husbands;
+
+319        166        by hhnum famnum;
+17                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+320        167
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+321        
+322        NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+323        NOTE: The data set WORK.HUSBANDS has 30991 observations and 15 variables.
+324        NOTE: PROCEDURE SORT used (Total process time):
+325              real time           0.03 seconds
+326              cpu time            0.03 seconds
+327        
+328        
+329        168        proc sort data=wives;
+
+330        169        by hhnum famnum;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+331        170
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+332        
+333        NOTE: There were 32314 observations read from the data set WORK.WIVES.
+334        NOTE: The data set WORK.WIVES has 32314 observations and 17 variables.
+335        NOTE: PROCEDURE SORT used (Total process time):
+336              real time           0.03 seconds
+337              cpu time            0.04 seconds
+338        
+339        
+340        171        data couples;
+
+341        172        merge husbands (in=in1) wives (in=in2);
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+342        173        by hhnum famnum;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+343        174
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+18                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+344        175        if in1 and in2 then mergestat='H and W present';
+
+345        176        else if in1 then mergestat='H but no W';
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+346        177        else if in2 then mergestat='W but no H';
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+347        178
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+348        179        wifework=(wweeksly>0);
+
+349        180
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+350        181
+351        182        age_gap=h_age-w_age;
+
+352        183        wagesalgap=hwagesal-wwagesal;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+353        184        educgap=heduc-weduc;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+354        185
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+355        186        hlogwage=log(htwage);
+
+356        187        wlogwage=log(wtwage);
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+357        188        hexp=h_age-heduc-6;
+           ___
+           180
+
+19                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+358        189        hexp2=hexp**2/100;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+359        190        hexp3=hexp**3/1000;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+360        191
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+361        7 The SAS System                                                                                 23:17 Tuesday,
+361      ! September 24, 2013
+362        
+363        192        hblack=(hrace=2);
+
+364        193        wblack=(wrace=2);
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+365        194        hasian=(hrace=4);
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+366        195        wasian=(wrace=4);
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+367        196
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+368        197
+369        
+370        NOTE: Missing values were generated as a result of performing an operation on missing values.
+371              Each place is given by: (Number of times) at (Line):(Column).
+372              2761 at 182:14   2761 at 183:20   2761 at 184:14   5376 at 186:10   9881 at 187:10   2042 at 188:11   2042 at
+372      ! 189:11
+373              2042 at 189:14   2042 at 190:11   2042 at 190:14
+374        NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+375        NOTE: There were 32314 observations read from the data set WORK.WIVES.
+376        NOTE: The data set WORK.COUPLES has 33033 observations and 44 variables.
+377        NOTE: DATA statement used (Total process time):
+20                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+378              real time           0.05 seconds
+379              cpu time            0.05 seconds
+380        
+381        
+382        198        proc corr;
+
+383        199        var wfamearn hfamearn weduc heduc w_age h_age wannhrs hannhrs wtwage htwage wwagesal hwagesal;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+384        200
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+385        
+386        NOTE: The PROCEDURE CORR printed pages 26-27.
+387        NOTE: PROCEDURE CORR used (Total process time):
+388              real time           0.03 seconds
+389              cpu time            0.03 seconds
+390        
+391        
+392        201        proc corr;
+
+393        202        var htwage hwage_ogr wtwage wwage_ogr;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+394        203
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+395        204
+396        
+397        NOTE: The PROCEDURE CORR printed page 28.
+398        NOTE: PROCEDURE CORR used (Total process time):
+399              real time           0.01 seconds
+400              cpu time            0.02 seconds
+401        
+402        
+403        205        proc corr;
+
+404        206        var wagesalgap educgap;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+405        207
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+21                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+406        208
+407        
+408        NOTE: The PROCEDURE CORR printed page 29.
+409        NOTE: PROCEDURE CORR used (Total process time):
+410              real time           0.01 seconds
+411              cpu time            0.02 seconds
+412        
+413        
+414        209        proc freq;
+
+415        210        tables mergestat age_gap wrace*hrace
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+416        211               wclassly * hclassly wimm*himm wgen2 * hgen2;
+
+417        212
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+418        213
+419        214
+420        
+421        8 The SAS System                                                                                 23:17 Tuesday,
+421      ! September 24, 2013
+422        
+423        NOTE: There were 33033 observations read from the data set WORK.COUPLES.
+424        NOTE: The PROCEDURE FREQ printed pages 30-40.
+425        NOTE: PROCEDURE FREQ used (Total process time):
+426              real time           0.05 seconds
+427              cpu time            0.05 seconds
+428        
+429        
+430        215        data here.mroz;
+
+431        216        set couples;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+432        217        if hwage_ogr>0;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+433        218
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+434        219        title2 'couples, husband in OGR';
+
+435        220
+           ___
+22                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+436        
+437        NOTE: There were 33033 observations read from the data set WORK.COUPLES.
+438        NOTE: The data set HERE.MROZ has 3362 observations and 44 variables.
+439        NOTE: DATA statement used (Total process time):
+440              real time           0.04 seconds
+441              cpu time            0.03 seconds
+442        
+443        
+444        221        proc means;
+
+445        222
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+446        
+447        NOTE: There were 3362 observations read from the data set HERE.MROZ.
+448        NOTE: The PROCEDURE MEANS printed page 41.
+449        NOTE: PROCEDURE MEANS used (Total process time):
+450              real time           0.03 seconds
+451              cpu time            0.02 seconds
+452        
+453        
+454        223        proc corr;
+
+455        224        var wifework hwagesal weduc heduc w_age h_age;
+           ___
+           180
+
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+456        225
+           ___
+           180
+ERROR 180-322: Statement is not valid or it is used out of proper order.
+
+457        226
+458        NOTE: The PROCEDURE CORR printed page 42.
+459        NOTE: PROCEDURE CORR used (Total process time):
+460              real time           0.00 seconds
+461              cpu time            0.01 seconds
+462        
+463        
+464        NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+465        NOTE: The SAS System used:
+466              real time           6.63 seconds
+467              cpu time            1.89 seconds
+468        
+
+ERROR: Errors printed on pages 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+23                                                         The SAS System                          23:18 Tuesday, September 24, 2013
+
+      

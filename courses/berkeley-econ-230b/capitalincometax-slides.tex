@@ -1,0 +1,2312 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+
+\usepackage{hyperref}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+\author{Emmanuel Saez}
+
+\date{Berkeley}
+
+\title{230B: Public Economics \\
+Capital Taxation} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MOTIVATION}
+\end{center}
+1) Capital income is about 25\% of national income (labor income
+is 75\%) but distribution of capital income is much more unequal
+than labor income
+
+Capital income inequality is due to differences in savings
+behavior but also inheritances received
+
+$\Rightarrow$ Equity suggests it should be taxed more than labor
+
+2) Capital Accumulation correlated strongly with growth [although
+causality link is not obvious] and capital accumulation might be
+sensitive to the net-of-tax return.
+
+$\Rightarrow$ Efficiency cost of capital taxation might be high.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MOTIVATION}
+\end{center}
+
+3) Capital more mobile internationally than labor 
+%$\Rightarrow$ Incidence of capital taxation might fall on workers:
+
+Key distinction is \textbf{residence} vs. \textbf{source} base capital taxation:
+
+\textbf{Residence: } Capital income tax based on residence of owner of capital.
+
+Most individual income tax systems are residence based (with credits for taxes
+paid abroad)
+
+Incidence falls on owner $\Rightarrow$ can only escape
+tax through evasion (tax heavens) or changing residence (mobility of persons)
+
+Tax evasion of capital income through tax heavens is a very serious concern (Zucman QJE'13, '15)
+
+\textbf{Source:} Capital income tax based on location of capital (most corporate income tax systems
+are source based)
+
+Incidence is then partly shifted to labor if capital is mobile.
+
+Example: Open economy with fully mobile capital and source taxation: 
+Local GDP: $wL+rK=F(K,L)=L \cdot F(K/L,1)=L \cdot f(k)$ where $k=K/L$ is capital stock per worker
+
+Net-of-tax rate of return
+is fixed by the international rate of return $r^*$ so that
+$(1-\tau_c)F_K(K,L)=(1-\tau_c)f'(k)=r^*$ where $k=K/L$ is capital stock per worker and $\tau_c$ corp tax rate
+
+As $wL+r^*K=F(K,L)$, wage $w=F_L(K,L)=f(k)-r^* \cdot k$ falls with $\tau_c$
+
+4) Capital taxation is extremely complex and provides many tax
+avoidance opportunities
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MACRO FRAMEWORK}
+\end{center}
+
+Constant return to scale aggregate production:
+
+$Y = F(K,L) = r K + w L$ = output = income
+
+$K$ = capital stock (wealth), $L$ = labor input
+
+$r$ = rate of return on capital, $w$ is wage rate
+
+$rK$ = capital income, $wL$ = labor income
+
+$\alpha=rK/Y$ = capital income share (constant $\alpha$ when
+$F(K,L)=K^{\alpha} L^{1-\alpha}$ Cobb-Douglas), $\alpha \simeq
+30\%$
+
+$\beta=K/Y$ = wealth to annual income ratio, $\beta \simeq 4-6$
+
+$r= (rK/Y) \cdot (Y/K) = \alpha/\beta$, $r=5-6\%$
+
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf SAVING FLOWS}
+%\end{center}
+%Saving is a flow and wealth or net worth is a stock
+%
+%Three saving flows:
+%
+%1) {\bf Personal saving:} individual income less individual
+%consumption [fell dramatically in the US since 1980s, recent
+%$\uparrow$ since 2008]
+%
+%2) {\bf Corporate Saving:} retained earnings =  after tax profits
+%- distributions to shareholders
+%
+%3) {\bf Government Saving:} Taxes - Expenditures [federal, state
+%and local]
+%
+%Taxes on savings might affect different savings flows differently:
+%savings subsidy through a tax credit can $\uparrow$ individual
+%savings but $\downarrow$ govt saving [if govt spending stays
+%constant]
+%\end{slide}
+
+
+
+
+\begin{slide}
+\includepdf[pages={15, 7-8,10,11,9}]{capitalincometax_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Piketty (2014) book: Capital in the 21st Century}
+\end{center}
+Analyzes income, wealth, inheritance data over the long-run:
+
+1) Growth rate $n+g$ = population growth + growth per capita. Population growth will converge
+to zero, growth per capita for frontier economies is modest (1\%) $\Rightarrow$ long-run $g \simeq 1\%, n \simeq 0\%$
+
+2) Long-run steady-state Wealth to income ratio ($\beta$) = savings rate ($s$) / annual growth ($n+g$): $\beta=s/(n+g)$
+
+Proof: $K_{t+1}=(1+n+g) \cdot K_t = K_t + s\cdot Y_t \Rightarrow K_t/Y_t = s /(n+g)$
+
+With $s=8\%$ and $n+g=2\%$, $\beta=400\%$ but with $s=8\%$ and $n+g=1\%$, $\beta=800\%$
+$\Rightarrow$ Wealth will become important
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Piketty (2014) book: Capital in the 21st Century}
+\end{center}
+
+3) After-tax rate of return on wealth $\bar{r}=r(1-\tau_K)=4-5\%$ significantly larger than $n+g$ [except exceptional period of 1930--1970]
+
+With $\bar{r} > n+g$, role of inheritance in wealth and wealth concentration become large [past swallows the future]
+
+Explanation: Rentier who saves all his return on wealth accumulates wealth at rate $\bar{r}$ bigger than $n+g$ and hence
+his wealth grows relative to the size of the economy. The bigger $\bar{r}-(n+g)$, the easier it is for wealth to ``snowball''
+
+$\Rightarrow$ Capital taxation reduces $r$ to $\bar{r}=r \cdot (1-\tau_K)$ $\Rightarrow$ This can reduce wealth concentration
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={18}]{capitalincometax_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf WEALTH AND CAPITAL INCOME IN AGGREGATE} \end{center}
+{\bf Definition:} Capital Income = Returns from Wealth Holdings
+
+Aggregate US {\bf Personal} Wealth $\simeq$ 4*GDP $\simeq$ \$60 Tr
+
+{\bf Tangible assets:} residential real estate (land+buildings)
+[income = rents] and unincorporated business + farm assets [income
+= profits]
+
+{\bf Financial assets:} corporate stock [income = dividends +
+retained earnings], fixed claim assets (corporate and govt bonds,
+bank accounts) [income = interest]
+
+{\bf Liabilities:} Mortgage debt, Student loans, Consumer credit debt
+
+Substantial amount of financial wealth is held indirectly through:
+pension funds [DB+DC], mutual funds, insurance reserves
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={22, 21}]{capitalincometax_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center} {\bf CAPITAL INCOME IN NATIONAL ACCOUNTS} \end{center}
+%
+%Gross capital income (before depreciation) is about 40\% of GDP
+%
+%Net capital income (after depreciation) is about 25\% of personal
+%income
+%
+%The capital income share in total income is relatively stable in
+%the long-run (but with some short term fluctuations)
+%
+%Average real rate of return of capital around 5-6\%, varies
+%greatly from year to year
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf INDIVIDUAL WEALTH AND CAPITAL INCOME} \end{center}
+
+Wealth = $W$, Return = $r$, Capital Income = $rW$
+
+$W_t=W_{t-1}+r_t W_{t-1}+ E_t + I_t - C_t $
+
+where $W_t$ is wealth at age $t$, $C_t$ is consumption, $E_t$
+labor income earnings (net of taxes), $r_t$ is the average (net)
+rate of return on investments and $I_t$ net inheritances (gifts
+received and bequests minus gifts given).
+
+Replacing $W_{t-1}$ and so on, we obtain the following expression
+(assuming initial wealth $W_0$ is zero):
+$$W_t= \sum_{k=1}^t (E_k-C_k+I_k) \prod_{j=k+1}^{t}(1+r_j)$$
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf INDIVIDUAL WEALTH AND CAPITAL INCOME} \end{center}
+$$W_t= \sum_{k=1}^t (E_k-C_k) \prod_{j=k+1}^{t}(1+r_j)+\sum_{k=1}^t I_k\prod_{j=k+1}^{t}(1+r_j)$$
+
+1st term is \textbf{life-cycle} wealth, 2nd term is \textbf{inheritance} wealth
+
+Differences in Wealth and Capital income due to:
+
+1) Age
+
+2) past earnings, and past saving behavior $E_t-C_t$ [life
+cycle wealth]
+
+3) Net Inheritances received $I_t$ [transfer wealth]
+
+4) Rates of return $r_t$
+
+[details in Davies-Shorrocks '00, Handbook chapter]
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf WEALTH DISTRIBUTION} \end{center}
+Wealth inequality is very large (much larger than labor income)
+
+US Household Wealth is divided 1/3,1/3,1/3 for the top 1\%, the
+next 9\%, and the bottom 90\% [bottom 1/2 households hold almost
+no wealth]
+
+Financial wealth is more unequally distributed than (net) real
+estate wealth
+
+Share of real estate wealth falls at the top of the wealth
+distribution
+
+Growth of private pensions [such as 401(k) plans] has
+``democratized'' stock ownership in the US
+
+US public underestimates extent of wealth inequality and thinks the
+ideal wealth distribution should be a lot less unequal [Norton-Ariely '11] 
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={6}]{capitalincometax_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf WEALTH DISTRIBUTION} \end{center}
+%Wealth is more unequally distributed than income [true in all
+%countries]
+%
+%Top 1\% income share in the US is around 20\%
+%
+%Top 1\% labor income share in the US (among workers) is around
+%15\%
+%
+%US Income concentration has increased sharply since 1970:
+%
+%Top 1\% income share was 9\% in 1970 and 20\%+ in recent years
+%[Piketty-Saez QJE'03 updated]
+%
+%US Wealth concentration has also increased but likely less than income
+%
+%%Top 1\% wealth share has grown ``only'' from 31\% in 1962 to 34\%
+%%in 2007 based on the Survey of Consumer Finances [Scholz '03,
+%%Kennickell '09]
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf WEALTH MEASUREMENT} \end{center}
+In the US, wealth distribution much less well measured than income distribution
+because no systematic administrative source (no wealth tax). 3 methods
+to estimate wealth distribution:
+
+\textbf{1) Surveys:} US Survey of Consumer Finances (SCF)
+
+Top 10\% wealth share has grown from 67\% in 1989 to 75\% in 2010
+
+Top 1\% wealth share has grown ``only'' from 30\% in 1989 to 35\%
+in 2010 [Kennickell '09, '12]
+
+Problems: small sample size, measurement error, only every 3 years, starts in 1989
+
+\pagebreak
+
+\textbf{2) Estate multiplier method:} use annual estate tax statistics and re-weights individual 
+estates by inverse of death probability [based on age$\times$gender$\times$social class]
+
+Kopczuk-Saez NTJ'04 create series 1916-2000 and find fairly small increases in wealth
+concentration in recent decades
+
+Problems:  social class effect on mortality not well known, significant estate tax avoidance, noisy
+measure of ``young wealth'', estates cover only the super rich (top .1\% in recent years)
+
+\textbf{3) Capitalization method:} use capital income from individuals tax statistics and estimates rates of returns
+by asset class to infer wealth: shows big increase
+in wealth concentration [Saez-Zucman '14 in progress]
+
+%Piketty (2014) compiles US (and Europe) wealth concentration series
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={23,24, 33, 34}]{capitalincometax_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={25}]{capitalincometax_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={29, 26-28}]{capitalincometax_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf CAPITAL TAXATION IN THE US} \end{center}
+
+Good US references: Gravelle '94 book, Slemrod-Bakija '04 book
+
+1) {\bf Corporate Income Tax} (fed+state): 35\% Federal tax rate
+on profits of corporations [complex rules with many industry
+specific provisions]: effective tax rate much lower and incidence
+depends on mobility of capital
+
+%[Full expensing means deducting investment costs instead of
+%depreciation, amounts to exempting normal rate of return from tax]
+
+2) {\bf Individual Income Tax} (fed+state): taxes many forms of
+capital income
+
+Realized capital gains and dividends (dividends since '03 only)
+receive preferential treatment
+
+Imputed rent of home owners, returns on pension funds, state+local
+government bonds interest are exempt
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf FACTS OF US CAPITAL INCOME TAXATION} \end{center}
+
+3) {\bf Estate and gift taxes:}
+
+Fed taxes estates above \$5.5M exemption (only .1\% of deceased
+liable), tax rate is 40\% above exemption (2013+)
+
+Charitable and spousal giving is exempt
+
+Substantial tax avoidance activity through tax accountants
+
+Step-up of realized capital gains at death (lock-in effect)
+
+4) {\bf Property taxes} (local) on real estate (old tax):
+
+Tax varies across jurisdictions. About 0.5\% of market value on
+average, like a 10\% tax on imputed rent if return is 5\%
+
+Lock-in effect in states that use purchase price base such as
+California
+
+%Note that Value Added Tax (VAT) [does not exist in the US] exempts
+%normal return on capital but taxes excess returns
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf LIFE CYCLE MODEL OF WEALTH (MODIGLIANI)}
+%\end{center}
+%Individuals work for $R$ years and live for $T$ years: $T-R$ is
+%retirement duration
+%
+%Individuals earn income $w_t$ from period $0$ to $R$ and earn zero
+%afterwards
+%
+%Individuals have additive separable utility $\sum_{t=1}^T
+%u(c_t)/(1+\delta)^t$ with concave $u(.)$
+%
+%subject to inter-temporal budget constraint: $\sum_{t=1}^T
+%c_t/(1+r)^t \leq \sum_{t=1}^R w_t/(1+r)^t$ (multiplier $\lambda$)
+%
+%FOC: $u'(c_t)/(1+\delta)^t=\lambda / (1+r)^t$
+%
+%Euler equation: $u'(c_{t+1})/u'(c_t)=(1+\delta)/(1+r)$
+%
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf LIFE CYCLE MODEL OF WEALTH (MODIGLIANI)}
+%\end{center}
+%Euler equation: $u'(c_{t+1})/u'(c_t)=(1+\delta)/(1+r)$
+%
+%If $\delta<r$, $c_{t+1}>c_t$ $\Rightarrow$ Individuals save to
+%consume more later on
+%
+%If $\delta>r$, $c_{t+1}<c_t$ $\Rightarrow$ Individuals want to
+%consume more earlier on
+%
+%If $\delta=r$ then $c_t$ is constant with $t$:
+%
+%$\Rightarrow$ Individuals want to smooth consumption by saving
+%while working and consuming saving while retired $\Rightarrow$
+%Wealth $W_t$ is inversely U-shaped during life-cycle
+%
+%$\Rightarrow$ Wealth inequality only slightly higher than labor
+%income inequality [does not fit facts]
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OTHER FACTORS AFFECTING WEALTH DISPERSION}
+%\end{center}
+%1) Heterogeneity in tastes for saving:
+%
+%$\bullet$ traditional discount rate
+%
+%$\bullet$ self-control problems [hyperbolic discount rate] and
+%financial education
+%
+%2) Rates of returns received on assets: traditional risk aversion,
+%luck, but also financial education
+%
+%3) Net inheritances and gifts received [in general from parents]
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LIFE CYCLE VS. INHERITED WEALTH}
+\end{center}
+Old view: Tobin and Modigliani: life cycle wealth accounts for the
+bulk of the wealth held in the US. Kotlikoff-Summers JPE'81
+challenged the old view (debate Kotlikoff vs. Modigliani in JEP'88) 
+
+Why is this question important? 
+
+1) Economic Modeling: what accounts for wealth accumulation and
+inequality? Is widely used life-cycle model with no bequests a
+good approximation? %[Causality between growth and savings]
+
+2) Policy Implications: taxation of capital income and estates.
+Role of pay-as-you-go vs. funded retirement programs
+
+Key problem is that the definition of life-cycle vs. inherited wealth
+is not conceptually clean (Modigliani does not capitalize inherited wealth
+while Kotlikoff-Summers do) 
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf LIFE CYCLE VS. INHERITED WEALTH} \end{center}
+Piketty-Postel-Vinay-Rosenthal EEH'14 (PPVR) propose better definition to resolve Modigliani
+vs. Kotlikoff-Summers controversy (see Piketty-Zucman Handbook chapter '14)
+
+Individual wealth accumulation:
+\[ W_t= \sum_{k=1}^t (E_k-C_k) \cdot (1+r)^{t-k}+\sum_{k=1}^t I_k \cdot (1+r)^{t-k} \]
+\small
+If $W_t > \sum_{k=1}^t I_k \cdot (1+r)^{t-k}$ then individual also saves out of labor income $E_k$
+and inherited wealth is $\sum_{k=1}^t I_k \cdot (1+r)^{t-k}$
+
+If $W_t \leq \sum_{k=1}^t I_k \cdot (1+r)^{t-k}$ then individual consumes part of inheritances (in addition to labor income)
+and inherited wealth is $W_t$
+
+PPVR requires micro-data for implementation. If we assume uniform saving rate $s$, there is a simplified
+formula for share of inherited wealth $b_y/[b_y+(1-\alpha) \cdot s]$ with $b_y$ bequest flow/national income
+and $\alpha$ capital share
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf LIFE CYCLE VS. INHERITED WEALTH}
+%\end{center}
+%
+%$W$ total wealth in the economy, $LCW$ is life cycle wealth, and
+%$T$ wealth due to transfers
+%
+%Two components in the individual wealth equation $W_t$:
+%$$LCW_t= \sum_{k=1}^t (E_k-C_k) (1+r)^{t-k}$$
+%$$T_t= \sum_{k=1}^t I_k (1+r)^{t-k}$$
+%Aggregate this over all individuals or households in the economy
+%to estimate $T/W$ and $LCW/W$. Two methods:
+%
+%(1) Compute $T_t$ (flow of bequests method)
+%
+%(2) Compute $LCW_t$ (comparison of earnings and consumption)
+%
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={1}]{capitalincometax_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf LIFE CYCLE VS. INHERITED WEALTH}
+%\end{center}
+%(a) Modigliani JEP'88 claims that over 2/3 of wealth is due to
+%life-cycle
+%
+%(b) Kotlikoff-Summers JPE'81, JEP'88 claim that over 2/3 of wealth
+%is due to transfers
+%
+%Differences due primarily in methodology (Gale and Scholtz
+%JEP'94):
+%
+%(a) how to capitalize past transfers
+%
+%(b) whether to count college tuition paid by parents as transfers
+%
+%Transfer wealth is probably quite important, especially at the top
+%of the wealth distribution
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={2}]{capitalincometax_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LIFE CYCLE VS. INHERITED WEALTH}
+\end{center}
+How do the shares of inheritance vs.
+life-cycle evolve over time? First measure is inheritance flow to national income
+
+Inheritance share likely huge in the distant past: class society
+with rentiers vs. workers [Delong '03]
+
+Inheritance share $\downarrow$ in 20th century but 
+has $\uparrow$ recently in France (Piketty QJE'11, Piketty-Zucman '14 handbook chapter)
+
+Post-war period was a time of fast population growth and fast
+economic growth $\Rightarrow$  If $n+g$ (growth) large relative to
+$r$ (rate of return on wealth) $\Rightarrow$ Inheritances play a
+minor role in life-time wealth
+
+In general $r>n+g$ in which case inheritances play a large role in aggregate
+wealth and wealth concentration is going back (Western countries moving in that
+direction, Piketty '14)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={5, 31, 30, 32}]{capitalincometax_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center} {\bf KEY ELEMENTS OF DEBATE ON CAPITAL INCOME
+%TAXATION}\end{center}
+%
+%Economic debate:
+%
+%1) Distributional concerns: capital income accrues
+%disproportionately to higher income families
+%
+%2) Efficiency concerns: capital tax distorts savings, business
+%creation, capital mobility across countries
+%
+%Public policy debate:
+%
+%3) Should we tax income vs. consumption? [Fundamental tax reform
+%debate]
+%
+%4) Should we encourage savings by cutting tax on capital income or
+%with tax favored savings vehicles?
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TAXES IN OLG LIFE-CYCLE MODEL} \end{center}
+$\max \:\: U=u(c_1,l_1)+ \delta u(c_2,l_2)$
+
+No tax situation: earn $w_1l_1$ in period 1, $w_2 l_2$ in period 2
+
+Savings $s=w_1 l_1 - c_1$, $c_2=w_2 l_2 + (1+r)s$
+
+Capital income $r s$
+
+Intertemporal budget with no taxes:
+
+$c_1+c_2/(1+r) \leq w_1 l_1 + w_2 l_2 /(1+r)$
+
+This model has uniform rate of return and does not capture excess
+returns
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TAXES IN OLG MODEL} \end{center}
+Budget with consumption tax $t_c$: $$(1+t_c) [ c_1+c_2/(1+r)] \leq
+w_1 l_1 + w_2 l_2/(1+r)$$ Budget with labor income tax $\tau_L$:
+$$c_1+c_2/(1+r)  \leq (1-\tau_L)[w_1 l_1 + w_2 l_2/(1+r)]$$
+Consumption and labor income tax are equivalent if
+$$1+t_c=1/(1-\tau_L)$$ Both taxes distort only labor-leisure choice
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TAXES IN OLG MODEL} \end{center}
+Budget with capital income tax $\tau_K$: $$c_1+c_2/(1+r(1-\tau_K))
+\leq w_1 l_1 + w_2 l_1/(1+r(1-\tau_K))$$ $\tau_K$ distorts only
+inter-temporal consumption choice
+
+Budget with comprehensive income tax $\tau$:
+$$c_1+c_2/(1+r(1-\tau)) \leq (1-\tau)[w_1 l_1 + w_2
+l_2/(1+r(1-\tau))]$$ $\tau$ distorts both labor-leisure and
+inter-temporal consumption choices
+
+$\tau$ imposes ``double'' tax: (1) tax on earnings, (2) tax on
+savings
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf EFFECT OF $r$ ON SAVINGS} \end{center}
+Assume that labor supply is fixed. Draw graph.
+Suppose $r$ $\uparrow$:
+
+1) Substitution effect: price of $c_2$ $\downarrow$ $\Rightarrow$
+$c_2 \uparrow$, $c_1$ $\downarrow$ $\Rightarrow$  savings
+$s=w_1l_1-c_1$ $\uparrow$.
+
+2) Wealth effect: Price of $c_2$ $\downarrow$ $\Rightarrow$ both
+$c_1$ and $c_2$ $\uparrow$ $\Rightarrow$ save less
+
+3) Human wealth effect: present discounted value of labor income
+$\downarrow$ $\Rightarrow$ both $c_1$ and $c_2$ $\downarrow$
+$\Rightarrow$ save more
+
+Note: If $w_2 l_2 < c_2$ (ie $s>0$), 2)+3) $\Rightarrow$ save less
+
+Total net effect is theoretically ambiguous $\Rightarrow$ $\tau_K$
+has ambiguous effects on $s$
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf SHIFT FROM LABOR TO CONSUMPTION TAX} \end{center}
+Labor and consumption are equivalent for the individual if
+$1+t_c=1/(1-\tau_L)$ but savings pattern is different
+
+Assume $w_2=0$ and $l_1=1$
+
+$(1+t_c)[c_1 + c_2/(1+r)] = w_1$ with consumption tax
+
+$c_1 + c_2/(1+r) = (1-t_L) w_1$ with labor tax
+
+1) Consumption tax $t_c$: $c^c_1=(w_1-s_c)/(1+t_c)$,
+$c^c_2=(1+r)s_c/(1+t_c)$
+
+2) Labor income tax $\tau_L$: $c^L_1=w_1(1-\tau_L)-s_L$,
+$c^L_2=(1+r)s_L$
+
+Same consumption in both cases so $s_L=s_c/(1+t_c)$ $\Rightarrow$
+Save more with a consumption tax
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TRANSITION FROM LABOR TO C TAX} \end{center}
+In OLG model and closed economy, capital stock is due to
+life-cycle savings $s$
+
+Start with labor tax $\tau_L$ and switch to a
+consumption tax $t_c$
+
+The old [at time of transition] would have paid nothing in labor
+tax regime but now have to pay tax on $c_2$
+
+For the young [and future generations], the two regimes look
+equivalent so they now save more and increase the capital stock
+
+However, this increase in capital stock comes at the price of
+hurting the old who are taxed twice
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TRANSITION FROM LABOR TO C TAX} \end{center}
+Suppose the government keeps the old as well off as in previous
+system by exempting them from consumption tax
+
+This creates a deficit in government budget equal to
+
+$d=\tau_L w_1 - t_c c_1 = t_c w_1/(1+t_c) -t_c c_1 = t_c s_L $
+
+Extra saving by the young is $s_c-s_L=t_c s_L$ exactly equal to
+government deficit.
+
+{\bf Full neutrality result:} Extra savings of young is equal to
+old capital stock + new government deficit $\Rightarrow$ no change
+in the aggregate capital stock
+
+Full neutrality depends crucially on same $r$ for govt debt and
+aggregate $r$ [in practice: equity premium puzzle]
+
+[Same result for Social Security privatization]
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf AUERBACH-KOTLIKOFF '87 MODEL} \end{center}
+%
+%Develop an inter-temporal Computational General Equilibrium (CGE)
+%model:
+%
+%1) Life cycle model, no bequests, people live for 55 years (born
+%at age 21). Work for 45 years, and retire for 10 years.
+%
+%2) Only one individual per cohort, representative agent model [
+%Useful for redistribution analysis across cohorts but not within
+%cohorts]
+%
+%3) Stock of wealth = life cycle savings [Classical Modigliani
+%graph]
+%
+%4) Labor income tax distorts labor supply, capital income tax
+%distorts savings choice.
+%
+%CES utility, discount rate, path of earnings with life cycle.
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf AUERBACH-KOTLIKOFF '87: RESULTS} \end{center}
+%
+%Tax reform experiments: shift from comprehensive income tax to
+%either
+%
+%(a) pure consumption tax
+%
+%(b) pure wage income tax
+%
+%(c) pure capital income tax
+%
+%[budget neutral but no transitional compensation]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={3,4}]{capitalincometax_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf AUERBACH-KOTLIKOFF '87: RESULTS} \end{center}
+%1) Effect on capital stock:
+%
+%(a) Consumption tax is best (because no compensation of the old)
+%
+%(b) Wage income tax has limited impact on capital stock
+%
+%(c) Capital income tax is worst (significant elasticity of savings
+%wrt to $r$).
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf AUERBACH-KOTLIKOFF '87: RESULTS} \end{center}
+%
+%2) Effect on welfare measured in percentage increase of
+%consumption for each generation:
+%
+%Consumption tax hurts current old and benefits the young and
+%future generations [no transitional relief]
+%
+%Wage income tax benefits the old but hurts the young
+%
+%Capital income tax hurts current generation (double tax), benefits
+%next generation (implicit levy of previously accumulated capital)
+%but hurts future generations (inefficient)
+%
+%Key lessons: Transitional reliefs rules and anticipated vs. not
+%tax changes has large impact on results
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf OPTIMAL CAPITAL INCOME TAXATION}
+\end{center}
+Complex problem with many sub-literatures: Banks and Diamond
+Mirrlees Review '09 provide recent survey
+
+1) Life-cycle models [linear and non-linear earnings tax]
+
+2) Models with bequests [many models including the infinite
+horizon model]
+
+3) Models with future earnings uncertainty: New Dynamic Public
+Finance [Kocherlakota '09 book]
+
+Bigger gap between theory and policy practice than in the case of
+static labor income taxation
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf RAMSEY TAX IN LIFE-CYCLE MODEL}
+%\end{center}
+%
+%Best reference is King (1980) [volume Heal-Hughes]. Also
+%Atkinson-Sandmo EJ '80, Sandmo '85 PE Handbook Chapter,
+%Atkinson-Stiglitz '80, Chap 14-4.
+%
+%Ramsey model with {\bf representative} agent and {\bf linear}
+%taxes on labor and savings to raise exogenous amount of revenue
+%
+%Individual maximization problem:
+%\[V(q,w(1-\tau_L))= max_{c_1,c_2,l} \,\, u(c_1,c_2,l) \]
+%\[\mathrm{st} \quad c_1+c_2/(1+r(1-\tau_K))=wl(1-\tau_L) \]
+%where $q=1/(1+r(1-\tau_K))$ and $p=1/(1+r)$ are post-tax and pre-tax
+%prices of $c_2$
+%
+%%Output is given by constant return to scale production function
+%%$Y=F(K,l)=l f(K/l)=l f(k)$, $r=F_K=f'(k)$ and $w=F_l$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf RAMSEY CAPITAL INCOME TAX} \end{center}
+%
+%%{\bf Implication:}
+%
+%Optimal tax rates can be obtained by solving the standard Ramsey
+%problem:
+%\[\max_{\tau_K,\tau_L} \:\: V(q,w(1-\tau_L)) \quad \mathrm{st} \quad
+%w l \tau_L + (q-p) c_2 \geq g \quad (\lambda) \]
+%where $g$ is exogenous tax revenue requirement
+%
+%Can apply the results from the 3 good Ramsey model
+%
+%Derive FOC for $\tau_K$ and $\tau_L$
+%
+%Can express them in terms of compensated elasticities
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf RAMSEY CAPITAL INCOME TAX} \end{center}
+%Combining the two FOC to get rid of $\lambda$, you get:
+%$$\frac{r \tau_K}{1+r} (\sigma_{L2}-\sigma_{22}) = \frac{\tau_L}{1-\tau_L}
+%(\sigma_{LL}-\sigma_{2L})$$ where
+%$\sigma_{LL}=(w(1-\tau_L)/l)\partial l^c / \partial
+%(w(1-\tau_L))>0$ is the compensated elasticity of labor supply
+%wrt net wage rate
+%
+%$\sigma_{22}=(q/c_2)\partial c_2^c / \partial q<0$
+%
+%$\sigma_{L2}=(q/l)\partial l^c / \partial q$
+%
+%$\sigma_{2L}=(w(1-\tau_L)/c_2)\partial c^c_2 / \partial
+%(w(1-\tau_L))$
+%
+%Formula defines relative optimal rates of taxation on labor and
+%capital (absolute levels depend on $g$)
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf RAMSEY CAPITAL INCOME TAX: DISCUSSION} \end{center}
+%Little known about cross elasticities so we might as well assume
+%that they are zero [symmetric by Slutsky] $\Rightarrow$ Optimal
+%formula simplifies to:
+%$$-\frac{r \tau_K}{1+r} \sigma_{22} = \frac{\tau_L}{1-\tau_L} \sigma_{LL} $$
+%{\bf Inverse elasticity rule} as in standard Ramsey model: If $
+%\sigma_{LL}  << | \sigma_{22} | $ then $\tau_K$ should be small
+%relative to $\tau_L$
+%
+%{\bf Key lesson:} What matters is the relative size of
+%elasticities, not the number of distortions
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf FELDSTEIN JPE'78} \end{center}
+%
+%Feldstein JPE'78 makes famous theoretical argument why $
+%\sigma_{22}$ can be large even if
+%$\varepsilon^u_{sq}=(q/s)\partial s/\partial q$ [uncompensated
+%savings elasticity] is zero: Budget $c_1+q c_2 = w(1-\tau_L)l+y$
+%
+%Slutsky equation [$y$ is endowment =0 in equilibrium]: $\partial
+%c^c_2 /
+%\partial q = \partial c_2 /
+%\partial q + c_2 \partial c_2 / \partial y$ $\Rightarrow$
+%
+%$\sigma_{22}=\varepsilon^u_{2q} + q \partial c_2 / \partial y$
+%
+%$c_2=s/q$ so $\varepsilon^u_{2q}= (q/c_2)\partial c_2/\partial q =
+%\varepsilon^u_{sq}-1$ $\Rightarrow$
+%
+%$\sigma_{22}=\varepsilon^u_{sq} -1 + q \partial c_2 / \partial y$
+%
+%$c_1+ q c_2 = w(1-\tau_L)l+y$ $\Rightarrow$ $\partial c_1 /
+%\partial y + q \partial c_2 / \partial y =  w(1-\tau_L)\partial l /
+%\partial y +1 \simeq 1$ (small income effects on labor supply)
+%
+%$\sigma_{22} \simeq \varepsilon^u_{sq} - \partial c_1 / \partial y
+%\simeq -\partial c_1 / \partial y \leq -0.75$ [as saving rate
+%modest]
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf CORLETT-HAGUE RESTUD'53-54} \end{center}
+%Obtain optimal tax formulas in three good model $c_1,c_2,l$
+%
+%$\sigma_{1L})=\sigma_{2L}=\sigma_{LL}
+%
+%Tax rate on $c_1$ equal to tax rate on $c_2$ $\Leftrightarrow$ Tax
+%only on labor is sufficient $\Leftrightarrow$
+%$$\sigma_{1L})=\sigma_{2L}=\sigma_{LL}$$
+%
+%Compensated change in the wage rate leads to equal proportionate
+%changes in $c_1$, $c_2$, and $l$ $\Leftrightarrow$
+%
+%[$\Leftrightarrow$ Ratio of money spent on $c_1$ and $c_2$ is
+%independent of wage rate]
+%
+%Tax $t_r>0$ $\Leftrightarrow$ Compensated change in the wage rate
+%has larger effect on $c_1$ than on $c_2$
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf RAMSEY TAX: ENDOGENOUS CAPITAL STOCK} \end{center}
+%Full dynamic model:
+%
+%Govt maximizes $SW = \sum_t V_t/(1+\delta)^t$
+%
+%subject to $\sum_t Tax_t/(1+r)^t \geq \sum_t g_t/(1+r)^t$
+%
+%$\Rightarrow$ Optimal dynamic capital stock $k$ is given by
+%Modified Golden rule $r=f'(k)=\delta$
+%
+%Optimal $k$ can be attained in steady state using debt policy
+%[implicit in budget constraint]
+%
+%In that case, optimal $\tau_K,\tau_L$ given by same static Ramsey rule
+%
+%Problems of dynamic efficiency (optimal $K$ stock) and efficiency within
+%a generation ($\tau_L,\tau_K$) are orthogonal
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf RAMSEY TAX: ENDOGENOUS CAPITAL STOCK} \end{center}
+%
+%If the govt cannot use debt policy then optimal dynamic capital
+%level may not be attained because savings equal capital $s_t=K_t$
+%$\Rightarrow$ tax formulas need to be modified: optimal tax rates
+%reflect
+%
+%(a) the trade-off between conventional [intra-generational]
+%efficiency losses [static Ramsey]
+%
+%(b) the failure to achieve the dynamic optimality condition on
+%capital stock [inter-generational efficiency trade-off]
+%
+%$\Rightarrow$ Effect on capital tax rate level is actually
+%ambiguous
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf RAMSEY CAPITAL INCOME TAX} \end{center}
+%
+%Government maximizes:
+%
+%$SW = \sum_t V_t/(1+\delta)^t$ subject to $\sum_t Tax_t/(1+r)^t
+%\geq \sum_t g_t/(1+r)^t$ [$g_t$ exogenous govt expenditures in
+%period $t$]
+%
+%Implicit in this budget constraint: the government can use debt
+%paying the same return $r$ as physical capital.
+%
+%Use of debt allows govt to reach dynamically efficient capital
+%stock level $r=F_K = \delta$ [return = discount rate: modified
+%golden rule] in the long-run steady state
+%
+%Proof: If $r> \delta$ in long-run: govt increases taxes by \$1 in
+%period $t$ and decreases taxes by \$1+$r$ in period $t+1$: budget
+%neutral and
+%$dSW=-V^t_R/(1+\delta)^t+(1+r)V_R^{t+1}/(1+\delta)^{t+1}=V_t^R/(1+\delta)^t
+%\cdot [-1 + (1+r)/(1+\delta)]>0$
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf RAMSEY CAPITAL INCOME TAX: REMARKS} \end{center}
+%
+%1) No redistributive concerns: Can extend model to the
+%multi-person case $\Rightarrow$ Higher rate $\tau_K$ if capital
+%income concentrated among the rich (Park JPubE, 1991).
+%
+%2) No bequests so this model does not capture an important aspect
+%of wealth accumulation and justification for redistribution.
+%
+%3) Only a two period model, if more periods are introduced (as in
+%the Auerbach-Kotlikoff simulation model), then optimal tax formula
+%would be more complex.
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf Life-Cycle model: Atkinson-Stiglitz JpubE '76} \end{center}
+
+Heterogeneous individuals and government uses nonlinear tax on
+earnings. Should the govt also use tax on savings?
+
+$V^h= \max U^h(v(c_1,c_2),l)$ st
+$c_1+c_2/(1+r(1-\tau_K))=wl-T_L(wl)$
+
+If utility is weakly separable and $v(c_1,c_2)$ is the same for
+all individuals, then the government should use only labor income
+tax and should not use tax on savings
+
+Recent proof by Laroque EJ '05 or Kaplow JpubE '06.
+
+Tax on savings justified if: 
+
+(1) High skill people have higher
+taste for saving (e.g, high skill people have lower discount rate) [Saez, JpubE '02]
+
+(2) $c_2$ is complementary with
+leisure
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf Life-cycle model: linear labor income tax} \end{center}
+
+Suppose the government can only use linear earnings tax: $wl \cdot (1-\tau_L) + E$
+
+If sub-utility $v(c_1,c_2)$ is also homothetic of degree one [i.e., $v(\lambda c_1,\lambda c_2)=\lambda v(c_1,c_2)$ for all
+$\lambda$]
+then $\tau_K=0$ is again optimal [linear tax counter-part of Atkinson-Stiglitz, see Deaton, 1979]
+
+In the general case $V^h(c_1,c_2,l)$, optimal $\tau_K$ is not always zero
+
+Old literature considered the Ramsey one-person model of linear taxation and expressed optimal
+$\tau_K$ as a function of compensated price and cross-price elastiticities [Corlett-Hague REstud'54,
+King, 1980, and Atkinson-Sandmo EJ'80]
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf DIAMOND-SPINNEWIJN '09} \end{center}
+%Heterogeneity of individuals in ability (wage rate) and discount
+%rate. Discrete earnings choice model (high vs. low) and discrete
+%discount (high vs. low) [Four type model]
+%
+%Govt can tax both earnings and savings non-linearly:
+%bi-dimensional tax function with bi-dimensional heterogeneity
+%
+%Start from no savings tax and optimal earnings tax
+%
+%{\bf Result:} introducing a small savings tax on high earners or a
+%small savings subsidy on low earners increases welfare
+%
+%{\bf Intuition:} Those valuing the future more (relative to the
+%disutility of work) are more willing to work than those valuing
+%the future less $\Rightarrow$ work IC constraint binds for high
+%wage/low savers but not for high wage/high saver $\Rightarrow$
+%Scope for taxing savings
+%%
+%%Interesting work in bi-dimensional pb (related to
+%%Kleven-Kreiner-Saez EMA '08 on couples)
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf LIMITS OF LIFE-CYCLE MODEL} \end{center}
+Atkinson-Stiglitz shows that life-time savings should not be
+taxed, tax only labor income
+
+From justice view: seems fair to not discriminate against savers
+if labor earnings is the only source of inequality and is taxed
+non-linearly
+
+In reality, capital income inequality also due
+
+(1) difference in rates of returns
+
+(2) shifting of labor income into capital income
+
+(3) inheritances
+
+(1) is not relevant if individuals handle risky assets rationally
+(as in CAPM model), probably not a very good assumption
+$\Rightarrow$ Tax on lucky returns might be desirable
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf SHIFTING OF LABOR / CAPITAL INCOME} \end{center}
+In practice, difficult to distinguish between capital and labor
+income [e.g., small business profits, professional traders]
+
+Differential tax treatment can induce shifting:
+
+(1) US C-corporations vs S-corporations: shift from corporate
+income (and subsequent realized capital gains) toward individual business
+income [Gordon and Slemrod '00]
+
+(2) Carried interest in the US: hedge fund and private equity fund
+managers receive fraction of profits of assets they manage for
+clients. Those profits are really labor income but are taxed as
+realized capital gains
+
+(3) Finnish Dual income tax system: taxes separately capital
+income at preferred rates since 1993: Pirttila and Selin SJE'11
+show that it induced shifting from labor to capital income
+especially among self-employed
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf Theory: Shifting of Labor / Capital Income} \end{center}
+
+Extreme case where government cannot distinguish at all between
+labor and capital income $\Rightarrow$ Govt observes only $wl+rK$
+$\Rightarrow$ Only option is to have identical MTRs at individual
+level $\Rightarrow$ General income tax $Tax=T(wl+rK)$
+
+With a finite shifting elasticity, differential MTRs for labor and
+capital income taxation induce an additional shifting distortion
+
+The higher the shifting elasticity, the closer the tax rates on
+labor and capital income should be [Christiansen and Tuomala
+ITAX'08, see also Piketty-Saez Handbook chapter '13]
+
+In practice, this seems to be a very important consideration when
+designing income tax systems [especially for top incomes]
+$\Rightarrow$ Strong reason for having $\tau_L=\tau_K$ at the top
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf MODELS OF BEQUESTS AND GIFTS}
+%\end{center}
+%Individuals receive inheritances and inter-vivos gifts. Those
+%arise because of:
+%
+%1) Accidental bequests: uncertain life-time with imperfect annuity
+%markets $\Rightarrow$ people die with positive wealth
+%
+%2) Wealth loving utility: individuals enjoy owning wealth above
+%consumption utility [Carroll '00]
+%
+%3) Altruistic (or warm glow) bequests/gifts: people enjoy making
+%transfers to children [Barro-Becker dynastic model is most famous
+%example]
+%
+%4) Manipulative / social norms bequests: bequests used to extract
+%services from heirs or pressure from heirs to leave bequests
+%[equal estate division Wilhelm AER'96, spousal pensions Aura
+%JpubE'05]
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf Taxation of Inheritances: Welfare Effects} \end{center}
+Definitions: donor is the person giving, donee is the person
+receiving
+
+Inheritances and inter-vivos transfers raise difficult issues:
+
+(1) Inequality in inheritances contributes to economic inequality:
+seems fair to redistribute from those who received inheritances to
+those who did not
+
+(2) However, it seems unfair to double tax the donors who worked
+hard to pass on wealth to children
+
+$\Rightarrow$ Double welfare effect: inheritance tax hurts donor
+(if donor altruistic to donee) and donee (which receives less) [Kaplow, '01]
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf Estate Taxation in the United States} \end{center}
+
+Estate federal tax imposes a tax on estates above \$5.5M exemption (only about .1\% of deceased
+liable), tax rate is 40\% above exemption (2013+)
+
+Charitable and spousal giving are fully exempt from the tax
+
+E.g.: if Bill Gates / Warren Buffet give all their wealth to charity, they won't pay estate tax
+
+Support for estate tax is pretty weak (``death tax'') but public does not know that estate tax affects
+only richest
+
+Support for estate tax increase shots up from 17\% to 53\% when survey respondents are informed that only richest pay it
+(Kuziemko-Norton-Saez-Stantcheva '13 do an online Mturk survey experiment)
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={20}]{capitalincometax_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf Taxation of Inheritances: Behavioral Responses} \end{center}
+
+Potential behavioral response effects of inheritance tax:
+
+(1) reduces wealth accumulation of altruistic donors (and hence
+tax base) [no very good empirical evidence, Slemrod-Kopczuk 01]
+
+(2) reduces labor supply of altruistic donors (less motivated to
+work if cannot pass wealth to kids) [no good evidence]
+
+(3) induces donees to work more through income effects (Carnegie
+effect, decent evidence from Holtz-Eakin,Joulfaian,Rosen QJE'93)
+
+Critical to understand why there are inheritances to decide on
+optimal inheritance tax policy. 4 main models of bequests: (a)
+accidental, (b) bequests in the utility, (c) manipulative bequest motive, (d)
+dynastic
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf ACCIDENTAL BEQUESTS} \end{center}
+
+People die with a stock of wealth they intended to spend on
+themselves: Such bequests arise because of imperfect annuity
+markets
+
+Annuity is an insurance contract converting lumpsum amount into a
+stream of payments till end of life [insurance against risk of
+living too long]
+
+Annuity markets are imperfect because of adverse selection
+[Finkelstein-Poterba EJ'02, JPE'04] or behavioral reasons
+[inertia, lack of planning]
+
+Public retirement programs [and defined benefit private
+pensions] are in general mandatory annuities
+
+Newer defined contribution private pensions [401(k)s in the US]
+are in general not annuitized
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf ACCIDENTAL BEQUESTS} \end{center}
+
+Bequest taxation has no distortionary effect on behavior of donor
+and can only increase labor supply of donees (through income
+effects) $\Rightarrow$ strong case for taxing bequests heavily
+
+Kopczuk JPE '03 makes the point that estate tax plays the role of
+a ``second-best'' annuity:
+
+Estate tax paid by those who die early, and not by those who die
+late $\Rightarrow$ Implicit insurance against risk of living too
+long
+
+\textbf{Wealth loving:} Same tax policy conclusion arises if donors have wealth in their
+utility function [social status or power, Carroll '98]
+
+Kopczuk-Lupton REStud'07 shows that only 1/2 of people accumulate wealth for
+bequest motives
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf Bequests in the Utility: Warm Glow Or Altruistic} \end{center}
+
+$u(c)-h(l)+ \delta v(b)$ where $c$ is own consumption, $l$ is
+labor supply, and $b$ is net-of-tax bequests left to next
+generation and $v(b)$ is warm glow utility of bequests
+
+Budget with no estate tax: $c+b/(1+r) = wl-T_L(wl)$
+
+Budget with bequest tax at rate $\tau_B$: $c+b/[(1+r)(1-\tau_B)] =
+wl-T_L(wl)$
+
+Suppose first that $b$ is not bequeathed but used for
+``after-life'' consumption [e.g., funerary monument of no value to
+next generation]
+
+$\Rightarrow$ Atkinson-Stiglitz implies that $b$ should not be
+taxed [$\tau_B=0$] and that nonlinear tax on $wl$ is enough for
+redistribution
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf Bequests in the Utility: Warm Glow Or Altruistic} \end{center}
+
+Suppose now that $b$ is given to a heir who derives utility
+$v^{heir}(b)$ $\Rightarrow$ $b$ creates a positive externality (to donee) and
+hence should be subsidized $\Rightarrow$ $\tau_B<0$ is optimal
+
+Kaplow '01 makes this point informally
+
+Farhi-Werning QJE'10 develop formal model of non-linear Pigouvian
+subsidization of bequests with 2 generations and social Welfare:
+$$SWF=\int[u(c)-h(l)+\delta v(b) +v^{heir}(b)]f(w)dw$$
+The marginal external effect of bequests is $dv^{heir}/db$ and
+hence should be smaller for large $b$
+
+$\Rightarrow$ Optimal subsidy rate is smaller for large estates
+$\Rightarrow$ progressive estate subsidy
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf WARM GLOW BEQUESTS: ISSUES} \end{center}
+%
+%(a) If past inheritances come from untaxed labor income, then it
+%is desirable to tax inheritances [important when income tax
+%starts]
+%
+%(b) Double counting issue: should social welfare double count
+%bequests? [both for donor and donee]
+%
+%{\bf Yes} under utilitarian framework [Kaplow '01]
+%
+%{\bf No:} utilitarian framework with double counting generates
+%predictions that conflict with horizontal equity:
+%
+%$\bullet$ Govt should tax less those well loved by other people
+%
+%$\bullet$ Govt should care more about kids with parents than
+%orphans
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf A-S Fails with Inheritances In General Equilibrium (Piketty-Saez ECMA'13)}
+\end{center}
+
+Atkinson-Stiglitz applies when sole source of lifetime income is labor:
+\[ c+ b(left)/(1+r)=w l-T(w l) \quad (w = \text{productivity, }
+ l = \text{labor supply}) \]
+
+In GE, bequests provide an additional source of life-income:
+\[c+b(left)/(1+r)=w l-T(w l)+b(received) \]
+
+$\Rightarrow$ conditional on $w l$, high $b(left)$ is a signal of high $b(received)$
+$\Rightarrow$ $b(left)$ should be taxed even with optimal $T(w l)$
+
+$\Rightarrow$ Two-dim. inequality requires two-dim. tax policy tool
+
+\textbf{Extreme example:} no heterogeneity in productivity $w$
+but pure heterogeneity in bequests motives $\Rightarrow$
+bequest taxation is desirable for redistribution
+
+%Note: bequests generate positive externality on donors and hence should be taxed less (but still >0)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Piketty-Saez Simplified Optimal Inheritance Tax Model}
+\end{center}
+Measure one of individuals, who are both bequests receivers and bequest leavers (in ergodic
+general equilibrium)
+
+Linear tax $\tau_B$ on bequests funds lumsump grant $E$
+
+Life-time budget constraint: $c_i+b_i = R (1-\tau_B) b^r_i + y_{Li} + E$
+
+with $c_i$ consumption, $b_i$ bequests left, $y_{Li}$ inelastic labor income,
+$b^r_i$ pre-tax bequests received,
+$R=1+r$ generational rate of return on bequests
+
+Individual $i$ has utility $V^i(c,\underline{b})$ with $\underline{b}=R(1-\tau_B)b$ net-of-tax bequests left
+and solves
+\[ \max_{b_i} V^{i}(y_{Li}+E + R (1-\tau_B) b^r_i -
+b_{i} ,Rb_{i} (1-\tau_{B})) \Rightarrow V^i_c = R(1-\tau_B) V^i_{\underline{b}}  \]
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Piketty-Saez ECMA'13 Optimal Inheritance Tax}
+\end{center}
+Government budget constraint is $E=\tau_B b$ with $b$ aggregate (=average) bequests.
+Govt  solves:
+\[ \max_{\tau_B} \int_i \omega_i V^{i}(y_{Li}+\tau_B b + R (1-\tau_B) b^r_i -
+b_{i} ,Rb_{i} (1-\tau_{B})) \]
+with $\omega_i \geq 0$ Pareto weights
+
+Meritocratic Rawlsian criterion: maximize welfare of those receiving no inheritances
+with uniform social marginal welfare weight $\omega_i V^i_c$ among zero-receivers
+
+(e.g., people not responsible for $b_i^r$ but responsible for $y_{Li}$) $\Rightarrow$
+\[ \textbf{Optimal inheritance tax rate: } \tau _{B}= \frac{1- \bar{b}} {1+e_B} \] 
+with $e_B=\frac{1-\tau_B}{b}\frac{db}{d(1-\tau_B)}$ elasticity of aggregate bequests and   $\bar{b} =\frac{E[b_i | b_i^r=0]}{b}$ relative
+bequest left by zero-receivers
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Piketty-Saez ECMA'13 Optimal Inheritance Tax: Proof}
+\end{center}
+\[ SWF= \int_i \omega_i V^{i}(y_{Li}+\tau_B b -
+b_{i} ,Rb_{i} (1-\tau_{B})) \]
+[NB: removed term $R (1-\tau_B) b^r_i$ because $\omega_i=0$ when $b^r_i=0$]
+\[ 0=\frac{dSWF}{d\tau_B} = \int_i \omega_i   \cdot \left ( V_c^{i} \left [ b - \tau_B \frac{db}{d(1-\tau_B)} \right ] - R b_i V^i_{\underline{b}}
+\right )  \Rightarrow \]
+\[ 0 = \int_i \omega_i  \cdot \left ( V_c^{i} \cdot b \left [ 1 - \frac{\tau_B}{1-\tau_B} e_B \right ] - \frac{b_i}{1-\tau_B} V^i_{c}
+\right )  \Rightarrow \]
+\[ 0 = b \left [ 1 - \frac{\tau_B}{1-\tau_B} e_B \right ] -
+ \frac{1}{1-\tau_B} \cdot \frac{\int_i \omega_i V^i_{c} \cdot b_i} {\int_i  \omega_i V^i_{c}}
+  \Rightarrow \] as $\omega_i V^i_c \equiv 0$ for $b_i^r>0$ and $\omega_i V^i_c\equiv 1$ for $b_i^r=0$ $ \Rightarrow$
+\[ 0 = 1 -\tau_B - \tau_B \cdot e_B - \frac{E[b_i | b_i^r=0]}{b} \Rightarrow \tau _{B}= \frac{1- \bar{b}} {1+e_B}  \]
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Piketty-Saez ECMA'13 Optimal Inheritance Tax}
+\end{center}
+\[ \textbf{Optimal inheritance tax rate: } \tau _{B}= \frac{1- \bar{b}} {1+e_B} \] 
+1) Optimal $\tau_B < 1/(1+e_B)$ revenue maximizing rate because zero-receivers care about bequests they leave
+
+2) $\tau_B=0$ if $\bar{b}=1$ (i.e, zero-receivers leave as much bequest as average)
+
+3) If bequests are quantitatively important, highly concentrated, and low wealth mobility then $\bar{b}<<1$
+
+4) Empirically $e_B$ small (Kopcuzk-Slemrod '01) but poorly known, $\bar{b} = 2/3$ in US (SCF data) but poorly
+measured
+
+5) Formula can be extended to other social criteria, elastic labor supply, wealth loving preferences, altruistic preferences
+[see Piketty-Saez ECMA'13]
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Capital Stock and Modified Golden Rule}
+\end{center}
+\textbf{Modified Golden Rule:} $r=\delta + \gamma \cdot g$ 
+\\ with $r=F_K(K,L)=f'(k)$ rate of return,
+$\delta$ discount rate, $\gamma$ curvature of $u'(c)=c^{-\gamma}$, $g$ growth rate (per capita).
+%Not clear at all that MGR holds in practice.
+
+Proof: \$1 extra in period $t$ gives social welfare $u'(c_t)$
+
+\$$1+r$ extra in period $t+1$ gives social welfare $\frac{(1+r)u'(c_{t+1})}{1+\delta}=\frac{(1+r)u'(c_{t})}{1+\delta} \frac{u'(c_{t+1})}{u'(c_t)}
+= \frac{1+r}{(1+\delta)(1+g)^{\gamma}} u'(c_t) $  $\Rightarrow$ $1+r=(1+\delta)(1+g)^{\gamma}$
+
+This is equivalent to $r=\delta + \gamma \cdot g$ when the period is small. QED.
+
+Normatively $\delta = 0$ seems justified. Small capital stock and $r>g$ desirable if $\gamma$ is high
+[controversy Stern vs. Nordhaus]
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Capital Stock and Modified Golden Rule}
+\end{center}
+\textbf{Modified Golden Rule:} $r=\delta + \gamma \cdot g$ 
+
+Bequest and capital taxes affect capital stock
+
+However, if govt can use debt, it can control capital  stock
+ 
+If debt used to set optimal capital stock at the Modified Golden Rule) then
+effects of taxes on $K$ stock can be ignored $\Rightarrow$
+Optimal $K$ stock and optimal redistribution are \textbf{orthogonal}
+
+If K stock is not at Modified Golden Rule, then optimal K tax formulas include
+a corrective term
+
+[see King 1980 and Atkinson-Sandmo 1980
+in OLG life-cycle model, Piketty-Saez ECMA'13 for models with bequests]
+
+In practice: no reason for MGR to hold, govts do not actively target K stock 
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf MANIPULATIVE BEQUESTS} \end{center}
+
+Parents use potential bequest to extract favors from children
+
+Empirical Evidence: Bernheim-Shleifer-Summers JPE '85 show that
+number of visits of children to parents is correlated with
+bequeathable wealth but not annuitized wealth of parents
+
+$\Rightarrow$ Bequest becomes one additional form of labor income
+for donee and one consumption good for donor
+
+$\Rightarrow$ Inheritances should be counted and taxed as labor
+income for donees
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf SOCIAL-FAMILY PRESSURE BEQUESTS} \end{center}
+
+Parents may not want to leave bequests but feel compelled to by
+pressure of heirs or society: bargaining between parents and
+children
+
+With estate tax, parents do not feel like they need to give as
+much $\Rightarrow$ parents are made better-off by the estate tax
+$\Rightarrow$ Case for estate taxation stronger [Atkinson-Stiglitz
+does not apply and no double counting of bequests]
+
+Empirical evidence:
+
+Aura JpubE'05: reform of private pension annuities in the US in
+1984 requiring both spouses signatures when retiring worker decides to get
+a single annuity or couple annuity: reform $\uparrow$ sharply
+couple annuities choice
+
+Equal division of estates [Wilhelm AER'96, Light-McGarry '04]: estates are
+very often divided equally but gifts are not
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf DYNASTIC MODEL OR INFINITE HORIZON} \end{center}
+Special case of warm glow: $V_t=u(c_t,l_t) + V_{t+1}/(1+\delta)$
+implies $$V_0 = \sum_{t \geq 0}  u(c_t,l_t)/(1+\delta)^t$$ $$\text{subject to } \sum_{t \geq 0}
+c_t/(1+r)^t \leq \sum_{t \geq 0} w_t l_t/(1+r)^t$$
+Dynasty with \textbf{Ricardian equivalence:} consumption depends only on
+PDV of earnings of dynasty
+
+Poor empirical fit:
+
+1) Altonji-Hayashi-Kotlikoff AER'92, JPE'97 show that income
+shocks to parents have bigger effect on parents consumption than
+on kids consumption (and conversely)
+
+2) Temporary tax cut debt financed [fiscal stimulus] should have
+no impact on consumption but actually do
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf DYNASTIC MODEL OR INFINITE HORIZON} \end{center}
+%Debate on what should the govt objective be:
+%
+%First generation $V_0$ or steady-state $V_t$ (for $t$ large)
+%
+%With uncertainty: $V_0$ objective leads to crazy asymptotic
+%results: {\bf immiseration} results of Akteson-Lucas REStud '92
+%
+%$\Rightarrow$ Cross sectional inequality explodes and $EV_t
+%\rightarrow -\infty$ (optimal to keep motivating future
+%generations, and does not hurt too much from $V_0$ perspective)
+%
+%Violates sense that govt should not exacerbate inequality due to
+%inter-generational linkage
+%
+%{\bf Steady state} $EV_t$ seems better objective but then the govt
+%would want to push capital into the future (at the expense of past
+%generations) [Phelan REStud'06, Farhi-Werning JPE'08 solve models
+%with no capital with this objective]
+%
+%%No very good solution to this conundrum
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf INFINITE HORIZON MODEL: CHAMLEY-JUDD} \end{center}
+Govt can collect taxes using linear
+labor income tax or capital income taxes that vary period by period $\tau_L^t$, $\tau_K^t$
+
+Goal of the government is to maximize utility of the dynasty
+\[V_0 = \sum_t u(c_t,l_t)/(1+\delta)^t \text{ st } \quad \sum_t q_t c_t \leq
+\sum_t q_t w_t(1-\tau_L^t) l_t+A_0 \quad (\lambda) \]
+$q_0=1$, ...,
+$q_t=1/\prod_{s=1}^t(1+r_s(1-\tau^s_K))$, ...
+
+%FOC in $l_t$ and $c_t$ $\Rightarrow$ $w_t(1-\tau_L^t)
+%u^t_c-u^t_l=0$, $u_c^{t+1}/u_c^t=(1+\delta)/(1+r(1-\tau^t_K))$
+
+With constant tax rate $\tau_K$ and constant $r$: Before tax
+price: $p_t=1/(1+r)^t$ and after-tax price
+$q_t=1/(1+r(1-\tau_K))^t$ $\Rightarrow$
+
+Price distortion $q_t/p_t$ grows exponentially with time
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf INFINITE HORIZON MODEL: CHAMLEY-JUDD} \end{center}
+%Let us assume representative agent with fixed labor supply and no
+%labor income tax for notational simplicity [not relevant for key
+%results]
+%
+%$V_0$ objective: govt choose path of $\tau^t_K$ (or equivalently
+%$q_t$) that maximizes $V_0$ st govt budget constraint
+%$$\sum_t (q_t-p_t)(c_t-w_t) \geq \sum_t p_t g_t$$ with $g_t$
+%exogenous govt spending requirement
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf CHAMLEY-JUDD: RESULTS} \end{center}
+
+Chamley-Judd show that the capital income tax rate always tends to
+zero asymptotically: no capital tax in the long-run: 
+
+Two equivalent ways to understand this result:
+
+(1) A constant
+tax on capital income creates an exponentially growing
+distortion which is inefficient
+
+(2) The PDV of the capital income tax base is infinitely elastic
+with respect to ant increase in $\tau_K$ in the distant future 
+[Piketty-Saez '13]
+
+Intuition: $u_c(c_{t+1})/u_c(c_t)=(1+\delta)/(1+r(1-\tau_K)) \Rightarrow$
+savings decisions infinitely elastic to $r(1-\tau_K) -\delta$
+
+If $r (1-\tau_K) >\delta$, accumulate
+forever. If $r (1-\tau_K) <\delta$, get in debt as much as possible.
+
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center} {\bf CHAMLEY-JUDD, INFINITE ELASTICITY} \end{center}
+%
+%Two classes: capitalists save as in infinite horizon model,
+%workers do not save (consume wages $w$ with no labor supply
+%effects) [Piketty '00 handbook chapter]
+%
+%Can capital tax at rate $\tau$ be desirable for workers in
+%steady-state?
+%
+%$r=f'(k)$ and $w=f(k)-k f'(k)$, tax $\tau$, net return is
+%$(1-\tau)f'(k)$
+%
+%Infinite horizon: modified Golden rule: discount rate $\delta =
+%(1-\tau)f'(k)$ (if $>$, save more and $k$ increases, if $<$, save
+%less and $k$ decreases).
+%
+%Workers get $w+f'(k) \tau k = f(k) - (1-\tau) k f'(k) = f(k) -
+%\delta k$, maximized when $f'(k)=\delta$, ie $\tau=0$
+%
+%Intuition: Supply of $k$ is infinitely elastic: taxing an
+%infinitely elastic good cannot be desirable [even in the steady
+%state]
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf CHAMLEY-JUDD, $V_0$ objective} \end{center}
+%
+%It is possible to build a model with endogenous discount rate
+%$\delta(c)$ so that elasticity of $k$ stock with respect to
+%long-term return $r$ is finite
+%
+%Judd JpubE '85 shows that:
+%
+%If workers have the same discount rate as capitalists
+%(asymptotically) then long-run zero capital income tax result
+%carries over
+%
+%This is because the elasticity of the PDV of the tax base with respect 
+%to long-distant tax change remains infinite [Piketty-Saez ECMA'13]
+%
+%% about inter-temporal distortions: a constant capital
+%%income tax rate $\tau_K$ produces a growing distortion overtime
+%%while Ramsey recommends to spread taxes across goods
+%
+%% and has nothing to do
+%%with intra-generational redistribution
+%\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf CHAMLEY-JUDD, $V_0$ objective} \end{center}
+%Proof:
+%
+%Consider steady state (large $t$): everything has converged:
+%$u_c^t=u_c$, $r_t=r$, $\tau^t_K=\tau_K$
+%
+%If $\tau_K>0$ then $r(1-\tau_K)=\delta$ $\Rightarrow$ $r> \delta$
+%
+%Suppose govt increases taxes by \$1 in period $t$ and decreases
+%taxes by \$1+$r$ in period $t+1$
+%
+%(1) budget neutral for govt
+%
+%(2) Social welfare effect:
+%$dSW=-u^t_c/(1+\delta)^t+(1+r)u_c^{t+1}/(1+\delta)^{t+1}=u_c/(1+\delta)^t
+%\cdot [-1 + (1+r)/(1+\delta)]>0$
+%
+%$\Rightarrow$ Cannot be an optimum: intertemporal distortion
+%cannot help in the long-run
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf ISSUES IN INFINITE HORIZON MODEL} \end{center}
+1) Taxing initial wealth is most efficient [as this is
+lumpsum taxation] $\Rightarrow$ solutions typically bang-bang: tax capital as much
+as possible early, then zero
+
+2) Chamley-Judd tax is not time consistent: the government would
+like to renege and start taxing capital again
+
+3) Zero-long run tax result is not robust to using progressive
+income taxation [Piketty, '01, Saez JpubE'13]
+
+4) Dynastic model requires strong homogeneity assumptions (in
+discount rates) to generate reasonable steady states [unlikely to
+hold in practice]
+
+5) Introducing stochastic shocks in labor/preferences in dynastic
+model leads to finite elasticities (and reasonable optimal tax rates)
+[Piketty-Saez ECMA'13]
+
+%{\bf Bottom line:} Not very useful model for thinking about
+%capital income taxation
+\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf PROGRESSIVE TAX IN $\infty$ HORIZON: PIKETTY '01} \end{center}
+%Dynastic utilities with inelastic labor supply
+%$$W = \sum_t u(c_t)/(1+\delta)^t$$
+%$r_t=f'(k_t)$, $w_t=f(k_t)-r_t k_t$
+%
+%Distribution of wealth: $a_t$ with density $f_t(a_t)$ so that $k_t
+%= \int a g_t(a)da$
+%
+%Golden rule capital stock $k^*$:  $f'(k^*)=\delta$
+%
+%With no taxes: In steady state: $f'(k_{\infty})=\delta$ (i.e
+%$k_{\infty}=k^*$), any $g_{\infty}(a)$ possible as long as $k^* =
+%\int a g_{\infty} (a)da$
+%
+%Proof: suppose $r_{\infty}=f'(k_{\infty})>\delta$ $\Rightarrow$
+%$u'(c_{t+1})/u(c_{t})=(1+\delta)/(1+r_t)<1$ i.e., $c_{t+1}>c_{t}$
+%$\Rightarrow$ Individuals want to shift consumption toward future
+%$\Rightarrow$ Save more and accumulate capital indefinitely [not a
+%steady state]
+%\end{slide}
+%
+%
+%
+%\begin{slide}
+%\begin{center} {\bf PROGRESSIVE TAX IN $\infty$ HORIZON: PIKETTY '01} \end{center}
+%
+%Suppose a progressive capital income tax is introduced: $\tau_K=0$
+%when $a \leq \bar{k}$ and $\tau_K=\tau>0$ when $a \geq \bar{k}$
+%
+%Assume $\bar{k}>k^*$
+%
+%In the steady state:
+%
+%1) Golden rule capital stock: $k_{\infty}=\int a g_{\infty}
+%(a)da=k^*$
+%
+%2) Truncated wealth distribution: $a\leq \bar{k}$ for all
+%individuals
+%
+%Proof: In steady state, all individuals must face same net-of-tax
+%rate $r_{\infty}(1-\tau_K)$ $\Rightarrow$ All individuals in same
+%tax bracket $[0,\bar{k}]$ or $(\bar{k},\infty)$. But
+%$(\bar{k},\infty)$ is impossible because $k_{\infty}=\int a g(a)da
+%\geq  \bar{k} > k^*$ and hence $f'(k_{\infty})<\delta$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf PROGRESSIVE TAX IN $\infty$ HORIZON: SAEZ '13} \end{center}
+%Piketty '01 shows that progressive capital income tax with
+%exemption up to $k^*$ equalizes wealth without affecting long-run
+%capital stock
+%
+%Seems desirable from steady-state perspective
+%
+%Saez '13 shows that such progressive taxation is desirable from
+%period 0 perspective if
+%
+%$a \cdot \sigma <1$ where $a$ is Pareto parameter of initial
+%wealth distribution and $\sigma$ is inter-temporal elasticity of
+%substitution $u(c_t)=[c_t^{1-1/\sigma}-1]/[1-1/\sigma]$
+%
+%Long-run wealth distribution will then be truncated
+%\end{slide}
+
+%\begin{slide}
+%\begin{center} {\bf PROGRESS IN OPTIMAL CAPITAL INCOME THEORY} \end{center}
+%
+%Research plan of Piketty and Saez '12
+%
+%1) Develop tax formulas that are based on sufficient statistics
+%that can be estimated empirically [behavioral responses and
+%distributive factors]
+%
+%2) Formulas should be robust to heterogeneity in preferences
+%[accidental, warm glow, altruistic]
+%
+%3) Predictions from theory should be somewhat aligned to actual
+%practice [taxing only earnings and not at all capital does not fit
+%with actual practice]
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf PIKETTY-SAEZ '12 SIMPLIFIED MODEL} \end{center}
+%Agent $i$ in cohort $t$ (1 cohort =1 period =H years)
+%
+%Receives bequest $b_{ti}=z_{it} b_t$ at beginning of period $t$ where $b_t$ average
+%bequest and $z_{i}$ (normalized) bequest received
+%
+%At the end of period $t$, individual receives (inelastic)
+%labor income $y_{Lti}=\theta_{it} y_{Lt}$, consumes $c_{ti}$,
+%and leaves bequest $b_{t+1i}$ to unique child so as to maximize:
+%\[U_{it}=(1-s_{it}) \log c_{ti} + s_{it} \log [(1-\tau_B)e^{rH}b_{t+1 i}] \quad \mathrm{s.c.}\]
+%\[ c_{ti} + b_{t+1 i} \leq
+% (1-\tau_B)b_{t}z_{it} e^{rH} +(1-\tau_L)y_{Lt}\theta_i \]
+%$\tau_B=$ bequest tax rate, $\tau_L=$ labor income tax rate
+%\[\Rightarrow b_{t+1i}=s_{ti} \cdot [ (1-\tau_B)b_{t}z_{it} e^{rH} +(1-\tau_L)y_{Lt}\theta_{it} ] \]
+%
+%$y_{Lt}=y_{L0}e^{gHt}$ (exogenous growth at rate $g$)
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf INHERITANCE FLOWS}
+%\end{center}
+%Assume $(s_{it},\theta_{it})$ iid within and across cohorts
+%\[b_{t+1i}=s_{ti} \cdot [ (1-\tau_B)b_{t}z_{it} e^{rH} +(1-\tau_L)y_{Lt}\theta_{it} ] \]
+%Aggregates to:
+%\[b_{t+1}=s \cdot [ (1-\tau_B)b_{t}e^{rH} +(1-\tau_L)y_{Lt} ] \]
+%Steady-state convergence $b_{t+1}=b_t e^{gH}$:
+%\[\Rightarrow b_{yL}=\frac{b_t e^{rH}}{y_{Lt}} = \frac{s(1-\tau_L)e^{(r-g)H}}{1-s(1-\tau_B)e^{(r-g)H}} \]
+%$b_{yL}$ increases with $r-g$ (capitalization effect, Piketty QJE'11)
+%
+%$r-g=3\%, \tau_L=\tau_B=10\%, H=30, s=10\% \Rightarrow b_{yL}=28\%$
+%
+%$r-g=1\%, \tau_L=\tau_B=30\%, H=30, s=10\% \Rightarrow b_{yL}=10\%$
+%
+%Shocks $(s_{it},\theta_{it})$ generate steady-state distribution $(z_{it},\theta_{it})$
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf MODEL: GOVERNMENT OBJECTIVE}
+%\end{center}
+%Govt chooses $\tau_B, \tau_L$ to maximize \textbf{steady-state} social welfare
+%\[SWF = \int \omega^i U^i d\Psi(z) dF(\theta) \]
+%with $\Psi(z)$ cdf of (normalized) inheritance $z$ and $F(\theta)$ cdf of
+%labor productivity $\theta$, $\omega^i=$ welfare weights concentrated on those with zero
+%inheritance $(z_{it}=0)$ (meritocratic).
+%
+%subject to budget balance constraint
+%\[ \tau _{L} y_{Lt}+\tau _{B}b_{t}e^{rH}=\tau y_t \quad \mathrm{with} \quad \tau \quad  \mathrm{given} \]
+%Consider small $d\tau_B>0$, can cut $d\tau_L<0$ by:
+%\[-y_{Lt} d\tau_L = d\tau_B b_t e^{rH} \left ( 1 - e_B \frac{\tau_B}{1-\tau_B} \right ) \]
+%$e_B =$ long-run elasticity of $b_{yL}$ with respect to $1-\tau_B$
+%\[ e_B =\frac{1-\tau _{B}}{b_{yL}} \frac{db_{yL}}{d(1-\tau _{B})} \]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf OPTIMAL INHERITANCE TAX RATE}
+%\end{center}
+%\textbf{Meritocratic Rawlsian Optimum:} maximize welfare of those receiving no inheritance
+%\[  \tau_B=\frac{1+s - e^{-(r-g)H}} {1+s+e_B} \]
+%$\tau_B \downarrow$ with $e_B$. Even if $e_B=0$, we have $\tau_B<1$. $e_B=\infty \Rightarrow
+%\tau_B=0$
+%%(trade-off between taxing  inheritors from my cohort vs. my children)
+%
+%$\tau_B \uparrow$ with $r-g$: Taxing bequests raises $\tau_B b_t e^{rH}$ from
+%inheritors in my cohort
+%but costs $\tau_B b_{t+1}=\tau_B b_t e^{gH}$ to what I leave to my child
+%
+%If $r-g=3\%, H=30, s=10\%, e_B=.25 \Rightarrow \tau_B=51\%$
+%
+%If $r-g=1\%, H=30, s=10\%, e_B=.25 \Rightarrow \tau_B=27\%$
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf OPTIMAL INHERITANCE TAX RATE: PROOF}
+%\end{center}
+%Preferred tax $(\tau_L,\tau_B)$ for zero inheritor with savings taste $s_{ti}$:
+%\[U_{it}=(1-s_{ti}) \log c_{ti} + s_{ti} \log[b_{t+1i}e^{rH}(1-\tau_B)]\]
+%\[c_{ti} = (1-s_{ti}) y_{Lt}\theta_{ti} (1-\tau_L) \quad \mathrm{and} \quad b_{t+1i} = s_{ti} y_{Lt}\theta_{ti} (1-\tau_L) \]
+%\[U_{it}=\log(1-\tau_L) +s_{ti}\log(1-\tau_B) + constant \]
+%\[\mathrm{FOC} \quad \frac{d\tau_L}{1-\tau_L} + s_{ti} \frac{d\tau_B}{1-\tau_B}=0 \]
+%Govt budget $d\tau_L = -d\tau_B b_{yL} \left ( 1 - e_B \tau_B/(1-\tau_B) \right )$ implies:
+%\[ \frac{d\tau_L}{1-\tau_L} =  -
+%\frac{d\tau_B}{1-\tau_B}  \cdot  \frac{s e^{(r-g)H}}{1-s(1-\tau_B)e^{(r-g)H}} \cdot [ 1 -\tau_B (e_B+1)]  \]
+%Using FOC, we obtain preferred $\tau_B$ of $s_{ti}$ person
+%\[ \Rightarrow  \tau_B=\frac{1+s_{ti} - (s_{ti}/s) e^{-(r-g)H}} {1+s_{ti}+e_B} \] 
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf NEW DYNAMIC PUBLIC FINANCE: REFERENCES} \end{center}
+Dynamic taxation in the presence of future earnings uncertainty 
+
+Recent series of papers following upon on Golosov, Kocherlakota,
+Tsyvinski REStud '03 (GKT)
+
+Principle can be understood in 2 period model: Diamond-Mirrlees
+JpubE '78 and Cremer-Gahvari EJ '95
+
+Generalized to many periods by GKT and subsequent papers
+
+Simple exposition is Kocherlakota AER-PP '04
+
+Two comprehensive surveys: Golosov-Tsyvinski-Werning '06 and
+Kocherlakota '10 book
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf NEW DYNAMIC PUBLIC FINANCE (NDPF)} \end{center}
+
+Key ingredient is uncertainty in future ability $w$
+
+2 period simple model:
+
+(0) Everybody is identical in period 0: no work and consume $c_0$,
+period 0 utility is $u(c_0)$
+
+(1) Ability $w$ revealed in period 1, work $l$ and earn $z=wl$,
+consume $c_1$, period 1 utility $u(c_1)-h(l)$
+
+Total utility $u(c_0)+ \beta [ u(c_1) -h(l)]$
+
+Rate of return $r$, gross return $R=1+r$
+
+Discount rate $\beta<1$
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf STANDARD EULER EQUATION} \end{center}
+No govt intervention: $c_0+c_1/R = wl/R$
+
+Solve model backward (assume $c_0$ given):
+
+Period 1: $c_1=wl - R c_0$, choose $l$ to maximize
+$u(wl-Rc_0)-h(l)$
+
+$\Rightarrow$ FOC $w u'(wl-Rc_0)=h'(l)$ $\Rightarrow$
+$l^*=l(w,c_0)$
+
+Period 0: Choose $c_0$ to maximize: 
+\[u(c_0)+ \beta \int [ u(w
+l^*-Rc_0) -h(l^*)]f(w)dw \]
+
+FOC for $c_0$ (using envelope condition for $l^*$) $$u'(c_0) =
+\beta R \int u'(c_1)f(w)dw$$ This is called the {\bf Euler equation}
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf MECHANISM DESIGN} \end{center}
+
+Government would like to redistribute from high $w$ to low $w$.
+Government does not observe $w$ but can observe $c_0,c_1,z=wl$ and
+can set taxes as a function of $c_0,c_1,z$
+
+Equivalently (using revelation principle), govt can offer menu
+$(c_0,c_1(w),z(w))_w$ and let individuals truthfully reveal their
+$w$
+
+Govt program: choose menu $(c_0,c_1(w),z(w))_w$ to maximize:
+\[ SW=u(c_0) + \beta \int [u(c_1(w))-h(z(w)/w)]f(w)dw \text{ st} \]
+1) Budget: $c_0 + \int c_1(w)f(w)dw/R \leq \int z(w)f(w)dw/R$
+
+2) Incentive Compatibility (IC): individual $w$ prefers
+$c_0,c_1(w),z(w)$ to any other $c_0,c_1(w'),z(w')$
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf INVERSE EULER EQUATION} \end{center}
+\textbf{Inverse Euler equation} holds at the govt optimum:
+$$\frac{1}{u'(c_0)} = \frac{1}{\beta R} \cdot \int \frac{1}{u'(c_1(w))}
+f(w)dw$$ \textbf{Proof:} small deviation in menus offered: $\Delta c_0 =
+-\varepsilon/u'(c_0)$ and $\Delta c_1(w) = \varepsilon/ [\beta
+u'(c_1(w))]$ with small $\varepsilon>0$
+
+Does not affect individual utilities in any state:
+\[ u(c_0+\Delta c_0) + \beta u(c_1(w)+\Delta c_1(w))=u(c_0) + \beta
+u(c_1(w))\] \[ + \Delta c_0 u'(c_0) + \Delta c_1(w) \beta u'(c_1(w)) =
+u(c_0) + \beta u(c_1(w))\]
+
+%$u(c_0) + \beta u(c_1(w)) - \varepsilon + \varepsilon =u(c_0) +
+%\beta u(c_1(w))$
+
+$\Rightarrow$ (IC) continues to hold and $SW$ unchanged
+
+Deviation must be budget neutral at optimum
+$$\Rightarrow -\frac{\varepsilon}{u'(c_0)}+\frac{1}{R} \int
+ \frac{\varepsilon f(w)dw}{\beta u'(c_1(w))} =0 $$
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf INTERTEMPORAL WEDGE} \end{center}
+Jensen Inequality:   for $K(.)$ convex $$\Rightarrow K \left (\int x(w) dF(w) \right ) < \int K(x(w))
+dF(w)$$
+
+Apply this to $K(x)=1/x$ and $x(w)=u'(c_1(w))$ $\Rightarrow$
+$$\frac{1}{\int u'(c_1(w)) f(w)dw}< \int \frac{f(w)dw}{u'(c_1(w))}=
+\frac{\beta R}{u'(c_0)} $$ $$\Rightarrow u'(c_0) < \beta R \int
+u'(c_1(w)) f(w)dw$$ $\Rightarrow$ Optimal govt redistribution
+imposes a positive tax wedge on intertemporal choice
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf NDPF DECENTRALIZATION AND INTUITION} \end{center}
+
+{\bf Decentralization:} Optimum can be decentralized with a tax on
+capital income [which depends on current labor income] along with
+a nonlinear tax on wage income [Kocherlakota EMA'06]
+
+{\bf Economic intuition:} If high skill person works less (to
+imitate lower skill person), person would also like to reduce
+$c_0$ and hence save more, so tax on savings is a good way to
+discourage imitation
+
+Result depends crucially on rationality in inter-temporal choices + income effects
+on labor: not clear yet how applicable this is in practice
+
+Would be valuable to explore empirically for example whether DI (disability insurance) 
+cheaters were saving more than non cheaters [would require merging SSA data and
+tax/wealth data, hard to do]
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf NDPF NUMERICAL SIMULATIONS} \end{center}
+
+Farhi-Werning '11 propose numerical calibration and show that, for
+realistic parameters, the welfare gain of using full nonlinear optimal capital/labor taxation
+is very small ($0.1\%$ in aggregate welfare) relative to using only optimal labor taxation
+
+Golosov-Troshkin-Tsyvinski '11 also find on average small welfare gains and small
+optimal capital tax rates
+
+$\Rightarrow$ Suggests that the mechanism is not quantitatively important even assuming
+the theory is right 
+
+$\Rightarrow$ Policy relevance of the NDPF for capital taxation likely to be limited 
+
+DI/retirement application of NDPF might be quantitatively more important
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Altonji, J., F. Hayashi, and L. Kotlikoff ``Is the Extended Family Altruistically Linked? Direct Tests Using Micro Data'', American Economic Review, Vol. 82, 1992, 1177-98. \href{http://links.jstor.org/stable/pdfplus/2117473.pdf} {(web)}
+
+Altonji, J., F. Hayashi and L. Kotlikoff ``Parental Altruism and Inter Vivos Transfers: Theory and Evidence'', Journal of Political Economy, Vol. 105, 1997, 1121-66. \href{http://links.jstor.org/stable/pdfplus/2138891.pdf} {(web)}
+
+Atkinson, A.B. and A. Sandmo ``Welfare Implications of the Taxation of Savings'', Economic Journal, Vol. 90, 1980, 529-49. \href{http://links.jstor.org/stable/pdfplus/2231925.pdf} {(web)}
+
+Atkinson, A.B. and J. Stiglitz ``The design of tax structure: Direct versus indirect taxation'', Journal of Public Economics, Vol. 6, 1976, 55-75. \href{http://elsa.berkeley.edu/~saez/course/AtkinsonStiglitz_JPubE(1976).pdf} {(web)}
+
+Atkinson, A.B. and J. Stiglitz Lectures on Public Economics, Chap 14-4 New York: McGraw Hill, 1980. \href{http://elsa.berkeley.edu/~saez/course/Atkinson,Stiglitz(1980)book_Chapter14_4.pdf} {(web)}
+
+Auerbach, A. and L. Kotlikoff ``Evaluating Fiscal Policy with a Dynamic Simulation Model'', American Economic Review, May 1987, 49–55. \href{http://links.jstor.org/stable/pdfplus/1805428.pdf} {(web)}
+
+Aura, S. ``Does the Balance of Power Within a Family Matter? The Case of the Retirement Equity Act'', Journal of Public Economics, Vol. 89, 2005, 1699-1717. \href{http://elsa.berkeley.edu/~saez/course/Aura_JPubE(2005).pdf} {(web)}
+
+Banks J. and P. Diamond ``The Base for Direct Taxation'', IFS Working Paper, The Mirrlees Review: Reforming the Tax System for the 21st Century, Oxford University Press, 2009. \href{http://elsa.berkeley.edu/~saez/course/Banks and Diamond_IFS(2009).pdf} {(web)}
+
+Bernheim, B. D., A. Shleifer, and L. Summers ``The Strategic Bequest Motive'', Journal of Political Economy, Vol. 93, 1985, 1045-76. \href{http://links.jstor.org/stable/pdfplus/1833175.pdf} {(web)}
+
+Carroll, C. ``Why Do the Rich Save So Much?'', NBER Working Paper No. 6549, 1998. \href{http://www.nber.org/papers/w6549} {(web)}
+
+Chamley, C. ``Optimal Taxation of Capital Income in General Equilibrium with Infinite Lives'', Econometrica, Vol. 54, 1986, 607-622. \href{http://links.jstor.org/stable/pdfplus/1911310.pdf} {(web)}
+
+Christiansen, Vidar and Matti Tuomala ``On taxing capital income with income shifting'',
+International Tax and Public Finance, Vol. 15, 2008, 527-545.
+\href{http://elsa.berkeley.edu/~saez/course/christiansen-tuomalaITAX08capitalincomeshifting.pdf} {(web)}
+
+Cremer, H. and F. Gahvari ``Uncertainty and Optimal Taxation: In defense of Commodity Taxes'', Journal of Public Economics, Vol. 56, 1995, 291-310. \href{http://elsa.berkeley.edu/~saez/course/Cremer and Ghavari_JPubE(1995).pdf} {(web)}
+
+Davies, J. and A. Shorrocks, Chapter 11 The distribution of wealth, In: Anthony B. Atkinson and Francois Bourguignon, Editor(s), Handbook of Income Distribution, Elsevier, 2000, Vol. 1, 605-675. \href{http://elsa.berkeley.edu/~saez/course/Davies,Shorrocks(2000).pdf} {(web)}
+
+DeLong, J.B. ``Bequests: An Historical Perspective,'' in A. Munnell, ed., \emph{The Role and Impact
+of Gifts and Estates}, Brookings Institution, 2003 \href{http://elsa.berkeley.edu/~saez/course/DeLong(2003)_MunnellBook.pdf} {(web)}
+
+Diamond, P. and J. Mirrlees ``A Model of Social Insurance with Variable Retirement'', Journal of Public Economics, Vol. 10, 1978, 295-336. \href{http://elsa.berkeley.edu/~saez/course/Diamond and Mirrlees_JPubE(1978).pdf} {(web)}
+
+\textbf{Diamond, Peter and Emmanuel Saez ``The Case for a Progressive Tax: From Basic Research to Policy Recommendations'', Journal of Economic Perspectives, 25(4), Fall 2011, 165-190.
+\href{http://elsa.berkeley.edu/~saez/diamond-saezJEP11full.pdf} {(web)} }
+
+Diamond, P. and J. Spinnewijn ``Capital Income Taxes with Heterogeneous Discount Rates'', NBER Working Paper, No. 15115, 2009. \href{http://www.nber.org/papers/w15115.pdf} {(web)}
+
+Farhi E. and I. Werning ``Progressive Estate Taxation'', Quarterly Journal of Economics, Vol. 125, 2010, 635-673. \href{http://elsa.berkeley.edu/~saez/course/Fahri and Werning_QJE(2010).pdf} {(web)}
+
+Farhi E. and I. Werning ``Capital Taxation: Quantitative Explorations
+of the Inverse Euler Equation,'' forthcoming \emph{Journal of Political Economy} 2011.
+\href{http://elsa.berkeley.edu/~saez/course/FahriWerningJPE11.pdf} {(web)}
+
+Feldstein, M. ``The Welfare Cost of Capital Income Taxation'', Journal of Political Economy, Vol. 86, 1978, 29-52. \href{http://links.jstor.org/stable/pdfplus/1829755.pdf} {(web)}
+
+Finkelstein A. and J. Poterba, ``Adverse Selection in Insurance Markets: Policyholder Evidence from the U.K. Annuity Market'', Journal of Political Economy, Vol. 112, 2004, 183-208. \href{http://links.jstor.org/stable/pdfplus/3555197.pdf} {(web)}
+
+Finkelstein A. and J. Poterba, ``Selection Effects in the United Kingdom Individual Annuities Market'', The Economic Journal, Vol. 112, 2002, 28-50. \href{http://www.jstor.org/stable/pdfplus/798430.pdf} {(web})
+
+Gale, William G. and John Karl Scholz, ``Intergenerational
+Transfers and the Accumulation of Wealth'', Journal of Economic Perspectives, Vol. 8(4), 1994
+145-160. \href{http://www.jstor.org/stable/pdfplus/2138343.pdf} {(web)} 
+
+Golosov, M., N. Kocherlakota and A. Tsyvinski ``Optimal Indirect and Capital Taxation'', Review of Economic Studies, Vol. 70, 2003, 569-587. \href{http://links.jstor.org/stable/pdfplus/3648601.pdf} {(web)}
+
+Golosov, M. and A. Tsyvinski ``Designing Optimal Disability Insurance: A Case for Asset Testing'', Journal of Political Economy, Vol. 114, 2006, 257-279. \href{http://www.journals.uchicago.edu/doi/abs/10.1086/500549} {(web)}
+
+Golosov, Mikhail, Maxim Troshkin, and Aleh Tsyvinski 2011. ``Optimal Dynamic Taxes.'' 
+Princeton Working Paper
+\href{http://elsa.berkeley.edu/~saez/course/Golosovetal11.pdf} {(web)}
+
+Golosov, M., M. Troshkin, A. Tsyvinski and M. Weinzierl ``Preference Heterogeneity and Optimal Commodity Taxation'', MIMEO Yale, July 2011. \href{http://elsa.berkeley.edu/~saez/course/Golosovetal(2011).pdf} {(web)}
+
+Golosov, M., A. Tsyvinski and I. Werning ``New Dynamic Public Finance: a User's Guide'' NBER Macro Annual 2006. \href{http://www.nber.org/chapters/c11181.pdf} {(web)}
+
+Gordon, R.H. and J. Slemrod ``Are ``Real'' Responses to Taxes Simply Income Shifting Between Corporate and Personal Tax Bases?,'' NBER Working Paper, No. 6576, 1998. \href{http://www.nber.org/papers/w6576} {(web)}
+
+Holtz-Eakin, D., D. Joulfaian and H.S. Rosen ``The Carnegie Conjecture: Some Empirical Evidence'', Quarterly Journal of Economics Vol. 108, May 1993, pp.288-307. \href{http://links.jstor.org/stable/pdfplus/2118337.pdf} {(web)}
+
+Judd, K. ``Redistributive Taxation in a Simple Perfect Foresight Model'', Journal of Public Economics, Vol. 28, 1985, 59-83. \href{http://elsa.berkeley.edu/~saez/course/Judd_JPubE(1985).pdf} {(web)}
+
+Kaplow, L. ``A Framework for Assessing Estate and Gift Taxation'', in
+Gale, William G., James R. Hines Jr., and Joel Slemrod (eds.) {\em Rethinking estate and gift taxation} Washington, D.C.: Brookings Institution Press, 2001.
+\href{http://www.nber.org/papers/w7775.pdf} {(web)}
+
+Kaplow, L. ``On the undesirability of commodity taxation even when income taxation is not optimal'', Journal of Public Economics, Vol.90, 2006, 1235-1260. \href{http://elsa.berkeley.edu/~saez/course/Kaplow_JPubE(2006).pdf} {(web)}
+
+Kennickell, A. ``Ponds and streams: wealth and income in the U.S., 1989 to 2007'', Board of Governors of the Federal Reserve System (U.S.), Finance and Economics Discussion Series: 2009-13, 2009. \href{http://elsa.berkeley.edu/~saez/course/Kennickell(2009).pdf} {(web)}
+
+King, M. ``Savings and Taxation'', in G. Hughes and G. Heal, eds., Public Policy and the Tax System (London: George Allen Unwin, 1980), 1-36. \href{http://elsa.berkeley.edu/~saez/course/King(1980).pdf} {(web)} 
+
+\textbf{Kocherlakota, N. ``Wedges and Taxes'', American Economic Review, Vol. 94, 2004, 109-113.  \href{http://links.jstor.org/stable/pdf/3592866.pdf} {(web)} }
+
+Kocherlakota, N. ``Zero Expected Wealth Taxes: A Mirrlees Approach to Dynamic Optimal Taxation'', Econometrica, Vol.73, 2005. \href{http://links.jstor.org/stable/pdfplus/3598884.pdf} {(web)}
+
+Kocherlakota, N. \emph{New Dynamic Public Finance}, Princeton University Press: Princeton, 2010.
+
+Kopczuk, W. ``The Trick Is to Live: Is the Estate Tax Social Security for the Rich?'', The Journal of Political Economy, Vol. 111, 2003, 1318-1341. \href{http://www.jstor.org/stable/pdfplus/10.1086/378529.pdf} {(web)}
+
+Kopczuk, Wojciech ``Taxation of Intergenerational Transfers and Wealth'', 
+in A. Auerbach, R. Chetty, M. Feldstein, and E. Saez (eds.), Handbook of Public Economics, Vol. 5 (Amsterdam: North-Holland, 2013). \href{http://www.nber.org/papers/w18584.pdf} {(web)}
+
+Kopczuk, Wojciech and Joseph Lupton 2007. ``To Leave or Not to Leave: The Distribution
+of Bequest Motives,'' Review of Economic Studies, 74(1), 207-235.
+\href{http://www.jstor.org/stable/pdfplus/4123242.pdf} {(web)}
+
+Kopczuk, Wojciech and Emmanuel Saez ``Top Wealth Shares in the United States, 1916-2000: Evidence from Estate Tax Returns'', National Tax Journal, 57(2), Part 2, June 2004, 445-487. 
+\href{http://elsa.berkeley.edu/~saez/course/kopczuksaez04.pdf} {(web)} 
+
+Kopczuk, Wojciech and Joel Slemrod, ``The Impact of the Estate Tax on the Wealth Accumulation and Avoidance Behavior of Donors'', in William G. Gale, James R. Hines Jr., and Joel B. Slemrod (eds.), \emph{Rethinking Estate and Gift Taxation,} Washington, DC: Brookings Institution Press, 2001, 299-343.
+\href{http://www.nber.org/papers/w7960.pdf} {(web)}
+
+Kotlikoff, L. ``Intergenerational Transfers and Savings'', Journal of Economic Perspectives, Vol. 2, 1988, 41-58. \href{http://links.jstor.org/stable/pdfplus/1942848.pdf} {(web)}
+
+Kotlikoff, L. and L. Summers ``The Role of Intergenerational Transfers in Aggregate Capital Accumulation'', Journal of Political Economy, Vol. 89, 1981, 706-732. \href{http://links.jstor.org/stable/pdfplus/1833031.pdf} {(web)}
+
+Kuziemko, Ilyana, Michael I. Norton, Emmanuel Saez, and Stefanie Stantcheva ``How Elastic are Preferences for Redistribution? Evidence from Randomized Survey Experiments,'' NBER Working Paper No. 18865, 2013.
+\href{http://www.nber.org/papers/w18865.pdf} {(web)}
+
+Laroque, G. ``Indirect Taxation is Superfluous under Separability and Taste Homogeneity: A Simple Proof'', Economic Letters, Vol. 87, 2005, 141-144. \href{http://elsa.berkeley.edu/~saez/course/Laroque(2005).pdf} {(web)}
+
+Light, Audrey and Kathleen McGarry. ``Why Parents Play Favorites: Explanations For Unequal Bequests,'' American Economic Review, 2004, v94(5,Dec), 1669-1681.
+\href{http://www.jstor.org/stable/pdfplus/3592839.pdf} {(web)}
+
+Modigliani, F. ``The Role of Intergenerational Transfers and Lifecyle Savings in the Accumulation of Wealth'', Journal of Economic Perspectives, Vol. 2, 1988, 15-40. \href{http://links.jstor.org/stable/pdfplus/1942847.pdf} {(web)}
+
+Norton, M. and D. Ariely ``Building a Better America--One Wealth Quintile at a Time'',
+Perspectives on Psychological Science 2011 6(9).
+\href{http://elsa.berkeley.edu/~saez/course/norton-ariely11.pdf} {(web)}
+
+Park, N. ``Steady-state solutions of optimal tax mixes in an overlapping-generations model'', Journal of Public Economics, Vol. 46, 1991, 227-246. \href{http://elsa.berkeley.edu/~saez/course/Park_JPubE1991.pdf} {(web)}
+
+Piketty, Thomas 2000. ``Theories of Persistent Inequality
+and Intergenerational Mobility'', In Atkinson A.B., Bourguignon F., eds. 
+\emph{Handbook of Income Distribution}, (North-Holland). 
+\href{http://elsa.berkeley.edu/~saez/course/PikettyHID00.pdf} {(web)}
+
+Piketty, T. ``Income Inequality in France, 1901-1998'', CEPR Discussion Paper No. 2876, 2001 (appendix with
+optimal capital tax point). \href{http://elsa.berkeley.edu/~saez/course/PikettyCEPR01.pdf} {(web)}
+
+Piketty, T. ``Income Inequality in France, 1901-1998'', Journal of Political Economy, Vol. 111, 2003, 1004-1042. \href{http://links.jstor.org/stable/pdfplus/3555130.pdf} {(web)}
+
+Piketty, T. ``On the Long-Run Evolution of Inheritance: France 1820-2050'', Quarterly Journal of
+Economics, 126(3), 2011, 1071-1131. \href{http://elsa.berkeley.edu/~saez/course/PikettyQJE11.pdf} {(web)}
+
+
+Piketty, Thomas, \emph{Capital in the 21st Century},  Cambridge: Harvard University Press, 2014,  
+\href{http://piketty.pse.ens.fr/en/capital21c2}{(web)}
+
+Piketty, Thomas, Gilles Postel-Vinay and Jean-Laurent Rosenthal, ``Inherited vs.
+Self-Made Wealth: Theory and Evidence from a Rentier Society (1872-1927),''  Explorations in
+Economic History, 2014.
+\href{http://elsa.berkeley.edu/~saez/course/ppvr13.pdf} {(web)}
+
+Piketty, T. and E. Saez ``Income Inequality in the United States, 1913-1998'', Quarterly Journal of Economics, Vol. 118, 2003, 1-39. \href{http://links.jstor.org/stable/pdfplus/25053897.pdf} {(web)}
+
+Piketty, T. and E. Saez ``A Theory of Optimal Capital Taxation'', NBER Working Paper No. 17989, 2012. 
+\href{http://www.nber.org/papers/w17989.pdf} {(web)}
+
+\textbf{Piketty, T. and E. Saez ``A Theory of Optimal Inheritance Taxation'', Econometrica, 81(5), 2013, 1851-1886.
+\href{http://elsa.berkeley.edu/users/saez/piketty-saezECMA13.pdf} {(web)} }
+
+Piketty, T. and G. Zucman ``Capital is Back: Wealth-Income Ratios in Rich Countries, 1700-2010'', Quarterly Journal of Economics,  2014 \href{http://elsa.berkeley.edu/~saez/course131/Piketty-Zucman13.pdf}{(web)}
+
+Piketty, T. and G. Zucman ``Wealth and Inheritance in the Long-Run'', Handbook of Income Distribution, Volume 2, Elsevier-North Holland, 2014
+\href{http://elsa.berkeley.edu/~saez/course/PikettyZucman2014HIDRevised.pdf} {(web)}
+
+
+Pirttila, Jukka and Hakan Selin, ``Income shifting within a dual income tax system: evidence from the Finnish tax reform,'' Scandinavian Journal of Economics, 113(1), 120-144, 2011.
+\href{http://elsa.berkeley.edu/~saez/course/pirttila-selinSJE11.pdf} {(web)}
+
+Saez, E. ``Optimal Capital Income Taxes in the Infinite Horizon Model'', Journal of Public
+Economics, 97(1), 2013, 61-74. \href{http://elsa.berkeley.edu/~saez/saezJpubE12optKtax.pdf} {(web)}
+
+Saez, E. ``The Desirability of Commodity Taxation under Nonlinear Income Taxation and Heterogeneous Tastes'', Journal of Public Economics, Vol. 83, 2002, 217-230. \href{http://elsa.berkeley.edu/~saez/course/Saez_JPubE(2002).pdf} {(web)}
+
+Saez, E. and G. Zucman ``The Distribution of US Wealth, Capital Income and Returns since 1913'', Working Paper 2014 (in progress), preliminary slides
+\href{http://elsa.berkeley.edu/~saez/course/SaezZucman2014Slides.pdf} {(web)}
+
+
+Sandmo, A. ``The Effects of Taxation on Savings and Risk-Taking'', in A. Auerbach  and M. Feldstein, Handbook of Public Economics vol. 1, chapter 5, 1985, 265-311. \href{http://elsa.berkeley.edu/~saez/course/Sandmo_Handbook.pdf} {(web)}
+
+Scholz, J. ``Wealth Inequality and the Wealth of Cohorts'', University of Wisconsin, mimeo,2003. \href{http://elsa.berkeley.edu/~saez/course/Scholz(2003).pdf} {(web)}
+
+Slemrod, J. and J. Bakija, Taxing Ourselves: A Citizen's Guide to the Debate over Taxes. The MIT Press, 2004.
+
+Wilhelm, Mark O.  ``Bequest Behavior and the Effect of Heirs' Earnings: Testing the Altruistic Model of Bequests,''
+American Economic Review, 86(4), 1996, 874-892. \href{http://www.jstor.org/stable/pdfplus/2118309.pdf} {(web)}
+
+Zucman, G. ``The Missing Wealth of Nations: Are Europe and the US Net
+Debtors or Net Creditors'', Quarterly Journal of Economics, 2013, 1321-1364. \href{http://elsa.berkeley.edu/~saez/course/zucmanQJE13.pdf} {(web)}
+
+Zucman, G. \emph{La Richesse Cach\'ee des Nations}, Paris: Seuil, 2012 [translation in english in 2015],
+summary in Journal of Economic Perspectives, 2014
+\href{http://gabriel-zucman.eu/richesse-cachee/} {(web)}
+
+Zucman, Gabriel, ``Taxing Offshore Wealth and Profits,'' Journal of Economic Perspectives 28(3),
+2014.
+
+
+}
+
+
+
+\end{slide}
+
+
+
+\end{document}
+
+
+

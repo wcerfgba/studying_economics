@@ -1,0 +1,636 @@
+1                                                          The SAS System                        22:27 Wednesday, September 25, 2013
+
+NOTE: Copyright (c) 2002-2010 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.3 (TS1M0) 
+      Licensed to UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R, Site 70081487.
+NOTE: This session is executing on the Linux 3.2.0-43-generic (LIN X64) platform.
+
+
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.21 seconds
+      cpu time            0.04 seconds
+      
+1          * extract2.sas - follows read2.sas, 2012 march cps, ages 24-64;
+2          options linesize = 130 nocenter;
+3          
+4          libname cps '/var/tmp/';
+NOTE: Libref CPS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /var/tmp
+5          libname here '.';
+NOTE: Libref HERE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /accounts/fac/card/gradlab/250a/ps2/ps2r
+6          
+7          
+8          data here.cps2012;
+9          set cps.extract2012;
+10         
+11         if (24<=age<=64);
+12         
+13         
+14         title1 'ages 24-64 ONLY';
+15         
+16         psupwgt=psupwgt/160924;  /*mean of 1 */
+17         
+18         if imm=1 then gen2=0;
+19          else if (momcob>100) or (dadcob>100) then gen2=1;
+20          else gen2=0;
+21         
+22         poor=(povstat=1);
+23         
+2 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+24         workly=(annhrs>0);
+25         
+26         if alloc_v=1 or alloc_e=1 then alloc_ws=1; else alloc_ws=0;
+27         
+28         wage=earnhr;
+29         
+30         twage=wage;
+31         trim=0;
+32         if wage=. then trim=.;
+33         
+34         if wage ne . then do;
+35          if wage<4 then do;
+36             trim=1;
+37             twage=4;
+38             end;
+39          else if wage >400 then do;
+40             trim=2;
+41             twage=400;
+42             end;
+43         end;
+44         
+45         trimmed=(trim>0);
+46         
+47         logwage=log(twage);
+48         
+49         female=(sex=2);
+50         
+51         exp=age-educ-5;
+52         if exp<0 then exp=0;
+53         exp2=exp*exp;
+54         exp3=exp2*exp;
+55         
+56         famearn=famwagesal;
+57         
+58         
+59         length fedwkr statewkr localwkr selfemp cbsa1-cbsa6 3;
+60         
+61         fedwkr=(classly=2);
+62         statewkr=(classly=3);
+63         localwkr=(classly=4);
+64         selfemp=(classly in (5,6));
+65         
+66         cbsa1=(cbsa_size=2);
+67         cbsa2=(cbsa_size=3);
+68         cbsa3=(cbsa_size=4);
+69         cbsa4=(cbsa_size=5);
+70         cbsa5=(cbsa_size=6);
+71         cbsa6=(cbsa_size=7);
+72         
+73         
+74         if hispanic=0 and white=1 then rgroup=1;
+75         else if hispanic=0 and black=1 then rgroup=2;
+76         else if hispanic=0 and asian=1 then rgroup=4;
+77         else if hispanic=1 then rgroup=3;
+78         else rgroup=5;
+79         
+80         
+81         
+3 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+82         keep female wagesal annhrs wage twage logwage alloc_ws trim trimmed
+83             famkind relhead hhdfxm numjobs weeksu
+84             wage_ogr wkpay earnwk fedwkr statewkr localwkr selfemp collplus maplus phd
+85             educ higrad age exp exp2 exp3 rgroup imm
+86             imm gen2 cbsa_size cbsa1-cbsa6
+87             psupwgt race ethnic weeksly hrswkly classly numjobs
+88             occ1ly ind1ly mover selfinc farminc health division
+89             state workly famearn cbsa_size state hhnum famnum ownkidsu6 ownkidsu18 ogrflag;
+90         	
+91         
+92         
+
+WARNING: The variable division in the DROP, KEEP, or RENAME list has never been referenced.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      23412 at 47:9   
+NOTE: There were 151337 observations read from the data set CPS.EXTRACT2012.
+NOTE: The data set HERE.CPS2012 has 107130 observations and 60 variables.
+NOTE: DATA statement used (Total process time):
+      real time           5.38 seconds
+      cpu time            0.35 seconds
+      
+
+93         proc freq;
+94         tables rgroup*female female*famkind*relhead
+95              female*workly hispanic*imm educ*female classly*female
+ERROR: Variable HISPANIC not found.
+96                 numjobs*female occ1ly*female ind1ly*female
+97                 mover health*female
+98         	ownkidsu6*ownkidsu18 ogrflag;
+99         
+100        
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+101        proc means;
+102        where (female=0);
+103        title2 'men';
+104        
+
+NOTE: There were 51272 observations read from the data set HERE.CPS2012.
+      WHERE female=0;
+NOTE: The PROCEDURE MEANS printed pages 1-2.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.40 seconds
+      cpu time            0.23 seconds
+      
+
+105        proc means;
+106        where (female=0 and famkind=1 and relhead in (1,3) );
+107        title2 'men, in dual-head families, husband of pair';
+108        
+109        
+4 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+
+NOTE: There were 30991 observations read from the data set HERE.CPS2012.
+      WHERE (female=0) and (famkind=1) and relhead in (1, 3);
+NOTE: The PROCEDURE MEANS printed pages 3-4.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.14 seconds
+      
+
+110        proc means;
+111        title2 'women';
+112        where (female=1);
+113        
+
+NOTE: There were 55858 observations read from the data set HERE.CPS2012.
+      WHERE female=1;
+NOTE: The PROCEDURE MEANS printed pages 5-6.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.20 seconds
+      
+
+114        proc means;
+115        where (female=1 and famkind=1 and relhead in (1,4) );
+116        title2 'women, in dual-head families, wife of pair';
+117        
+118        
+119        
+
+NOTE: There were 32314 observations read from the data set HERE.CPS2012.
+      WHERE (female=1) and (famkind=1) and relhead in (1, 4);
+NOTE: The PROCEDURE MEANS printed pages 7-8.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.14 seconds
+      
+
+120        data husbands;
+121        set here.cps2012 (where=(female=0 and famkind=1 and relhead in (1,3)) ) ;
+122        himm=imm;
+123        hgen2=gen2;
+124        heduc=educ;
+125        htwage=twage;
+126        hannhrs=annhrs;
+127        hfamearn=famearn;
+128        h_age=age;
+129        hrace=race;
+130        hwagesal=wagesal;
+131        hwage_ogr=wage_ogr;
+132        hselfinc=selfinc;
+133        hfarminc=farminc;
+134        hclassly=classly;
+135        hhealth=health;
+136        hweeksly=weeksly;
+137        hhrswkly=hrswkly;
+138        hogrflag=ogrflag;
+139        hrgroup=rgroup;
+140        keep hhnum famnum heduc htwage hannhrs hfamearn h_age hrace hwagesal hwage_ogr
+5 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+141             hselfinc hfarminc hclassly himm hgen2 hhealth hweeksly hhrswkly hogrflag
+142             hrgroup state cbsa_size;
+143        
+
+NOTE: There were 30991 observations read from the data set HERE.CPS2012.
+      WHERE (female=0) and (famkind=1) and relhead in (1, 3);
+NOTE: The data set WORK.HUSBANDS has 30991 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.07 seconds
+      
+
+144        proc means;
+145        title2 'husbands' ;
+146        
+
+NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+NOTE: The PROCEDURE MEANS printed page 9.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.04 seconds
+      
+
+147        proc freq;
+148        tables hclassly heduc hhealth hogrflag/ missing;
+149        
+150        
+151        
+
+NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+NOTE: The PROCEDURE FREQ printed page 10.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+152        data wives;
+153        set here.cps2012 (where=(female=1 and famkind=1 and relhead in (1,4)) ) ;
+154        wimm=imm;
+155        wgen2=gen2;
+156        weduc=educ;
+157        wtwage=twage;
+158        wannhrs=annhrs;
+159        wfamearn=famearn;
+160        w_age=age;
+161        wrace=race;
+162        wwagesal=wagesal;
+163        wwage_ogr=wage_ogr;
+164        wselfinc=selfinc;
+165        wfarminc=farminc;
+166        wclassly=classly;
+167        wweeksly=weeksly;
+168        whrswkly=hrswkly;
+169        whealth=health;
+170        wogrflag=ogrflag;
+171        wrgroup=rgroup;
+172        keep hhnum famnum weduc wtwage wannhrs wfamearn w_age wrace wwagesal wwage_ogr
+173             wselfinc wfarminc wclassly wimm wgen2 wweeksly whrswkly whealth
+6 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+174             ownkidsu6 ownkidsu18 wogrflag wrgroup;
+175        
+
+NOTE: There were 32314 observations read from the data set HERE.CPS2012.
+      WHERE (female=1) and (famkind=1) and relhead in (1, 4);
+NOTE: The data set WORK.WIVES has 32314 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.07 seconds
+      
+
+176        proc means;
+177        title2 'wives' ;
+178        
+
+NOTE: There were 32314 observations read from the data set WORK.WIVES.
+NOTE: The PROCEDURE MEANS printed page 11.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.05 seconds
+      
+
+179        proc freq;
+180        tables wclassly weduc wogrflag / missing;
+181        
+182        
+
+NOTE: There were 32314 observations read from the data set WORK.WIVES.
+NOTE: The PROCEDURE FREQ printed page 12.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+183        proc sort data=husbands;
+184        by hhnum famnum;
+185        
+
+NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+NOTE: The data set WORK.HUSBANDS has 30991 observations and 22 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.04 seconds
+      
+
+186        proc sort data=wives;
+187        by hhnum famnum;
+188        
+
+NOTE: There were 32314 observations read from the data set WORK.WIVES.
+NOTE: The data set WORK.WIVES has 32314 observations and 22 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.04 seconds
+      
+
+189        data couples;
+190        merge husbands (in=in1) wives (in=in2);
+7 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+191        by hhnum famnum;
+192        
+193        if in1 and in2 then mergestat='H and W present';
+194        else if in1 then mergestat='H but no W';
+195        else if in2 then mergestat='W but no H';
+196        
+197        wifework=(wweeksly>0);
+198        husbandwork=(hweeksly>0);
+199        
+200        age_gap=h_age-w_age;
+201        wagesalgap=hwagesal-wwagesal;
+202        educgap=heduc-weduc;
+203        
+204        hlogwage=log(htwage);
+205        wlogwage=log(wtwage);
+206        hexp=h_age-heduc-6;
+207        hexp2=hexp**2/100;
+208        hexp3=hexp**3/1000;
+209        
+210        hblack=(hrgroup=2);
+211        wblack=(wrgroup=2);
+212        hhispanic=(hrgroup=3);
+213        whispanic=(wrgroup=3);
+214        
+215        
+
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      2761 at 200:14   2761 at 201:20   2761 at 202:14   5376 at 204:10   9881 at 205:10   2042 at 206:11   2042 at 207:11
+      2042 at 207:14   2042 at 208:11   2042 at 208:14   
+NOTE: There were 30991 observations read from the data set WORK.HUSBANDS.
+NOTE: There were 32314 observations read from the data set WORK.WIVES.
+NOTE: The data set WORK.COUPLES has 33033 observations and 57 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+216        proc freq;
+217        title2 'merged H and W';
+218        tables mergestat wogrflag*hogrflag ;
+219        
+220        
+221        
+
+NOTE: There were 33033 observations read from the data set WORK.COUPLES.
+NOTE: The PROCEDURE FREQ printed page 13.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+222        data here.mroz;
+223        set couples;
+224        
+225        if wifework=1 or husbandwork=1;
+226        if wwage_ogr>0 or hwage_ogr>0;
+227        if hwagesal ne . ;
+8 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+228        if wwagesal ne . ;
+229        
+230        wife_wage_ogr=(wwage_ogr>0);
+231        husband_wage_ogr=(hwage_ogr>0);
+232        
+233        
+234        missing_wwage_ogr=0;
+235        
+236        if wifework=1 and wife_wage_ogr=0 then missing_wwage_ogr=1;;
+237        
+238        if wwage_ogr>0 then wlogwage_ogr=log(wwage_ogr);
+239        
+240        any_under6=(ownkidsu6>0);
+241        
+242        
+243        title2 'couples, husband or wife working last year and one has wage in OGR ';
+244        
+245        
+
+NOTE: There were 33033 observations read from the data set WORK.COUPLES.
+NOTE: The data set HERE.MROZ has 4066 observations and 62 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.27 seconds
+      cpu time            0.03 seconds
+      
+
+246        proc freq;
+247        tables husbandwork*wifework hrgroup*wrgroup
+248        	wifework*wife_wage_ogr
+249        	whealth*hhealth
+250        	wclassly * hclassly
+251        	wimm*himm
+252        	wgen2 * hgen2
+253        	missing_wwage_ogr*wifework  / missing;
+254        
+
+NOTE: There were 4066 observations read from the data set HERE.MROZ.
+NOTE: The PROCEDURE FREQ printed pages 14-20.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.02 seconds
+      
+
+255        proc means;
+256        
+257        
+
+NOTE: There were 4066 observations read from the data set HERE.MROZ.
+NOTE: The PROCEDURE MEANS printed pages 21-22.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.04 seconds
+      
+
+258        proc corr;
+259        var wfamearn hfamearn weduc heduc w_age h_age wannhrs hannhrs ;
+260        
+
+9 The SAS System                                                                               22:27 Wednesday, September 25, 2013
+
+NOTE: The PROCEDURE CORR printed page 23.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+261        proc corr;
+262        var htwage hwage_ogr hwagesal wtwage wwage_ogr wwagesal;
+263        
+
+NOTE: The PROCEDURE CORR printed page 24.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+264        proc corr;
+265        var wlogwage wlogwage_ogr;
+266        
+
+NOTE: The PROCEDURE CORR printed page 25.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+267        proc corr;
+268        var husbandwork wifework weduc heduc w_age h_age ownkidsu6;
+269        
+
+NOTE: The PROCEDURE CORR printed page 26.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+270        proc freq;
+271        tables wclassly*wifework hclassly ownkidsu6*wifework whealth*wifework hhealth*wifework / missing;
+272        
+273        
+
+NOTE: There were 4066 observations read from the data set HERE.MROZ.
+NOTE: The PROCEDURE FREQ printed pages 27-30.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+274        proc means;
+275        where (wifework=1);
+276        title3 'working wife';
+277        
+
+NOTE: There were 3265 observations read from the data set HERE.MROZ.
+      WHERE wifework=1;
+NOTE: The PROCEDURE MEANS printed pages 31-32.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.02 seconds
+10 The SAS System                                                                              22:27 Wednesday, September 25, 2013
+
+      cpu time            0.03 seconds
+      
+
+278        proc means;
+279        where (wifework=1 and wife_wage_ogr=1);
+280        title3 'working wife but wage in OGR';
+281        
+
+NOTE: There were 2871 observations read from the data set HERE.MROZ.
+      WHERE (wifework=1) and (wife_wage_ogr=1);
+NOTE: The PROCEDURE MEANS printed pages 33-34.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+282        proc means;
+283        where (wifework=1 and wife_wage_ogr=0);
+284        title3 'working wife but no wage in OGR';
+285        
+286        
+287        
+288        
+
+NOTE: There were 394 observations read from the data set HERE.MROZ.
+      WHERE (wifework=1) and (wife_wage_ogr=0);
+NOTE: The PROCEDURE MEANS printed pages 35-36.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+289        proc reg;
+290        where (wannhrs>0);
+291        title3 'wife with postive hrs ONLY';
+292        model wannhrs=wlogwage hwagesal ownkidsu6 any_under6 w_age ;
+293        
+
+NOTE: The PROCEDURE REG printed page 37.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+294        proc reg;
+295        where (wannhrs>0 and wwage_ogr>0);
+296        title3 'wife with postive hrs and wage in OGR ';
+297        model wannhrs=wlogwage hwagesal ownkidsu6 any_under6 w_age ;
+298        
+
+NOTE: The PROCEDURE REG printed page 38.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+299        proc reg;
+300        where (wannhrs>0);
+11 The SAS System                                                                              22:27 Wednesday, September 25, 2013
+
+301        model wlogwage=wlogwage_ogr hwagesal ownkidsu6 any_under6 w_age;
+302        model  wannhrs=wlogwage_ogr hwagesal ownkidsu6 any_under6 w_age ;
+303        
+
+NOTE: The PROCEDURE REG printed pages 39-40.
+NOTE: PROCEDURE REG used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+304        proc syslin 2sls;
+305        where (wannhrs>0);
+306        endogenous wlogwage;
+307        instruments wlogwage_ogr hwagesal ownkidsu6 any_under6 w_age ;
+308        model wannhrs=wlogwage hwagesal ownkidsu6 any_under6 w_age ;
+309        
+310        
+311        
+NOTE: 3265 observations were read. 
+      394 observations have missing values. 
+      2871 observations were used in the computations.
+NOTE: The PROCEDURE SYSLIN printed page 41.
+NOTE: PROCEDURE SYSLIN used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+ERROR: Errors printed on page 3.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           7.14 seconds
+      cpu time            1.81 seconds
+      

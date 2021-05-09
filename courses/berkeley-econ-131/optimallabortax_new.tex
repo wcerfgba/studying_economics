@@ -1,0 +1,1048 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+
+\title{Optimal Labor Income Taxation \\ (follows loosely Chapters 20-21 of Gruber)}
+\onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAXATION AND REDISTRIBUTION}
+\end{center}
+
+{\bf Key question:} By how much should government reduce inequality using
+taxes and transfers?
+
+1) Governments use {\bf taxes} to raise revenue
+
+2) This revenue funds {\bf transfer} programs:
+
+a) Universal Transfers: Public Education, Health Care Benefits
+(only 65+ in the US), Retirement and Disability Benefits,
+Unemployment benefits
+
+b) Means-tested Transfers: In-kind (Medicaid, public housing, foodstamps in the US) and cash benefits
+
+Modern governments raise large fraction of GDP in taxes (30-45\%)
+and spend significant fraction of GDP on transfers
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf FACTS ON US TAXES AND TRANSFERS}
+\end{center}
+{\bf References:} Comprehensive description in:
+
+http://www.taxpolicycenter.org/taxfacts/
+
+{\bf A) Taxes:} (1) individual income tax (fed+state), (2) payroll
+taxes on earnings (fed, funds Social Security+Medicare), (3)
+corporate income tax (fed+state), (4) sales taxes (state)+excise
+taxes (state+fed), (5) property taxes (state)
+
+{\bf B) Means-tested Transfers:} (1) refundable tax credits (fed),
+(2) in-kind transfers (fed+state): Medicaid, public housing, nutrition
+(SNAP), education, (3) cash welfare: TANF for single parents
+(fed+state), SSI for old/disabled (fed)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX}
+\end{center}
+
+US income tax assessed on {\bf annual} {\bf family} income (not
+individual) [most other OECD countries have shifted to individual
+assessment]
+
+Sum all cash income sources from family members (both from labor
+and capital income sources) = called {\bf Adjusted Gross Income
+(AGI)}
+
+Main exclusions: fringe benefits (health insurance, pension
+contributions and returns), imputed rent of homeowners, undistributed corporate profits, unrealized capital gains
+
+$\Rightarrow$ AGI base is only 70\% of national income
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX}
+\end{center}
+
+Taxable income = AGI - deductions
+
+%personal exemptions = \$4K * \# family members (in 2016)
+
+deduction is max of standard deduction or itemized deductions
+
+Standard deduction is a fixed amount 
+(\$12K for singles, \$24K for married couple)
+
+Itemized deductions: (a) state and local taxes paid (up to \$10K), (b) mortgage interest payments, (c) charitable giving,  various small other items
+
+[about 10\% of AGI lost through itemized deductions, called tax
+expenditures]
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX: TAX BRACKETS}
+\end{center}
+
+Tax $T(z)$ is piecewise linear and continuous function of taxable
+income $z$ with constant marginal tax rates (MTR) $T'(z)$ by
+brackets
+
+In 2018+, 6 brackets with MTR 10\%,12\%,22\%,24\%,32\%,35\%, 37\% (top
+bracket for $z$ above \$600K), indexed on price inflation
+
+Lower preferential rates (up to a max of 20\%) apply to dividends
+(since 2003), realized capital gains [in part to offset double
+taxation of corporate profits].
+
+%20\% of business profits are exempt since 2018
+
+Tax rates change frequently over time. Top MTRs have declined
+drastically since 1960s (as in many OECD countries)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={15, 16, 1}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX: TAX CREDITS}
+\end{center}
+
+%{\bf Alternative minimum tax (AMT)} is a parallel tax system
+%(quasi flat tax at 28\%) with fewer deductions: actual tax =$\max
+%(T(z),AMT)$ (hits 2-3\% of tax filers in upper middle class)
+
+{\bf Tax credits:} Additional reduction in taxes
+
+(1) {\bf Non refundable} (cannot reduce taxes below zero): foreign
+tax credit, child care expenses, education credits, energy credits, and many others
+
+(2) {\bf Refundable} (can reduce taxes below zero, i.e., be net
+transfers): EITC (earned income tax credit, up to \$3.5K, \$5.7K, \$6.5K for working
+families with 1, 2, 3+ kids), Child Tax Credit (\$2K per kid, partly
+refundable)
+
+Refundable tax credits are now the largest means-tested cash transfer for
+low income families
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={14}, scale=1.1]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={47}, scale=1.1]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX: TAX FILING}
+\end{center}
+Taxes on year $t$ earnings are withheld on paychecks during year
+$t$ (pay-as-you-earn)
+
+Income tax return filed in Feb-April 15, year $t+1$ [filers use
+either software or tax preparers, huge private industry, most OECD
+countries provide pre-populated returns]
+
+Most tax filers get a tax refund as withholdings larger than taxes
+owed in general
+
+Payers (employers, banks, etc.) send income information to govt
+(3rd party reporting)
+
+3rd party reporting + withholding at source is key for successful
+enforcement
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MAIN MEANS-TESTED TRANSFER PROGRAMS}
+\end{center}
+1) {\bf Traditional transfers:} managed by welfare agencies, paid
+on monthly basis, high stigma and take-up costs $\Rightarrow$ low
+take-up rates (often only around 50\%)
+
+Main programs: Medicaid (health insurance for low incomes), SNAP
+(former food stamps), public housing, TANF (welfare), SSI
+(aged+disabled)
+
+2) {\bf Refundable income tax credits:} managed by tax
+administration, paid as an annual lumpsum in year $t+1$, low
+stigma and take-up cost $\Rightarrow$  high take-up rates
+
+Main programs: EITC and Child Tax Credit [large expansion since
+the 1990s] for low income working families with children
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf BOTTOM LINE ON ACTUAL TAXES/TRANSFERS}
+%\end{center}
+%1) Based on current income, family situation, and disability
+%(retirement) status $\Rightarrow$ Strong link with {\bf current
+%ability to pay}
+%
+%2) Some allowances made to reward / encourage certain behaviors:
+%charitable giving, home ownership, savings, energy conservation,
+%and more recently work (refundable tax credits such as EITC)
+%
+%3) Provisions pile up overtime making tax/transfer system more and
+%more complex until significant simplifying reform happens (such as
+%US Tax Reform Act of 1986)
+%
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf KEY CONCEPTS FOR TAXES/TRANSFERS}
+\end{center}
+Draw budget $(z,z-T(z))$ which integrates taxes and transfers
+
+1) Transfer benefit with zero earnings $-T(0)$ [sometimes called
+demogrant or lumpsum grant]
+
+2) Marginal tax rate (or phasing-out rate) $T'(z)$: individual
+keeps $1-T'(z)$ for an additional \$1 of earnings (intensive labor
+supply response)
+
+3) Participation tax rate $\tau_p=[T(z)-T(0)]/z$: individual keeps
+fraction $1-\tau_p$ of earnings when moving from zero earnings to
+earnings $z$ (extensive labor supply response): 
+\[ z-T(z)=-T(0) + z \cdot
+(1-\tau_p) \] 
+
+4) Break-even earnings point $z^*$: point at which $T(z^*)=0$
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={17, 18}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={2}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={3}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Profile of Current Means-tested Transfers}
+\end{center}
+Traditional means-tested programs reduce incentives to work for low income
+workers
+
+Refundable tax credits have significantly increased incentive to work
+for low income workers
+
+However, refundable tax credits cannot benefit those with zero earnings
+
+Trade-off: US chooses to reward work more than most European countries (such as France) but therefore
+provides smaller benefits to those with no earnings
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Taxation: Case with No Behavioral Responses}
+\end{center}
+
+Utility $u(c)$ strictly increasing and concave
+
+Same for everybody where $c$ is after tax income.
+
+Income $z$ is fixed for each individual, $c=z-T(z)$ where
+$T(z)$ is tax/transfer on $z$ (tax if $T(z)>0$, transfer if $T(z)<0$)
+
+$N$ individuals with fixed incomes $z_1<...<z_N$
+
+Government maximizes {\bf Utilitarian} objective:
+\[ SWF = \sum_{i=1}^N u(z_i-T(z_i)) \]
+subject to {\bf budget constraint} $\sum_{i=1}^N T(z_i) = 0$ (taxes need to fund transfers)
+%(multiplier $\lambda$)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Simple Model With No Behavioral Responses}
+\end{center}
+Replace $T(z_1)=- \sum_{i=2}^N T(z_i)$ from budget constraint:
+\[ SWF= u \left (z_1 + \sum_{i=2}^N T(z_i)  \right ) +  \sum_{i=2}^N u(z_i-T(z_i)) \]
+%Form lagrangian: $L=\sum_{i=1}^N u(z_i-T(z_i)) + \lambda [\sum_{i=1}^N T(z_i) - E] $
+First order condition (FOC) in $T(z_j)$ for a given $j=2,..,N$:
+\[ 0= \frac{\partial SWF}{\partial T(z_j) } = u' \left (z_1 + \sum_{i=2}^N T(z_i)  \right ) 
+-u'(z_j-T(z_j))=0 \Rightarrow   \]
+$u'(z_j-T(z_j))=u'(z_1-T(z_1))
+\Rightarrow$ $z_j-T(z_j)=$ constant across $j=1,..,N$
+
+Perfect equalization of after-tax income = 100\% tax rate and redistribution [draw graph]
+
+Utilitarianism with decreasing marginal utility leads to perfect
+egalitarianism [Edgeworth, 1897]
+
+%Mathematically equivalent to perfect insurance result with risk aversion
+%and no moral hazard
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Simpler Derivation with just 2 individuals}
+\end{center}
+\[ \max SWF = u(z_1-T(z_1)) + u(z_2-T(z_2)) \text{ s.t. } T(z_1)+T(z_2)=0 \]
+Replace $T(z_1)=- T(z_2)$ in $SWF$ using budget constraint:
+\[ SWF= u \left (z_1 + T(z_2)  \right ) +   u(z_2-T(z_2)) \]
+%Form lagrangian: $L=\sum_{i=1}^N u(z_i-T(z_i)) + \lambda [\sum_{i=1}^N T(z_i) - E] $
+First order condition (FOC) in $T(z_2)$:
+\[ 0= \frac{d SWF}{d T(z_2) } = u' \left (z_1 + T(z_2)  \right ) 
+-u'(z_2-T(z_2))=0 \Rightarrow   \]
+$u'(z_1+T(z_2))=u'(z_2-T(z_2)) \Rightarrow u'(z_1-T(z_1))=u'(z_2-T(z_2))$
+
+$\Rightarrow$ $z_1-T(z_1)=z_2-T(z_2)$ constant across the 2 individuals
+
+Perfect equalization of after-tax income = 100\% tax rate and redistribution [see graph]
+
+%Mathematically equivalent to perfect insurance result with risk aversion
+%and no moral hazard
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={20}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf ISSUES WITH SIMPLE MODEL}
+\end{center}
+
+1) {\bf No behavioral responses:} Obvious missing piece: 100\%
+redistribution would destroy incentives to work and thus the
+assumption that $z$ is exogenous is unrealistic
+
+$\Rightarrow$ Optimal income tax theory incorporates behavioral
+responses
+
+2) {\bf Issue with Utilitarianism:} Even absent behavioral
+responses, many people would object to 100\% redistribution
+[perceived as confiscatory]
+
+$\Rightarrow$ Citizens' views on fairness impose {\bf bounds} on
+redistribution govt can do [political economy / public choice
+theory]
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf 2ND WELFARE THEOREM FALLACY}
+%\end{center}
+%Suppose individuals differ in their ability to earn
+%
+%{\bf 2nd Welfare Theorem:} Any Pareto Efficient outcome can be
+%reached by (1) Suitable redistribution of initial endowments
+%[individualized {\bf lump-sum} taxes based on ability and not
+%behavior], (2) Then letting markets work freely
+%
+%$\Rightarrow$ No conflict between efficiency and equity
+%
+%In reality, redistribution of initial endowments is not feasible
+%(information pb) and govt needs to use {\bf distortionary} taxes
+%and transfers based on income and consumption to redistribute
+%
+%$\Rightarrow$ Real conflict between efficiency and equity
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf EQUITY-EFFICIENCY TRADE-OFF}
+\end{center}
+
+Taxes can be used to raise revenue for transfer programs which can
+reduce inequality in disposable income 
+
+$\Rightarrow$ Desirable if
+society feels that inequality is too large
+
+Taxes (and transfers) reduce incentives to work 
+
+$\Rightarrow$ High
+tax rates create economic inefficiency if individuals respond to
+taxes
+
+Size of behavioral response limits the ability of government to
+redistribute with taxes/transfers
+
+$\Rightarrow$ Generates an equity-efficiency trade-off
+
+Empirical tax literature estimates the size of behavioral
+responses to taxation
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Labor Supply Theory}
+\end{center}
+Individual has utility over labor supply $l$ and consumption $c$: $u(c,l)$
+\textbf{increasing} in $c$ and \textbf{decreasing} in $l$ [= increasing in leisure]
+\[ \max_{c,l} u(c,l) \quad \text{subject to} \quad c = w \cdot l + R \]
+with $w=\bar{w} \cdot (1-\tau)$ the net-of-tax wage ($\bar{w}$ is before tax wage rate and $\tau$ is tax rate), and $R$ non-labor income
+
+FOC $w \frac{\partial u}{\partial c}+\frac{\partial u}{\partial l}=0$ defines Marshallian labor supply
+$l=l(w,R)$
+\[ \textbf{Uncompensated labor supply elasticity:} \quad \varepsilon^u=\frac{w}{l} \cdot \frac{\partial l}
+{\partial w} \]
+\[ \textbf{Income effects:} \quad \eta=w \frac{ \partial l}{\partial R} \leq 0 \quad \text{(if leisure is a normal good)}\] 
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={22}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={24, 25, 26}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Labor Supply Theory}
+\end{center}
+\textbf{Substitution effects:} Hicksian labor supply: $l^c(w,u)$
+minimizes cost needed to reach $u$ given slope $w$ $\Rightarrow$
+\[ \mathrm{Compensated\:\:elasticity} \quad \varepsilon^c=\frac{w}{l} \cdot \frac{\partial l^c}
+{\partial w} > 0  \]
+\[\mathrm{Slutsky\:\:equation} \quad \frac{\partial l}{\partial w} = \frac{\partial l^c}{\partial w}
++ l \frac{ \partial l}{\partial R} \Rightarrow \varepsilon^u = \varepsilon^c + \eta\]
+
+Tax rate $\tau$ discourages work through substitution effects (work pays less at the margin)
+
+Tax rate $\tau$ encourages work through income effects (taxes make you poorer and hence in more need of income)
+
+Net effect ambiguous (captured by sign of $\varepsilon^u$)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={23, 27-32}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf General nonlinear income tax [draw graph]}
+\end{center}
+With no taxes: $c= z$ (consumption = earnings)
+
+With taxes $c=z-T(z)$ (consumption = earnings - net taxes)
+
+$T(z) \geq 0$ if individual pays taxes on net, $T(z) \leq 0$ if individual receives transfers on net
+
+$T'(z)>0$ reduces net wage rate and reduces labor supply through substitution effects
+
+$T(z) >0$ reduces disposable income and increases labor supply through income effects
+
+$T(z) < 0$ increases disposable income and decreases labor supply through income effects
+
+Transfer program such that $T(z) <0$ and $T'(z)>0$ always discourages labor supply
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={35-37}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: LAFFER CURVE}
+\end{center}
+$c=(1-\tau)\cdot z + R$ with $\tau$ linear tax rate and $R$ fixed universal transfer funded
+by taxes $R=\tau \cdot Z$ with $Z$ average earnings
+
+Individual $i=1,..,N$ chooses $l_i$ to max $u^i((1-\tau)\cdot w_i l_i + R,l_i)$
+
+Labor supply choices $l_i$ determine individual earnings $z_i=w_i l_i$ $\Rightarrow$ Average
+earnings $Z=\sum_i z_i/N$ depends (positively) on net-of-tax rate $1-\tau$.
+
+Tax Revenue per person $R(\tau)=\tau \cdot Z(1-\tau)$ is inversely U-shaped
+with $\tau$: $R(\tau=0)=0$ (no taxes) and $R(\tau=1)=0$ (nobody
+works): called the Laffer Curve
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={19}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: LAFFER CURVE}
+\end{center}
+
+Top of the Laffer Curve is at $\tau^*$
+maximizing tax revenue:
+\[0=R'(\tau^*)=Z - \tau^* \frac{d Z}{d(1-\tau)} \Rightarrow \frac{\tau^*}{1-\tau^*} \cdot \frac{1-\tau^*}{Z} \frac{d Z}{d(1-\tau)} = 1  \]
+\[ \text {Revenue maximizing tax rate: }  \tau^*=\frac{1}{1+e} \text{ with } e = \frac{1-\tau}{Z}\frac{dZ}{d(1-\tau)} \] $e$
+is the
+elasticity of average income $Z$ with respect to the net-of-tax rate $1-\tau$ [empirically estimable]
+
+Inefficient to have $\tau>\tau^*$ because decreasing $\tau$ would make taxpayers better off (they pay less taxes)
+and would increase tax revenue for the government [and hence univ. transfer $R$]
+
+If government is \textbf{Rawlsian} (maximizes welfare of the worst-off person with no earnings) then $\tau^*=1/(1+e)$ is optimal
+to make transfer $R(\tau)$ as large as possible
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: FORMULA}
+\end{center}
+Government chooses $\tau$ to maximize \textbf{utilitarian} social welfare
+\[ SWF = \sum_i u^i((1-\tau)w_i l_i+\tau \cdot Z(1-\tau),l_i)  \]
+taking into account that labor supply $l_i$ responds to taxation and hence
+that this affects the tax revenue per person $\tau \cdot Z(1-\tau)$ that is redistributed
+back as transfer to everybody
+
+Government first order condition: (using the envelope theorem as $l_i$ maximizes $u^i$):
+\[ 0 = \frac{dSWF}{d\tau} =  \sum_i \frac{ \partial u^i}{\partial c} \cdot
+\left [-z_i + Z - \tau \frac{dZ}{d(1-\tau)} \right ],\]
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: FORMULA}
+\end{center}
+
+Hence, we have the following optimal linear income tax formula
+\[
+\tau= \frac{1-\bar{g}}{1-\bar{g} + e} \quad \mathrm{with} \quad
+\bar{g}= \frac{ \sum_i z_i \cdot  \frac{ \partial u^i}{\partial c}   }{Z \cdot \sum_i \frac{ \partial u^i}{\partial c} }
+\]
+$0\leq \bar{g} <1$ as $\frac{ \partial u^i}{\partial c}$ lower when income $z_i$ is high (marginal utility
+falls with consumption)
+
+$\tau$ decreases with elasticity $e$ [efficiency] and with $\bar{g}$ [equity]
+
+Formula captures the \textbf{equity-efficiency trade-off}
+
+$\bar{g}$ is low and $\tau$ close to Laffer rate $\tau^*=1/(1+e)$ when
+
+(a) inequality is high
+
+(b) marginal utility decreases fast with income
+
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE \\ (Diamond and Saez JEP'11)}
+\end{center}
+In practice, individual income tax is progressive with brackets with increasing
+marginal tax rates. What is the optimal top tax rate?
+
+Consider constant MTR $\tau$ above fixed $z^*$. Goal is to
+derive optimal $\tau$
+
+In the US in 2018+, $\tau=37\%$ and $z^*\simeq \$600,000$ ($\simeq$ top 1\%)
+
+Denote by
+$z$ average income of top bracket earners [depends on net-of-tax rate
+$1-\tau$], with elasticity $e=[(1-\tau)/z]\cdot
+d z/d(1-\tau)$
+
+Suppose the government wants to maximize tax revenue collected
+from top bracket taxpayers (marginal utility of consumption of
+top 1\% earners is small)
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={7,8}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE}
+\end{center}
+Consider small $d\tau>0$ reform above $z^*$.
+
+1) {\bf Mechanical increase} in tax revenue:
+\[ dM=
+[z-z^*] d\tau \]
+
+2) {\bf Behavioral response} reduces tax revenue:
+\[ dB= \tau dz= - \tau \frac{dz}{d(1-\tau)}d\tau = -
+ \frac{\tau}{1-\tau} \cdot  e \cdot z \cdot d\tau \]
+\[ dM+dB=d\tau \left \{ [z-z^*]   - e
+\frac{\tau}{1-\tau} z \right \}\]
+Optimal $\tau$ such that
+$dM+dB=0$ 
+\[ \Rightarrow \quad \frac{\tau}{1-\tau}=\frac{1}{e} \cdot \frac{z-z^*}{z} \Rightarrow 
+\tau=\frac{1}{1+a \cdot e} \quad \mathrm{with} \quad
+a=\frac{z}{z-z^*}\]
+
+
+\end{slide}
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE}
+\end{center}
+$$\text{Optimal top tax rate: } \tau=\frac{1}{1+a \cdot e} \quad \mathrm{with} \quad
+a=\frac{z}{z-z^*}$$
+
+Optimal $\tau$ decreases with $e$ [efficiency]
+
+Optimal $\tau$ decrease with $a$ [thinness of top tail]
+
+Empirically $a \simeq 1.5$, easy to estimate using distributional data
+[mean income above $z^*=\$.5$m is about \$1.5m in the US]
+
+Empirically $e$ is harder to estimate [controversial]
+
+Example: If $e=.25$ then $\tau=1/(1+1.5\cdot 0.25)=1/1.375=73\%$
+
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={9}]{optimallabortax_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REAL VS. TAX AVOIDANCE RESPONSES}
+\end{center}
+Behavioral response to income tax comes not only from reduced
+labor supply but from tax avoidance or tax evasion
+
+Tax avoidance: legal means to reduce tax liability (exploiting tax loopholes)
+
+Tax evasion: illegal under-reporting of income 
+
+%
+%shifts to other forms of income or
+%activities: (untaxed fringe benefits, shift to corporate
+%income tax base, shift toward tax favored capital gains, etc.)
+
+Labor supply vs. tax avoidance/evasion distinction matters because:
+
+1) If people work less when tax rates increase, there is not much the government can do about 
+it
+
+2) If people avoid/evade more when tax rates increase, then the govt can reduce tax avoidance/evasion 
+opportunities [closing tax loopholes, broadening the tax base, increasing tax enforcement, etc.]
+
+%Government can control tax avoidance through other tools: closing loopholes,
+%broadening the tax base $\Rightarrow$ Elasticity $e$ is lower with no loopholes
+%
+%2) Most tax avoidance responses create ``fiscal externalities'' in the
+%sense that tax revenue increases at other time periods or in other tax bases:
+%
+%e.g., US top tax rate increased in 2013, taxpayers likely shifted part of their income to 2012
+%to avoid higher tax rates
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REAL VS. AVOIDANCE RESPONSES}
+\end{center}
+{\bf Key policy question:} Is it possible to eliminate avoidance responses using base broadening, etc.? or would new avoidance schemes keep popping up?
+
+a) Some forms of tax avoidance are due to \textbf{poorly designed tax codes} (preferential treatment for some income forms or some deductions)
+
+b) Some forms of tax avoidance/evasion can only be addressed with \textbf{international cooperation} (off-shore
+tax evasion in tax havens)
+
+c) Some forms of tax avoidance/evasion are due to technological limitations of tax collection
+(impossible to tax informal cash businesses)
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL PROFILE OF TRANSFERS}
+\end{center}
+If individuals respond to taxes only through \textbf{intensive} margin (how much they work rather than
+whether they work), optimal transfer at bottom takes the
+form of a ``Negative Income Tax'':
+
+1) Lumpsum grant $-T(0)>0$ for those with no earnings
+
+2) High marginal tax rates (MTR) $T'(z)$ at the bottom to phase-out the lumpsum grant
+quickly
+
+Intuition: high MTR at bottom are efficient because:
+
+(a) they target transfers to the most needy
+
+(b) earnings at the bottom are low to start with $\Rightarrow$ intensive
+labor supply response does not generate large output losses
+
+But US system with zero MTR at bottom justified if society sees people
+with zero income as \textbf{less deserving} than average 
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={43-45}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Transfers: Participation Responses}
+\end{center}
+Empirical literature shows that participation labor supply
+responses [whether to work or not] are large at the bottom
+[much larger and clearer than intensive responses]
+
+Participation depends on participation tax rate:
+\[ \tau_p=[T(z)-T(0)]/z \]
+
+Individual keeps fraction $1-\tau_p$ of
+earnings when moving from zero earnings to earnings $z$:
+$z-T(z)=-T(0) + z \cdot (1-\tau_p)$
+
+{\bf Key result:} in-work subsidies with $T'(z)<0$
+are optimal when labor supply responses are concentrated along
+extensive margin and govt cares about low income workers.
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={18}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={38-42}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL PROFILE OF TRANSFERS: SUMMARY}
+\end{center}
+
+1) If society views \textbf{zero earners} as less deserving than average [conservative view 
+that substantial fraction of zero earners are ``free loaders''] then low lumpsum grant
+combined with low phasing out rate at bottom is optimal 
+
+2) If society views \textbf{low income workers} as more deserving than average [typically bipartisan view]
+and labor supply responses concentrated along extensive margin (work vs. not) then low phasing out rate at
+bottom is optimal 
+
+3) Generous lumpsum grant with high MTR at bottom justified only if society views non workers as deserving
+and no strong response along the extensive margin (work vs. not)
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf ACTUAL TAX/TRANSFER SYSTEMS}
+\end{center}
+
+1) Means-tested transfer programs used to be of the traditional form with high
+phasing-out rates (sometimes above 100\%) $\Rightarrow$ No
+incentives to work (even with modest elasticities)
+
+Initially designed for
+groups not expected to work [widows in the US] but later attracting
+groups who could potentially work [single mothers]
+
+2) In-work benefits have been introduced and expanded in OECD
+countries since 1980s (US EITC, UK Family Credit, etc.) and have
+been politically successful $\Rightarrow$ (a) Redistribute to low
+income workers, (b) improve incentives to work
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Basic Income vs. Means-tested transfer: Mankiw quiz}
+\end{center}
+
+Consider an economy in which average income is \$50,000 but with much income inequality. To provide a social safety net, two possible policies are proposed.
+
+A.  A universal transfer of \$10,000 to every person, financed by a 20-percent flat tax on income.
+
+B.  A means-tested transfer of \$10,000.  The full amount goes to someone without any income.  The transfer is then phased out: You lose 20 cents of it for every dollar of income you earn.  These transfers are financed by a tax of 20 percent on income above \$50,000.
+
+Which would you prefer?
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Basic Income vs. Means-tested transfer}
+\end{center}
+Basic income definition: all people receive an unconditional sum of money (every year) regardless of
+how much they earn
+
+This is the $R$ of the linear tax system $c= (1-\tau) \cdot z + R$ 
+
+Or the $-T(0)>0$ of the nonlinear tax system $c=z-T(z)$
+
+%In practice, most of the basic income is ``in-kind'' such as Universal health care, public education. Cash component is 
+%administered through welfare programs (and phased-out with income)
+
+Basic income for everybody + higher taxes to fund it is \textbf{economically equivalent} to means-tested transfer phased out with earnings
+
+Pro basic income: less stigmatizing than means-tested transfer
+
+Cons: basic income requires higher ``nominal'' taxes (that are then rebated back)
+%But means-tested program is often much more stigmatizing so 
+
+Countries provide ``in-kind'' basic income in the form of universal health care (not the US)
+and public education
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={33}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf IN-KIND REDISTRIBUTION}
+\end{center}
+Most means-tested transfers are in-kind and often
+rationed (health care, child care, public education, public housing, nutrition
+subsidies) [care not cash San Francisco reform]
+
+1) {\bf Rational Individual perspective:}
+
+(a) If in-kind transfer is {\bf tradeable} at market price
+$\Rightarrow$ in-kind equivalent to cash
+
+(b) If in-kind transfer {\bf non-tradeable} $\Rightarrow$ in-kind
+inferior to cash
+
+Cash transfer preferable to in-kind transfer from individual perspective
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={46}]{optimallabortax_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf IN-KIND REDISTRIBUTION}
+\end{center}
+2) {\bf Social perspective:} 3 justifications:
+
+a) Commodity Egalitarianism: some goods (education, health,
+shelter, food) seen as {\bf rights} and ought to be provided to
+all in a just society
+
+b) Paternalism: society imposes its preferences on recipients
+[recipients prefer cash]
+
+c) Behavioral: Recipients do not make choices in their best
+interests (self-control, myopia) [recipients understand that
+in-kind is better for them]
+
+%d) Efficiency: It could be efficient to give in-kind benefits if it can prevent those who don't really need them 
+%from getting them (i.e., force people to queue to get free soup kitchen)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FAMILY TAXATION: MARRIAGE AND CHILDREN}
+\end{center}
+Two important issues in policy debate:
+
+1) Marriage: What is the optimal taxation of couples vs. singles?
+
+2) Children: What should be the net transfer (transfer or tax
+reduction) for family with children (as a function of family
+income and structure)?
+
+%Theoretical literature is not great in part because utilitarian
+%framework is not satisfactory
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAXATION OF COUPLES}
+\end{center}
+Three potentially desirable properties:
+
+(1) income tax should be based on resources (i.e., family income if
+families fully share their income)
+
+(2) income tax should be marriage neutral: no higher/lower tax when two
+single individuals marry
+
+(3) income tax should be progressive (i.e., higher incomes pay a larger
+fraction of their income in taxes)
+
+It is \textbf{impossible} to have a tax system that satisfies all 3 conditions simultaneously:
+
+Income tax that is based on family income and marriage neutral has to satisfy:
+$T(z^h+z^w)=T(z^h)+T(z^w)$ and hence be linear i.e. $T(z)=\tau\cdot z$
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAXATION OF COUPLES}
+\end{center}
+(1) If couples share their incomes, then family taxation is better. 
+If couples don't share their incomes, then individualized tax is better 
+
+(2) If marriage responds to tax/transfer differential $\Rightarrow$
+better to reduce marriage penalty, i.e., move toward
+individualized system
+
+Particularly important when cohabitation is close
+substitute for marriage (as in Scandinavian countries)
+
+(3) If labor supply of secondary earners more elastic than labor
+supply of primary earner $\Rightarrow$ Secondary earnings should
+be taxed less (Boskin-Sheshinski JpubE'83)
+
+Labor supply elasticity differential between primary and secondary earners is decreasing over time as earnings
+gender gap decreases (Blau and Kahn 2007)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TRANSFERS OR TAX CREDITS FOR CHILDREN}
+\end{center}
+1) Children reduce {\bf normalized family income} $\Rightarrow$ Children
+increase marginal utility of consumption $\Rightarrow$ Transfer
+for children $T_{kid}$ should be positive
+
+In practice, transfers for children are always positive
+
+2) Should $T_{kid}(z)$ increase with income $z$?
+
+Pro: rich spend more on their kids than lower income families
+
+%they reduce normalized income most for upper earners [e.g.,
+%France computes taxes as $N \cdot T(z/N)$ where $N$ is \# family
+%members, kids count as .5 $\Rightarrow$ $T_{kid}(z) \uparrow z$].
+
+Cons: Lower income families need child transfers most
+
+In practice, $T_{kid}(z)$ is fairly constant with $z$
+
+\small
+Europe has much more generous pre-kindergarten child care benefits,
+US has more generous cash tax credits for working families with children
+
+Strong evidence that govt provided child care (Europe) more egalitarian and cheaper overall than private
+provision (US)
+
+%[most OECD countries
+%have means-tested transfers conditional on number of kids
+%$\Rightarrow$ $T_{kid}(z) \downarrow z$, US has  $T_{kid}(z)$
+%inverted U-shape due to EITC and Child Tax Credit]
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber,Public Finance and Public Policy, Fifth Edition, 2016 Worth Publishers, Chapter 20 and Chapter 21
+
+Blau, F. and L. Kahn ``Changes in the Labor Supply Behavior of Married Women: 1980-2000'', Journal of Labor Economics, Vol. 25, 2007, 393-438. \href{http://www.jstor.org/stable/pdfplus/10.1086/513416.pdf} {(web)}
+
+Boskin, Michael J., and Eytan Sheshinski. ``Optimal tax treatment of the family: Married couples.'' Journal of Public Economics 20.3 (1983): 281-297.\href{http://elsa.berkeley.edu/~saez/course131/Boskin-Sheshinski83.pdf} {(web)}
+
+Diamond, P. and E. Saez ``From Basic Research to Policy Recommendations:
+The Case for a Progressive Tax'', Journal of Economic Perspectives, 25.4, (2011): 165-190.
+\href{http://elsa.berkeley.edu/~saez/diamond-saezJEP11full.pdf} {(web)}
+
+IRS, Statistics of Income Division ``U.S. Individual Income Tax: Personal Exemptions and Lowest and Highest Tax Bracket''(2013) \href{http://elsa.berkeley.edu/~saez/course131/taxable-income4.pdf} {(web)}
+
+%Kleven, Henrik Jacobsen, Claus Thustrup Kreiner, and Emmanuel Saez. ``The optimal income taxation of couples.'' Econometrica 77.2 (2009): 537-560.\href{http://www.jstor.org/stable/pdfplus/40263874.pdf}{(web)}
+
+Piketty, Thomas and Emmanuel Saez ``Optimal Labor Income Taxation,'' Handbook of Public Economics, Volume 5, Amsterdam: Elsevier-North Holland, 2013. \href{http://www.nber.org/papers/w18521.pdf} {(web)}
+
+Saez, Emmanuel. ``Optimal income transfer programs: intensive versus extensive labor supply responses.'' The Quarterly Journal of Economics 117.3 (2002): 1039-1073.\href{http://elsa.berkeley.edu/~saez/botqje.pdf}{(web)}
+
+}
+\end{slide}
+
+\end{document}

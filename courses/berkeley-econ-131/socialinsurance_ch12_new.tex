@@ -1,0 +1,521 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+\title{Social Insurance: \\ General Introduction} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OUTLINE}
+%\end{center}
+%Chapter 12
+%
+%12.1 What Is Insurance and Why Do Individuals Value It?
+%
+%12.2 Why Have Social Insurance? Asymmetric Information and Adverse Selection
+%
+%12.3 Other Reasons for Government Intervention in Insurance Markets
+%
+%12.4 Social Insurance Versus Self-Insurance: How Much Consumption Smoothing?
+%
+%12.5 The Problem with Insurance: Moral Hazard
+%
+%12.6 Putting It All Together: Optimal Social Insurance
+%
+%12.7 Conclusion
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf MOTIVATION}
+%\end{center}
+%
+%In the preamble to the United States Constitution, the framers wrote that they were uniting the states in order to ``provide for the common defense, promote the general welfare, and secure the blessings of liberty to ourselves and our posterity.''
+%
+%For most of the country's history ``common defense,'' was the federal government's clear spending priority.
+%
+%Since then, the government's spending priorities shifted dramatically, away from ``common defense'' and toward promoting ``the general welfare.''
+%\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={2}]{socialinsurance_ch12_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf DEFINITION}
+\end{center}
+\textbf{Insurance} is payment of premium to get payment in case of adverse event
+(e.g., auto insurance)
+
+{\bf Social insurance programs}:
+Government provided insurance against adverse events funded by taxation:
+
+(a) health insurance (Medicaid, Medicare, Obamacare)
+
+(b) retirement and disability insurance (Social Security),
+
+(c) unemployment insurance
+
+Growth in government over the 20th century is mostly due to the growth of social insurance (health and retirement benefits)
+
+
+
+%{\bf Means-tested}:
+%Programs in which eligibility depends on the level of one's current income or assets
+%
+%Example: Medicaid (health insurance for the poor) is means-tested. Medicare (health
+%insurance for the elderly 65+) is not means-tested.
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={12}]{socialinsurance_ch12_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf EXPECTED UTILITY MODEL}
+\end{center}
+Utility function $U(c)$ increasing in consumption $c$ and concave in consumption $c$: $U'(c)>0$ and $U''(c)<0$
+
+{\bf Expected utility model}: Individuals want to maximize expected utility defined as
+the weighted sum of utilities across states of the world, where the weights are the probabilities of each state occurring.
+
+If $q$ is probability of adverse event, expected utility (EU)  is:
+
+%\small
+EU=(1-q) $\cdot$ U(consumption with no adverse event)+ \\ q $\cdot$ U(consumption with adverse event)
+
+\normalsize
+{\bf Actuarially fair premium}:
+Insurance premium that is set equal to the insurer's expected payout.
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={8}]{socialinsurance_ch12_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf EXPECTED UTILITY MODEL}
+\end{center}
+
+%\small
+%Let $U(c)$ be the utility function, increasing and concave in $c$:
+%$U'(c)>0$ and $U''(c)<0$
+
+Person has income $W$ (regardless of health)
+
+Person is sick with probability $q$
+
+If sick, person incurs medical cost $d$ to get better
+
+Insurance contract: pay premium $p$ always, and receive payout $b$ only if sick
+
+Expected utility:
+
+$EU=(1-q) \cdot U(W-p)+q  \cdot U(W-p-d+b)$
+
+Expected profits of insurers: $EP=p-q \cdot b$
+
+Competition among insurers $EP=0 \Rightarrow b=p/q$
+
+This is called \textbf{actuarially fair} insurance
+
+\end{slide}
+
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf EXPECTED UTILITY MODEL}
+\end{center}
+
+Individual chooses the level of premiums $p$ to maximize:
+\[EU=(1-q) \cdot U(W-p)+q \cdot U(W-d-p + p/q) \]
+First order condition:
+
+$0=dEU/dp=-(1-q)U'(W-p)+q[-1+1/q] U'(W-d- p + p/q )$
+
+$\Rightarrow U'(W-p)=U'(W-d- p + p/q)$
+
+$\Rightarrow W-p=W-d- p + p/q$ (because $U$ is concave and hence $U'$ is strictly
+decreasing and hence invertible)
+
+$\Rightarrow 0=-d +p/q \Rightarrow p= d \cdot q$
+
+This implies that the person is perfectly insured: consumption is the same
+in both states and equal to $W-d \cdot q$
+
+\small
+Intuition: with concave utility, marginal utility decreases and it is always
+desirable to reduce consumption in high income states to increase
+consumption in low income states
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={9-11}]{socialinsurance_ch12_new_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={2}]{Gruber2e_ch12_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Introducing heterogeneity in risk across individuals}
+\end{center}
+\small
+Suppose now that there are two types of individuals: sickly and healthy
+Sickly have $q=q_S$ and Healthy have $q=q_H$ with $q_S>q_H$
+
+\textbf{First scenario: Symmetric Information:} Insurance companies and
+individuals can observe $q_H$ vs. $q_S$ types (for example, could be age status)
+
+Then insurance companies will charge 2 policies, each actuarially fair:
+
+$p_S, b_S=p_S/q_S$ for the sickly
+
+$p_H, b_H=p_H/q_H$ for the healthy
+
+Each type will still choose to buy perfect insurance $b_S=b_H=d$ and $p_S=q_S  \cdot d, p_H=q_H \cdot d$
+
+Sickly always consume $W-q_S \cdot d$
+
+Healthy always consume $W-q_H \cdot d$
+
+Private insurance does not equalize incomes across types only within
+types
+
+Pre-existing conditions will lead to inequality in insurance premia and welfare but no
+failure in the insurance market
+
+What if $W-q_S  \cdot d<0$? Sickly person cannot afford insurance and dies (or starves) if sick
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Introducing heterogeneity in risk across individuals}
+\end{center}
+\small
+\textbf{Second scenario: Asymmetric Information:} Insurance companies
+cannot observe (or cannot price on) $q_H$ vs. $q_S$ types but individuals do 
+
+If insurance companies charge the same two policies as before
+
+$p_S=q_S  \cdot d  , b_S=d$ for the sickly
+
+$p_H=q_H  \cdot d  , b_H=d$ for the healthy
+
+Then everybody wants to buy the healthy insurance which is cheaper $\Rightarrow$
+Insurance company will make losses $\Rightarrow$ cannot be an equilibrium [this is
+called \textbf{Adverse Selection}]
+
+Two equilibrium possibilities:
+
+\textbf{1) Pooling equilibrium:} Insurance companies offer a contract based on
+average risk [good deal for sickly, mediocre deal for healthy but 
+better than no insurance]
+
+\textbf{2) Separating equilibrium:} Insurance companies offer two contracts: one
+expensive contract with full insurance for the sickly, one cheap contract
+with partial insurance for the healthy: each type self-select into its contract
+$\Rightarrow$ Outcome not efficient as healthy as under-insured
+\end{slide}
+
+
+
+%\begin{slide}
+%\includepdf[pages={3}]{Gruber2e_ch12_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Adverse Selection}
+\end{center}
+
+\textbf{Adverse selection} is when individuals know more about their risk level than
+the insurer and hence individuals with higher risk are more likely to purchase insurance.
+
+Example: people with high risk of getting sick more likely to buy health insurance on Obamacare exchanges than people with low risk of getting sick (as insurers cannot discriminate based on pre-existing conditions)
+
+With adverse selection, market for insurance can unravel in a \textbf{death spiral}:
+
+\small
+Insurance is offered at average fair price, bad deal for low risk people and hence
+only high risk people buy it $\Rightarrow$ insurers make losses $\Rightarrow$
+insurers raise the price further $\Rightarrow$ only very high risk people buy it $\Rightarrow$ insurers make losses again
+$\Rightarrow$ no insurance contract is offered at all even though everybody wants full actuarially fair insurance
+
+\normalsize
+This inefficiency (market failure) arises because of \textbf{asymmetric information}
+
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\includepdf[pages={3,4}]{socialinsurance_ch12_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf How Does the Government Address Adverse Selection?}
+\end{center}
+
+The government can address adverse selection and improve market efficiency but this involves redistribution
+
+Natural solution is to impose a \textbf{mandate}: everybody is required to
+purchase insurance $\Rightarrow$ If price is the same for everybody, low risk people end up subsidizing high risk people
+
+From a social perspective, being high risk (e.g. having a sickly constitution) is rarely consequence of
+individual choices $\Rightarrow$ Society might want to compensate individuals for this
+
+$\Rightarrow$ Explains why all OECD countries (except US) have adopted universal health insurance
+paid for by government 
+%(US being the last one to do it with Obamacare)
+
+\small
+Obamacare three-legged-stool (a) forbids insurers from charging based on pre-existing conditions, (b) mandates that everybody 
+needs to get insurance, (c) subsidizes health insurance for low income families
+
+In 2019+, mandate (b) weakened by eliminating fine for not having insurance (Obamacare exchanges prices went up but
+still subsidized at bottom)
+%will see whether this leads to death spiral on Obamacare exchanges
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf WHY SOCIAL INSURANCE: OTHER REASONS}
+\end{center}
+
+{\bf Health Care is a Right:} Access to quality health care (regardless of resources) is perceived as \textbf{right}.
+Low income families can't pay for it so need for government funding.
+
+{\bf Redistribution:}
+Private insurers cannot provide insurance against pre-existing conditions so those with
+high risk have to pay more: society may want to compensate high risk people (as being high risk
+is often not the fault of the person)
+
+$\Rightarrow$ Universal health insurance funded by taxation
+effectively redistributes from high-risk people to low-risk people
+
+
+{\bf Externalities:} Your lack of insurance can be a cause of illness for me, thereby exerting a negative physical externality
+(flu vaccine example)
+
+
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf WHY SOCIAL INSURANCE: OTHER REASONS}
+\end{center}
+
+
+{\bf Individual Failures:} Individuals may not appropriately insure themselves against risks if the government does not force them to do so (myopia, lack of information, self-control problems)
+
+\small
+If individuals understand their own failures, they will support social insurance (e.g., Medicare Health Insurance for elderly is very popular).
+If individuals really want to be myopic, they will oppose govt social insurance (paternalism)
+\normalsize
+
+{\bf Administrative Costs: }
+The administrative costs for Medicare are less than 2\% of claims paid.
+Administrative costs for private insurance average about 12\% of claims paid.
+
+\small
+High administrative costs arise because private insurers try to screen away sickly customers
+and steal healthy customers from competitors. \\ 
+Individuals may also not understand well products
+and hence be sensitive to flashy advertisements. 
+\normalsize
+
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={5}]{Gruber2e_ch12_attach.pdf}
+%\end{slide}
+
+%12.4 Social Insurance Versus Self-Insurance: How Much Consumption Smoothing?
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf SOCIAL INSURANCE VS. SELF-INSURANCE}
+%\end{center}
+%
+%{\bf Self-insurance}:
+%The private means of smoothing consumption over adverse events, such as through one's own savings, labor supply of family members, or borrowing from friends.
+%
+%{\bf Example: Unemployment Insurance}:
+%Individuals do not generally have a private form of unemployment insurance, but they do have other potential means to smooth their consumption across unemployment spells: 
+%
+%-They can draw on their own savings
+%
+%-They can borrow
+%
+%-Other family members can increase their labor earnings
+%
+%-They can receive transfers from their extended family, friends, or local charitable organizations.
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={5,6}]{socialinsurance_ch12_new_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf UNEMPLOYMENT INSURANCE: SUMMARY}
+%\end{center}
+%
+%The availability of self-insurance determines the value of social insurance to individuals suffering adverse events.
+%
+%\end{slide}
+
+
+
+%12.5 The Problem with Insurance: Moral Hazard
+
+\begin{slide}
+\begin{center}
+{\bf CONSEQUENCE OF INSURANCE: MORAL HAZARD}
+\end{center}
+
+{\bf Moral hazard}:
+Adverse actions taken by insured individuals in response to insurance against adverse outcomes.
+
+Example: If you receive unemployment benefits replacing lost wages, you may not search as much for a new job $\Rightarrow$ Insurance reduces incentives to remedy adverse events
+
+Moral Hazard exists with both private and social insurance as long as insurer cannot perfectly monitor the person insured $\Rightarrow$ Insurers do not offer perfect insurance
+
+The existence of moral hazard problems creates the \textbf{central trade-off of social insurance}: insurance is
+desirable for consumption smoothing but insurance can create moral hazard
+
+[similar to the problem of optimal income taxation equity-efficiency trade-off]
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={7}]{socialinsurance_ch12_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MORAL HAZARD}
+\end{center}
+
+{\bf What Determines Moral Hazard?}\\
+-How hard it is to observe whether the adverse event has happened \\
+-How easy it is to change behavior in get into or stay in the adverse event
+
+{\bf Moral Hazard Is Multidimensional:}
+In examining the effects of insurance, three types of moral hazard play a particularly important role:\\
+1) Reduced precaution against entering the adverse state (example: auto insurance) \\
+2) Increased odds of staying in the adverse state (example: unemployment insurance)\\
+3) Increased expenditures when in the adverse state (example: health insurance)
+
+$\Rightarrow$ Moral hazard increases the cost of providing insurance
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf THE CONSEQUENCES OF MORAL HAZARD}
+%\end{center}
+%
+%Moral hazard is costly for two reasons:
+%
+%(1) The adverse behavior encouraged by insurance increases the cost of providing social insurance:
+%
+%If people receiving unemployment insurance stay unemployed longer, this is a cost for the program
+%
+%(2) When social insurance encourages adverse events, which raise the cost of the social insurance program, it increases taxes and lowers social efficiency further.
+%\end{slide}
+
+%12.6 Putting It All Together: Optimal Social Insurance
+
+\begin{slide}
+\begin{center}
+{\bf  OPTIMAL SOCIAL INSURANCE}
+\end{center}
+Optimal social insurance trades-off two considerations:
+
+1) The benefit of social insurance is the amount of consumption smoothing provided by social insurance programs
+
+2) The cost of social insurance is the moral hazard caused by insuring against adverse events
+
+$\Rightarrow$ Optimal social insurance systems should partially, but not completely, insure individuals against adverse events.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf CONCLUSION}
+\end{center}
+
+Asymmetric information in insurance markets has two important implications:
+
+1) It can cause adverse selection in private insurance provision (as insurers cannot perfectly observe risk types) hence the need for \textbf{social} insurance
+
+2) It can cause moral hazard (as insurer cannot perfectly monitor behavior), hence the need
+to \textbf{limit generosity} of insurance
+
+The ironic feature of asymmetric information is, therefore, that it simultaneously motivates and undercuts the rationale for government intervention through social insurance.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber, Public Finance and Public Policy, Fourth Edition, 2019 Worth Publishers, Chapter 12
+
+}
+
+\end{slide}
+
+\end{document}

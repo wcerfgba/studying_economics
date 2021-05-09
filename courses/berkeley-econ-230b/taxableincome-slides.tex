@@ -1,0 +1,1172 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+\author{Emmanuel Saez}
+
+\date{UC Berkeley}
+
+\title{230B: Public Economics \\
+Taxable Income Elasticities} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+
+\maketitle
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAXABLE INCOME ELASTICITIES}
+\end{center}
+
+Modern public finance literature focuses on taxable income
+elasticities instead of hours/participation elasticities
+
+Two main reasons:
+
+1) What matters for policy is the total behavioral response
+to tax rates (not only hours of work but also occupational choices,
+avoidance, etc.)
+
+2) Data availability: taxable income is precisely measured in tax
+return data
+
+Overview of this literature: Saez-Slemrod-Giertz JEL'12
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf FELDSTEIN RESTAT'99}
+%\end{center}
+%Consider two sources of responses to tax rates:
+%
+%1) Labor supply: $u(c,z)$ model where $z$ is earnings and is equal
+%to reported income $y$ with $c=y \cdot (1-\tau)+R$
+%
+%Individual chooses $y$ to maximize $u(y(1-\tau)+R,y)$
+%
+%2) Avoidance: $z$ earnings is fixed but reported income $y=z-d$
+%where $d$ is non-taxable compensation (health benefits or perks):
+%$u(c,d)$ with $c=(1-\tau) y+R$
+%
+%Individual chooses $y$ to maximize $u(y(1-\tau)+R,z-y)$ [$z$
+%fixed]
+%
+%Models are formally identical and generate the same efficiency and
+%optimal tax analysis
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf TAXABLE INCOME ELASTICITY}
+%\end{center}
+%Taxable income elasticity due to both real responses (labor supply) and
+%avoidance responses (e.g., non-taxable fringe benefits compensation)
+%
+%Feldstein '99 shows that real vs. avoidance responses is irrelevant for
+%deadweight burden and revenue raising considerations but this view is too narrow
+%
+%Real response vs. avoidance response is critical because:
+%
+%a) avoidance elasticity depends on tax law (loopholes, etc.) and hence can be
+%reduced by base broadening
+%
+%b) avoidance responses often generate fiscal externalities
+%
+%{\bf Key policy question:} Is it possible to eliminate avoidance elasticity using base broadening, etc.? or would new avoidance schemes keep popping up?
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX CHANGES}
+\end{center}
+Tax rates change frequently over time
+
+Biggest tax rate changes have happened at the top:
+
+Reagan I: ERTA'81: top rate $\downarrow$ 70\% to 50\% (1981-1982)
+
+Reagan II: TRA'86: top rate $\downarrow$ 50\% to 28\% (1986-1988)
+
+Clinton: OBRA'93: top rate $\uparrow$ 31\% to 39.6\% (1992-1993)
+
+Bush: EGTRRA '01: top rate $\downarrow$ 39.6\% to 35\% (2001-2003)
+
+Obama '13:  top rate $\uparrow$ 35\% to 39.6\%+3.8\% (2012-2013)
+
+Trump '17: top rate $\downarrow$ 37\%+3.8\% (2017-2018)
+
+Taxable Income = Ordinary Income + Realized Capital Gains -
+Deductions $\Rightarrow$ Each component can respond to $MTR$s
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1}]{taxableincome_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={3}]{taxableincome_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={4}]{taxableincome_attach.pdf}
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf LONG-RUN EVIDENCE IN THE US}
+\end{center}
+Goal: evaluate whether top \textbf{pre-tax} incomes respond to changes in one minus
+the marginal tax rate (=net-of-tax rate)
+
+Focus is on pre-tax income before deductions and excluding realized
+capital gains
+
+Pioneered by Feenberg-Poterba TPE'93 for period 1951-1990
+
+Piketty-Saez QJE'03 estimate top income shares since 1913 [IRS
+tabulations for 1913-1959, IRS micro-files since 1960]
+
+Saez TPE'04 proposes detailed analysis for 1960-2000 period using
+TAXSIM calculator at NBER linked to IRS micro-files
+
+Piketty-Saez-Stantcheva AEJ'14 look at 1913-2010 period for the US
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={5}]{taxableincome_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={6}]{taxableincome_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={7}]{taxableincome_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={8}]{taxableincome_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={53}]{taxableincome_attach.pdf}
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf INCOME SHARE BASED ELASTICITY ESTIMATION}
+\end{center}
+1) {\bf Tax Reform Episode:} Compare top \textbf{pre-tax} income shares at $t_0$
+(before reform) and $t_1$ (after reform)
+$$e=\frac{\log sh_{t_{1}}-\log sh_{t_{0}}}{\log (1-\tau
+_{t_{1}})-\log (1-\tau _{t_{0}})}$$ where $sh_t$ is top income
+share and $\tau_t$ is the average MTR for top group
+
+Identification assumption: absent tax change, $sh_{t_0}=sh_{t_1}$
+
+2) {\bf Full Time Series:} Run regression:
+$$\log sh_{t}=\alpha+e\cdot \log (1-\tau_{t})+\varepsilon _{t}$$
+and adding time controls to capture non-tax related top income
+share trends
+
+ID assumption: non-tax related changes in $sh_t$ $\perp \tau_t$
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={9}]{taxableincome_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={10}]{taxableincome_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LONG-RUN EVIDENCE IN THE US}
+\end{center}
+1) Clear correlation between top incomes and top income rates both
+in several short-run tax reform episodes and in the long-run [but
+hard to assess long-run tax causality]
+
+2) Correlation largely absent below the top 1\% (such as the next
+9\%)
+
+3) Top income shares sometimes do not respond to large tax rate
+cuts [e.g., Kennedy Tax Cuts of early 1960s]
+
+2) and 3) suggest that context matters (such as opportunities to respond / avoid taxes matter),
+response not due to a universal labor supply elasticity
+
+%4) Top income shares can change for non-tax related
+%reasons: (a) Great Depression 1928-1931 (MTR stable and top income
+%shares $\downarrow$, (b) 1990s: MTR $\uparrow$ and top income
+%shares $\uparrow$
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf SPECIFIC TAX REFORM STUDIES}
+\end{center}
+Literature initially developed by analyzing specific tax reforms (instead of
+full time series)
+
+Lindsey JpubE'87 analyzes ERTA'81 using {\bf repeated
+cross-section} tax data and finds large elasticities
+
+Feldstein JPE'95 uses {\bf panel} tax data to study TRA'86
+
+Goolsbee JPE'00 uses {\bf executive compensation} data to study
+OBRA'93
+
+Gruber-Saez JpubE'02 uses 1979-1990 {\bf panel} tax data 
+
+Saez TPE'17 uses income share to study 2013 top tax rate increase
+
+%Romer-Romer '11 uses 1919-1939 tabulated data
+
+Many other studies in the US and abroad (survey by Saez-Slemrod-Giertz JEL'12)
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf FELDSTEIN JPE'95: METHODOLOGY}
+%\end{center}
+%Feldstein (1995)\ estimates the effect of TRA86 on taxable income
+%for top earners using {\bf panel} tax data
+%
+%1) Constructs three income groups $M$ (Medium), $H$ (High), $HH$ (Highest) based on before
+%reform income in 1985
+%
+%2) Looks at how incomes and MTRs evolve from 1985 to 1988 for
+%individuals in each group using panel: forms DD estimates
+%$$\hat{e} = \frac{ \Delta \log (z^H) - \Delta \log (z^M) }
+%{\Delta \log (1-\tau^H) - \Delta \log (1-\tau^M)}$$ where $z^H$,
+%$z^M$ and $\tau^H$, $\tau^M$ are income and MTRs of the $H$ and
+%$M$ groups
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={11,12}]{taxableincome_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf FELDSTEIN JPE'95: RESULTS}
+%\end{center}
+%
+%{\bf Results:} Feldstein obtains very high elasticities (above 1)
+%for top earners
+%
+%$\Rightarrow$ US was on the wrong side of the Laffer curve for the
+%rich
+%
+%$\Rightarrow$ Laffer rate $\tau=1/(1+a \cdot e)=1/(1+2 \cdot 1)
+%=33\%$ Cutting top tax rate from 50\% to 28\% raised revenue
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf FELDSTEIN JPE'95: ISSUES}
+%\end{center}
+%1) Non-tax related {\bf changes in inequality} [same criticism as
+%top share analysis]: panel helps only if inequality changes due to
+%arrival of new people
+%
+%2) Short-term vs. Long-term response [same criticism as top share
+%analysis]
+%
+%3) {\bf Mean reversion:} rich people in year $t$ tend to revert to
+%the mean in year $t+1$ $\Rightarrow$ Panel analysis introduces
+%downward bias in $e$ [when $\tau \downarrow$ for rich]
+%
+%4) {\bf Very small sample} in panel data [57 tax filers in $HH$
+%group] [Auten-Carroll RESTAT'99 use larger Treasury panel data and
+%find smaller elasticity 0.65]
+%
+%In net, not clear panel data adds value relative to
+%repeated-cross-section
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf FELDSTEIN JPE'95: ISSUES}
+%\end{center}
+%5) DD can give very biased results when elasticity differs across
+%groups:
+%
+%Example: (a) $M$ group has $e^M=0$ so that $\Delta \log (z^M)=0$
+%and that $H$ group has $e^H=e>0$ so that $\Delta \log (z^H) = e
+%\Delta \log (1-\tau^H)$.
+%
+%Suppose that $\Delta \log (1-\tau^M)=0.5 \cdot \Delta \log
+%(1-\tau^H)$.
+%
+%Then, the estimated elasticity
+%$\hat{e}^{DD}= e \Delta \log
+%(1-\tau^H) /[\Delta \log (1-\tau^H)- \Delta \log (1-\tau^M)]= 2 e$
+%
+%In Feldstein JPE'95: Simple Difference $\Delta \log (z)/\Delta
+%\log (1-\tau)$ uniformly smaller than DD
+%
+%$\Rightarrow$ Better to focus on a single group as in top share
+%analysis than on the comparison with lower income group control
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf GRUBER AND SAEZ JPUBE'02 (skip)}
+\end{center}
+%Generalization of Feldstein JPE'95 using IV regression analysis
+
+Use panel data from 1979-1990 on all tax changes available rather
+than a single reform
+
+{\bf Model:} $z_{it}=z_{it}^0 \cdot (1-\tau_{it})^e$ where
+$z^0_{it}$ is potential income (if MTR=0), $e$ is elasticity
+$$\log \left ( \frac{z_{i t+3}}{z_{it}} \right ) = \alpha + e \cdot \log \left ( \frac{1-\tau_{i t+3}}{1-\tau_{i
+t}} \right ) + \varepsilon_{it}$$ $\tau_{i t+3}$ and $\varepsilon_{it}$ are
+correlated [because $\tau_{i t+3} = T_{t+3}'(z_{i t+3})]$
+
+{\bf Instrument:} predicted change in MTR assuming income stays
+constant: $\log [(1-\tau^p_{i t+3})/(1-\tau_{i t})]$ where $\tau^p_{i
+t+3}=T'_{t+3}(z_{it})$
+
+Isolates changes in tax law ($T_{t}(.)$) as the only source of
+variation in tax rates
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={13}]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf GRUBER AND SAEZ JPUBE'02 (skip)}
+\end{center}
+Find an elasticity of roughly 0.3-0.4 BUT results are very fragile
+[Saez-Slemrod-Giertz JEL'12]
+
+1) Sensitive to exclusion of low incomes 
+
+2) Sensitive to controls for mean reversion
+
+3) Subsequent studies find smaller elasticities using data from
+other countries [Kleven-Schultz AEJ-EP'14 for Denmark]
+
+4) Bundles together small tax changes and large tax changes: if
+individuals respond only to large changes in short-medium run,
+then estimated elasticity is too low [Chetty et al. QJE'11]
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf KLEVEN AND SCHULTZ AEJ-EP'14}
+\end{center}
+\textbf{Key Advantages:} 
+
+a) Use full population of tax returns in Denmark since 1980 
+(large sample size, panel structure, many demographic variables, stable inequality)
+
+b) A number of reforms changing tax rates differentially across three income
+brackets and across tax bases (capital income taxed separately from labor income)
+
+c) Show compelling visual DD-evidence of tax responses around the 1986 large reform:
+
+Define treatment and control group in year 1986 (pre-reform), follow the same group in years before and years after
+the reform (panel analysis)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={31-32}]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf KLEVEN AND SCHULTZ AEJ-EP'14}
+\end{center}
+
+\textbf{Key Findings:} 
+
+a) Small labor income elasticity (.1)
+
+b) bigger capital income elasticities (.2-.3)
+
+c) bigger elasticities for large reforms
+
+d) modest income shifting between labor and capital in Denmark
+(likely because top rates on labor and capital are carefully aligned)
+
+$\Rightarrow$ Danish tax system
+optimized to have broad base and few avoidance opportunities
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf RELATED: NON-LINEAR ELECTRICITY PRICING}
+%\end{center}
+%Nonlinear pricing used in other settings (electricity, utility, cell phones consumption, etc.)
+%
+%Ito AER'14 is a great example using household electricity consumption to estimate consumer
+%responses:
+%
+%1) Electricity is priced nonlinearly based on monthly consumption
+%
+%2) Ito compares people at the border of two electricity areas in Southern California:
+%comparable groups facing different schedules and changes over time
+%
+%3) Finds very compelling evidence that consumers respond to average price and not marginal price
+%
+%To date, no such compelling design has been found for income taxation
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={24-30}]{taxableincome_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf FISCAL EXTERNALITIES}
+%\end{center}
+%Feldstein RESTAT'99: nature of behavioral response (labor supply,
+%avoidance, etc.) does not matter AS LONG AS the behavioral
+%response does not generate a {\bf fiscal externality}
+%
+%A {\bf Fiscal externality} is a change in tax revenue that occurs
+%in any tax base $z^B$ other than $z$ due to the behavioral
+%response to the tax change in the initial base $z$
+%
+%(1) $z^B$ can be a different tax base in the same time period
+%(such as corporate income tax base) $\Rightarrow$ {\bf Income
+%shifting}
+%
+%(2) $z^B$ can be the same tax base in a different time period
+%(such as future income) $\Rightarrow$ {\bf Inter-temporal
+%Substitution}
+%
+%Efficiency and optimal tax analysis depend on effect on {\bf
+%total} tax revenue
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf FISCAL EXTERNALITIES}
+\end{center}
+
+Tax changes due to tax avoidance often generate \textbf{fiscal externalities}
+
+A {\bf Fiscal externality} is a change in tax revenue that occurs
+in any tax base $z^B$ other than $z$ due to the behavioral
+response to the tax change in the initial base $z$
+
+(1) $z^B$ can be a different tax base in the same time period
+(such as corporate income tax base) $\Rightarrow$ {\bf Income
+shifting}
+
+(2) $z^B$ can be the same tax base in a different time period
+(such as future income) $\Rightarrow$ {\bf Inter-temporal
+Substitution}
+
+Efficiency and optimal tax analysis depend on effect on {\bf
+total} tax revenue so critical to identify fiscal externalities
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Inter-Temporal Substitution: Realized Capital Gains}
+\end{center}
+Realized capital gains occur when individual sells asset at a
+higher price than buying price
+
+Individuals have flexibility in the timing of asset sales and
+capital gains realizations
+
+TRA'86 lowered the top tax rate on ordinary income from 50\% to
+28\% but increased the top tax rate on realized capital gains from
+20\% to 28\%
+
+2013: tax rate on KG increased from 15\% to 20\%+3.8\% (Saez TPE'17 proposes
+simple analysis)
+
+$\Rightarrow$ Surge in capital gains realizations in 1986 and 2012 [and
+depressed capital gains in 1987 and 2013] 
+
+\normalsize
+$\Rightarrow$ Short-term elasticity is very large but long-term
+elasticity is certainly much smaller
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={48}, scale=.95]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={49}]{taxableincome_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf INTER-TEMPORAL SUBSTITUTION: STOCK-OPTIONS}
+%\end{center}
+%Goolsbee JPE'00 hypothesizes that top earners' ability to retime
+%income drives much of observed responses 
+%[Frisch elasticity instead of compensated elasticity]
+%
+%Fixed effects regression specification:
+%$$TLI_{it}= e_{1}\log (1-MTR_{it})+ e_{2}\log
+%(1-MTR_{i t+1})+ \alpha_i + \beta_t$$ Short-run elasticity is
+%$e_1$
+%
+%$e_2<0$ if future MTR increase shifts income to present
+%
+%Long run elasticity is $e_{1}+e_{2}$
+%
+%Uses ExecuComp panel data to study effects of the 1993 Clinton top
+%tax rate $\uparrow$ [from 31\% in 1992 to 39.6\% in 1993 announced
+%in late 1992] on executive pay
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf INTER-TEMPORAL SUBSTITUTION: STOCK-OPTIONS}
+\end{center}
+Goolsbee JPE'00 analyzes CEO pay around the 1993 Clinton top tax rate increase
+$\uparrow$ [from 31\% in 1992 to 39.6\% in 1993 announced
+in late 1992] on executive pay
+
+Finds a strong re-timing response through stock-option exercise (executive can choose
+the timing of their stock-option exercises)
+
+$\Rightarrow$ Large short-term response due to re-timing, small long-term response
+
+Some response but smaller around the 2013 tax increase
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf STOCK OPTIONS}
+\end{center}
+Major form of compensation of US top executives. Theoretical goal
+is to motivate executives to increase the value of the company
+(stock price $P(t)$)
+
+Stock-options granted at date $t_0$ allow executives to buy $N$
+company shares at price $P(t_0)$ on or after $t_1$ (in general
+$t_1-t_0 \simeq 3-5$ years = vesting period)
+
+Executive exercises option at (chosen) time $t_2 \geq t_1$: pays $N
+\cdot P(t_0)$ to get shares valued $N \cdot P(t_2)$. Exercise
+profit $N \cdot [P(t_2)-P(t_0)]$ (taxed as wage income in
+the US)
+
+After $t_2$, executive owns $N$ shares, eventually sold at time
+$t_3 \geq t_2$: realized capital gain $N \cdot [P(t_3)-P(t_2)]$ (taxed
+as KG)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={16}]{taxableincome_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={17}]{taxableincome_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf GOOLSBEE JPE'00: INTER-TEMPORAL SUBSTITUTION}
+%\end{center}
+%Executives had a surge in income in 1992 (when reform was
+%announced) relative to 1991 followed by a sharp drop in 1993
+%
+%1) Simple DD estimate for '92 vs '93 would find a large effect
+%here, but it would be picking up pure re-timing
+%
+%2) Concludes that long run effect $e_1+e_2$ is much smaller than
+%substitution effect $e_1$ [long-run elasticity is the relevant
+%parameter for policy]
+%
+%3) Effects driven almost entirely by re-timing exercise of
+%stock-options [executives knew tax rate would $\uparrow$ in '93
+%when Clinton elected in Nov. '92 $\Rightarrow$ Exercise stock
+%options]
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf INCOME SHIFTING: CORPORATE AND INDIVIDUAL TAX BASE}
+%\end{center}
+%Businesses can be organized as {\bf corporations} or {\bf
+%unincorporated businesses} [also called {\bf pass-through}
+%entities]
+%
+%Corporate profits are first taxed by corporate tax [tax rate
+%$\tau_c$ ]
+%
+%Net-of-tax profits are taxed again when finally distributed to
+%shareholders. 2 distribution options:
+%
+%a) dividends [tax rate $\tau_d$ ]
+%
+%b) retained profits increase stock price: shareholders realize
+%capital gains when finally selling the stock [tax rate
+%$\tau_{cg}$]
+%
+%For {\bf unincorporated businesses}: sole proprietorships,
+%partnerships (including LLCs), S-corporations profits are taxed directly and
+%solely as individual income (rate $\tau_i$)
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Income Shifting: Corporate and Individual Tax Base}
+\end{center}
+Businesses can be organized as {\bf corporations} or {\bf
+unincorporated businesses} [also called {\bf pass-through}
+entities]
+
+Corporate profits first taxed by corporate tax [rate
+$\tau_c = 21\%$]
+
+Net-of-tax profits are taxed again at rate $\tau_{\text{distrib}}$  when finally distributed to
+shareholders. Two distribution options:
+
+a) dividends [tax rate $\tau_d = 20\%$ today]
+
+b) retained profits increase stock price: shareholders realize
+capital gains when finally selling the stock [tax rate
+$\tau_{cg}=20\%$]
+
+\vspace{-0.5cm}
+
+But distributions can be deferred so that $\tau_{\text{distrib}}<<\tau_d, \tau_{cg}$
+
+For {\bf unincorporated businesses} (sole proprietorships,
+partnerships, S-corporations) profits are taxed directly and
+solely as individual income (tax rate $\tau_i = 37\%$ top MTR or even $30\%$ with 20\% business profit deduction since 2018)
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf CORPORATE AND INDIVIDUAL TAX BASE}
+\end{center}
+Corporate form best if $(1-\tau_c) \cdot (1-\tau_{\text{distrib}})>1-\tau_i$
+
+US fed taxes in 2018: $\tau_c=21\%$, $\tau_{cg}=\tau_d=20\%$,
+(but $\tau_{\text{distrib}}<<20\%$ if distribution deferred), 
+$\tau_i=37\%$ or $30\%$ 
+
+After 2018 Trump change: corporate form is best, especially if 
+wealthy business owner can defer distribution
+
+Pre 2018, $\tau_c=35\%$ and $\tau_i=39.6\% \Rightarrow$ individual form better
+
+$\Rightarrow$ wealthy people likely to incorporate their businesses in 2018+
+
+\small
+Before TRA'86 (and especially before ERTA'81), top individual rate
+$\tau_i$ was much higher so corporate form was best
+
+Shifts from corporate to individual base increases business
+profits at the expense of dividends and realized capital gains
+
+Large part of TRA'86 response is due to such shifting
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={18, 50}]{taxableincome_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf INCOME SHIFTING: US EXECUTIVE COMPENSATION AND TAX RATES}
+%\end{center}
+%1) Executive compensation (relative to average pay) stagnated from
+%1936-1970 and surged in the US since 1970 [Frydman-Saks '08]
+%
+%2) Top income rates on earnings high till 1970 and lower
+%afterwards: tempting to attribute surge in executive compensation
+%to lower tax rates
+%
+%3) BUT stock-options from 1950 to 1975 used to be ``Qualified
+%stock options'' taxed as realized capital gains only when stock
+%sold [no tax when exercised] but not deductible for corporate tax
+%
+%$\Rightarrow$ Tax rate on stock-option compensation was therefore
+%very low (25\%) as realized capital gains
+%
+%Yet stock-option compensation was only used in moderation
+%
+%$\Rightarrow$ Frydman-Molloy '09 find no overall elasticity of
+%executive compensation with respect to MTRs when taking this into
+%account
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={38}]{pdf/frydman-saks08executivepay.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={40}]{pdf/frydman-molloy09tax-executives.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={40}]{pdf/frydman-molloy09tax-executivesb.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Bottom Line On Behavioral Responses To Taxes}
+%\end{center}
+%1) Clear evidence of strong responses to tax changes due to
+%re-timing or income shifting
+%
+%2) Heterogeneity in tax responses due to heterogeneity in shifting
+%opportunities [e.g., Kennedy tax cuts of '61 vs. TRA'86]
+%
+%3) Top income shares can change drastically without changes in tax
+%rates [Great Depression, 1993-2000]
+%
+%4) Difficult to know from single country time series the role
+%played by top tax rate cuts in the surge of top incomes
+%$\Rightarrow$ International evidence can cast further useful
+%evidence
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf INTERNATIONAL EVIDENCE ON TOP INCOMES AND TAX RATES}
+%\end{center}
+%Atkinson-Piketty-Saez JEL'10 summarize recent effort to construct
+%top income share series [and MTR series in some cases]
+%
+%Two empirical regularities from those top income studies:
+%
+%(1) 1900-1950: Most Western countries experience substantial drop
+%in top income shares due to fall in top capital incomes
+%
+%possibly long run consequence of high tax rates which reduce
+%ability to accumulate wealth $W_t$
+%
+%$W_{t+1}=W_t \cdot (1+r_t(1-\tau_t)) + Savings_t$ $\Rightarrow$
+%High $\tau$ makes accumulating wealth $W_t$ harder
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={19}]{taxableincome_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={20}]{taxableincome_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TOP RATES AND TOP INCOMES INTERNATIONAL EVIDENCE}
+\end{center}
+
+1) Use pre-tax top 1\% income share data from 18 OECD countries since 1960 using
+the {\bf World Inequality Database}
+
+2) Compute top (statutory) individual income tax rates using OECD data [including both
+central and local income taxes].
+
+%Those tax rates do not include payroll taxes,
+%corporate taxes, or VAT and Sales taxes
+
+Plot top 1\% pre-tax income share against top MTR in 1960-4,  in 2005-9, and 1960-4 vs. 2005-9
+
+%OLS basic regressions:
+%$$\log (Top\:\: 1\% \:\: Share) = \alpha + e \cdot \log(1-MTR) + \varepsilon$$
+%$$\Delta \log (Top\:\: 1\% \:\: Share) = \alpha + e \cdot  \Delta \log(1-MTR) + \varepsilon$$
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={34-36}]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={37}]{taxableincome_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf ECONOMIC EFFECTS OF TAXING THE TOP 1\%}
+\end{center}
+Strong empirical evidence that \textbf{pre-tax} top incomes are affected by top tax rates
+
+\textbf{3} potential scenarios with very different policy consequences
+
+{\bf 1) Supply-Side:} Top earners work less and earn less when top tax rate increases
+$\Rightarrow$ Top tax rates should not be too high
+
+{\bf 2) Tax Avoidance/Evasion:} Top earners avoid/evade more when top tax rate increases
+
+$\Rightarrow$ a) Eliminate loopholes, b) Then increase top tax rates
+
+{\bf 3) Rent-seeking:} Top earners extract more pay (at the expense of the 99\%)
+when top tax rates are low 
+$\Rightarrow$ High top tax rates are desirable
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf ANATOMY OF BEHAVIORAL RESPONSES}
+%\end{center}
+%{\bf 1) Avoidance:} Is the surge in US top income shares explained by reduced tax avoidance/evasion
+%since 1970s instead of change in real income?
+%
+%\textbf{Test:} Under avoidance scenario, narrower measures of taxable income should
+%be much more responsive to marginal tax rates than broader measures including tax preferred
+%income items
+%
+%First pass is to compare income excluding and including tax preferred realized capital gains
+%$\Rightarrow$ Does not support tax avoidance scenario
+%
+%{\bf 2) Rent-Seeking:} Has top 1\% income share surge come at the expense of the 99\%?
+%
+%\textbf{Test:} First pass is to look at correlation between economic growth and top tax rate cuts
+%$\Rightarrow$ No correlation supports trickle-up (more work needed)
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Real changes vs. tax avoidance?}
+\end{center}
+Long-term Correlation between \textbf{pre-tax} top reported incomes and top tax rates
+
+If due solely to tax avoidance, true top income shares were high in the 1950s-1970s but
+top earners could lower their taxable income (by retaining earnings in businesses and benefit
+from lower tax rate on capital gains)
+
+But top income share including K gains follows the same U-shape (Piketty, Saez, Stantcheva '14)
+
+%2) fully comprehensive national income definition
+%from Distributional National Accounts (Piketty, Saez, Zucman '18)
+
+Piketty, Saez, Zucman QJE'18: comprehensive national income estimates are also U-shaped over the century
+
+$\Rightarrow$ Long-run evolution of inequality is not an artifact of tax avoidance or evasion
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={54}, scale=.95]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={58}, scale=.95]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Real changes vs. tax Avoidance? Charitable giving}
+\end{center}
+Test using charitable giving behavior of top income earners (Saez TPE '17)
+
+Because charitable is tax deductible, incentives to give are stronger
+when tax rates are higher
+
+Under the tax avoidance scenario, reported incomes and reported charitable
+giving should move in opposite directions
+
+Empirically, charitable giving of top income earners has grown in close tandem with
+top incomes
+
+$\Rightarrow$ Incomes at the top have grown for real 
+
+%Empirical correlation is very similar ruling out the pure tax avoidance scenario
+
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={51,52}, scale=.95]{taxableincome_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Supply-Side or Rent-Seeking? (Piketty-Saez-Stantcheva)}
+\end{center}
+Correlation between \textbf{pre-tax} top incomes and top tax rates
+
+If rent-seeking: growth in top 1\% incomes should come at the expense of
+bottom 99\% (and conversely)
+
+Two macro-preliminary tests:
+
+1) In the US, top 1\% incomes grow slowly from 1933 to 1975 and fast afterwards.
+Bottom 99\% incomes grow fast from 1933 to 1975 and slowly afterwards
+$\Rightarrow$ Consistent with rent-seeking effects
+
+2) Look at cross-country correlation between economic growth and top tax rate cuts
+$\Rightarrow$ No correlation supports trickle-up 
+
+One micro-test using CEO pay data
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={55}]{taxableincome_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={38-39}]{taxableincome_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={40}]{taxableincome_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf INTERNATIONAL CEO PAY EVIDENCE}
+\end{center}
+Recent micro-data for 2006 gathered by Fernandes, Ferreira, Matos, Murphy RFS'12. 
+
+1) CEO pay across countries strongly negatively correlated with top tax rates
+
+2) Correlation remains as strong even when controlling for firms' characteristics
+and performance 
+
+$\Rightarrow$ Consistent with bargaining effects
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={41-43}]{taxableincome_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf INTERNATIONAL MIGRATION}
+\end{center}
+Public debate concern that top skilled individuals move to low tax countries (e.g., in EU context)
+or low tax states (within US Federation)
+
+Migration concern bigger in public debate than supply-side concern within a country 
+
+%Relatively little work on tax induced international migration of top skilled workers
+
+Interesting variation due to proliferation of special low tax schemes for highly paid foreigners
+in Europe
+
+\small
+
+Kleven-Landais-Saez AER'13 look at \textbf{football players} in Europe (highly mobile group, many tax
+reforms) $\Rightarrow$ Find significant migration responses to taxes after European football market
+was de-regulated in '95
+
+Akcigit-Baslandze-Stantcheva AER'16 look at \textbf{innovators} (using patent data) mobility and find significant tax
+effects for top innovators
+
+\normalsize
+
+Various US states studies: Moretti-Wilson AER17 , 2019, Rauh-Shyu '19 (huge effects), Young et al. '16 (modest effects)
+
+
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf KLEVEN-LANDAIS-SAEZ-SCHULTZ QJE'14}
+\end{center}
+Exploit the 1991 Danish tax scheme:  immigrants with high earnings ($ \geq 103,000$ Euros/year)
+taxed at flat 25\% rate (instead of regular progressive tax with top 59\% rate) for 3 years
+
+Use population wide Danish tax data and DD strategy: compare immigrants above eligibility
+earnings threshold (treatment) to immigrants below threshold (control) 
+
+\textbf{Key Finding:} Scheme doubles the number of highly paid
+foreigners in Denmark relative to controls
+
+$\Rightarrow$ Elasticity of migration with respect to the net-of-tax rate above one
+(much larger than the within country elasticity of earnings)
+
+$\Rightarrow$ Tax coordination will be key to
+preserve progressive taxation in the EU (but tax competition hard-coded in EU treaties)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={33}]{taxableincome_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf RESPONSE OF TAX EXPENDITURES TO MTRs}
+%\end{center}
+%Taxable Income = Ordinary Income + Realized Capital Gains -
+%Deductions
+%
+%Deductions include mortgage interest payments, charitable
+%contributions, state and local taxes
+%
+%Deductions could also respond to MTRs: MTRs $\uparrow$
+%$\Rightarrow$ Deductions more attractive
+%
+%This response is captured in taxable income response but not
+%ordinary income response
+%
+%Harder to construct long time series of taxable income because
+%definition changes overtime
+%
+%Large literature has analyzed response of charitable contributions
+%to tax rates [Andreoni Handbook Chapter, Fack-Landais '09]
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={23}]{taxableincome_attach.pdf}
+%\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Akcigit, Ufuk , Salom\'e Baslandze, and Stefanie Stantcheva. ``Taxation and the International Mobility of Inventors'',
+American Economic Review 106 (10), 2016, 2930--2981 \href{http://elsa.berkeley.edu/~saez/course/Akcigit_Baslandze_Stantcheva_Taxation_Superstars.pdf} {(web)}
+
+Akcigit, Ufuk, John Grigsby, Tom Nicholas, and Stefanie Stantcheva. 2018. ``Taxation and Innovation in the 20th Century.'' National Bureau of Economic Research No. 24982.
+\href{https://www.nber.org/papers/w24982.pdf} {(web)}
+
+Alvaredo, F., A. Atkinson, T. Piketty, E. Saez, G. Zucman \emph{The World Wealth and Income Database},
+\href{http://www.wid.world/} {(web)}
+
+Andreoni, J. ``Philanthropy'', In Serge-Christophe Kolm and Jean Mercier Ythier, Handbook on the Economics of Giving, Reciprocity and Altruism, Volume 2, Applications, 2006, 1201-1269 \href{http://elsa.berkeley.edu/~saez/course/Andereoni_Handbook chapter.pdf} {(web)}
+
+Atkinson, A., T. Piketty and E. Saez ``Top Incomes in the Long Run of History'', Journal of Economic Literature, 49(1), 2011, 3-71. \href{http://elsa.berkeley.edu/~saez/atkinson-piketty-saezJEL10.pdf} {(web)}
+
+Auten,G., R. Carroll ``The Effect of Income Taxes on Household Income'', Review of Economics and Statistics, Vol. 81, 1999, 681-693. \href{http://www.jstor.org/stable/pdfplus/2646717.pdf} {(web)}
+
+Break, G. ``Income Taxes and Incentives to Work: An Empirical Study'', American Economic Review, Vol. 47, 1957, 529-549. \href{http://links.jstor.org/stable/pdfplus/1811736.pdf} {(web)}
+
+Chetty, R., J. Friedman, T. Olsen and L. Pistaferri ``Adjustment Costs, Firms
+Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax
+Records'', Quarterly Journal of Economics,  126(2), 2011, 749-804. \href{http://elsa.berkeley.edu/~saez/course/chettyetalQJE2011denmark.pdf} {(web)} 
+
+Fack, G and C. Landais ``Are Tax Incentives for Charitable Giving Efficient? Evidence from France'', American Economic Journal: Economic Policy, vol. 2, 2010, 117-41 \href{http://elsa.berkeley.edu/~saez/course/Fack and Landais(2010).pdf} {(web)}
+
+Feenberg, D. and J. Poterba, ``Income Inequality and the Incomes of Very High Income Households: Evidence from Tax Returns'', in J. Poterba, ed., Tax Policy and the Economy, Volume 7, 145-177, Cambridge and London: MIT Press, 1993. \href{http://www.jstor.org/stable/pdfplus/20060632.pdf} {(web)}
+
+Feldstein, M. ``The Effect of Marginal Tax Rates on Taxable Income: A Panel Study of the 1986 Tax Reform Act'', Journal of Political Economy, Vol. 103, 1995, 551-572. \href{http://links.jstor.org/stable/pdfplus/2138698.pdf} {(web)} 
+
+Feldstein, M. ``Tax Avoidance and the Deadweight Loss of the Income Tax'', Review of Economics and Statistics, Vol. 81, 1999, 674-680. \href{http://links.jstor.org/stable/pdfplus/2646716.pdf} {(web)}
+
+Goolsbee, A. ``What Happens When You Tax the Rich? Evidence from Executive Compensation'', Journal of Political Economy, Vol. 108, 2000, 352-378. \href{http://links.jstor.org/stable/pdfplus/3038281.pdf} {(web)} 
+
+Gordon, R.H. and J. Slemrod ``Are ``Real'' Responses to Taxes Simply Income Shifting Between Corporate and Personal Tax Bases?'', NBER Working Paper No. 6576, 2000. \href{http://www.nber.org/papers/w6576} {(web)}
+
+Gruber, J. and E. Saez ``The Elasticity of Taxable Income: Evidence and Implications'', Journal of Public Economics, Vol. 84, 2002, 1-32. \href{http://elsa.berkeley.edu/~saez/course/Gruber and Saez_JPubE(2002).pdf} {(web)}
+
+Kleven, Henrik, Camille Landais, and Emmanuel Saez ``Taxation and International Mobility of Superstars: Evidence from the European Football Market,'' American Economic Review, 103(5), 2013, 1892-1924. \href{http://elsa.berkeley.edu/~saez/kleven-landais-saezAER13football.pdf} {(web)}
+
+Kleven, Henrik, Camille Landais, Emmanuel Saez, and Esben Schultz ``Taxation and International Migration of Top Earners: Evidence from the Foreigner Tax Scheme in Denmark,'' Quarterly Journal of Economics, 129(1), 2014, 333-378.
+\href{http://elsa.berkeley.edu/~saez/kleven-landais-saez-schultzQJE14danishscheme.pdf} {(web)}
+
+\textbf{Kleven, Henrik and Esben Schultz  ``Estimating Taxable Income Responses
+using Danish Tax Reforms'', American Economic Journal: Economic Policy, 6(4), 2014, 271-301
+\href{http://elsa.berkeley.edu/~saez/course/kleven-schultz_may2012.pdf} {(web)} }
+
+Kleven, Henrik and Mazhar Waseem ``Tax Notches in Pakistan: Tax Evasion, Real Responses, and Income Shifting'', Quarterly Journal of Economics, 128, 669-723, 2013
+\href{http://elsa.berkeley.edu/~saez/course/kleven-waseem_qje2013.pdf} {(web)}
+
+Ito, Koichiro. ``Do Consumers Respond to Marginal or Average Price?
+Evidence from Nonlinear Electricity Pricing'', 
+American Economic Review, 104(2), 2014, 537-567 \href{http://elsa.berkeley.edu/~saez/course/koichiroAER14.pdf} {(web)} 
+
+Lindsey, L. ``Individual Taxpayer Response to Tax Cuts, 1982-1984: With Implications for the Revenue Maximizing Tax Rate'', Journal of Public Economics, 33, 1987, 173-206. \href{http://elsa.berkeley.edu/~saez/course/Lindsey_JPubE(1987).pdf} {(web)}
+
+Moretti, Enrico and Daniel Wilson 2017. ``The Effect of State Taxes on the Geographical Location of Top Earners: Evidence from Star Scientists'', American Economic Review 107(7), 1858-1903 \href{http://elsa.berkeley.edu/~saez/course/moretti-wilsonAER17mobility.pdf} {(web)}
+
+Moretti, Enrico, and Daniel J. Wilson. Taxing Billionaires: Estate Taxes and the Geographical Location of the Ultra-Wealthy. National Bureau of Economic Research Working Paper No. 26387.
+\href{https://www.nber.org/papers/w26387.pdf} {(web)}
+
+Piketty, T. and E. Saez ``Income Inequality in the United States, 1913-1998'', Quarterly Journal of Economics, Vol. 116, 2003, 1-39. \href{http://links.jstor.org/stable/pdfplus/25053897.pdf} {(web)}
+
+\textbf{Piketty, Thomas, Emmanuel Saez, and Stefanie Stantcheva ``Optimal Taxation of Top Labor Incomes: A Tale of Three Elasticities,'' \emph{American Economic Journal: Economic Policy} 2014, 6(1), 2014, 230-271.
+\href{http://elsa.berkeley.edu/~saez/piketty-saez-stantchevaAEJ14.pdf} {(web)} }
+
+Piketty, Thomas, Emmanuel Saez, and Gabriel Zucman,  ``Distributional National Accounts:
+Methods and Estimates for the United States'', Quarterly Journal of Economics, 133(2), 553-609, 2018
+\href{https://eml.berkeley.edu/~saez/PSZ2018QJE.pdf} {(web)}
+
+Rauh, Joshua, and Ryan J. Shyu. 2019. ``Behavioral Responses to State Income Taxation of High Earners: Evidence from California.'' National Bureau of Economic Research Working Paper No. 26349.
+\href{https://www.nber.org/papers/w26349.pdf} {(web)} 
+
+Saez, E. ``Reported Incomes and Marginal Tax Rates, 1960-2000: Evidence and Policy Implications'', in J. Poterba, ed., Tax Policy and the Economy, Volume 18, Cambridge: MIT Press, 2004. \href{http://www.jstor.org/stable/pdfplus/20061888.pdf} {(web)}
+
+\textbf{Saez, E. ``Taxing the Rich More: Preliminary Evidence from the 2013 Tax Increase'', in R. Moffitt, ed., Tax Policy and the Economy, Volume 31, Cambridge: MIT Press, 2017. \href{http://eml.berkeley.edu/~saez/saezNBERWP16TPE.pdf} {(web)} }
+
+\textbf{Saez, E., J. Slemrod, and S. Giertz ``The Elasticity of Taxable Income with Respect to Marginal Tax Rates: A Critical Review,'' Journal of Economic Literature 50(1), 2012, 3-50. \href{http://elsa.berkeley.edu/~saez/saez-slemrod-giertzJEL12.pdf} {(web)}}
+
+Saez, Emmanuel and Gabriel Zucman. ``The Rise of Income and Wealth Inequality in America: Evidence from Distributional Macroeconomic Accounts,'' Journal of Economic Perspectives 34(4), Fall 2020, 3-26.
+\href{https://eml.berkeley.edu/~saez/SaezZucman2020JEP.pdf}{(web)} 
+
+
+Slemrod, J. ``Income Creation or Income Shifting? Behavioral Responses to the Tax Reform Act of 1986'', American Economic Review, Vol. 85, 1995, 175-180. \href{http://links.jstor.org/stable/pdfplus/2117914.pdf} {(web)}
+
+Young, Cristobal, Charles Varner, Ithai Lurie, Richard Prisinzano, 2016 ``Millionaire Migration and the Taxation of the Elite: Evidence from Administrative Data'', American Sociological Review 81(3), 421--446
+\href{http://elsa.berkeley.edu/~saez/course/Millionaire_Migration_and_the_Taxtion_of_the_Elite.pdf} {(web)}
+
+
+}
+
+\end{slide}
+
+\end{document}

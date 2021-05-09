@@ -1,0 +1,1154 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+
+\title{Labor Supply Responses to Taxes and Transfers} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MOTIVATION}
+\end{center}
+1) Labor supply responses to taxation are of fundamental
+importance for income tax policy [efficiency costs and optimal tax
+formulas]
+
+2) Labor supply responses along many dimensions:
+
+(a) Intensive: hours of work on the job, intensity of work,
+occupational choice [including education]
+
+(b) Extensive: whether to work or not [e.g., retirement and
+migration decisions]
+
+3) Reported earnings for tax purposes can also vary due to (a) tax
+avoidance [legal tax minimization], (b) tax evasion [illegal
+under-reporting]
+
+4) Different responses in short-run and long-run: long-run
+response most important for policy but hardest to estimate
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf STATIC MODEL: SETUP}
+\end{center}
+Baseline model (same as previous lecture):
+
+Let $c$ denote consumption and $l$ hours worked, utility $u(c,l)$
+increases with $c$, and decreases with $l$
+
+Individual earns wage $w$ per hour (net of taxes) and has $R$ in
+non-labor income
+
+Individual solves \[\max_{c,l} u(c,l) \text{ subject to } c=wl+R \]
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf LABOR SUPPLY BEHAVIOR}
+\end{center}
+FOC: $w \partial u/ \partial c + \partial u/ \partial l =0$ defines uncompensated (Marshallian)  labor
+supply function $l^u(w,R)$
+
+Uncompensated elasticity of labor supply: $\varepsilon^u = (w/l)
+\partial l^u/ \partial w$ [\% change in hours when net wage $w
+$ increases by 1\%]
+
+Income effect parameter: $\eta = w \partial l / \partial R \leq
+0$: \$ increase in earnings if person receives \$1 extra in
+non-labor income
+
+Compensated (Hicksian) labor supply function $l^c(w,u)$ which
+minimizes cost $w l - c$ st to constraint $u(c,l) \geq u$.
+
+Compensated elasticity of labor supply: $\varepsilon^c = (w/l)
+\partial l^c/ \partial w>0$
+
+Slutsky equation: $\partial l/ \partial w = \partial l^c/ \partial
+w +l  \partial l /\partial R$ $\Rightarrow$ $\varepsilon^u =
+\varepsilon^c + \eta $
+
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf IMPORTANT SPECIAL CASE: NO INCOME EFFECTS}
+%\end{center}
+%Quasi-linear utility function $u(c,l)=c - h(l)$
+%
+%$\max_l wl+y -h(l)$ $\Rightarrow$ $h'(l)=w$
+%
+%$\Rightarrow$ Marshallian $l^u(w,y)=l(w)$ labor supply independent
+%of $y$
+%
+%$\Rightarrow$ Hicksian  $l^c(w,u)=l(w)$ labor supply independent
+%of $y$ [parallel indifference curves]
+%
+%$\Rightarrow$ Identical uncompensated and compensated labor supply
+%
+%$\Rightarrow$  $\eta=0$ and $\epsilon^c = \epsilon^u >0$
+%
+%Iso-elastic utility function: $u(c,l)=c-a\frac{l^{1+1/\varepsilon }}{%
+%^{1+1/\varepsilon }}$ $\Rightarrow$ $w =C \cdot l^{\varepsilon}$
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BASIC CROSS SECTION ESTIMATION}
+\end{center}
+Data on hours or work, wage rates, non-labor income started
+becoming available in the 1960s when first micro surveys and
+computers appeared:
+
+Simple OLS (Ordinary Least Square) regression:
+$$l_i = \alpha + \beta w_i + \gamma R_i + X_i \delta +
+\epsilon_i$$
+
+$w_i$ is the net-of-tax wage rate
+
+$R_i$ measures non-labor income [including spousal earnings for
+couples]
+
+$X_i$ are demographic controls [age, experience, education, etc.]
+
+$\beta$ measures uncompensated wage effects, and $\gamma$ measures income
+effects [can be converted to $\varepsilon^u$, $\eta$]
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BASIC CROSS SECTION RESULTS}
+\end{center}
+
+{\bf 1. Male workers} [primary earners when married] (Pencavel,
+1986 survey):
+
+a) Small effects $\varepsilon^u=0$, $\eta=-0.1$, $\varepsilon^c=0.1$
+with some variation across estimates
+
+{\bf 2. Female workers} [secondary earners when married]
+(Killingsworth and Heckman, 1986):
+
+Much larger elasticities on average, with larger variations across
+studies. Elasticities go from zero to over one. Average around
+0.5. Significant income effects as well
+
+Female labor supply elasticities have declined overtime as women
+become more attached to labor market (Blau-Kahn JOLE'07)
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf ISSUE WITH OLS REGRESSION: \\ $w_i$ correlated with tastes for work $\epsilon_i$}
+\end{center}
+\[ l_i = \alpha + \beta w_i + \epsilon_i \]
+Identification is based on cross-sectional variation in $w_i$:
+comparing hours of work of highly skilled individuals (high $w_i$)
+to hours of work of low skilled individuals (low $w_i$)
+
+If highly skilled workers have more taste for work (independent of
+the wage effect), then $\epsilon_i$ is positively correlated with
+$w_i$ leading to an upward bias in OLS regression
+
+Plausible scenario: hard workers acquire better education and
+hence have higher wages
+
+Controlling for $X_i$ can help but can never be sure that we have
+controlled for all the factors correlated with $w_i$ and tastes
+for work: {\bf Omitted variable bias} $\Rightarrow$ Tax changes
+provide more compelling identification
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Natural Experiment Labor Supply Literature}
+%\end{center}
+%Literature exploits variation in taxes/transfers to estimate Hours
+%and Participation Elasticities
+%
+%1) Large literature in labor/Public economics estimates effects of
+%taxes and wages on hours worked and participation
+%
+%2) Now discuss some estimates from this older literature
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Negative Income Tax (NIT) Experiments}
+\end{center}
+
+1) Best identification method: exogenously
+increase the tax rate / non-labor income with a {\bf randomized experiment}
+
+2)  NIT experiment conducted in 1960s/70s in Denver, Seattle, and
+other cities
+
+3) First major social experiment in U.S. designed to test proposed
+transfer policy reform
+
+4) Lump-sum transfers $G$ combined with a steep
+phaseout rate $\tau $ (50\%-80\%) [based on family earnings] for 3 or 5 years.
+
+5) Analysis by Rees (1974), Munnell (1986) book, Ashenfelter and\
+Plant JOLE'90, and others
+
+6) Several groups, with randomization within each; approx. N = 75
+households in each group
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={59-60}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf NIT Experiments: Ashenfelter and Plant 1990}
+%\end{center}
+%1) Present non-parametric evidence of labor supply effects
+%
+%2) Compare implied benefit payments to treated vs. control
+%households
+%
+%3) Difference in benefit payments reflects aggregates hours and
+%participation responses
+%
+%4) This is the relevant parameter for expenditure calculations and
+%potentially for welfare analysis (revenue method of calculating
+%DWL)
+%
+%%5) Shortcoming: approach does not decompose estimates into income
+%%and substitution effects and intensive vs. extensive margin
+%%
+%%6) Hard to identify the key elasticity relevant for policy
+%%purposes and predict labor supply effect of other programs
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={44}]{laborsupply_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf NIT Experiments: Findings}
+\end{center}
+
+1) Significant labor supply response but small overall
+
+2) Implied earnings elasticity for males around 0.1
+
+3) Implied earnings elasticity for married women around 0.5
+
+4) Response of married women is concentrated along the extensive margin
+
+5) Earnings of treated married women who were working before the
+experiment did not change much
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Problems with NIT Experimental Design}
+%\end{center}
+%Estimates from NIT\ not considered fully credible due to several
+%shortcomings:
+%
+%1) {\bf Self reported earnings:} Treatments had financial
+%incentives to under-report earnings $\Rightarrow$ Lesson: need to
+%match with administrative records [Greenberg and Halsey JOLE'83]
+%
+%2) {\bf Selective attrition:}
+%
+%After initial year, data collected based on voluntary income
+%reports by families $\Rightarrow$ Those in control group
+%had much less incentive to stick around and keep
+%reporting
+%$\Rightarrow$ No longer a random sample of treatment + controls
+%[Ashenfelter-Plant JOLE'90]
+%
+%3) Response might be smaller than real reform because of {\bf General
+%Equilibrium} effects
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf From true experiment to ``natural experiments'': \\ Estimating income effects with lottery winnings}
+\end{center}
+True experiments are costly to implement and hence rare
+
+However, real economic world (nature) provides variation that can
+be exploited to estimate behavioral responses $\Rightarrow$
+``Natural Experiments''
+
+Natural experiments sometimes come very close to true experiments:
+Imbens, Rubin, Sacerdote AER '01 did a survey of lottery winners
+and non-winners matched to Social Security administrative data to
+estimate income effects
+
+Lottery generates random assignment conditional on playing
+
+Find significant but relatively small income effects: $\eta = w
+\partial l/\partial R$ between -0.05 and -0.10
+
+Identification threat: differential response-rate among groups
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={2,3}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Labor Supply Substitution Effects: \\ Tax Free Second Jobs in Germany}
+\end{center}
+
+In 2003, Germany made secondary jobs (paying less than 400 Euros/month) tax free:
+amounts to a 20-60\% subsidy on second job earnings: substitution labor supply effect
+
+Tazhitdinova '20 uses social security admin monthly earnings data
+
+Fraction of population holding second jobs increased sharply (from 2.5\% to 6-7\%)
+with bigger response overtime
+
+Finds no offsetting effect on primary earnings $\Rightarrow$ People did work more
+
+Looks like a big labor supply response but likely happened because employers 
+willing to create lots of mini-jobs to accommodate supply
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={52}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Tax Reform Variation (Eissa 1995)}
+%\end{center}
+%1) Modern studies use tax changes as \textquotedblleft natural
+%experiments\textquotedblright
+%
+%2) Representative example:\ Eissa (1995)
+%
+%3) Uses the Tax Reform Act of 1986 to identify the effect of MTRs
+%on labor force participation and hours of married women
+%
+%4) TRA 1986 cut top income MTR from 50\% to 28\% from 1986 to 1988
+%but did not significantly change tax rates for the middle class
+%
+%5) Substantially increased incentives to work of wives of high
+%income husbands relative wives of middle income husbands
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={4}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Difference-in-Difference (DD) Methodology:}
+%\end{center}
+%{\bf Step 1: Simple Difference}
+%
+%Outcome: $LFP$ (labor force participation)
+%
+%Two groups: Treatment group (T) which faces a change [women
+%married to high income husbands] and control group (C) which does
+%not [women married to middle income husband]
+%
+%Simple Difference estimate: $D=LFP^T-LFP^C$ captures treatment
+%effect if absent the treatment, $LFP$ equal across 2 groups
+%
+%Note: assumption always holds when $T$ and $C$ status is randomly
+%assigned
+%
+%Test for : Compare $LFP$ before treatment happened
+%$D_B=LFP_B^T-LFP_B^C$
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Difference-in-Difference (DD) Methodology:}
+%\end{center}
+%{\bf Step 2: Difference-in-Difference (DD)}
+%
+%If $D_B \neq 0$, can estimate DD: $$DD=D_A-D_B=LFP_A^T-LFP_A^C -
+%[LFP_B^T-LFP_B^C]$$ (A = after reform, B = before reform)
+%
+%DD is unbiased if {\bf parallel trend} assumption holds:
+%
+%Absent the change, difference across $T$ and $C$ would have stayed
+%the same before and after
+%
+%DD most convincing when groups are very similar to start with
+%[closer to randomized experiment]
+%
+%Should always test DD using data from more periods and plot the two time
+%series to check parallel trend assumption [as ub Imbens et al. 2001]
+%
+%\end{slide}
+%
+%
+%
+%
+%
+%\begin{slide}
+%\includepdf[pages={5-7}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa 1995: Results}
+%\end{center}
+%1) Participation elasticity around 0.4 but large standard errors
+%
+%2) Hours elasticity of 0.6
+%
+%3) Total elasticity (unconditional hours) is $0.4+0.6=1$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Eissa 1995: Caveats}
+%\end{center}
+%1) Does the parallel trend assumption hold? Potential story biasing
+%the result:
+%
+%Trend toward \textquotedblleft power couples\textquotedblright\
+%and thus DD might not be due to taxes: In 1983-1985, professionals
+%had non-working spouses, In 1989-1991, professionals married to
+%professionals [and no change for middle class]
+%
+%2) Liebman and Saez (2006) plot full time-series CPS plot and show
+%that Eissa's results are not robust using admin data (SSA\ matched
+%to\ SIPP) [unfortunately, IRS public tax data does not break down
+%earnings within couples]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={8}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+%
+
+
+\begin{slide}%
+\begin{center}
+{\bf Responses to Low-Income Transfer Programs}
+\end{center}
+
+1) Particular interest in treatment of low incomes in a
+progressive tax/transfer system: are they responsive to incentives?
+
+2) Complicated set of transfer programs in\ US
+
+a) In-kind: food stamps (SNAP), Medicaid, public housing, job training,
+education subsidies
+
+b) Cash:\ TANF, EITC, SSI
+
+US government (fed+state and local) spent \$1000bn in 2016 on
+income-tested programs
+
+a) About 50\% is health care (Medicaid)
+
+b) Only \$250 billion in cash
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Overall Costs of Anti Poverty Programs}
+%\end{center}
+%1) US government (fed+state and local) spent \$1000bn in 2016 on
+%income-tested programs
+%
+%a) About 5\% of GDP but 15\% of \$6 Trillion govt budget
+%(fed+state+local).
+%
+%b) About 50\% is health care (Medicaid)
+%
+%2) Only \$250 billion in cash (1.3\% of GDP, or 25\% of transfer
+%spending)
+%
+%\end{slide}
+
+
+
+
+\begin{slide}%
+\begin{center}
+{\bf 1996 US Welfare Reform}
+\end{center}
+1) Largest change in welfare policy
+
+2) Reform modified AFDC\ cash welfare program to provide more
+incentives to work (renamed TANF)
+
+a) Requiring recipients to go to job training or work
+
+b) Limiting the duration of benefits (5 year max lifetime)
+
+c) Reducing phase out rate of benefits
+
+3) States got welfare waivers from Federal government to experiment
+during 1992-1996 before Federal welfare reform
+%Variation across states because Fed govt. gave block grants
+%with guidelines
+
+4) EITC\ also expanded during this period:\ general shift from
+welfare to \textquotedblleft workfare\textquotedblright
+
+%States and Canada did various welfare reform experiments
+
+Did welfare reform and EITC increase labor supply?
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={64}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={63}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\includepdf[pages={11}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Randomized welfare experiment: \\SSP Welfare Demonstration in Canada}
+\end{center}
+
+Canadian Self Sufficiency Project (SSP):
+randomized experiment that gave welfare recipients an earnings subsidy for 36 months in 1990s
+(but need to start working by month 12 to get it)
+
+3 year temporary participation tax rate cut from average rate of 74.3\% to 16.7\%
+[get to keep 83 cents for each \$ earned instead of 26 cents]
+
+
+Card and Hyslop (EMA 2005) provide classic analysis. Two results:
+
+1) Strong effect on employment rate during experiment (peaks at 14 points)
+
+2) Effect quickly vanishes when the subsidy stops after 36 months (entirely gone by month 52)
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={9}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Earned Income Tax Credit (EITC) program}
+\end{center}
+%Hotz-Scholz (2003) and Eissa-Hoynes '06 detailed surveys
+
+1) EITC started small in the 1970s but was expanded in 1986-88,
+1994-96, 2008-09: today, largest means-tested cash transfer
+program [\$75bn in 2019, 30m families recipients]
+
+2) Eligibility: families with kids and low earnings.
+
+3) Refundable Tax credit: administered through income tax as
+annual tax refund received in Feb-April, year $t+1$ (for earnings
+in year $t$)
+
+4) EITC has flat pyramid structure with phase-in (negative MTR),
+plateau, (0 MTR), and phase-out (positive MTR)
+
+5) Theoretically, EITC should encourage labor force participation
+(extensive labor supply margin)
+
+Kleven (2019) who looks at participation of single women (aged 20-50)
+with kids (treatment) vs without kids (control)
+
+%5) States have added EITC components to their income taxes [in
+%general a percentage of the Fed EITC, great source of natural
+%experiments, understudied bc CPS too small]
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={13}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={37, 38}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Welfare Reform and EITC Expansion: \\ Two Empirical Questions}
+%\end{center}
+%1) Incentives:\ did welfare reform actually increase labor supply?
+%
+%a) Test whether EITC\ expansions affect labor supply
+%
+%b) Try and disentangle effect of EITC vs. effect of cut in traditional welfare
+%
+%2) Benefits:\ did removing many people from transfer system reduce
+%their welfare? How did consumption change?
+%
+%Focus on single mothers, who were most impacted by reform
+%
+%Use Kleven (2018) who looks at participation of single women (aged 20-50)
+%with kids (treatment) vs without kids (control)
+%
+%
+%\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={39-45}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Welfare Reform and EITC Expansion: Labor supply}
+\end{center}
+
+Kleven (2019) who looks at participation of single women (aged 20-50)
+with kids (treatment) vs without kids (control)
+
+Large increase in labor force participation of single mothers during the 1990s
+during welfare reform and EITC expansion 
+
+Unlikely that the EITC can explain it fully because other EITC changes haven't generated
+such large effects
+
+Sociological evidence shows that welfare reform ``scared'' single mothers into working
+
+Single moms in the US were suddenly expected to work
+
+Maybe a unique combination of EITC reform, welfare reform,
+economic upturn, and changing social norms lead to this shift
+
+
+\end{slide}
+
+
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Welfare reform and consumption: \\ Meyer and\ Sullivan 2004}
+%\end{center}
+%
+%1) Examine the consumption patterns of single mothers and their
+%families from 1984--2000 using CEX\ data
+%
+%2) Question:\ did single mothers' consumption fall because they
+%lost welfare benefits and were forced to work?
+%
+%Results:
+%
+%1) Material conditions of single mothers did not decline in 1990s,
+%either in absolute terms or relative to single childless
+%women
+%
+%2) In most cases, evidence suggests that the material conditions
+%of single mothers have improved slightly
+%
+%%During Great Recession: SNAP (food stamps) was the critical program
+%%helping those without work
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={34}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Meyer and\ Sullivan: Results}
+%\end{center}
+%
+%1) Material conditions of single mothers did not decline in 1990s,
+%either in absolute terms or relative to single childless
+%women
+%
+%2) In most cases, evidence suggests that the material conditions
+%of single mothers have improved slightly
+%
+%3) Question: is this because economy was booming in 1990s?
+%
+%4) Is workfare approach more problematic in recession?
+%
+%Households getting SNAP (food stamps) surged from 12M in '07 to 20M in '10 
+%
+%But households getting TANF increased only slightly from 1.7M in '07 to 1.85M in '10
+%
+%\end{slide}%
+
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Extensive EITC Labor Supply Response: \\ Eissa and Liebman QJE' 96}
+%\end{center}
+%
+%1) Pioneering study of labor force participation of single mothers
+%before/after 1986-7 EITC expansion using CPS data
+%
+%2) Limitation: this expansion was relatively small
+%
+%3) Diff-in-Diff strategy:
+%
+%a) Treatment group: single women with kids
+%
+%b) Control group: single women without kids
+%
+%c) Comparison periods: 1984-1986 vs. 1988-1990
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={14-16}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={17}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa and Liebman 1996: Results}
+%\end{center}
+%1) Find a small but significant DD effect: 2.4\% (larger DD effect
+%4\% among women with low education) $\Rightarrow$ Translates into
+%substantial participation elasticities above 0.5
+%
+%2) Note the labor force participation for women with/without
+%children are not great comparison groups (70\% LFP vs. +90\%):
+%time series graph is only moderately convincing
+%
+%3) Subsequent studies have used much bigger EITC expansions of the
+%mid 1990s and also find positive effects on labor force
+%participation of single women/single mothers (but contaminated
+%by AFDC to TANF reform)
+%
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Theoretical Behavioral Responses to the EITC}
+\end{center}
+{\bf Extensive margin:} EITC makes work more attractive (relative to non-work)
+$\Rightarrow$ positive effect on Labor Force
+Participation
+
+%Meyer-Rosenbaum (2001) find that 60\% of LFP increase of
+%single mothers in 1990s due to EITC expansion.
+
+{\bf Intensive margin:} earnings conditional on working;
+
+1) Phase in: (a) Substitution effect: work more due to 40\% increase
+in net wage, (b) Income effect: work less $\Rightarrow$ Net
+effect: ambiguous; probably work more
+
+2) Plateau: Pure income effect (no change in net wage)
+$\Rightarrow$ Net effect: work less
+
+3) Phase out: (a) Substitution effect: work less, (b) Income
+effect: also work less $\Rightarrow$ Net effect: work less
+
+%We also should expect \textbf{bunching} at EITC kink points
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={61-62}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}%
+\begin{center}
+{\bf EITC and Intensive Labor Supply Response: \\ Bunching at Kinks}
+\end{center}
+1) Basic labor supply theory predicts that we should observe
+bunching of individuals at the EITC kink points:
+
+Some individuals find it worthwhile to work more when subsidy rate is 40\% (2 kids)
+but not when subsidy rate falls to 0\% $\Rightarrow$ Utility maximizing labor supply is to
+be exactly at the kink 
+
+2) Amount of bunching is proportional to compensated elasticity:
+if labor supply is inelastic, then kinks in the budget set are irrelevant and 
+do not create bunching
+
+Saez AEJ'10 finds bunching around 1st kink point of EITC but only
+for the self-employed $\Rightarrow$ likely due to cheating
+to maximize tax refund (and not labor supply)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={18,19}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={4}]{laborsupply_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={19}]{pdf/chetty-harvard.pdf}
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={20-23}, scale=1.3]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}%
+\begin{center}
+{\bf EITC Empirical Studies}
+\end{center}
+Some evidence of response along extensive margin but little
+evidence of response along intensive margin (except for
+self-employed)
+
+$\Rightarrow$ Possibly due to lack of understanding
+of the program
+
+Qualitative surveys show that:
+
+Low income families know about EITC and understand that they get a
+tax refund if they work
+
+However very few families know whether tax refund increases or
+decreases with earnings
+
+Such confusion might be good for the government as the EITC
+induces work along participation margin without discouraging work
+along intensive margin
+\end{slide}
+
+
+\begin{slide}%
+\begin{center}
+{\bf Chetty, Friedman, Saez AER'13 EITC information}
+\end{center}
+Use US population wide tax return data since 1996
+
+1) Substantial heterogeneity fraction of EITC recipients bunching (using self-employment)
+across geographical
+areas 
+
+$\Rightarrow$ Information about EITC varies across areas
+
+2) Places with high self-employment EITC bunching display
+{\bf wage earnings} distribution more concentrated around plateau
+
+$\Rightarrow$ Evidence of wage earnings response to EITC along intensive
+margin
+
+3) Omitted variable test: use birth of first child to test
+causal effect of EITC on wage earnings
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={24-33}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf ADVANCE EITC}
+%\end{center}
+%Recipients get EITC with tax refund in a single annual refund in
+%Feb year $t+1$ which seems suboptimal: (a) free interest loan to
+%govt and (b) harder to smooth consumption [surveys show that
+%primary use of tax refund is to pay overdue bills]
+%
+%Tax filers have option to use Advance EITC to get part of EITC in
+%the paycheck by filing a W5 form with employer [reverse of tax
+%withholding]: take up extremely low ($<$2\%)
+%
+%Possible explanation: (a) Information, (b) Lack of employer
+%cooperation, (c) Risk of owing taxes if not EITC eligible, (d) Tax
+%filers like big refunds, (e) Inertia (default is no Advance EITC)
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf ADVANCE EITC}
+%\end{center}
+%Jones AEJ-AP'10 carries a randomized experiment with large
+%employer to encourage take-up and gets significant but very small
+%take-up effect suggesting that (a) [Information] and (b) [Employer
+%cooperation] cannot explain low take-up
+%
+%(d) [Love of refunds] seems plausible but (1) not supplied by
+%market absent refunds [employers could also pay part of wages as
+%annual lumpsum], (2) A-EITC use has not $\uparrow$ with EITC
+%expansions
+%
+%(c) [Risk of owing taxes] and (e) [Inertia] are likely part of the
+%explanation
+%
+%Interesting research topic: Have big tax refunds fueled low
+%income credit [tax refund loans, payday loans, etc.]? Are big
+%refunds useful forced saving mechanisms?
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Long-term effects of Redistribution: \\ Evidence from the Israeli Kibbutz}
+\end{center}
+Abramitzky (2018) book based on series of academic papers
+
+Kibbutz are egalitarian and socialist voluntary communities in Israel, thrived for
+almost a century within a capitalist society
+
+1) Social sanctions on shirkers effective in small communities with limited privacy
+
+2) Deal with brain drain exit using communal property as a bond
+
+3) Deal with adverse selection in entry with screening and trial period
+
+4) Perfect sharing in Kibbutz has negative effects on high school students performance
+but effect is small in magnitude %(concentrated among kids with low educ parents)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Long-term effects of Redistribution: \\ Evidence from the Israeli Kibbutz}
+\end{center}
+Abramitzky-Lavy ECMA'14 show that
+high school students study harder once their
+kibbutz shifts away from equal sharing
+
+They use a DD strategy: pre-post reform and comparing reform Kibbutz to non-reform Kibbutz.
+They find that
+
+1) Students are 3 percentage points more likely to graduate
+
+2)  Students are 6 points more likely to achieve a matriculation
+certificate that meets university entrance requirements
+
+%3)  Students get an average of 3.6 more points in their exams
+
+Effect is driven by students whose parents have
+low schooling; larger for males; stronger in
+kibbutz that reformed to greater degree
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Culture of Welfare across Generations}
+\end{center}
+Conservative concern that welfare promotes a culture of dependency: kids growing up
+in welfare supported families are more likely to use welfare
+
+Correlation in welfare use across generations is obviously not necessarily causal 
+
+Dahl, Kostol, Mogstad QJE'14 analyze causal effect of parental use of Disability Insurance (DI)
+on children use (as adults) of DI in Norway
+
+Identification uses random assignment of judges to denied DI applicants who appeal [some judges severe, others
+lenient] 
+
+Find evidence of causality: parents on DI increases odds of kids on DI over next 5 years by 6 percentage points
+
+\small
+Mechanism seems to be learning about DI availability rather than reduced stigma from using DI [because no effect on other
+welfare programs use]
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={36}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf SOCIAL DETERMINANTS OF LABOR SUPPLY}
+\end{center}
+Concern that taxes funding social state could discourage work
+
+\textbf{Standard econ view:} labor supply $l(w,R)$ coming out of \\ $\max u(\underset{+}{c},\underset{-}{l})$ st $c=wl+R$
+is highly incomplete
+
+\textbf{Social determinants of labor supply:}
+
+a) Youth labor is regulated by labor laws/education
+
+b) Old age labor regulated by retirement programs
+
+c) Female market labor driven by norms + child care policy
+
+d) Hours of work regulated by overtime + vacation mandates
+
+Social labor supply with disutility for youth, old, overtime labor
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={53-57}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={49, 50, 51}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={58}]{laborsupplyandtaxes_new_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Social Determinants of Labor Supply}
+%\end{center}
+%Strong evidence that labor supply is not purely an individual decision based on
+%standard invariant utility $u(c,l)$
+%
+%Social norms play large role: e.g. women's market labor supply 
+%
+%US female labor force participation during World War II: 50\% increase from '40 to '45
+%(2/3 reversed afterwards)
+%
+%Child penalties in female earnings vary a lot across countries (Kleven et al. AEA PP'19) and are not due solely
+%to monetary incentives but also to norms about working moms
+%
+%Responses to taxes and transfers likely affected by social norms
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={49, 50, 51}]{laborsupplyandtaxes_new_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Abramitzky, Ran ``The Mystery of the Kibbutz: How Socialism Succeeded.''[Book] Princeton University Press,
+2018. \href{http://elsa.berkeley.edu/~saez/course/Abramitzky_book_presentation.pdf} {(web)}
+
+Abramitzky, Ran and Victor Lavy, 2014 ``How Responsive is Investment in Schooling to Changes in Redistributive Policies and in Returns?'', Econometrica, 82(4), 1241-1272 \href{http://elsa.berkeley.edu/~saez/course/Abramitzky-Lavy14.pdf} {(web)}
+
+Ashenfelter, O. and M. Plant ``Non-Parametric Estimates of the Labor Supply Effects of Negative Income Tax Programs'', Journal of Labor Economics, Vol. 8, 1990, 396-415. \href{http://links.jstor.org/stable/pdfplus/2535218.pdf} {(web)}
+
+%Card, David, and Dean R. Hyslop. ``Estimating the Effects of a Time-Limited
+%Earnings Subsidy for Welfare-Leavers'' Econometrica, 73.6 (2005): 1723-70.
+%\href{http://www.jstor.org/stable/pdfplus/3598750.pdf} {(web)}
+
+Chetty, R., J. Friedman and E. Saez ``Using Differences in Knowledge Across Neighborhoods
+to Uncover the Impacts of the EITC on Earnings'', 
+American Economic Review, 2013, 103(7), 2683-2721 \href{http://eml.berkeley.edu/~saez/chetty-friedman-saezAER13EITC.pdf} {(web)}
+
+Congressional Research Service. 2019.  ``The Temporary Assistance for Needy Families (TANF) Block Grant: Responses to Frequently Asked Questions'', Congressional Research Service
+\href{https://fas.org/sgp/crs/misc/RL32760.pdf} {(web)}
+
+Dahl, Gordon B., Andreas Ravndal Kostol, Magne Mogstad ``Family Welfare Cultures''
+Quarterly Journal of Economics, 129(4), 2014, 1711-52 \href{http://elsa.berkeley.edu/~saez/course/dahl-kostol-mogstadQJE14.pdf} {(web)} 
+
+%Eissa, N. ``Taxation and Labor Supply of Married Women: The Tax Reform Act of 1986 as a Natural Experiment'', NBER Working Paper No. 5023, 1995. \href{http://www.nber.org/papers/w5023.pdf} {(web)}
+
+Eissa, N. and J. Liebman ``Labor Supply Response to the Earned Income Tax Credit'', Quarterly Journal of Economics, Vol. 111, 1996, 605-637. \href{http://links.jstor.org/stable/pdfplus/2946689.pdf} {(web)}
+
+Heckman, J. and M. Killingsworth ``Female Labor Supply: A Survey'' Handbook of Labor Economics, Vol. I, Chapter 2, 1986. \href{http://elsa.berkeley.edu/~saez/course/Heckman and Killingsworth_Handbook.pdf} {(web)}
+
+Imbens, G.W., D.B. Rubin and B.I. Sacerdote ``Estimating the Effect of Unearned Income on Labor Earnings, Savings, and Consumption: Evidence from a Survey of Lottery'', American Economic Review, Vol. 91, (2001), 778-794. \href{http://links.jstor.org/stable/pdfplus/2677812.pdf} {(web)}
+
+Kleven, Henrik 2019. ``The EITC and the Extensive Margin: A Reappraisal'', NBER working
+paper No. 26405.
+\href{http://www.nber.org/papers/w26405.pdf} {(web)} 
+
+Kleven, Henrik, Camille Landais, Johanna Posch, Andreas Steinhauer, and Josef Zweimuller. 2019 ``Child penalties across countries: Evidence and explanations.'' AEA Papers and Proceedings, 109, 122-26. 
+\href{https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.20191078} {(web)}
+
+%Meyer, B. and D. Rosenbaum ``Welfare, the Earned Income Tax Credit, and the Labor Supply of Single Mothers'', Quarterly Journal of Economics, Vol. 116 (2001), 1063-1114. \href{http://links.jstor.org/stable/pdfplus/2696426.pdf} {(web)}
+
+%Meyer, B. and X. Sullivan ``The effects of welfare and tax reform: the material well-being of single mothers in the 1980s and 1990s'', Journal of Public Economics, Vol. 88 (2004), 1387-1420. \href{http://elsa.berkeley.edu/~saez/course/Meyer and Sullivan_JPubE(2004).pdf} {(web)}
+
+Munnell, Alicia H. "Lessons from the income maintenance experiments." Proceedings of a conference sponsored by the Federal Reserve Bank of Boston and the Brookings Institution, Melvin Village, NH. 1986. \href{http://elsa.berkeley.edu/~saez/course/Munnell(1986)book.pdf} {(web)}
+
+Pencavel, J. ``Labor Supply of Men: A Survey'', Handbook of Labor Economics, 	vol. 1, chapter 1, 1986. \href{http://elsa.berkeley.edu/~saez/course/Pencavel_Handbook.pdf} {(web)}
+
+Saez, E. ``Do Taxpayers Bunch at Kink Points?'', American Economic Journal: Economic Policy, Vol. 2, 2010, 180-212. \href{http://elsa.berkeley.edu/~saez/course/Saez_AEJ(2010).pdf} {(web)}
+
+Saez, Emmanuel  ``Public Economics and Inequality: Uncovering Our Social Nature'', AEA Papers and Proceedings, 121, 2021
+\href{https://eml.berkeley.edu/~saez/saez-AEAlecture.pdf} {(web)} 
+
+Tazhitdinova, Alisa. 2020 ``Increasing Hours Worked: Moonlighting Responses to a Large Tax Reform'',
+NBER Working Paper No. 27726, forthcoming AEJ: Economic Policy. \href{http://www.nber.org/papers/w27726.pdf} {(web)}
+
+}
+\end{slide}
+
+
+\end{document}

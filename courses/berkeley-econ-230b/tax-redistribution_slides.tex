@@ -1,0 +1,2279 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+\author{Emmanuel Saez}
+\date{}
+
+\title{Graduate Public Economics \\
+Optimal Labor Income Taxes/Transfers} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAXATION AND REDISTRIBUTION}
+\end{center}
+
+{\bf Key question:} By how much should government reduce inequality?
+
+1) Governments use {\bf taxes} to raise revenue
+
+2) This revenue funds \textbf{public goods} and \textbf{social state}. Social state has 2 components:
+
+\small
+
+a) Universal programs: Education, Health Care
+(only 65+ in the US), Retirement and Disability
+
+b) Means-tested programs: In-kind (e.g., public housing, nutrition,
+Medicaid in the US) and cash (direct welfare and refundable tax credits)
+\normalsize
+
+Means-tested transfers relatively small relative to universal transfers
+and generally in-kind and targeted to children
+
+%Modern governments raise large fraction of  in taxes (30-45\%)
+%and spend significant fraction of GDP on transfers 
+
+This lecture follows Piketty and Saez '13 \textbf{handbook chapter}
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={75}, scale=.95]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FACTS ON US TAXES AND TRANSFERS}
+\end{center}
+{\bf References:} Comprehensive description in Gruber undergrad
+textbook (taxes/transfers) and Slemrod-Bakija (taxes)
+
+http://www.taxpolicycenter.org/taxfacts/
+
+{\bf A) Taxes:} (1) individual income tax (fed+state), (2) payroll
+taxes on earnings (fed, funds Social Security+Medicare), (3)
+corporate income tax (fed+state), (4) sales taxes (state)+excise
+taxes (state+fed), (5) property taxes (state)
+
+{\bf B) Means-tested Transfers:} (1) refundable tax credits (fed),
+(2) in-kind transfers (fed+state): Medicaid, public housing, nutrition
+(SNAP), education (3) cash welfare: TANF for single parents
+(fed+state), SSI for old/disabled (fed)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX}
+\end{center}
+
+US income tax assessed on {\bf annual} {\bf family} income (not
+individual) [most other OECD countries have shifted to individual
+assessment]
+
+Sum all cash income sources from family members (both from labor
+and capital income sources) = called {\bf Adjusted Gross Income
+(AGI)}
+
+Main exclusions: fringe benefits (health insurance, pension
+contributions and returns), imputed rent of homeowners, undistributed corporate profits, unrealized capital gains, interest from state+local bonds 
+
+$\Rightarrow$ AGI base is only 70\% of national income
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX}
+\end{center}
+
+Taxable income = AGI - deduction
+
+%personal exemptions = \$4K * \# family members (in 2016)
+
+deduction is max of standard deduction or itemized deductions
+
+Standard deduction is a fixed amount 
+(\$12K for singles, \$24K for married couple)
+
+Itemized deductions: (a) state and local taxes paid (only up to \$10K since 2018), (b) mortgage interest payments (capped), (c) charitable giving,  various small other items
+
+[about 10\% of AGI lost through itemized deductions, called tax
+expenditures]
+
+In 2018+, only 10\% of tax filers itemize (30\% before 2018)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX: TAX BRACKETS}
+\end{center}
+
+Tax $T(z)$ is piecewise linear and continuous function of taxable
+income $z$ with constant marginal tax rates (MTR) $T'(z)$ by
+brackets
+
+In 2018+, 6 brackets with MTR 10\%,12\%,22\%,24\%,32\%,35\%, 37\% (top
+bracket for $z$ above \$600K), indexed on price inflation
+
+Lower preferential rates (up to a max of 20\%) apply to dividends
+(since 2003), realized capital gains [in part to offset double
+taxation of corporate profits].
+
+20\% of business profits are exempt since 2018
+
+Tax rates change frequently over time. Top MTRs have declined
+drastically since 1960s (as in many OECD countries)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={44, 45, 70}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX: AMT AND CREDITS}
+\end{center}
+
+{\bf Alternative minimum tax (AMT)} is a parallel tax system
+(quasi flat tax at 28\%) with fewer deductions: actual tax =$\max
+(T(z),AMT)$ (hits $<1\%$ of taxpayers in 2018+)
+
+{\bf Tax credits:} Additional reduction in taxes
+
+(1) {\bf Non refundable} (cannot reduce taxes below zero): foreign
+tax credit, child care expenses, education credits, energy credits
+
+(2) {\bf Refundable} (can reduce taxes below zero, i.e., be net
+transfers): EITC (earned income tax credit, up to \$3.5K, \$5.7K, \$6.5K for working
+families with 1, 2, 3+ kids), Child Tax Credit (\$2K per kid, partly
+refundable)
+
+Refundable credits have become the largest means-tested cash transfer
+in the US
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf FEDERAL US INCOME TAX: TAX FILING}
+\end{center}
+Taxes on year $t$ earnings are withheld on paychecks during year
+$t$ (pay-as-you-earn)
+
+Income tax return filed in late January-April 15th, year $t+1$ [filers use
+either software or tax preparers, big private industry]
+
+Most tax filers get a tax refund as withholdings $>$ taxes
+owed
+
+Payers (employers, banks, etc.) send income information to IRS (US tax administration)
+(3rd party reporting)
+
+Third party reporting + withholding at source is key for successful
+enforcement
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MAIN MEANS-TESTED TRANSFER PROGRAMS}
+\end{center}
+1) {\bf Traditional transfers:} managed by welfare agencies, paid
+on monthly basis, high stigma and take-up costs $\Rightarrow$ low
+take-up rates
+
+Main programs: Medicaid (health insurance for low incomes), SNAP
+(former food stamps), public housing, TANF (traditional welfare), SSI
+(aged+disabled)
+
+2) {\bf Refundable income tax credits:} managed by tax
+administration, paid as an annual lumpsum in year $t+1$, low
+stigma and take-up cost $\Rightarrow$  high take-up rates
+
+Main programs: EITC and Child Tax Credit [large expansion since
+the 1990s] for low income working families with children
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={42}, scale=1.1]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BOTTOM LINE ON ACTUAL TAXES/TRANSFERS}
+\end{center}
+1) Based on current income, family situation, and disability
+(retirement) status $\Rightarrow$ Strong link with {\bf current
+ability to pay}
+
+2) Some allowances made to reward / encourage certain behaviors:
+charitable giving, home ownership, savings, energy conservation,
+and more recently work (refundable tax credits such as EITC)
+
+3) Provisions pile up overtime making tax/transfer system more and
+more complex until significant simplifying reform happens (such as
+US Tax Reform Act of 1986, or TCJA 2018)
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf KEY CONCEPTS FOR TAXES/TRANSFERS}
+\end{center}
+1) Transfer benefit with zero earnings $-T(0)$ [sometimes called
+demogrant or lumpsum grant]
+
+2) Marginal tax rate (or phasing-out rate) $T'(z)$: individual
+keeps $1-T'(z)$ for an additional \$1 of earnings (intensive labor
+supply response)
+
+3) Participation tax rate $\tau_p=[T(z)-T(0)]/z$: individual keeps
+fraction $1-\tau_p$ of earnings when moving from zero earnings to
+earnings $z$ (extensive labor supply response): \[z-T(z)=-T(0)+z - [T(z)-T(0)] = -T(0) + z \cdot
+(1-\tau_p)\] 
+
+4) Break-even earnings point $z^*$: point at which $T(z^*)=0$
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={46,47}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={3,40}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TAXATION: SIMPLE MODEL WITH NO BEHAVIORAL RESPONSES}
+\end{center}
+
+Utility $u(c)$ strictly increasing and concave
+
+Same for everybody where $c$ is after tax income.
+
+Income is $z$ and is fixed for each individual, $c=z-T(z)$ where
+$T(z)$ is tax on $z$. $z$ has density distribution $h(z)$
+
+Government maximizes {\bf Utilitarian} objective: 
+\[ \int_0^{\infty}
+u(z-T(z))h(z)dz \]
+subject to {\bf budget constraint} $\int T(z)h(z)dz \geq E$
+(multiplier $\lambda$)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf SIMPLE MODEL WITH NO BEHAVIORAL RESPONSES}
+\end{center}
+
+Form lagrangian: $L=[u(z-T(z))+\lambda \cdot T(z)] \cdot h(z)$
+
+First order condition (FOC) in $T(z)$: 
+\[ 0= \frac{\partial L}{\partial T(z) } =
+[-u'(z-T(z))+\lambda] \cdot h(z) \Rightarrow u'(z-T(z))=\lambda \]
+$\Rightarrow$ $z-T(z)=$ constant for all $z$.
+
+$\Rightarrow$ $c=\bar{z}-E$ where $\bar{z}=\int z h(z)dz$ average
+income.
+
+100\% marginal tax rate. Perfect equalization of after-tax income.
+
+Utilitarianism with decreasing marginal utility leads to perfect
+egalitarianism [Edgeworth, 1897]
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={55}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={76}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ISSUES WITH SIMPLE MODEL}
+\end{center}
+
+1) {\bf No behavioral responses:} Obvious missing piece: 100\%
+redistribution would destroy incentives to work and thus the
+assumption that $z$ is exogenous is unrealistic
+
+$\Rightarrow$ Optimal income tax theory incorporates behavioral
+responses $u(\underset{+}{c},\underset{-}{z})$ (Mirrlees REStud '71):  \textbf{equity-efficiency trade-off}
+
+2) {\bf Issue with Utilitarianism:} Even absent behavioral
+responses, many people would object to 100\% redistribution
+[perceived as confiscatory]
+
+$\Rightarrow$ Citizens' views on fairness impose {\bf bounds} on
+redistribution 
+
+We will discuss at the end of the lecture alternatives to utilitarianism
+(and be agnostic for now on how society's preferences for redistribution are shaped)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={77}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf 2ND WELFARE THEOREM FALLACY}
+%\end{center}
+%Suppose individuals differ in their ability to earn
+%
+%{\bf 2nd Welfare Theorem:} Any Pareto Efficient outcome can be
+%reached by (1) Suitable redistribution of initial endowments
+%[individualized {\bf lump-sum} taxes based on ability and not
+%behavior], (2) Then letting markets work freely
+%
+%$\Rightarrow$ No conflict between efficiency and equity
+%
+%In reality, redistribution of initial endowments is not feasible
+%(information pb) and govt needs to use {\bf distortionary} taxes
+%and transfers based on income and consumption to redistribute
+%
+%$\Rightarrow$ Real conflict between efficiency and equity
+%
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf EQUITY-EFFICIENCY TRADE-OFF}
+%\end{center}
+%
+%Taxes can be used to raise revenue for transfer programs which can
+%reduce inequality in disposable income $\Rightarrow$ Desirable if
+%society feels that inequality is too large
+%
+%Taxes (and transfers) reduce incentives to work $\Rightarrow$ High
+%tax rates create economic inefficiency if individual respond to
+%taxes
+%
+%Size of behavioral response limits the ability of govt to
+%redistribute with taxes/transfers
+%
+%$\Rightarrow$ Generates an \textbf{equity-efficiency trade-off}
+%
+%Empirical tax literature estimates the size of behavioral
+%responses to taxation
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf MIRRLEES OPTIMAL INCOME TAX MODEL (skip)}
+\end{center}
+
+{\bf 1) Standard labor supply model:} Individual maximizes
+$u(c,l)$ subject to $c=wl-T(wl)$ where $c$ consumption, $l$ labor
+supply, $w$ wage rate, $T(.)$ nonlinear income tax $\Rightarrow$
+taxes affect labor supply
+
+{\bf 2) Individuals differ in ability $w$:} $w$ distributed with
+density $f(w)$.
+
+{\bf 3) Govt social welfare maximization:} Govt maximizes
+\[ SWF=\int G(u(c,l))f(w)dw\] ($G(.)$ $\uparrow$ concave) subject to
+
+(a) budget constraint $\int T(wl) f(w)dw \geq E$ (multiplier
+$\lambda$)
+
+(b) individuals' labor supply $l$ depends on $T(.)$
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MIRRLEES MODEL RESULTS (skip)}
+\end{center}
+Optimal income tax trades-off redistribution and efficiency (as
+tax based on $w$ only not feasible) 
+
+$\Rightarrow$ $T(.)<0$ at
+bottom (transfer) and $T(.)>0$ further up (tax) [full integration
+of taxes/transfers]
+
+Mirrlees formulas complex, only a couple fairly general results:
+
+1) $0 \leq T'(.) \leq 1$, $T'(.)\geq 0$ is non-trivial (rules out
+EITC) [Seade '77]
+
+2) Marginal tax rate $T'(.)$ should be zero at the top (if skill
+distribution bounded) [Sadka '76-Seade '77]
+
+3) If everybody works and lowest $wl>0$, $T'(.)=0$ at bottom
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BEYOND MIRRLEES (skip)}
+\end{center}
+Mirrlees '71 had a huge impact on information economics:
+models with asymmetric information in contract theory
+
+Discrete 2-type version of Mirrlees model developed by Stiglitz
+JpubE '82 with individual FOC replaced by Incentive Compatibility
+constraint [high type should not mimick low type]
+
+Till late 1990s, Mirrlees results not closely connected to
+empirical tax studies and  little impact on tax policy
+recommendations
+
+Since late 1990s, Diamond AER'98, Piketty '97, Saez ReStud '01
+have connected Mirrlees model to practical tax policy / empirical
+tax studies 
+
+[new approach summarized in Diamond-Saez JEP'11 and
+Piketty-Saez Handbook'13]
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf INTENSIVE LABOR SUPPLY CONCEPTS}
+\end{center}
+ \[ \max_{c,z} u(\underset{+}{c},\underset{-}{z}) \text{ subject to  } c=z \cdot (1-\tau)+R\] 
+$R$ is virtual income and
+$\tau$ marginal tax rate.   FOC in $c,z$ $\Rightarrow$
+$(1-\tau) u_c+u_z=0$ $\Rightarrow$ Marshallian labor supply
+$z=z(1-\tau,R)$
+\[ \mathrm{Uncompensated\:\:elasticity} \quad \varepsilon^u=\frac{(1-\tau)}{z}\frac{\partial z}
+{\partial (1-\tau)} \]
+\[ \mathrm{Income\:\:effects} \quad \eta=(1-\tau)\frac{ \partial z}{\partial R} \leq 0 \]
+Substitution effects: Hicksian labor supply: $z^c(1-\tau,u)$
+minimizes cost needed to reach $u$ given slope $1-\tau$ $\Rightarrow$
+\[ \mathrm{Compensated\:\:elasticity} \quad \varepsilon^c=\frac{(1-\tau)}{z}\frac{\partial z^c}
+{\partial (1-\tau)} > 0 \]
+\[\mathrm{Slutsky\:\:equation} \quad \frac{\partial z}{\partial (1-\tau)} = \frac{\partial z^c}{\partial (1-\tau)}
++ z \frac{ \partial z}{\partial R} \Rightarrow \varepsilon^u = \varepsilon^c + \eta\]
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={56-60}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Labor Supply Effects of Taxes and Transfers}
+\end{center}
+Taxes and transfers change the slope $1-T'(z)$ of the budget constraint and net disposable income $z-T(z)$
+(relative to the no tax situation where $c=z$)
+
+Positive MTR $T'(z)>0$ reduces labor supply through substitution effects
+
+Net transfer ($T(z)<0$) reduces labor supply through income effects
+
+Net tax ($T(z)>0$) increases labor supply through income effects
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={61}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf WELFARE EFFECT OF SMALL TAX REFORM}
+\end{center}
+Indirect utility: $V(1-\tau,R)=\max_z u((1-\tau)z+R,z)$ where $R$
+is virtual income intercept
+
+Small tax reform: $d\tau$ and $dR$:
+
+$dV=u_c \cdot [-z d\tau + dR ] + dz \cdot [(1-\tau)u_c+u_z] = u_c \cdot [-z d\tau + dR ]$
+
+\textbf{Envelope theorem:} no effect of $dz$ on $V$ because $z$ is already chosen
+to maximize utility ($(1-\tau)u_c+u_z=0$)
+
+$[-z d\tau + dR]$ is the \textbf{mechanical} change in disposable income due to tax reform
+
+
+Welfare impact of a small tax reform is given by $u_c$ times the money metric
+mechanical change in tax
+
+Remains true for any nonlinear tax system $T(z)$ (just need to look at $dT(z)$, mechanical change
+in taxes)
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf SOCIAL WELFARE FUNCTIONS (SWF)}
+\end{center}
+Welfarism = social welfare based solely on individual utilities
+
+\small
+Any other social objective will lead to Pareto dominated outcomes in some
+circumstances (Kaplow and Shavell JPE'01)
+\normalsize
+
+Most widely used welfarist SWF:
+
+1) Utilitarian: $SWF = \int_i u^i$
+
+2) Rawlsian (also called Maxi-Min): $SWF=\min_i u^i$
+
+3) $SWF= \int_i G(u^i)$ with $G(.) \uparrow$  and concave, e.g., $G(u)=u^{1-\gamma}/(1-\gamma)$ 
+(Utilitarian is $\gamma=0$, Rawlsian is $\gamma=\infty$)
+
+4) General Pareto weights: $SWF=\int_i \mu_i \cdot u^i$ with $\mu_i \geq 0$ exogenously given
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf SOCIAL MARGINAL WELFARE WEIGHTS}
+\end{center}
+
+Key sufficient statistics in optimal tax formulas are \textbf{Social Marginal Welfare Weights} for each
+individual: 
+
+Social Marginal Welfare Weight on individual $i$ is $g_i = \mu_i u^i_c / \lambda$ ($\lambda$ multiplier of govt budget constraint) measures \$ value for
+govt of giving \$1 extra to person $i$ 
+
+No income effects $\Rightarrow \int_i g_i =1$: giving \$1 to all costs \$1 (pop. has measure 1)
+and increases SWF (in \$ terms) by $\int_i g_i$
+
+$g_i$ typically depend on tax system (endogenous variable)
+
+Utilitarian case: $g_i$ decreases with $z_i$ due to decreasing marginal utility of consumption 
+
+Rawlsian case: $g_i$ concentrated on most disadvantaged (typically those with $z_i=0$)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={78-79}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: LAFFER CURVE (skip)}
+\end{center}
+$c=(1-\tau)\cdot z + R$ with $\tau$ linear tax rate and $R$ demogrant funded
+by taxes $\tau Z$ with $Z$ aggregate earnings
+
+Population of size one (continuum) with heterogeneous preferences $u^i(c,z)$
+[differences in earnings ability are built in utility function]
+
+Individual $i$ chooses $z$ to maximize $u^i((1-\tau)\cdot z + R,z)$
+labor supply choices $z^i(1-\tau,R)$ aggregate to economy wide earnings
+$Z(1-\tau) = \int_i z^i $
+
+Tax Revenue $R(\tau)=\tau \cdot Z(1-\tau)$ is inversely U-shaped
+with $\tau$: $R(\tau=0)=0$ (no taxes) and $R(\tau=1)=0$ (nobody
+works): called the Laffer Curve
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: LAFFER RATE (skip)}
+\end{center}
+Top of the Laffer Curve corresponds to tax rate $\tau^*$
+maximizing tax revenue: inefficient to have $\tau>\tau^*$
+\[R'(\tau^*)=Z - \tau^* d Z/ d(1-\tau)=0 \Rightarrow \]
+Revenue maximizing tax rate (Laffer rate): 
+\[ \tau^*=\frac{1}{1+e} \quad \mathrm{ with } \quad e=\frac{1-\tau}{Z} \frac{d Z}{ d(1-\tau)} \] 
+elasticity of earnings with respect to the net-of-tax rate
+
+$\tau>\tau^*$ is (second-best) Pareto inefficient: cutting $\tau$ increases individuals welfare and
+government revenue (and hence $R$)
+
+$\tau=\tau^*$ is the optimum in Rawlsian case (if some people have zero earnings)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={54}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: FORMULA (skip)}
+\end{center}
+Government chooses $\tau$ to maximize
+\[ \int_i G[u^i((1-\tau)z^i+\tau Z(1-\tau),z^i)] \]
+Govt FOC (using the envelope theorem as $z^i$ maximizes $u^i$):
+\[ 0 = \int_i G'(u^i) u^i_c \cdot
+\left [-z^i + Z - \tau \frac{dZ}{d(1-\tau)} \right ] ,\]
+\[ 0 = \int_i G'(u^i) u^i_c \cdot
+\left [(Z-z^i) - \frac{\tau}{1-\tau} e Z \right ],\]
+First term $(Z-z^i)$ is mechanical redistributive effect of $d\tau$, second term is efficiency cost due to behavioral 
+response of $Z$
+
+$\Rightarrow$ we obtain the following optimal linear income tax formula
+\[
+\tau= \frac{1-\bar{g}}{1-\bar{g} + e} \quad \mathrm{with} \quad
+\bar{g}= \frac{ \int g_i \cdot z_i  }{Z \cdot \int g_i}, \quad g_i =  G'(u^i) u^i_c
+\]
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL LINEAR TAX RATE: FORMULA (skip)}
+\end{center}
+\[
+\tau= \frac{1-\bar{g}}{1-\bar{g} + e} \quad \mathrm{with} \quad
+\bar{g}= \frac{ \int g_i \cdot z_i  }{Z \cdot \int g_i}, \quad g_i =  G'(u^i) u^i_c
+\]
+$0\leq \bar{g} <1$ if $g_i$ is decreasing with $z_i$ (social marginal welfare weights
+fall with $z_i$). 
+
+$\bar{g}$ low when (a) inequality is high, (b) $g^i$ $\downarrow$ sharply with $z^i$
+
+Formula captures the equity-efficiency trade-off \textbf{robustly} ($\tau \downarrow \bar{g}$, $\tau \downarrow e$)
+
+Rawlsian case: $g_i \equiv 0$ for all $z_i>0$ so $\bar{g}=0$ and $\tau=1/(1+e)$
+
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE (SAEZ '01)}
+\end{center}
+Consider constant MTR $\tau$ above fixed $z^*$. Goal is to
+derive optimal $\tau$
+
+%We assume that social marginal value of consumption of the rich
+%is very small	(relative to average) so goal is to maximize tax revenue
+%from the rich
+
+Assume w.l.o.g there is a continuum of measure one of individuals above $z^*$
+
+Let
+$z(1-\tau)$ be their average income [depends on net-of-tax rate
+$1-\tau$], with elasticity $e=[(1-\tau)/z]\cdot
+d z/d(1-\tau)$
+
+Note that $e$ is a mix of income and substitution effects (see Saez '01)
+
+%[$a$ is $z^m/(z^m-z^*)>1$ as we will see]
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={24-25}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE}
+\end{center}
+Consider small $d\tau>0$ reform above $z^*$.
+
+1) {\bf Mechanical increase} in tax revenue: $$dM=
+[z-z^*] d\tau$$
+
+2) {\bf Welfare effect:} $$dW=-\bar{g} \cdot dM = -\bar{g} \cdot [z-z^*] d\tau$$ where $\bar{g}$ is the social marginal welfare weight for top earners
+
+%Money-metric utility loss is $dM$ by envelope theorem: govt values
+%marginal consumption of rich at $0 \leq \bar{g} <1$: $dW=-\bar{g}
+%dM$ [formally $\bar{g}=\int_{z^*}^\infty G'(u) \cdot u_c \cdot
+%h(z)dz/ ((1-H(z))\lambda)$]
+
+3) {\bf Behavioral response} reduces tax revenue:
+$$dB=  \tau \cdot dz= - \tau \frac{dz}{d(1-\tau)}d\tau = -
+\frac{\tau}{1-\tau} \cdot \frac{1-\tau}{z}
+\frac{dz}{d(1-\tau)} \cdot z d\tau$$ $$\Rightarrow dB=  - 
+ \frac{\tau}{1-\tau} \cdot  e \cdot z d\tau$$ 
+ 
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE}
+\end{center}
+$$dM+dW+dB=d\tau \left [ (1-\bar{g}) [z-z^*]   - e
+\frac{\tau}{1-\tau} z \right ] $$ Optimal $\tau$ such that
+$dM+dW+dB=0$ $\Rightarrow$
+$$\frac{\tau}{1-\tau}=\frac{(1-\bar{g})[z-z^*]}
+{e \cdot z}$$
+$$\tau=\frac{1-\bar{g}}{1-\bar{g}+a \cdot e} \quad \mathrm{with} \quad
+a=\frac{z}{z-z^*}$$
+
+Optimal $\tau$
+$\downarrow$ $\bar{g}$ [redistributive tastes]
+
+Optimal $\tau$ $\downarrow$ with $e$ [efficiency]
+
+Optimal $\tau$ $\downarrow$ $a$ [thinness of top tail]
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf ZERO TOP RATE RESULT (skip)}
+\end{center}
+Suppose top earner earns $z^T$ 
+ 
+When $z^* \rightarrow z^T$ $\Rightarrow$ $z  \rightarrow  z^T $
+
+\[ dM=d\tau [z-z^*]<< dB= d\tau \cdot  e \cdot
+\frac{\tau}{1-\tau} z \quad \mathrm{when} \quad z^* \rightarrow z^T \]
+
+Intuition: extra tax applies only to earnings above $z^*$ but
+behavioral response applies to full $z$ $\Rightarrow$
+
+Optimal $\tau$ should be zero when $z^*$ close to $z^T$
+(Sadka-Seade zero top rate result) but result applies only to top earner
+
+Top is uncertain: If actual distribution is finite draw from an underlying Pareto
+distribution then expected revenue maximizing rate is $1/(1+a\cdot e)$
+(Diamond and Saez JEP'11)
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf ZERO TOP RATE RESULT}
+%\end{center}
+%Suppose top earner earns $z^T$, 
+%and second top earner earns $z^S$,
+%then $z = z^T$ when $z^*>z^S$ $\Rightarrow$ $z/z^*
+%\rightarrow 1$ when $z^* \rightarrow z^T$ $\Rightarrow$
+%
+%\[ dM=d\tau [z-z^*]<< dB= d\tau \cdot  e \cdot
+%\frac{\tau}{1-\tau} z \quad \mathrm{when} \quad z^* \rightarrow z^T \]
+%
+%Intuition: extra tax applies only to earnings above $z^*$ but
+%behavioral response applies to full $z$ $\Rightarrow$
+%
+%Optimal $\tau$ should be zero when $z^*$ close to $z^T$
+%(Sadka-Seade zero top rate result) but result applies only to top earner
+%
+%Top is uncertain: If actual distribution is finite draw from an underlying Pareto
+%distribution then expected revenue maximizing rate is $1/(1+a\cdot e)$
+%(Diamond and Saez JEP'11)
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={26}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TOP INCOME TAX RATE}
+\end{center}
+Empirically: $a=z/(z-z^*)$ very stable above $z^*=\$400K$
+
+Pareto distribution $1-F(z)=(k/z)^{\alpha}$, $f(z)=\alpha \cdot k^{\alpha}/z^{1+{\alpha}}$,
+with ${\alpha}$ Pareto parameter
+$$z(z^*) = \frac{ \int_{z^*}^{\infty} s f(s)ds }{\int_{z^*}^{\infty} f(s)ds }
+= \frac{ \int_{z^*}^{\infty} s^{-{\alpha}} ds
+}{\int_{z^*}^{\infty} s^{-{\alpha}-1} ds } = \frac{{\alpha}}{{\alpha}-1} \cdot
+z^*$$  ${\alpha}=z/(z-z^*)=a$ measures {\em thinness} of top tail of the
+distribution
+
+Empirically $a \in (1.5,3)$, US has $a=1.5$, Denmark has $a=3$
+$$\tau=\frac{1-\bar{g}}{1-\bar{g}+a \cdot e}$$
+Only difficult parameter to estimate is $e$
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TAX REVENUE MAXIMIZING TAX RATE (skip)}
+\end{center}
+Utilitarian criterion with $u_c  \rightarrow 0$ when $c
+\rightarrow \infty$ $\Rightarrow$ $\bar{g} \rightarrow 0$ when
+$z^* \rightarrow \infty$
+
+Rawlsian criterion (maximize utility of worst off person) $\Rightarrow$ $\bar{g}=0$ for any
+$z^*>\min(z)$
+
+In the end, $\bar{g}$ reflects the value that society puts on
+marginal consumption of the rich
+
+$\bar{g}=0$ $\Rightarrow$ Tax Revenue Maximizing Rate $\tau=1/(1+a \cdot
+e)$ (upper bound on top tax rate)
+
+Example: $a=2$ and $e=0.25$ $\Rightarrow$
+$\tau=2/3=66.7\%$
+
+Laffer linear rate is a special case with $z^*=0$,
+$z^m/z^*=\infty=a/(a-1)$ and hence $a=1$,
+$\tau=1/(1+e)$
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf EXTENSIONS AND LIMITATIONS}
+%\end{center}
+%1) Model includes only intensive earnings response. Extensive
+%earnings responses [entrepreneurship decisions, migration
+%decisions] $\Rightarrow$ Formulas can be modified
+%
+%2) Model does not include {\bf fiscal externalities}: part of the
+%response to $d\tau$ comes from {\bf income shifting} which affects
+%other taxes $\Rightarrow$ Formulas can be modified
+%
+%3) Model does not include {\bf classical externalities}: (a)
+%charitable contributions, (b) positive spillovers (trickle down)
+%[top earners underpaid], (c) negative spillovers [top earners
+%overpaid]
+%
+%Classical general equilibrium effects on prices are NOT
+%externalities and do not affect formulas [Diamond-Mirrlees AER
+%'71, Saez JpubE '04]
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf EXTENSION: MIGRATION EFFECTS (skip)}
+\end{center}
+Migration issues may be particularly important at the top end (brain
+drain). Some theory papers (Mirrlees '82, Lehmann-Simula QJE'14). 
+%Little empirical work (on individual side).
+
+Migration depends on average tax rate. Define $P(z-T(z)|z)$
+fraction of $z$ earners in the country: Elasticity
+$$\eta^m=\frac{z-T(z)}{P} \cdot \frac{\partial P}{\partial (z-T(z))}
+$$
+Tax revenue maximizing formula (Brewer-Saez-Shepard '10):
+$$\tau=\frac{1}{1+a \cdot e+ \bar{\eta}^m}$$
+Note: $\bar{\eta}^m$ depends on size of jurisdiction: large for
+cities, zero worldwide $\Rightarrow$ (1) Redistribution easier in
+large jurisdictions, (2) Tax coordination across countries
+increases ability to redistribute (big issue currently in EU)
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REAL VS. TAX AVOIDANCE RESPONSES (skip)}
+\end{center}
+Behavioral response to income tax comes not only from reduced
+labor supply but also shifts to other forms of income or
+activities: (untaxed fringe benefits, deferred compensation, shift to corporate
+income tax base, shift toward tax favored capital gains, etc.)
+
+Real responses vs. tax avoidance responses is critical for 2 reasons:
+
+1) Govt can control tax avoidance through other tools: closing loopholes,
+broadening the tax base $\Rightarrow$ Elasticity $e$ is endogenous to
+tax system design (Slemrod) 
+
+2) Most tax avoidance responses create ``fiscal externalities'' in the
+sense that tax revenue increases at other time periods or in other tax bases
+(Saez-Slemrod-Giertz JEL' 12)
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf REAL VS. AVOIDANCE RESPONSES THEORY}
+%\end{center}
+%Fraction $s$ of response $dz$ to $d\tau$ due to avoidance (fraction $1-s$ is real)
+%and ``shifted income'' $s \cdot dz$ is taxed at rate $t \leq \tau$
+%
+%$\Rightarrow$ Tax revenue maximizing rate is (Saez, Slemrod, Giertz '12)
+%\[ \tau=\frac{1+a \cdot t \cdot s \cdot e }{1+a \cdot e} \]
+%1) $t=0 \Rightarrow \tau=1/(1+a \cdot e)$ (tax avoidance response vs. real
+%response response is irrelevant, Feldstein '99)
+%
+%2) $t>0 \Rightarrow \tau>1/(1+a \cdot e)$ because of ``fiscal externality''
+%
+%3) \textbf{Fully optimal policy:} $t=\tau$ and $\tau=1/[1+a \cdot (1-s)e]$ with $(1-s)e$ real elasticity (avoidance response $s \cdot e$ irrelevant) $\Rightarrow$ (a) broaden the base/close loopholes, (b) then $\uparrow$ top rates
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf REAL VS. AVOIDANCE RESPONSES (skip)}
+\end{center}
+{\bf Key policy question:} Is it possible to eliminate avoidance elasticity using base broadening, etc.? or would new avoidance schemes keep popping up?
+
+a) Some forms of tax avoidance are due to \textbf{poorly designed tax codes} (preferential treatment for some income forms, deductions)
+
+b) Some forms of tax avoidance/evasion can only be addressed with \textbf{international cooperation} (off-shore
+tax evasion in tax heavens)
+
+c) Some forms of tax avoidance/evasion are due to technological limitations of tax collection
+(impossible to tax informal cash businesses)
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf CLASSICAL EXTERNALITIES}
+%\end{center}
+%1) Classical externalities require additional Pigouvian correction
+%on top of the regular optimal income tax (Sandmo '75,
+%Cremer-Gahvari-Ladoux JpubE '98). 
+%
+%If externality cannot be directly targeted, tweak the income tax as follows
+%(Piketty-Saez-Stantcheva AEJ'14):
+%
+%a) If top pay = marginal productivity, then no externalities,
+%standard theory.
+%
+%b) If top pay $<$ marginal productivity (e.g., unions divert
+%surplus from top to bottom workers or firm insurance)$\Rightarrow$
+%labor supply of top earners has positive externality and optimal
+%tax rate should be lower
+%
+%c) If top pay $>$ marginal productivity (e.g., executives skim
+%their companies)$\Rightarrow$ skimming is a negative externality
+%for shareholders, tax on top pay may mitigate the externality
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf RENT-SEEKING RESPONSES THEORY}
+%\end{center}
+%In models with frictions or imperfect information, pay $z$ does not always equal
+%marginal product $y$ $\Rightarrow$ scope for rent-seeking bargaining $\Rightarrow$ Classical Externality
+%
+%Suppose fraction $s$ of the response $dz$ to $d\tau$ is due to bargaining (and fraction $1-s$ is real so that $dy=(1-s)dz$)
+%
+%Tax revenue maximizing rate (Piketty, Saez, Stantcheva '14):
+%$$\tau=\frac{1+ a \cdot s \cdot e }{1+a \cdot e}$$
+%%$s$ depends both on bargaining responses and whether top earners
+%%are overpaid
+%{\bf 1) Trickle-up:} If top earners overpaid $y<z$, then $s>0$ and
+%$\tau>1/(1+a \cdot e)$
+%
+%{\bf 2) Trickle-down:} If top earners underpaid, then $s<0$ is
+%possible and $\tau<1/(1+a \cdot e)$
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf GENERAL NON-LINEAR INCOME TAX $T(z)$}
+\end{center}
+(1) Lumpsum grant given to everybody equal to $-T(0)$
+
+(2) Marginal tax rate schedule $T'(z)$ describing how (a) lump-sum
+grant is taxed away, (b) how tax liability increases with income
+
+Let $H(z)$ be the income CDF [population normalized to 1] and
+$h(z)$ its density [endogenous to $T(.)$]
+
+Let $g(z)$ be the social marginal value of consumption for
+taxpayers with income $z$ in terms of public funds.
+With no income effects $\Rightarrow$
+$\int g(z)h(z)dz=1$
+
+Redistribution valued $\Rightarrow$ $g(z)$ decreases with $z$
+%[government
+%indifferent between giving $1/g(z_1)$ to person with $z_1$ and
+%giving $1/g(z_2)$  to person with  $z_2$]
+
+Let $G(z)$ the {\em average} social marginal value of $c$ for
+taxpayers with income above $z$ [$G(z)=\int_z^{\infty}
+g(s)h(s)ds/(1-H(z))$]
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={34}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf GENERAL NON-LINEAR INCOME TAX (skip)}
+\end{center}
+Assume away income effects $\varepsilon^c = \varepsilon^u
+=e$ [Diamond AER'98 shows this is the key theoretical
+simplification]
+
+Consider small reform: increase $T'$ by $d\tau$ in small band $z$
+and $z+dz$
+
+Mechanical effect $dM=dz d\tau [1-H(z)]$
+
+Welfare effect $dW=-dz d\tau [1-H(z)]G(z)$
+
+Behavioral effect: substitution effect $\delta z$ inside small
+band $[z,z+dz]$: $dB=h(z)dz \cdot T' \cdot \delta z = -h(z)dz
+\cdot T' \cdot d\tau \cdot z \cdot e_{(z)}/(1-T')$
+
+Optimum $dM+dW+dB=0$
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf GENERAL NON-LINEAR INCOME TAX}
+\end{center}
+\[ T'(z) =\frac{1-G(z)}{1-G(z) + \alpha(z) \cdot e_{(z)} } \]
+
+1) $T'(z)$ decreases with $e_{(z)}$ (elasticity efficiency
+effects)
+
+2) $T'(z)$ decreases with $ \alpha(z)= (z h(z))/(1-H(z))$ (local Pareto
+parameter)
+
+3) $T'(z) $ decreases with  $G(z)$ (social weight above $z$)
+
+Asymptotics: $G(z) \rightarrow \bar{g}$, $\alpha(z)
+\rightarrow a$, $e_{(z)} \rightarrow
+e$ $\Rightarrow$ Recover top rate formula
+$\tau=(1-\bar{g})/(1-\bar{g}+a \cdot e)$
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={26}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Negative Marginal Tax Rates Never Optimal (skip)}
+\end{center}
+Suppose $T'<0$ in band $[z,z+dz]$
+
+Increase $T'$ by $d\tau>0$ in band $[z,z+dz]$: $dM+dW>0$ and
+$dB>0$ because $T'(z)<0$
+
+$\Rightarrow$ Desirable reform
+
+$\Rightarrow$  $T'(z)<0$ cannot be optimal
+
+EITC schemes are not desirable in Mirrlees '71 model 
+\end{slide}
+
+%pset idea: demonstration of top rate>0 Pareto inefficient and bottom rate<0 Pareto inefficient
+% if bottom guy works
+
+\begin{slide}
+\begin{center}
+{\bf NUMERICAL SIMULATIONS (skip)}
+\end{center}
+$H(z)$ [and also $G(z)$] endogenous to $T(.)$. Calibration method
+(Saez Restud '01):
+
+Specify utility function (e.g. constant elasticity):
+$$u(c,z)=c- \frac{1}{1+\frac{1}{e}} \cdot  \left ( \frac{z}{n} \right )
+^{1+\frac{1}{e}}$$ Individual FOC $\Rightarrow$
+$z=n^{1+e} (1-T')^{e}$
+
+Calibrate the exogenous skill distribution $F(n)$ so that, using
+{\bf actual} $T'(.)$, you recover {\bf empirical} $H(z)$
+
+Use Mirrlees '71 tax formula (expressed in terms of $F(n)$) to
+obtain the optimal tax rate schedule $T'$.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf NUMERICAL SIMULATIONS (skip)}
+\end{center}
+$$\frac{T'(z(n))}{1-T'(z(n))} =\left ( 1+\frac{1}{e} \right ) \left
+(\frac{1}{n f(n)} \right ) \int_n^{\infty} \left
+[1-\frac{G'(u(m))}{\lambda} \right ] f(m)dm,$$
+
+Iterative Fixed Point method: start with $T'_0$, compute $z^0(n)$
+using individual FOC, get $T^0(0)$ using govt budget, compute
+$u^0(n)$, get $\lambda$ using $\lambda=\int G'(u)f$, use formula
+to estimate $T'_1$, iterate till convergence
+
+Fast and effective method (Brewer-Saez-Shepard '10)
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf NUMERICAL SIMULATION RESULTS (skip)}
+\end{center}
+\[ T'(z) =\frac{1-G(z)}{1-G(z) + \alpha(z) \cdot e_{(z)} } \] Take utility
+function with $e$ constant
+
+2) $\alpha(z)=(z h(z))/(1-H(z))$ is inversely U-shaped empirically
+
+3) $1-G(z)$ increases with $z$ from $0$ to $1$ ($\bar{g}=0$)
+
+$\Rightarrow$ Numerical optimal $T'(z)$ is U-shaped with $z$:
+reverse of the general results $T'=0$ at top and bottom [Diamond
+AER'98 gives theoretical conditions to get U-shape]
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={8}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TRANSFERS: MIRRLEES MODEL}
+\end{center}
+Mirrlees model predicts that optimal transfer at bottom takes the
+form of a ``Negative Income Tax'':
+
+1) Lumpsum grant $-T(0)$ for those with no earnings
+
+2) High MTRs $T'(z)$ at the bottom to phase-out the lumpsum grant
+quickly: intuition
+
+Intuition: high MTRs at bottom are efficient because:
+
+(a) they target transfers to the most needy
+
+(b) earnings at the bottom are low to start with so intensive
+response does not generate large output losses
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL TRANSFERS: MIRRLEES MODEL}
+\end{center}
+
+Diamond-Saez JEP'11: 
+\[ T'(0)=(g_0-1)/(g_0-1+e_0) \]
+
+$e_0$ elasticity of the fraction non-working wrt to $1-T'(0)$ 
+
+$g_0$
+social marginal welfare weight on non workers
+
+$ \Rightarrow T'(0)$ large: e.g. $g_0=3$ and $e_0=.5$ $\Rightarrow$ $T'(0)=80\%$
+
+However if $g_0<1$ then $T'(0)<0$ $\Rightarrow$ EITC is optimal
+
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={9}]{tax-redistribution_attach.pdf}
+%\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={67-69}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf EXTENSIONS (skip)}
+%\end{center}
+%
+%1) Income effects can be introduced (Saez Restud '01). Keeping
+%$\varepsilon_c(z)$ and $g(z)$ constant: Higher income effects
+%$\Rightarrow$ Higher $T'(z)$ for high incomes
+%
+%2) Inverted problem: use current $T(z)$ and $H(z)$  to back out
+%welfare weights $g(z)$ [very sensitive to assumptions on
+%$e_{(z)}$]
+%
+%3) Pareto Efficient taxation (Werning '07): any tax schedule such
+%that $g(z) \geq 0$ for all $z$ is Pareto Efficient (and
+%conversely)
+%
+%If $g(z)<0$ in some range, can design a tax reform that keeps
+%utilities constant and raises tax revenue [tax system is locally
+%on the wrong side of the Laffer curve]
+%
+%\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal Transfers: Participation Responses}
+\end{center}
+Empirical literature shows that participation labor supply
+responses [due to fixed costs of working] are large at the bottom
+[much larger and clearer than intensive responses]
+
+Diamond JpubE'80, Saez QJE'02, Laroque EMA'05 incorporate such
+extensive labor supply responses in the optimal income tax model
+
+Participation depends on participation tax rate:
+$\tau_p=[T(z)-T(0)]/z$: individual keeps fraction $1-\tau_p$ of
+earnings when moving from zero earnings to earnings $z$:
+\[z-T(z)=-T(0)+z - [T(z)-T(0)] = -T(0) + z \cdot (1-\tau_p) \]
+
+{\bf Key result:} in-work subsidies with $T'(z)<0$ (such as EITC)
+become optimal when labor supply responses are concentrated along
+extensive margin and social marginal welfare weight on low skilled
+workers $>1$.
+
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf SAEZ QJE'02 PARTICIPATION MODEL (skip)}
+%\end{center}
+%Model with discrete earnings outcomes: $w_0=0<w_1<...<w_I$
+%
+%Tax/transfer $T_i$ when earning $w_i$, $c_i=w_i-T_i$
+%
+%Participation labor supply: Skill $i$ individual compares $c_i$
+%and $c_0$ when deciding to work $\Rightarrow$ Participation tax
+%rate $\tau_i$ such that $c_i-c_0=w_i \cdot (1-\tau_i)$
+%
+%Person works iff $c_i - \theta \geq c_0$ where $\theta$ is fixed cost of working
+%
+%$\Rightarrow$ In aggregate, fraction $h_i(c_i-c_0)$ of population
+%earns $w_i$
+%
+%Participation elasticity $e_i=(c_i-c_0)/h_i \cdot \partial h_i /
+%\partial (c_i-c_0)$
+%
+%Social Welfare function is summarized by social marginal welfare
+%weights at each earnings level $g_i \downarrow i$, and average to
+%one $\sum_i g_i h_i =1$ (if no income effects)
+%
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={63-66}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={13-16}]{tax-redistribution_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf SAEZ QJE'02: OPTIMAL TAX DERIVATION}
+%\end{center}
+%Small reform $dc_i=-dT_i>0$. Three effects:
+%
+%1) Mechanical Change in tax revenue $dM=h_i dT_i$
+%
+%2) Behavioral Effect: $dh_i = -e_i h_i dT_i / (c_i-c_0)$
+%$\Rightarrow$ Tax loss: $dB=-(T_i-T_0) dh_i=-e_i h_i dT_i
+%(T_i-T_0)/ (c_i-c_0)$
+%
+%3)  Welfare Effect: each worker in job $i$ looses $dT_i$ so
+%welfare loss $dW=-g_i h_i dT_i$ [No first order welfare loss for
+%switchers]
+%
+%FOC: $dM+dB+dW=0$ $\Rightarrow$
+%$$\frac{\tau_i}{1-\tau_i} = \frac{T_i-T_0}{c_i-c_0} = \frac{1}{e_i} (1-g_i)$$
+%$g_1>1 \Rightarrow T_1-T_0<0 \Rightarrow$ in-work subsidy
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ACTUAL TAX/TRANSFER SYSTEMS}
+\end{center}
+
+1) Transfer programs used to be of the traditional form with high
+phasing-out rates (sometimes above 100\%) $\Rightarrow$ No
+incentives to work (even with modest elasticities)
+
+Initially designed for
+groups not expected to work [widows in the US] but later attracting
+groups who could potentially work [single mothers]
+
+2) In-work benefits have been introduced and expanded in OECD
+countries since 1980s (US EITC, UK Family Credit, etc.) and have
+been politically successful 
+
+$\Rightarrow$ (a) Redistribute to low
+income workers, (b) improve incentives to work
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf OPTIMAL TRANSFERS IN RECESSIONS (GUESS)}
+%\end{center}
+%1) The models we have covered consider only voluntary unemployment
+%[people compare costs of work vs. benefits of work and can find a
+%job if they want to]. Reasonable approximation during good times
+%with low involuntary unemployment
+%
+%2) During recessions (such as US in 2008-2010), many unemployed
+%would like to work but cannot find a job
+%
+%$\Rightarrow$ Labor supply participation responses shut down
+%during recession [unemployed cannot find jobs, workers do not want
+%to abandon jobs]
+%
+%$\Rightarrow$ Redistribution becomes close to lumpsum [no
+%efficiency costs while labor supply is frozen]
+%
+%$\Rightarrow$ Redistributing more to non-workers during recessions
+%is efficient [justification for increasing unemployment benefits
+%during recessions, Landais-Michaillat-Saez '10]
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf TAGGING}
+%\end{center}
+%We have assumed that $T(z)$ depends only on earnings $z$.
+%
+%In reality, govt can observe many other characteristics $X$ also
+%correlated with ability [gender, race, age, disability, family
+%structure, height,...] and set $T(z,X)$. Two theory results:
+%
+%1) If characteristic $X$ is {\bf immutable} then redistribution
+%across the $X$ groups will be complete [until average social
+%marginal welfare weights are equated across $X$ groups]
+%
+%2) If characteristic $X$ can be \textbf{manipulated} [behavioral response
+%or cheating] but $X$ correlated with ability then taxes will still
+%depend on both $X$ and $z$.
+%
+%References: Akerlof AER'78 (welfare), Nichols-Zeckhauser AER'82
+%(welfare), Weinzierl '11 (age), Mankiw-Weinzierl '10 (height),
+%Kaplow '08 (chapter 7)
+%\end{slide}
+
+%notes: for result 2), sign of T(z,1) - T(z,0) does not depend
+%only on average social marginal weights but also on whether X is
+%positively or negatively related to leisure: do switchers work more or less (which has 1st order
+%fiscal consequences)?
+
+%\begin{slide}
+%\begin{center}
+%{\bf TAGGING WITH IMMUTABLE CHARACTERISTICS}
+%\end{center}
+%Consider $X$ binary immutable ({\bf T}alls vs. {\bf S}horts)
+%
+%With $T(z)$ independent of $X$, Talls have higher ability on
+%average $\Rightarrow$ Average social marginal welfare weights
+%$\bar{g}^T<\bar{g}^S$ $\Rightarrow$ Transfer from Talls to Shorts
+%is desirable (surtax on Talls which finances an allowance on
+%Shorts)
+%
+%Optimal height transfers should be up to point where
+%$\bar{g}^T=\bar{g}^S$
+%
+%Mankiw-Weinzierl '09 compute the optimal $T^{Tall}(z)$ and
+%$T^{Short}(z)$ based on calibrated mode: optimal transfer
+%$T^{Tall}(z)-T^{Short}(z)$ not trivial ($\simeq$ 10\% of income)
+%
+%They also show that you can get a (very modest) {\bf
+%Pareto} improvement using taxes on height and income instead of
+%only income
+%
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf PROBLEM WITH TAGGING}
+%\end{center}
+%
+%In practice public would oppose height based redistribution
+%because height does not cause high earnings $\Rightarrow$
+%
+%1) {\bf Horizontal Equity} concerns [people with same
+%``ability-to-pay'' should pay the same tax] impose constraints on
+%feasible policies [not captured by utilitarian framework]
+%
+%2) Constrained optimization analysis [$T(z)$ instead of $T(z,X)$]
+%remains valid even with heterogeneity in preferences
+%
+%3) In practice $T(z,X)$ depends on $X$ only when $X$ is {\bf
+%directly} related to welfare [family structure, \# kids, medical
+%expenses] or ability to earn [disability status]
+%(``ability-to-pay'' intuition)
+%\end{slide}
+%
+
+%\begin{slide}
+%\begin{center}
+%{\bf IN-KIND REDISTRIBUTION (skip)}
+%\end{center}
+%Majority of actual transfers are in-kind (health care, child care, education, public housing, nutrition
+%subsidies) %[care not cash San Francisco reform]
+%
+%1) {\bf Rational Individual perspective:}
+%
+%(a) In-kind transfer is {\bf tradeable} at market price
+%$\Rightarrow$ in-kind equivalent to cash
+%
+%(b) In-kind transfer {\bf non-tradeable} $\Rightarrow$ in-kind
+%inferior to cash.
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf IN-KIND REDISTRIBUTION  (skip)}
+%\end{center}
+%2) {\bf Social perspective:} 4 justifications:
+%
+%a) Commodity Egalitarianism: some goods (education, health,
+%shelter, food) seen as {\bf rights} and ought to be provided to
+%all
+%
+%b) Paternalism: society imposes its preferences on recipients
+%[recipients prefer cash]
+%
+%c) Behavioral: Recipients do not make choices in their best
+%interests (self-control, myopia) [recipients understand that
+%in-kind is better for them]
+%
+%d) Under standard welfarist objective: Efficiency considerations
+%in a 2nd best context
+%
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf EFFICIENCY OF IN-KIND REDISTRIBUTION}
+%\end{center}
+%Depends on what income tax tools are available:
+%
+%1) No income tax: Income $z$ not observable (devo countries)
+%$\Rightarrow$ In-kind provision or subsidies for necessities
+%desirable
+%
+%2) Linear tax model (Ramsey): Guesnerie-Roberts EMA'84
+%$\Rightarrow$ rationing goods encouraged by the tax system is
+%desirable [and forcing consumption of goods discouraged by tax]
+%
+%3) Nonlinear income tax: Under Atkinson-Stiglitz assumption
+%[weak-separability and homogeneity $U^h(v(c_1,..,c_K),z)$]
+%$\Rightarrow$ Any distortion (quota, rationing, subsidy) involving
+%$c$ choices not desirable provided $T(z)$ optimal
+%
+%If good $c_k$ related to leisure/ability [soup kitchen with
+%queuing requirement] then A-S fails and in-kind redistribution
+%possibly desirable even with optimal $T(z)$
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf IMPOSING ORDEALS ON TRANSFER RECIPIENTS  (skip)}
+%\end{center}
+%Many actual transfer programs impose requirements on beneficiaries
+%(complex application, job search, training, or work requirements)
+%and hence have low take-up (often $<50\%$)
+%
+%\small
+%
+%1) If social objective is welfarist and income $z$ observable:
+%ordeals unlikely to be desirable:
+%
+%Compare ordeal to benefit cut: (a) only benefit cut saves money
+%mechanically, (b) both reduce welfare of recipients, (c) both
+%reduce take-up [good fiscally]
+%
+%Need implausible sorting effects for ordeal to be desirable [e.g.,
+%ordeal does not hurt much deserving beneficiaries and discourages
+%undeserving take-up, conditional on $z$]
+%
+%2) If $z$ is not observable then ordeal could be desirable (kitchen soup line)
+%
+%3) With non-welfarist objective [such as poverty alleviation], ordeal can be desirable [Besley-Coate
+%AER'92]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf WORK RESTRICTIONS AND MINIMUM WAGE  (skip)}
+%\end{center}
+%Minimum wage creates rationing of low skilled work. Could minimum
+%wage be desirable on top of nonlinear tax/transfer?
+%
+%Lee and Saez JpubE'12 use a job choice model [Saez QJE '02 with
+%endogenous wages]. Two results:
+%
+%1) Minimum wage desirable if (a) govt wants to redistribute to low
+%skilled workers ($g_1>1$) and (b) rationing created by min wage is
+%{\bf efficient} 
+%
+%2) If labor supply responses along extensive margin only then
+%minimum wage with positive tax rate on low skilled work $\tau_1>0$
+%is 2nd best Pareto inefficient 
+%
+%$\Rightarrow$ EITC and min wage are
+%complementary 
+%%[delivers strong policy reform
+%%prescription]
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={17-23}]{tax-redistribution_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf FAMILY TAXATION: MARRIAGE AND CHILDREN}
+%\end{center}
+%Two important issues in policy debate:
+%
+%1) Marriage: What is the optimal taxation of couples vs. singles?
+%Should secondary earnings be treated differently?
+%
+%2) Children: What should be the net transfer (transfer or tax
+%reduction) for family with children (as a function of family
+%income and structure)?
+%
+%Theoretical literature is not great in part because utilitarian
+%framework is not satisfactory
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf TAXATION OF COUPLES}
+%\end{center}
+%1) Economies of scale and sharing in consumption within families
+%$\Rightarrow$ Welfare best measured by family income relative to
+%size [$\equiv$ {\bf normalized income}]
+%
+%$\Rightarrow$ Taxes/Transfers should be based on normalized family income
+%which can create a marriage penalty / subsidy
+%
+%Note: Impossible to have a tax/transfer system that 
+%
+%(1) is  family
+%income based $T(z^h+z^w)$
+%
+%(2) has marriage neutrality $T(z^h,z^w)=T(z^h)+T(z^w)$
+%
+%(3) is progressive (i.e., not strictly linear)
+%
+%Proof: (1)+(2) $\Rightarrow T(z^h+z^w)=T(z^h)+T(z^w) \Rightarrow T(z)=\tau \cdot z$
+%
+%\normalsize
+%
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf TAXATION OF COUPLES}
+%\end{center}
+%
+%2) If marriage responds to tax/transfer differential $\Rightarrow$
+%better to reduce marriage penalty and move toward
+%individualized system
+%
+%Particularly important cohabitation is close
+%substitute to marriage (Scandinavian countries)
+%
+%3) Labor supply of secondary earners more elastic than labor
+%supply of primary earner $\Rightarrow$ Secondary earnings should
+%be taxed less (standard Ramsey intuition, Boskin-Sheshinski
+%JpubE'83)
+%
+%But labor supply elasticity differential is decreasing as earnings
+%gender gap decreases [Blau and Kahn JOLE'07]
+%
+%%4) Welfare effect of spousal earnings $\downarrow$ primary
+%%earnings $\Rightarrow$ Transfer for having a non-working spouse
+%%[=tax on secondary earnings] $\downarrow$ primary earnings
+%%[Kleven-Kreiner-Saez EMA'09]
+%
+%In OECD countries: income tax systems have become {\bf individual
+%based} but means tested transfers have remained {\bf family based}
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf TRANSFERS OR TAX CREDITS FOR CHILDREN}
+%\end{center}
+%1) Children reduce {\bf normalized income} $\Rightarrow$ Transfer
+%for children $T_{kid}$ should be positive
+%
+%In practice, transfers for children are always positive
+%
+%2) Should $T_{kid}(z)$ increase with income $z$?
+%
+%Pro: they reduce normalized income most for upper earners [e.g.,
+%France computes taxes as $N \cdot T(z/N)$ where $N$ is \# family
+%members, kids count as .5 $\Rightarrow$ $T_{kid}(z) $ increases with $ z$].
+%
+%Cons: lower earners need child transfers most [most OECD countries
+%have means-tested transfers conditional on number of kids
+%$\Rightarrow$ $T_{kid}(z)$ decreases with $ z$, US has  $T_{kid}(z)$
+%inverted U-shape due to EITC and Child Tax Credit]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf TRANSFERS OR TAX CREDITS FOR CHILDREN}
+%\end{center}
+%
+%3) Family does not make decisions as a single unit (Chiappori JPE'92):
+%transfers to mothers has bigger effects on children's consumption
+%than transfers to fathers [Lundberg et al. '97, Duflo '03]
+%
+%4) Children create externalities [positive: pay-as-you-go retirement programs,
+%negative: global warming]. If fertility responds to transfers,
+%case for subsidizing/taxing children
+%
+%5) Child care costs are positively related to work
+%$\Rightarrow$ Such costs should be subsidized by Atkinson-Stiglitz
+%[often they are in practice]:
+%
+%Public pre-kindergarten in Europe is a huge in-work subsidy for
+%mothers $\Rightarrow$ Large effect on mothers' labor force participation
+%(bigger effect than US EITC)
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf CHILDREN AND LIMITS OF UTILITARIAN MODEL}
+%\end{center}
+%If fertility decisions unrelated to children tax/transfers
+%$\Rightarrow$ Social marginal utility should be equated across
+%families with 0 children, families with 1 child, etc.
+%
+%If ability uncorrelated with children $\Rightarrow$ Families with
+%kids will get fully compensating transfers
+%
+%If ability positively correlated with children $\Rightarrow$
+%Families with kids might be taxed more heavily [as in the height
+%tax case]
+%
+%Seems an absurd model to think about transfers for children
+%$\Rightarrow$ Need to come up with more realistic alternative
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LIMITS OF WELFARIST APPROACH}
+\end{center}
+Welfarism is the dominant approach in optimal taxation 
+
+Welfarism: social objective is a sole function of individual utilities
+
+Tractable and coherent framework that captures the equity-efficiency trade-off but generates puzzles:
+
+\small
+
+(a) 100\% taxation absent behavioral responses
+
+(b) Whether income is deserved or due to luck is irrelevant
+
+(c) What transfer recipients would have done absent transfers is irrelevant
+
+%(d) Tags correlated with ability should be heavily used
+
+\normalsize
+A number of alternatives to welfarism have been proposed 
+
+Saez-Stantcheva '16 propose ``generalized social welfare weights'' to resolve
+those puzzles. Stantcheva '20: surveys on how people think about taxes.
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf TESTING PEOPLE SOCIAL PREFERENCES}
+\end{center}
+Saez-Stantcheva '16 survey people online (using Amazon MTurk) by asking hypothetical questions
+to elicit social preferences:
+
+1) People typically do not have ``utilitarian'' social justice principles (consumption lover not seen as more
+deserving than frugal person)
+
+2) People put weight on whether income has been earned through effort vs. not (hard working
+vs. leisure lover)
+
+3) People put weight of what people would have done absent the government intervention
+(deserving poor vs. free loaders)
+
+4) People put weight on taxes paid conditional on $c$: person z=\$50K, T=\$15K, c=\$35K more deserving than z=\$40K, T=\$5K, c=\$35K
+
+
+\small
+$\Rightarrow$ Aversion for free loaders and liking tax contributors  is like an intuitive or evolutionary optimal tax tool
+(needed to sustain cooperative societies)
+
+%Lakoff (1996) shows that framing (conservative/liberal) is critical to shape views
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={74, 73, 72}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={71}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf STANDARD TAX REFORM APPROACH}
+%\end{center}
+%Consider classic optimal income tax problem. Individual $i$ has utilities $u^i(c,z)$ increasing
+%in consumption $c$, decreasing in earnings $z$.
+%
+%Planner sets $T(z)$ to maximize $\int_i G(u_i)$ 
+%
+%subject to (a) $\int_i T(z_i) \geq E$, (b) $z_i$ maximizes $u^i(z_i-T(z_i),z_i)$
+%
+%Equivalent to \textbf{tax reform approach:} $T(z)$ is optimal if
+%
+%For any budget  \textbf{neutral} small tax reform $dT(z)$,
+%$\int_i g_i dT(z_i)=0$ with $g_i=G_{u^i} u^i_c \geq 0$ social marginal welfare weight on indiv. $i$
+%
+%Sum mechanical gains and losses across individuals, behavioral responses matter only for govt budget constraint
+%
+%$\Rightarrow$ Generates optimal tax formulas function of $g_i$'s and behavioral response elasticities
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Generalized Social Marginal Welfare Weights (skip)}
+\end{center}
+Social planner uses \textbf{generalized social marginal welfare weights} $g_i \geq 0$ to value marginal consumption
+of individual $i$
+
+Standard utilitarist case $SWF=\int_i u^i$ has $g_i=u^i_c$
+
+But we can define generalized $g_i$ that might depend on fairness judgements as well
+
+\textbf{Optimal tax criterion:} $T(z)$ is optimal if for any budget \textbf{neutral} small tax reform $dT(z)$,
+$\int_i g_i \cdot dT(z_i)=0$ with $g_i \geq 0$ generalized social marg. welfare weight on indiv. $i$
+
+%\small
+
+1) Generates same optimal tax formulas as welfarist approach 
+
+2) Respects (local) constrained Pareto efficiency ($g_i \geq 0$)
+
+3) No social objective is maximized
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Application 1: Optimal Tax with Fixed Incomes (skip)}
+\end{center}
+%$u(c)$ with $c=z-T(z)$
+
+Utilitarian approach has degenerate solution with 100\% taxation when $u'(c)$ decreases with $c$
+
+Public may not support confiscatory taxation even absent behavioral responses
+
+Generalized social marginal welfare weights: $g_i=g(c_i,T_i)$
+
+$g(c,T) $ decreases with $c$ (ability to pay)
+
+$g(c,T)$ increases with $T$ (contribution to society)
+
+Optimum: $g(z-T(z),T(z))$ equalized across $z$ 
+
+$\Rightarrow T'(z)=1/(1-g_T/g_c)$ and $0 \leq T'(z) \leq 1$
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Application 1: Optimal Tax with Fixed Incomes (skip)}
+\end{center}
+Preferences for redistributions embodied in $g(c,T)$
+
+Polar cases:
+
+1) Utilitarian case: $g(c,T)=u'(c)  \Rightarrow T'(z)\equiv 1$
+
+2) Libertarian case: $g(c,T)=g(T)  \Rightarrow T'(z) \equiv 0$
+
+We use Amazon mTurk online survey to estimate $g(c,T)$
+
+We find that revealed preferences depend on \textbf{both} $c$ and $T$
+
+\small
+z=\$40K, T=\$10K, c=\$30K more deserving than z=\$50K, T=\$10K, c=\$40K
+
+z=\$50K, T=\$15K, c=\$35K more deserving than z=\$40K, T=\$5K, c=\$35K
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Application 2: DESERVED VS. LUCK INCOME}
+%\end{center}
+%Taxing luck income is fair while taxing deserved income is not
+%
+%Suppose $z=w+y$ with $w$ deserved income and $y$ luck income ($w,y$ mix not observable)
+%
+%Person is deserving if $c=z-T \leq w+ Ey$ with $Ey$ average luck income 
+%$\Rightarrow g_i=1$ if $c_i \leq w_i+Ey$, $g_i=0$ if not.
+%
+%$\mathrm{Prob}[g_i=1 | w+y=z]$ provides micro-foundation for $g(c,T)$ increasing in $T$
+%
+%Beliefs in share of income due to luck at each income level is key
+%
+%\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Application 2: FREE LOADERS (skip)}
+\end{center}
+Saez-Stantcheva '16 online survey shows strong public preference for redistributing toward ``deserving poor''
+(unable to work or trying hard to work) rather than ``undeserving poor'' (who would work absent
+transfers)
+
+Generalized social welfare weights can capture this by setting $g_i=0$ on free loaders (=transfer recipients who would have worked absent the transfer) $\Rightarrow$
+
+1) Behavioral responses reduce desirability of transfers (over and above standard budgetary effect)
+
+2) In-work benefit ($T'(0)=(g_0-1)/(g_0-1+e_0)<0$ at bottom becomes optimal in Mirrlees (1971) optimal tax model
+if $g_0<1$
+
+%3) Extending UI benefits in recessions (when jobs are hard to find)
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Application 4: TAGS AND HORIZONTAL EQUITY}
+%\end{center}
+%Tagging (e.g. taxing height) desirable in welfarist framework
+%
+%In practice horizontal equity concerns
+%
+%Horizontal equity concerns can be captured with generalized social marginal welfare weights
+%as follows:
+%
+%If individual suffers from horizontal inequity (e.g., she is taxed more because of her height) then
+%her generalized social welfare weight increases sharply (Endogenous Rawlsian criterion)
+%
+%$\Rightarrow$ Tagging is desirable only if it benefits those discriminated against by the tax system
+%
+%
+%$\Rightarrow$ Dramatically reduces the scope for tagging
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LINK WITH OTHER JUSTICE PRINCIPLES (skip)}
+\end{center}
+Various alternatives to welfarism have been proposed (survey Fleurbaey-Maniquet '11)
+
+Each alternative can be recast in terms of implied \textbf{generalized social marginal welfare weights} (as long
+as it generates constrained Pareto efficient optima)
+
+In all cases, we can use simple and tractable optimal income tax formula for heterogeneous population from Saez Restud'01 (case with no income effects):
+\[ T'(z)=\frac{1-G(z)}{1-G(z)+\alpha(z) \cdot e(z)} \] 
+with $G(z)$ average of $g_i$ above $z$
+
+$g_i$ average to one in the full population and hence $G(0)=1$
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LINK WITH OTHER JUSTICE PRINCIPLES (skip)}
+\end{center}
+
+\textbf{1) Rawlsian:}  $g_i$ concentrated on worst-off individual $\Rightarrow$ $G(z)=0$ for $z>0$ and
+$T'(z)=1/(1+ \alpha(z) \cdot e)$ revenue maximizing
+
+\textbf{2) Libertarian:} $g_i \equiv 1$ $\Rightarrow$ $G(z)\equiv 1$ and $T'(z) \equiv 0$
+
+%\textbf{3) Fair income tax:} Fleurbaey-Maniquet '06, '11 capture the compensation and responsibility principles: 
+%individuals should be compensated for differences in ability but not for differences in taste for work
+%
+%$g_i$ concentrated
+%on minimum wage workers working full-time (earnings $z_0>0$) $\Rightarrow$ $G(z)=0$ if $z>z_0$,
+%$G(z)=1/(1-H(z))>1$ if $z<z_0$. Therefore, $T'(z)<0$ for $z<z_0$ and $T'(z)=1/(1+ \alpha(z) \cdot e)$ for $z>z_0$
+
+\textbf{3) Equality of Opportunity:} (Roemer '98) $g_i$ concentrated on those coming from disadvantaged background.
+$G(z)$= relative fraction of individuals above $z$ coming from disadvantaged background
+
+$\Rightarrow G(z)$ decreases with $z$ for reasons unrelated to decreasing marginal utility
+
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={41}]{tax-redistribution_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf CONCLUSION ON LIMITS OF WELFARISM}
+%\end{center}
+%\textbf{Tax reform approach + generalized social marginal welfare weights} create a tractable and powerful 
+%framework for optimal tax analysis
+%
+%1) Nests welfarist case, retains the same optimal tax formulas, can address most puzzles
+%
+%2) Puts social preferences at the core of the optimal tax problem: 2 approaches
+%
+%a) Positive approach: analyze actual social preferences for redistribution using online surveys
+%
+%b) Normative approach: set social marginal welfare weights based on justice principles
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf COMMODITY VS. INCOME TAXATION}
+\end{center}
+Suppose we have $K$ consumption goods $c=(c_1,..,c_K)$ with
+pre-tax price $p=(p_1,..,p_K)$. Individual $h$ has utility
+$u^h(c_1,..,c_K,z)$
+
+Key question: Can government increase $SWF$ using differentiated
+commodity taxation $t=(t_1,..,t_K)$ (after tax price $q=p+t$) in
+addition to nonlinear Mirrlees income tax on earnings $z$?
+
+In practice, govt (a) exempts some goods (food, education, health)
+from sales tax or value-added-tax, (b) imposes additional excise
+taxes on some goods (cars, gasoline, luxury goods)
+
+$\max_{t,T(.)} SWF \geq \max_{t=0,T(.)} SWF$ because more
+instruments cannot hurt
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ATKINSON-STIGLITZ THEOREM }
+\end{center}
+
+Famous Atkinson-Stiglitz JpubE' 76 shows that $$\max_{t,T(.)} SWF
+= \max_{t=0,T(.)} SWF$$ (i.e, commodity taxes not useful over and above $T(z)$) under
+\textbf{two assumptions} on utility functions $u^h(c_1,..,c_K,z)$
+
+1) Weak separability between $(c_1,..,c_K)$ and $z$ in utility
+
+2) Homogeneity across individuals in the sub-utility of
+consumption $v(c_1,..,c_K)$ [does not vary with $h$]
+\[ \text{(1) and (2):} \quad u^h(c_1,..,c_K,z)=U^h(v(c_1,..,c_K),z) \]
+
+%$\Rightarrow$ Given after tax income $y=z-T(z)$, everybody
+%consumes the same bundle $c$ [$\max_{c} v(c_1,..,c_K)$ st $q \cdot
+%c \leq y$]
+
+Original proof was based on optimum conditions, new
+straightforward proof by Laroque EL '05, and Kaplow JpubE '06.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ATKINSON-STIGLITZ THEOREM PROOF}
+\end{center}
+
+Let $V(y,p+t)=\max_{c} v(c_1,..,c_K)$ st $(p+t) \cdot c \leq y$ be
+the indirect utility of consumption $c$ [common to all
+individuals]
+
+Start with $(T(.),t)$. Let $c(t)$ be consumer choice.
+
+Replace $(T(.),t)$ with $(\bar{T}(.),t=0)$ where $\bar{T}(z)$ such
+that $V(z-T(z),p+t)=V(z-\bar{T}(z),p)$ $\Rightarrow$ Utility
+$U^h(V,z)$ and labor supply choices $z$ unchanged for all
+individuals.
+
+Attaining $V(z-\bar{T}(z),p)$ at price $p$ costs at least
+$z-\bar{T}(z)$
+
+Consumer also attains $V(z-\bar{T}(z),p)=V(z-T(z),p+t)$ when
+choosing $c(t)$ $\Rightarrow$ $ z - \bar{T}(z) \leq p \cdot c(t)
+=z -T(z) - t \cdot c(t)$
+
+$\Rightarrow$ $\bar{T}(z) \geq T(z) + t \cdot c(t)$: the
+government collects more taxes with $(\bar{T}(.),t=0)$
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ATKINSON-STIGLITZ INTUITION}
+\end{center}
+
+With separability and homogeneity, conditional on earnings $z$,
+consumption choices $c=(c_1,..,c_K)$ do not provide any
+information on ability
+
+$\Rightarrow$ Differentiated commodity taxes $t_1,..,t_K$ create a
+tax distortion with no benefit $\Rightarrow$ Better to do all the
+redistribution with the individual income tax
+
+Note: With weaker linear income taxation tool (Diamond-Mirrlees
+AER '71, Diamond JpubE '75), need $v(c_1,..,c_K)$ homothetic
+(linear Engel curves, Deaton EMA '81) to obtain no
+commodity tax result
+
+\small
+[Unless Engel curves are linear, commodity taxation can be useful
+to ``non-linearize'' the tax system]
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf WHEN ATKINSON-STIGLITZ ASSUMPTIONS FAIL}
+\end{center}
+
+Thought experiment: force high ability people to work less and
+earn only as much as low ability people: if higher ability consume
+more of good $k$ than lower ability people, then taxing good $k$
+is desirable. Happens when:
+
+1) High ability people have a relatively higher taste for good $k$
+(independently of income) [indirect tagging]
+
+2) Good $k$ is positively related to leisure (consumption of $k$
+increases when leisure increases keeping after-tax income
+constant) [tax on holiday trips, subsidy on work
+related expenses such as child care]
+
+In general Atkison-Stiglitz assumption is a good starting place
+for most goods $\Rightarrow$ Zero-rating on some goods under VAT
+for redistribution is inefficient and administratively burdensome
+[Mirrlees 2010 review]
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ATKINSON-STIGLITZ AND TAX ON SAVINGS (skip)}
+\end{center}
+Standard two period model ($w$=wage rate in period 1, retired in
+period 2)
+$$u^h(c_1,c_2,z)=u(c_1)+\frac{u(c_2)}{1+\delta}-b(z/w)$$
+$\delta$ is the discount rate, $b(.)$ is the disutility of effort,
+budget $c_1+c_2/(1+r(1-t_K)) \leq z-T(z)$
+
+Aktinson-Stiglitz implies that savings taxation $t_K$ (equivalent
+to tax on $c_2$) is useless in the presence of an optimal income
+tax if $\delta$ is the same for everybody
+
+If low ability people have higher $\delta$ [empirically plausible]
+then savings tax $t_K>0$ is desirable (Saez JpubE '02)
+
+%Diamond-Spinnewijn '09 consider nonlinear savings tax
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf ATKINSON-STIGLITZ AND TAX ON SAVINGS II}
+%\end{center}
+%{\bf Conjecture to verify:}
+%
+%Suppose now that labor supply decision is about retirement age
+%[length of work life vs. retirement life]
+%
+%Savings are used for retirement consumption
+%
+%$\Rightarrow$ Retirement consumption is positively related to
+%leisure [high skill person retiring earlier and earning life-time
+%like a low skilled person needs to save more to finance smooth
+%consumption profile]
+%
+%$\Rightarrow$ Retirement savings should be taxed
+%
+%\end{slide}
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Akerlof, G. ``The Economics of Tagging as Applied to the Optimal Income Tax, Welfare Programs, and Manpower Planning'', American Economic Review, Vol. 68, 1978, 8-19. \href{http://links.jstor.org/stable/pdfplus/1809683.pdf} {(web)} 
+
+Atkinson, A.B. and J. Stiglitz ``The design of tax structure: Direct versus indirect taxation'', Journal of Public Economics, Vol. 6, 1976, 55-75. \href{http://elsa.berkeley.edu/~saez/course/AtkinsonStiglitz_JPubE(1976).pdf} {(web)}
+
+Besley, T. and S. Coate ``Workfare versus Welfare: Incentives Arguments for Work Requirements in Poverty-Alleviation Programs'', American Economic Review, Vol. 82, 1992, 249-261. \href{http://links.jstor.org/stable/pdfplus/2117613.pdf} {(web)}
+
+Blau, F. and L. Kahn ``Changes in the Labor Supply Behavior of Married Women: 1980-2000'', Journal of Labor Economics, Vol. 25, 2007, 393-438. \href{http://www.jstor.org/stable/pdfplus/10.1086/513416.pdf} {(web)}
+
+Boskin, M. and E. Sheshinski ``Optimal tax treatment of the family: Married couples'', Journal of Public Economics, Vol. 20, 1983, 281-297 \href{http://elsa.berkeley.edu/~saez/course/Boskin,Sheshinski_JpubE(1983).pdf} {(web)}
+
+Brewer, M., E. Saez, and A. Shephard ``Means Testing and Tax Rates on Earnings'', in The Mirrlees Review: Reforming the Tax System for the 21st Century, Oxford University Press, 2010. \href{http://eml.berkeley.edu/~saez/brewer-saez-shephardMR10book.pdff} {(web)}
+
+Chiappori, P-A ``Collective Labor Supply and Welfare'', Journal of Political Economy, 100(3), 1992, 437--467. \href{http://www.jstor.org/stable/pdfplus/2138727.pdf} {(web)}
+
+Cremer, H., F. Gahvari, and N. Ladoux ``Externalities and optimal taxation'', Journal of Public Economics, Vol. 70, 1998, 343-364. \href{http://elsa.berkeley.edu/~saez/course/Cremer et.al._JPubE(1998).pdf} {(web)}
+
+Deaton, A. ``Optimal Taxes and the Structure of Preferences'', Econometrica, Vol. 49, 1981, 1245-1260 \href{http://www.jstor.org/stable/pdfplus/1912753.pdf} {(web)}
+
+Diamond, P. ``A many-person Ramsey tax rule'', Journal of Public Economics, Vol.4, 1975, 335-342. \href{http://elsa.berkeley.edu/~saez/course/Diamond_JPubE(1975).pdf} {(web)}
+
+Diamond, P. ``Income Taxation with Fixed Hours of Work''Journal of Public Economics, Vol. 13, 1980, 101-110. \href{http://elsa.berkeley.edu/~saez/course/Diamond_JPubE(1980).pdf} {(web)}
+
+Diamond, P. ``Optimal Income Taxation: An Example with a U-Shaped Pattern of Optimal Marginal Tax Rates'', American Economic Review, Vol. 88, 1998, 83-95. \href{http://links.jstor.org/stable/pdfplus/116819.pdf} {(web)}
+
+Diamond, P. and J. Mirrlees ``Optimal Taxation and Public Production I: Production Efficiency'', American Economic Review, Vol. 61, 1971, 8-27. \href{http://links.jstor.org/stable/pdfplus/1910538.pdf} {(web)}
+
+Diamond, P. and J. Mirrlees ``Optimal Taxation and Public Production II: Tax Rules'', American Economic Review, Vol. 61, 1971, 261-278. \href{http://links.jstor.org/stable/pdfplus/1813425.pdf} {(web)}
+
+\textbf{Diamond, P. and E. Saez ``From Basic Research to Policy Recommendations:
+The Case for a Progressive Tax'', Journal of Economic Perspectives, 25(4), 2011, 165-190.
+\href{http://elsa.berkeley.edu/~saez/diamond-saezJEP11full.pdf} {(web)} }
+
+%Diamond, P. and J. Spinnewijn ``Capital Income Taxes with Heterogeneous Discount Rates'', NBER Working Paper No. 15115, 2009. \href{http://www.nber.org/papers/w15115.pdf} {(web)}
+
+Duflo, E. ``Grandmothers and Granddaughters: Old-Age Pensions and Intrahousehold Allocation in South Africa'', The World Bank Economic Review
+Vol. 17, 2003, 1-25 \href{http://www.jstor.org/stable/pdfplus/3990043.pdf} {(web)}
+
+Edgeworth, F. ``The Pure Theory of Taxation'', The Economic Journal, Vol. 7, 1897, 550-571. \href{http://www.jstor.org/stable/pdfplus/2956603.pdf} {(web)}
+
+Feldstein, M. ``Tax Avoidance and the Deadweight Loss of the Income Tax'', Review of Economics and Statistics, Vol. 81, 1999, 674-680. \href{http://links.jstor.org/stable/pdfplus/2646716.pdf} {(web)}
+
+%Fleurbaey, Marc and Fran\c{c}ois Maniquet. 2006.
+%\textquotedblleft Fair Income Tax,\textquotedblright\ \textit{Review of
+%Economic Studies} 73, 55-83.  \href{http://www.jstor.org/stable/3700617} {(web)}
+
+%Fleurbaey, Marc and Fran\c{c}ois Maniquet. 2011. \textit{%
+%A Theory of Fairness and Social Welfare}, Cambridge: Cambridge University
+%Press.
+
+Guesnerie, R. and K. Roberts, ``Effective Policy Tools and Quantity Controls'', Econometrica, Vol. 52, 1984, 59-86. \href{http://links.jstor.org/stable/pdfplus/1911461.pdf} {(web)}
+
+Kaplow, L. ``On the undesirability of commodity taxation even when income taxation is not optimal'', Journal of Public Economics, Vol. 90, 2006, 1235-1250. \href{http://elsa.berkeley.edu/~saez/course/Kaplow_JPubE(2006).pdf} {(web)}
+
+Kaplow, L. \emph{The Theory of Taxation and Public Economics.}  Princeton University Press, 2008.
+
+Kaplow, L. and S. Shavell ``Any Non-welfarist Method of Policy Assessment Violates the Pareto Principle,''
+Journal of Political Economy, 109(2), (April 2001), 281-286
+\href{http://www.jstor.org/stable/pdfplus/10.1086/319553.pdf} {(web)}
+
+Kleven, H., C. Kreiner and E. Saez ``The Optimal Income Taxation of Couples'', Econometrica, Vol. 77, 2009, 537-560. \href{http://elsa.berkeley.edu/~saez/course/Kleven et al_Econometrica.pdf} {(web)}
+
+Lakoff, George, 1996. \emph{Moral Politics: How Liberals and Conservatives Think}, 2nd edition 2010.
+\href{https://georgelakoff.com/} {(web)}
+
+Landais, Camille, Pascal Michaillat, and Emmanuel Saez ``Optimal Unemployment Insurance over the Business Cycle,'' NBER Working Paper No. 16526, November 2010.
+\href{http://www.nber.org/papers/w16526.pdf} {(web)}
+
+Laroque, G. ``Income Maintenance and Labor Force Participation'', Econometrica, Vol. 73, 2005, 341-376. \href{http://links.jstor.org/stable/pdfplus/3598791.pdf} {(web)}
+
+\textbf{Laroque, G. ``Indirect Taxation is Superfluous under Separability and Taste Homogeneity: A Simple Proof'', Economic Letters, Vol. 87, 2005, 141-144. \href{http://elsa.berkeley.edu/~saez/course/Laroque(2005).pdf} {(web)} }
+
+Lee, D. and E. Saez ``Optimal Minimum Wage in Competitive Labor Markets'', Journal of Public Economics 96(9-10), 2012, 739-749. \href{http://elsa.berkeley.edu/~saez/lee-saezJpubE12minwage.pdf} {(web)}
+
+Lehmann, E., L. Simula, A. Trannoy ``Tax Me if You Can! Optimal Nonlinear Income Tax between Competing Governments,'' Quarterly Journal of Economics 129(4), 2014, 1995-2030.
+\href{http://elsa.berkeley.edu/~saez/course/lehmannetalQJE14.pdf} {(web)}
+
+Lundberg, S. R. Pollak and T. Wales ``Do Husbands and Wives Pool Their Resources? Evidence from the United Kingdom Child Benefit'', The Journal of Human Resources, Vol. 32, 1997, 463-480 \href{http://www.jstor.org/stable/pdfplus/146179.pdf} {(web)}
+
+Mankiw, G. and M. Weinzierl ``The Optimal Taxation of Height: A Case Study of Utilitarian Income Redistribution'', AEJ: Economic Policy, Vol. 2, 2010, 155-176. \href{http://elsa.berkeley.edu/~saez/course/Mankiw and Weinzierl_AEJ(2010).pdf} {(web)}
+
+Mirrlees, J. ``An Exploration in the Theory of Optimal Income Taxation'', Review of Economic Studies, Vol. 38, 1971, 175-208. \href{http://links.jstor.org/stable/pdfplus/2296779.pdf} {(web)}
+
+Mirrlees, J. ``Migration and Optimal Income Taxes'', Journal of Public Economics, Vol. 18, 1982, 319-341. \href{http://elsa.berkeley.edu/~saez/course/Mirrlees_JPubE(1982).pdf} {(web)}
+
+Mirrlees, J. Reforming the Tax System for the 21st Century The Mirrlees Review, Oxford University Press, (2 volumes) 2009 and 2010.
+\href{http://www.ifs.org.uk/mirrleesReview} {(web)}
+
+Nichols, A. and R. Zeckhauser``Targeting Transfers Through Restrictions on Recipients'', American Economic Review, Vol. 72, 1982, 372-377.  \href{http://links.jstor.org/stable/pdfplus/1802361.pdf} {(web)}
+
+Piketty, T. ``La redistribution fiscale face au ch\^{o}mage'', Revue fran\c{c}aise d'\'{e}conomie, Vol.12, 1997, 157-201. \href{http://elsa.berkeley.edu/~saez/course/Piketty(1997).pdf} {(web)}
+
+\textbf{Piketty, Thomas and Emmanuel Saez ``Optimal Labor Income Taxation,'' Handbook of Public Economics, Volume 5, Amsterdam: Elsevier-North Holland, 2013.
+\href{http://www.nber.org/papers/w18521.pdf} {(web)} }
+
+Piketty, Thomas, Emmanuel Saez, and Stefanie Stantcheva "Optimal Taxation of Top Labor Incomes: A Tale of Three Elasticities", American Economic Journal: Economic Policy, 6(1), 2014, 230-271
+\href{http://eml.berkeley.edu/~saez/piketty-saez-stantchevaAEJ14.pdf} {(web)} 
+
+Sadka, E. ``On Income Distribution, Incentives Effects and Optimal Income Taxation'', Review of Economic Studies, Vol. 43, 1976, 261-268. \href{http://www.jstor.org/stable/pdfplus/2297322.pdf} {(web)}
+
+Saez, E. ``Using Elasticities to Derive Optimal Income Tax Rates'', Review of Economics Studies, Vol. 68, 2001, 205-229. \href{http://links.jstor.org/stable/pdfplus/2695925.pdf} {(web)} 
+
+Saez, E. ``Optimal Income Transfer Programs: Intensive Versus Extensive Labor Supply Responses'', Quarterly Journal of Economics, Vol. 117, 2002, 1039-1073.  \href{http://links.jstor.org/stable/pdfplus/4132495.pdf} {(web)} 
+
+Saez, E. ``The Desirability of Commodity Taxation under Non-linear Income Taxation and Heterogeneous Tastes'', Journal of Public Economics, Vol. 83, 2002, 217-230. \href{http://elsa.berkeley.edu/~saez/course/Saez_JPubE(2002).pdf} {(web)}
+
+Saez, E. ``The Optimal Treatment of Tax Expenditures'', Journal of Public Economics, Vol. 88, 2004, 2657-2684. \href{http://elsa.berkeley.edu/~saez/course/Saez_JPubE(2004).pdf} {(web)}
+
+Saez, E., J. Slemrod, and S. Giertz (2012) ``The Elasticity of Taxable Income with Respect to Marginal Tax Rates: A Critical Review'', Journal of Economic Literature. \href{http://elsa.berkeley.edu/~saez/course/Saez et al(2010).pdf} {(web)} 
+
+\textbf{Saez, Emmanuel and Stefanie Stantcheva ``Generalized Social Marginal Welfare Weights for Optimal Tax Theory,'' American Economic Review 2016. \href{http://eml.berkeley.edu/~saez/saez-stantchevaAER16.pdf} {(web)} }
+
+Sandmo, A. ``Optimal Taxation in the Presence of Externalities'', The Swedish Journal of Economics, Vol. 77, 1975, 86-98. \href{http://www.jstor.org/stable/pdfplus/3439329.pdf} {(web)}
+
+Seade, Jesus K. ``On the shape of optimal tax schedules.'' Journal of public Economics 7.2 (1977): 203-235.
+\href{http://elsa.berkeley.edu/~saez/course/seadeJpubE77zerotopresults.pdf} {(web)} 
+
+Stantcheva, Stefanie. ``Understanding Tax Policy: How Do People Reason?'', NBER Working Paper No. 27699, 2020
+\href{http://www.nber.org/papers/w27699.pdf} {(web)} 
+
+Stiglitz, J. ``Self-selection and Pareto Efficient Taxation'', Journal of Public Economics, Vol. 17, 1982, 213-240. \href{http://elsa.berkeley.edu/~saez/course/Stiglitz_JPubE(1982).pdf} {(web)}
+
+%Werning, I. ``Pareto Efficient Income Taxation'', Mimeo MIT, 2007. \href{http://elsa.berkeley.edu/~saez/course/Werning(2007).pdf} {(web)}
+
+%Weinzierl, M. ``The Surprising Power of Age-Dependent Taxes'', Harvard Business School Working Paper, No. 11-114, 2011 \href{http://elsa.berkeley.edu/~saez/course/Weinzierl(2011).pdf} {(web)}
+
+}
+\end{slide}
+
+\end{document}

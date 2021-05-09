@@ -1,0 +1,1094 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{pdfpages}
+
+\usepackage{{hyperref}}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+\author{Emmanuel Saez}
+
+\date{Berkeley}
+
+\title{230B: Public Economics \\
+Tax Enforcement} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf Tax Enforcement Problem} \end{center}
+
+Most models of optimal taxation (income or commodity) assume away
+enforcement issues. In practice:
+
+\vskip2ex
+
+1) Enforcement is costly (eats up around 10\% of taxes collected
+in the US) when combining costs for government (tax administration) and private
+agents (tax compliance costs)
+
+\vskip2ex
+
+2) Substantial tax evasion (15\% of under-reported income in the
+US federal taxes). Tax evasion much worse in developing countries
+
+\vskip2ex
+
+Two widely used surveys:
+
+Andreoni, Erard, Feinstein JEL 1998
+
+Slemrod and Yitzhaki Handbook of PE, 2002
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf ALLINGHAM-SANDMO JPUBE'72 MODEL} \end{center}
+
+Seminal in the theoretical tax evasion literature. Uses the Becker
+crime model
+
+Individual taxpayer problem:
+$$\max_{\bar{w}} \:\: (1-p) \cdot u(w-\tau \cdot \bar{w}) + p \cdot u(w -\tau \cdot \bar{w} -
+\tau (w-\bar{w})(1+\theta)),$$ \noindent where $w$ is true income,
+$\bar{w}$ reported income, $\tau$ tax rate, $p$ audit probability,
+$\theta$ fine factor, $u(.)$ concave.
+
+Let $c^{No \:Audit}=w-\tau \cdot \bar{w}$ and $c^{Audit}=w -\tau
+\cdot \bar{w} - \tau (w-\bar{w})(1+\theta)$
+
+FOC in $\bar{w}$: $-\tau(1-p)u'(c^{No \:Audit})+p \theta \tau
+u'(c^{Audit})=0 \Rightarrow$
+$$\frac{u'(c^{Audit})}{u'(c^{No
+\:Audit})} = \frac{1-p}{p \theta}$$
+
+SOC $\Rightarrow$ $\tau^2 (1-p)u''(c^{No
+\:Audit})+p\tau^2\theta^2u''(c^{Audit})<0$
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf ALLINGHAM-SANDMO JPUBE'72 MODEL} \end{center}
+
+{\bf Result:} Evasion $w-\bar{w}$ $\downarrow$ with $p$ and
+$\theta$
+
+Proof of $d\bar{w}/dp>0$: Differentiate FOC with respect to $p$
+and $\bar{w}$:
+
+$-dp \cdot \tau u'(c^{No \:Audit}) - d\bar{w} \cdot  \tau^2 (1-p)
+u''(c^{No \:Audit})  = dp \cdot \theta \tau u'(c^{Audit}) +
+d\bar{w} \cdot p \theta^2 \tau^2 u''(c^{Audit})$
+
+$\Rightarrow$ $ d\bar{w} \cdot [- \tau^2 (1-p) u''(c^{No \:Audit})
+- p \theta^2 \tau^2 u''(c^{Audit}) ] = dp \cdot [ \theta \tau
+u'(c^{Audit}) + \tau u'(c^{No \:Audit}) ]$
+
+Similar proof for $d\bar{w}/d\theta>0$
+
+%In this model $d\bar{w}/d\tau>0$: $d\tau$ creates income effect
+%$\bar{w} \uparrow$ [risk aversion] and substitution effect
+%$\bar{w} \downarrow$ [pays to evade more]
+
+Huge literature built from the {\bf A-S} model [including optimal
+auditing rules]
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf Why is tax evasion so low in OECD countries?} \end{center}
+
+{\bf Key puzzle:} US has low audit rates ($p=.01$) and low fines
+($\theta \simeq .2$). With reasonable risk aversion (say CRRA
+$\gamma=1$), tax evasion should be much higher than observed
+empirically
+
+Two types of explanations for puzzle
+
+1) {\bf Unwilling to Cheat:} Social norms and morality [people
+dislike being dishonest and hence voluntarily pay taxes]
+
+2) {\bf Unable to Cheat:} Probability of being caught is much
+higher than observed audit rate because of {\bf 3rd party
+reporting}:
+
+Employers double report wages to govt (W2 forms), companies and
+financial institutions double report capital income paid out to
+govt (US 1099 forms)
+
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf DETERMINANTS OF TAX EVASION} \end{center}
+
+Large empirical literature studies tax evasion levels and the link
+between tax evasion and (a) tax rates, (b) penalties, (c) audit
+probabilities, (d) prior audit experiences, (e) socio-economic
+characteristics
+
+Early literature relies on observational [non-experimental]
+data which creates serious identification and measurement issues:
+
+(1) Evasion is difficult to measure
+
+(2) Most independent variables [audits, penalties, etc.] are
+endogenous responses to evasion and also difficult to measure
+
+$\Rightarrow$ Requires to use experimental data or to find good
+instruments: (a) IRS Tax Compliance Measurement Studies (TCMP),
+(b) lab experiments, (c) field experiments
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TCMP: IMPACT OF THIRD PARTY REPORTING} \end{center}
+
+IRS Tax Compliance Measurement Study (TCMP) is a thorough audit of
+stratified sample of tax returns done periodically. TCMP shows that:
+
+1) Tax Gap is about 15\%
+
+2) Tax Gap concentrated among income items with no 3rd party
+reporting (such as self-employment income)
+
+$\bullet$ tax gap over 50\% when little 3rd party reporting
+[consistent with Allingham-Sandmo]
+
+$\bullet$ Tax Gap very small ($<5\%$) with 3rd party reporting
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1,2}]{taxenforcement_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TCMP: IMPACT OF TAX WITHHOLDING} \end{center}
+
+3) Tax Withholding further reduces tax gap: liquidity constraint
+effect is most likely explanation: some taxpayers can never
+pay the tax due unless it is withheld at source
+
+$\Rightarrow$ wage income withholding is critical for enforcement
+of broad based income tax and payroll taxes
+
+Numbers from TCMP are rough estimates because audits cannot
+uncover all evasion [IRS blows up uncovered evasion by factor 3-4]
+$\Rightarrow$ Thorough audits detect evasion of only about 4\% of income
+
+%TCMP cannot be used to study convincingly causal impact of audits
+%or fines on evasion
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf LAB EXPERIMENTS} \end{center}
+
+Multi-period reporting games involving participants (mostly
+students) who receive and report income, pay taxes, and face risks
+of being audited and penalized
+
+1) Lab experiments have consistently shown that penalties, audit
+probabilities, and prior audits increase compliance (e.g., Alm,
+Jackson, and McKee, 1992)
+
+2) But when penalties and audit probabilities are set at realistic
+levels, their deterrent effect is quite small [Alm, Jackson, and
+McKee 1992] $\Rightarrow$  Laboratory experiments tends to predict
+more evasion than we observe in practice
+
+Issues: Lab environment is artificial, and therefore likely to
+miss important aspects of the real-world reporting environment
+[3rd party information and social norms]
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf FIELD EXPERIMENTS} \end{center}
+
+1) Blumenthal, Christian, Slemrod NTJ'01 study the effects of
+normative appeals to comply: treatment group receives letter
+encouraging compliance on normative grounds ``support valuable
+services'' or ``join the compliant majority'', control group [no
+letter]
+
+$\Rightarrow$ No (statistically significant) effect of normative
+appeals on compliance overall
+
+2) Slemrod, Blumenthal, Christian JPubE'01 study the effects of
+``threat-of-audit'' letters
+
+$\Rightarrow$ Statistically significant effect on reported income
+increase, especially among the self-employed [``high opportunity
+group''] but very small sample size
+
+\small
+Recently: (a) Hallsworth et al. (2014) show that normative appeals help in collecting
+overdue taxes [but small quantitatively], (b) Bott et al. 2014 for a randomized experiment in Norway on
+foreign income [threat of audit more effective than normative appeal], (c) see survey Luttmer-Singhal '14
+ 
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={3}]{taxenforcement_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={4}]{taxenforcement_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TAX AUDIT EXPERIMENT FROM DENMARK} \end{center}
+
+Kleven-Knudsen-Kreiner-Pedersen-Saez '11 analyze bigger Danish
+income tax auditing experiment [stratified sample 40,000]
+
+Overall detected evasion [no adjustment] is around 2.5\% but:
+
+1) Evasion rate for self-reported items is almost 40\%
+
+2) Evasion rate for third party reported items is only 0.3\%
+
+3) Overall evasion rate is so low because 95\% of income is third
+party reported in Denmark
+
+Role of 3rd party reports [information structure] seem to trump
+social factors and economic factors:
+
+$Evade_i = \alpha + \beta Self\: Reported \: Income_i + \gamma
+Social\: Factors_i + \varepsilon_i$
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={5,6}]{taxenforcement_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={15}]{taxenforcement_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={16}]{taxenforcement_attach.pdf}
+\end{slide}
+
+%
+%\begin{slide}
+%\includepdf[pages={14,15}]{pdf/TaxComplianceExperimentOct2009K.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf TAX AUDIT EXPERIMENT FROM DENMARK} \end{center}
+Kleven et al. '11 also provide experimental causal effects of:
+
+1) Marginal tax rates: use bunching evidence before and after audit:
+Most bunching not due to evasion but avoidance $\Rightarrow$ Effect of MTR on evasion is
+modest
+
+2) Prior-audit effects: compare next year outcomes of 100\% audit
+group and a 0\% audit group [as audited tax filers may update
+upward beliefs on $p$]
+
+$\Rightarrow$ Find significant effects on reported income
+increases, concentrated among self-reported items [nothing on 3rd
+party income]: Extra tax collected through this indirect effect is about 50\% of
+extra taxes collected due to base year audits
+
+3) Threat-of-audit letters: Find significant effects on
+self-reported income increases [as in Slemrod et al.] and letter prob matters
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={7,8,9,10,11}]{taxenforcement_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={19,20}]{pdf/TaxComplianceExperimentOct2009K.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center} {\bf ADDING THIRD PARTY REPORTING IN A-S MODEL: KLEVEN-KREINER-SAEZ '09} \end{center}
+%
+%Income $w=w_t+w_s$ where $w_t$ is third party reported (observed
+%by govt at no cost) and $w_s$ is self-reported (as in standard
+%Allingham-Sandmo model). Individual reports $\bar{w}_t$ and
+%$\bar{w}_s$
+%
+%1) $\bar{w}_t=w_t$ because audit rate is 100\% for this income
+%category
+%
+%2) Government audits $\bar{w}_s$ with probability $p<1$ (costly):
+%$$\max_{\bar{w}_s} \:\: (1-p) u(w- \tau w_t - \tau \bar{w}_s) + p u(w-\tau w_t - \tau \bar{w}_s -
+%\tau (w_s-\bar{w}_s)(1+\theta))$$ $$\Leftrightarrow
+%\max_{\bar{w}=w_t+\bar{w}_s} \:\: (1-p) u(w - \tau \bar{w}) + p
+%u(w - \tau \bar{w} - \tau (w-\bar{w})(1+\theta))$$
+%
+%$\Rightarrow$ {\bf 3rd Party Irrelevance:} If no constraints on
+%$\bar{w}_s$, 3rd party reporting does not help enforcement
+%
+%Note: irrelevance result remains true if $p(\bar{w})$
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center} {\bf BREAKING THE IRRELEVANCE RESULT} \end{center}
+%
+%Irrelevance result depends on 2 strong assumptions:
+%
+%(1) Self-reported losses are allowed
+%
+%(2) Audit rate does not depend on (sign of) $\bar{w}_s$
+%
+%More realistic models where irrelevance breaks down:
+%
+%(1) Disallow self-reported losses 
+%
+%(2) Audit rate $p$ depends (negatively) on $\bar{w}_s$
+%
+%$\Rightarrow$ 3rd party reporting helps government enforce taxes
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center} {\bf EXPLAINING ACTUAL TAX POLICIES} \end{center}
+Income $w=w_t+w_s$ where $w_t$ is third party reported (observed
+by govt at no cost) and $w_s$ is self-reported (as in standard
+Allingham-Sandmo model).
+
+Incorporating 3rd party reporting solves
+puzzles of the {\bf Allingham-Sandmo} model:
+
+1) Evasion rates are high in $s$ sector (consistent with {\bf Allingham-Sandmo})
+and low in $t$ sector
+
+2) IRS sets audit rate $p$ higher when $\bar{w}_s<0$ (small business losses,
+undocumented deductions, etc.) to protect $w_t$ base
+
+3) $\bar{w}_s$ losses not allowed against $w_t$ (example: US
+limits capital gain losses and passive business losses)
+
+4) Use of schedular income taxes (tax separately various bases): Earliest
+income taxes (1800-1900) are {\bf schedular}
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf SIMPLER MODEL OF TAX EVASION} \end{center}
+$$u=(1-p(\bar{w}))[w-\tau \bar{w}]+ p(\bar{w})[ w(1-\tau) - \theta
+\tau (w-\bar{w})]$$
+
+FOC $du/d\bar{w}=0$ $\Rightarrow$ $[p ( \bar{w}) - p' ( \bar{w})
+(w-\bar{w})]( 1+\theta) =1$
+
+Introduce the elasticity of the detection probability with respect
+to undeclared income: $\varepsilon = -(w-\bar{w})
+p'(\bar{w})/p(\bar{w})>0$
+$$1=p ( \bar{w}) \cdot ( 1+\theta) \cdot (1+\varepsilon )$$ 
+%Marginal benefit of evading \$1 extra = Marginal
+%cost of evading \$1 extra
+
+If $\varepsilon=0$, then always evade if $1>p \cdot (1+\theta)$
+
+If $\varepsilon>0$, then evading more increases risk of being
+caught on all infra-marginal evaded taxes $\Rightarrow$ Even with
+$\theta=0$, full evasion is not always optimal
+
+Shape of $p(\bar{w})$ depends crucially on 3rd party income
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={12}]{taxenforcement_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf WHY DOES THIRD PARTY REPORTING WORK?} \end{center}
+In theory, employer and employee could collude to evade taxes
+$\Rightarrow$ third-party does not help (Yaniv 1992)
+
+In practice, such collusion is fragile in modern companies because
+of combination of:
+
+1) Accounting and payroll records that are widely used within the
+firm [records need to report true wages in order to be useful to run
+a complex business]
+
+2) A single employee can denounce collusion between employer and
+employees. Likely to happen
+in a large business [disgruntled employee, honest newly hired
+employee, whistle blower seeking govt reward]
+
+$\Rightarrow$ Taxes can be enforced even with low penalties and
+low audit rates [Kleven-Kreiner-Saez, 2016]
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center} {\bf FORMAL MODEL OF 3RD PARTY} \end{center}
+%
+%1) Firm has $N$ employees where wages=marginal productivity
+%$w=(w_1,..,w_N)$ (assume away profits).
+%
+%2) Firm and employees cooperatively report
+%$\bar{w}=(\bar{w}_1,..,\bar{w}_N)$ to govt which applies constant
+%tax rate $\tau$
+%
+%3) If firm uses {\bf accounting records} then $w, \bar{w}$ known
+%within firm by all employees
+%
+%4) If $w \neq \bar{w}$, any employee can show {\bf accounting
+%records} to govt and denounce cheating
+%
+%5) Govt cannot observe $w$ if all employees collude
+%
+%6) Govt applies fine at rate $\theta>0$ for evaded taxes
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center} {\bf FORMAL MODEL OF 3RD PARTY} \end{center}
+%
+%Firm and all employees can {\bf collude} to report
+%$\bar{w}=(0,..,0)$ and evade taxes entirely
+%
+%But collusive equilibrium is fragile as a single employee can
+%reveal cheating. Can happen because of:
+%
+%1) Random Shocks: Work conflict, Moral Concerns, Mistake
+%
+%2) Whistle blowing reward: Govt offers fraction $\delta$ of unpaid
+%taxes to whistle blowers
+%
+%$\Rightarrow$ Collusive equilibrium harder to sustain in large
+%firms
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center} {\bf FORMAL MODEL OF 3RD PARTY: RANDOM SHOCKS} \end{center}
+%
+%If $w \neq \bar{w}$, each employee denounces firm with probability
+%$\varepsilon$ (iid) $\Rightarrow$ Firm successfully evades with
+%prob. $(1-\varepsilon)^N$
+%
+%Firm/workers set $\bar{w}$ to maximize ex-ante expected surplus
+%(assuming risk neutrality):
+%$$S=\sum_n [w_n - \tau \cdot \bar{w}_n - (1-(1-\varepsilon)^N) \cdot
+%\tau \cdot (1+\theta) \cdot (w_n-\bar{w}_n)]$$ $$\partial S /
+%\partial \bar{w}_n = \tau \cdot
+%[-1+(1+\theta)(1-(1-\varepsilon)^N)]$$ Firm/workers evade (fully)
+%iff $(1-\varepsilon)^N > \theta/(1+\theta)$
+%
+%Large firms do not evade even for small $\varepsilon$ and $\theta$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center} {\bf FORMAL MODEL OF 3RD PARTY: WHISTLE BLOWER
+%MODEL}\end{center}
+%
+%Govt offers reward fraction $\delta$ of uncovered taxes to whistle
+%blowers ($\delta<\theta$).
+%
+%Audit probability is 0 if nobody whistle blows and 1 if anybody
+%whistle blows. Whistle blowers share fraction $\delta$ of unpaid
+%taxes $\tau \sum_{n'} (w_{n'} - \bar{w}_{n'})$
+%
+%If $w \neq \bar{w}$, nobody whistle blows iff
+%
+%$w_n - \tau \bar{w}_n \geq w_n - \tau \bar{w}_n - (1+\theta)\tau
+%(w_n-\bar{w}_n) + \delta \tau \sum_{n'} (w_{n'} - \bar{w}_{n'})$
+%
+%iff $(1+\theta)(w_n-\bar{w}_n) \geq \delta \sum_{n'} (w_{n'} -
+%\bar{w}_{n'})$ for all $n$ $\Rightarrow$ $1+\theta \geq N \delta$
+%
+%$\Rightarrow$ No collusive tax cheating is sustainable iff $\delta
+%> (1+\theta)/N$ $\Rightarrow$ Large firms do not evade even with
+%small $\delta$ and $\theta$
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf INCOME TAXATION IN DEVO COUNTRIES}
+%\end{center}
+%Progressive individual income taxes in devo countries are small and limited to a small
+%fraction of upper income taxpayers (vast majority of the population are informal self-employed workers)
+%
+%Kleven and Waseem QJE'13 study income tax in Pakistan
+%
+%Tax creates notches because \textbf{average} tax rate jumps
+%$\Rightarrow$ Bunching below the notch and gap in density just above the notch
+%
+%\textbf{Empirically:} Evidence of bunching (primarily among self-employed)
+%but size of the response is quantitatively small
+%
+%Large fraction of taxpayers are unresponsive to notch likely  due to lack of information
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={20,18-19,21}]{taxenforcement_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Kleven and Waseem QJE'13 notch analysis}
+%\end{center}
+%With optimization frictions (lack of information, costs of adjustment),
+%a fraction of individuals fail to respond to notch
+%
+%Kleven-Waseem use density above notch to measure the fraction
+%of unresponsive individuals
+%
+%This allows them to back up the frictionless elasticity (i.e. the elasticity
+%among responsive individuals)
+%
+%The frictionless elasticity is much higher than the reduced form elasticity
+%but remains still relatively modest
+%
+%
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center} {\bf HISTORY OF TAX COLLECTION} \end{center}
+Interesting to understand why taxes develop the way they do
+[Webber-Wildavsky '86 book, Ardant '71 book in French]
+
+During most of history, governments were under the tax enforcement
+constraint: they were collecting as much taxes as possible given
+the economic / informational conditions
+
+Many developing countries today still face such tax enforcement
+constraints
+
+Earliest taxes are tributes: conquerors / rulers realize that it
+is more lucrative to raise periodic tributes than outright
+stealing
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Taxation as the Origin of States}
+\end{center}
+States first arise through warfare and conquest in productive areas (e.g. Nile Valley) to extract taxes (see Carneiro, 1970)
+
+Modern test of this theory: Sanchez (2015) surveys Eastern Congo villages in war areas 
+
+Bandits establish ``local states'' (=order and taxes) when village tax potential is high
+
+(a) villages with coltan mineral have tax potential particularly when coltan price is high
+
+(b) villages with gold mineral do not have tax potential (bc gold can be easily hidden)
+
+Likelihood of taxation of coltan mining sites follows coltan price
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={27}]{taxenforcement_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={28}]{taxenforcement_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center} {\bf ARCHAIC TAXES} \end{center}
+
+Governments try to extract revenue through rules without
+destroying economic activity and without generating tax revolts
+
+Colbert (17th century France) famous expression: ``plucking the
+goose while minimizing hissing''
+
+{\bf Direct taxes:} taxes on property, businesses, or people
+
+{\bf Indirect taxes:} taxes on transactions and exchanges
+
+Classification is no longer very meaningful: [estate tax is
+direct, inheritance tax is indirect but economically equivalent]
+\end{slide}
+
+
+
+
+
+\begin{slide}
+\begin{center} {\bf ARCHAIC DIRECT TAXES}\end{center}
+
+{\bf Poll tax} (fixed amount per person). Cannot raise much
+revenue as poor cannot pay much [people flee or rebel, serfdom is
+a way to prevent fleeing behavioral response]. Later
+differentiated by class (nobility, peasants, professions).
+
+{\bf Land tax} (amount per lot), later differentiated by quality.
+Cannot raise much unless carefully differentiated with expensive
+land registry [otherwise marginal lands abandoned]
+
+{\bf Product taxes} (such as tithe = fraction of gross
+agricultural product): Tax requires monitoring production. Tax on
+gross product can be overwhelming for marginal lands
+
+$\Rightarrow$ Archaic direct taxes can hardly raise more than 5\%
+of total product in primitive economies. Hard to collect in barter
+economies. Only minimal govt can be supported.
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf ARCHAIC INDIRECT TAXES} \end{center}
+
+Indirect taxes require exchange economies %because based on
+%movements of people and goods
+
+{\bf Tolls} for use of roads, rivers, entering towns, crossing
+borders, harbors, mountain pass. Initially based on people, later
+based on goods transported [overused when no coordination across
+jurisdictions]
+
+{\bf Excise and Sales Taxes} on exchanged goods. In early
+economies, only few goods are traded: salt, metal, alcohol
+beverages. Fairs where exchanges are concentrated also allow
+governments to impose sales taxes
+
+{\bf Govt Monopoly} Some economic activities require use of heavy
+equipment (grinding wheat, pressing grapes) $\Rightarrow$ Can be
+controlled/monitored by govt
+
+$\Rightarrow$ Archaic indirect taxes can raise substantial
+additional revenue in jurisdictions with substantial trading
+activity %[Italian towns, Holland towns]. Easier to collect as
+%money is used for exchanges.
+\end{slide}
+
+\begin{slide}
+\begin{center} {\bf MODERN TAXES} \end{center}
+Modern taxes exploit {\bf accounting information} that is required
+in large/complex business activities and {\bf withholding at
+source}
+
+Shift from differentiated capitation and presumptive taxes (on
+businesses and individuals) toward modern income taxation
+
+Shift from excise taxes toward general sales taxes and VAT
+
+Modern taxes can collect 50\% of GDP without harming
+growth
+
+Modern taxes in rich countries today are threatened primarily by
+(a) tax havens [enforcement difficult], (b) international tax
+competition [requires international coordination], (c) marginally
+the informal sector
+
+\small IMF recommendations for poor countries to switch from archaic
+tariffs to modern VAT reduced tax revenue bc VAT enforcement failed [Cage-Gadenne 13]
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf EMPIRICAL PATH OF GOVERNMENT GROWTH}
+\end{center}
+1) Govt size is small (typically $<$ 10\% of GDP) in Western
+countries before industrialization (Flora '83). Use {\bf archaic}
+taxes: [poll taxes, land-property taxes, product taxes, excise
+taxes, tolls, tariffs]
+
+2) Govt size increases sharply in all advanced economies during
+20th century. Increase corresponds to the development of {\bf
+modern} taxes enforced using business records [income taxes,
+payroll taxes, value added taxes]
+
+3) Govt growth has slowed or stopped in most advanced economies
+over last 3 decades
+
+This general historical pattern applies to almost all rich
+countries although timing and final govt size varies across
+countries
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={13,14}]{taxenforcement_attach.pdf}
+\end{slide}
+
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Explaining Pattern of Govt Growth with Tax Enforcement (Kleven-Kreiner-Saez '09)}
+%\end{center}
+%
+%
+%1) Early development: economy is rudimentary and business are
+%small / do not need business records: government cannot use modern
+%taxes and is constrained by limited fiscal capacity 
+%$\Rightarrow$
+%Government size is too small relative to citizens' preferences
+%
+%2) Middle development: businesses grow in size and start using
+%records $\Rightarrow$ Government can start using modern taxes and
+%grows (still constrained by fiscal capacity as too high taxes
+%would make businesses go back to informality)
+%
+%3) Late development: economy is largely formal $\Rightarrow$
+%Government no longer constrained, govt size optimal given citizens'
+%preferences $\Rightarrow$ Government size (relative to
+%GDP) is stable
+%\end{slide}
+%
+\begin{slide}
+\begin{center}
+{\bf ALTERNATIVE THEORIES OF GOVT GROWTH}
+\end{center}
+1) Demand elasticity for public goods has income elasticity above
+one [{\bf Wagner's law} $\sim 1900$] (can't explain stability since 1980)
+
+2) Supply side: Stagnating productivity in the government sector
+[Baumol's '67 {\bf Cost Disease Theory}] (can't explain stability since 1980)
+
+3) {\bf Ratchet effect theory}: temporary shocks (e.g., wars)
+raise government expenditures, which do not fall back after the
+shock because of changed social norms [Peacock-Wiseman '61,
+Besley-Persson '08] (can't explain Sweden and pre-20th century
+wars)
+
+4) {\bf Political economy} theories based on voting and
+democratization, etc.
+
+%5) {\bf Leviathan theory} Bureaucrats maximize govt size subject
+%to fiscal capacity and political constitution constraints
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf VARIOUS SALES TAXES}
+\end{center}
+{\bf Turnover taxes} used to tax all sales: business to consumer
+(B-C) and business to business (B-B):
+
+Creates multiple layers of taxes along a production chain
+$\Rightarrow$ Higher total tax when B-B-C than B-C
+
+{\bf Retail Sales Tax} is imposed on B-C sales only [B-B exempt]:
+difficult to distinguish B-B and B-C (shifting), strong evasion
+incentive for B-C [sales tax does not work well with small retailers]
+
+{\bf Value-Added-Tax (VAT)} taxes only value added [sales minus
+purchases] in all transactions (B-B and B-C): equivalent to retail
+sales economically but easier to enforce [automatic upstream enforcement]
+
+VAT first introduced in France in 1950s, has spread to most countries
+[US only rich country without VAT] yet little research
+
+%VAT is huge quantitatively yet little VAT research (lack of data)
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf NO EVASION: VAT $\Leftrightarrow$ RETAIL SALES TAX }
+%\end{center}
+%(1) Supplier $S$ produces material using only labor inputs and
+%sells it for $s$, pays VAT $\tau \cdot s$
+%
+%(2) Manufacturer $M$ buys material for $s$ and sells product for
+%$m$, pays VAT $\tau \cdot (m-s)$
+%
+%(3) Retailer $R$ buys product for $m$ and sells good to consumers
+%for $r$, pays VAT $\tau \cdot (r-m)$
+%
+%Total VAT is $\tau \cdot r$
+%
+%Retail sales tax paid only by $R$: $\tau \cdot r$
+%
+%VAT $\Leftrightarrow$ Retail sales tax
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf INTRODUCING EVASION}
+%\end{center}
+%Government matches the purchases and sales VAT reports: need to be
+%consistent: $\bar{s}$, $\bar{m}$, $\bar{r}$
+%
+%If $M$ and $R$ truthfully report $\bar{m}=m$, $\bar{r}=r$: if $S$
+%decides to evade $\bar{s}<s$, $M$ has to pay $\tau \cdot
+%(m-\bar{s})$, $M$ will only purchase at lower price $\Rightarrow$
+%No gain for $S$ to evade
+%
+%Similarly, if $R$ truthfully reports $\bar{r}=r$, then $M$ (and
+%hence $S$) cannot evade
+%
+%VAT compliance down the chain forces compliance upstream [even if
+%upstream businesses are informal]
+%
+%If $R$ is big and uses business records (Walmart) then $R$ cannot
+%misreport $\bar{r}$ $\Rightarrow$ VAT will work well [but retail
+%sales tax would also work]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf WHY VAT WORKS BETTER?}
+%\end{center}
+%
+%If $R$ is small / informal, it can evade but needs to report at
+%least $\bar{r}=\bar{m}$ [otherwise VAT credit would attract tax
+%audit]
+%
+%If $M$ is small / informal and if $R$ evades and sets
+%$\bar{r}=\bar{m}$, then $M$ can evade VAT by colluding with $R$:
+%both $R$ and $M$ can decide to lower both $\bar{r}$ and $\bar{m}$
+%equally
+%
+%... $S$ can also evade if $M$ and $R$ evade
+%
+%If all firms are small / informal, VAT enforcement is impossible
+%
+%If bottom firm $R$ is small / informal $\Rightarrow$ Retail sales
+%tax breaks down entirely but VAT does not:
+%
+%If bottom firm $R$ is small / informal but $M$ is large / formal,
+%VAT enforcement will work from $M$ and upstream
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf ENFORCEMENT OF VAT VS RETAIL SALES TAX}
+%\end{center}
+%
+%1) Sales tax enforcement depends critically on retailers. Sales tax
+%can be enforced with large retailers but much harder with small retailers
+%
+%2) VAT: when there is a large/formal firm in the production chain, then
+%enforcement upstream takes place automatically. Imports often play this role
+%as they are easy to observe and tax [Keen '07]
+%
+%3) VAT Issues: (a) VAT evasion easier with international
+%transactions [carousel fraud], (b) VAT cannot tax easily financial
+%services.
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf POMERANZ AER'15 VAT EXPERIMENT}
+\end{center}
+Randomized experiment with 445,000 firms in Chile: sent threat of VAT audit letters to sub-sample of businesses
+
+\textbf{Key Results:}
+
+1) Significant effect of letters on VAT collection (+10\% over 12 months)
+
+2) Smaller impact on
+reported transactions that already have a paper trail
+(intermediate sales) than on those which don't (final sales)
+
+3) Effect of random audit announcement is transmitted up the VAT chain, increasing compliance
+by firms' suppliers
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={22-26}]{taxenforcement_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf WEALTH IN TAX HEAVENS ZUCMAN QJE'13}
+\end{center}
+Official statistics substantially underestimate the net foreign asset positions of rich countries 
+bc they do not capture most of the assets held by households in off-shore tax havens
+
+Example: Wealthy US individual opens a Cayman Islands account and buys
+mutual fund shares (composed of US corporate stock): Cayman Islands record a liability
+but US do not record an asset (because this is not reported in the US) 
+
+$\Rightarrow$ Total world liabilities are larger than world total assets
+
+Zucman compiles all financial stats and estimates that around 8\% of the global financial wealth of households is held in tax
+havens (three-quarters of which goes unrecorded = 6\%)
+
+If top 1\% hold about 50\% of total financial wealth, then about 12\% of financial wealth of the rich is
+hidden in tax heavens
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf CURBING OFF-SHORE TAX EVASION}
+\end{center}
+Off-shore tax evasion possible because of bank secrecy: US cannot get a list
+of US individuals owning Swiss bank accounts from Switzerland
+
+$\Rightarrow$ No 3rd party reporting makes tax enforcement very difficult
+
+In principle, problem could be solved with exchange of information across
+countries BUT need all countries to cooperate
+
+Johannesen-Zucman AEJ-EP'14 analyze tax haven crackdown: 
+G20 countries forced number of tax havens to sign bilateral treaties
+on bank information sharing
+
+Key result: Instead of repatriating funds, tax evaders
+shifted deposits to havens not covered by treaty with home country.
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf CURBING OFF-SHORE TAX EVASION}
+\end{center}
+
+\textbf{FATCA'13 US regulations} try to impose info exchange for all entities dealing with US: 
+
+If foreign bank B
+does not provide list of all its US account holders, any financial transaction between B and US will carry
+30\% tax withholding $\Rightarrow$ Interesting to see what it will do
+
+
+\textbf{Long-term solution} will require:
+
+a) Systematic registration of assets to ultimate owners [already exists within countries for domestic
+tax enforcement]
+
+b) Systematic information exchange between tax countries with no exceptions for tax heavens 
+
+$\Rightarrow$ Could be enforced with tariffs threats on tax heavens [Zucman JEP'14 and book '15]
+
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={17}]{materials\zucman2013.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+\textbf{Allingham, M. and A. Sandmo ``Income tax evasion: a theoretical analysis'', Journal of Public Economics, Vol. 1, 1972, 323-338. \href{http://elsa.berkeley.edu/~saez/course/Allingham\&SandmoJPubE(1972).pdf} {(web)} }
+
+Alm, J., B. Jackson and M. McKee ``Institutional Uncertainty and Taxpayer Compliance'', American Economic Review, Vol. 82, 1992, 1018-1026. \href{http://links.jstor.org/stable/pdfplus/2117358.pdf} {(web)}
+
+\textbf{Andreoni, J., B. Erard and J. Feinstein ``Tax Compliance'', Journal of Economic Literature, Vol. 36, 1998, 818-60.  \href{http://links.jstor.org/stable/pdfplus/2565123.pdf} {(web)} }
+
+Ardant, G.: Histoire de l'imp\^{o}t (Volumes 1 and 2), Paris: Fayard, 1971.
+
+Besley, T., T. Persson ``The Incidence of Civil War: Theory and Evidence'', NBER Working Paper, 14585, 2008. \href{http://www.nber.org/papers/w14585.pdf} {(web)}
+
+Blumenthal, M., C. Christian and J. Slemrod ``Do Normative Appeals
+Affect Tax Compliance? Evidence from a Controlled Experiment in
+Minnesota'', National Tax Journal, Vol. 54, 2001, 125-238.
+\href{http://elsa.berkeley.edu/~saez/course/BlumenthaletalNTJ(2001).pdf}
+{(web)}
+
+Bott, Kristina, Alexander W. Cappelen Erik Sorensen, Bertil Tungodden (2014) ``YouÕve got mail: A randomised field
+experiment on tax evasion'', Norwegian School of Economics Working Paper
+\href{http://elsa.berkeley.edu/~saez/course/bottetal14.pdf}
+{(web)}
+
+Cage, Julia and Lucie Gadenne ``The Fiscal Cost of Trade Liberalization'', Harvard Working Paper, 2012
+\href{http://elsa.berkeley.edu/~saez/course/CageGadenne.pdf}
+{(web)}
+
+Carneiro, Robert (1970) ``A Theory of the Origin of the State,'' Science, 169(3947), 733--738. 
+\href{http://elsa.berkeley.edu/~saez/course/carneiro70.pdf}
+{(web)}
+
+Cowell, F. Cheating the Government: The Economics of Evasion (MIT Press, Cambridge, 1990).
+
+Dwenger, Nadja , Henrik Kleven, Imran Rasul, Johannes Rincke 2016. ``Extrinsic and Intrinsic Motivations for Tax Compliance: Evidence from a Field Experiment in Germany'', American Economic Journal: Economic Policy?
+\href{http://elsa.berkeley.edu/~saez/course/dwenger-kleven-rasul-rincke_aejpol2015.pdf} {(web)}
+
+Hallsworth, Michael, John A. List, Robert D. Metcalfe, and Ivo Vlaev (2014) , ``The Behavioralist As Tax Collector: Using Natural Field Experiments to Enhance Tax Compliance'', NBER Working Paper No. 20007
+ \href{http://www.nber.org/papers/w20007.pdf} {(web)}
+
+IRS, 2012 ``Tax Gap for Tax Year 2006: Overview''
+\href{http://elsa.berkeley.edu/~saez/course/overview_tax_gap_2006.pdf} {(web)}
+
+Johannesen, Niels  and Gabriel Zucman ``The End of Bank Secrecy? An Evaluation of the G20 Tax Haven Crackdown,''
+American Economic Journal: Economic Policy, 6(1), 2014.
+\href{http://elsa.berkeley.edu/~saez/course/johannesen-zucmanAEJ14.pdf} {(web)}
+
+Keen, M. ``VAT, Tariffs, and Withholding: Border Taxes and Informality in Developing Countries'', IMF Working Paper WP/07/174. \href{http://elsa.berkeley.edu/~saez/course/Keen_IMF.pdf} {(web)}
+
+\textbf{Kleven, H., M. Knudsen, C. Kreiner, S. Pedersen, and E. Saez ``Unwilling or Unable to Cheat? Evidence from a Randomized Tax Audit Experiment in Denmark'', Econometrica 79(3), 2011, 651-692. \href{http://elsa.berkeley.edu/~saez/kleven-knudsen-kreiner-pedersen-saezEMA11taxaudit.pdf} {(web)} }
+
+Kleven, H. C. Kreiner, and E. Saez ``Why Can Modern Governments Tax So Much? An Agency Model of Firms as Fiscal Intermediaries'', Economica,  2016. \href{http://eml.berkeley.edu/~saez/kleven-kreiner-saezEMA15.pdf} {(web)}
+
+Kopczuk, W. and C. Pop-Eleches ``Electronic filing, tax preparers, and participation in the earned income tax credit'', Journal of Public Economics, Vol. 91, 2007, 1351-1367. \href{http://elsa.berkeley.edu/~saez/course/Kopczuk\&Pop-Eleches_JPubE(2007).pdf} {(web)}
+
+Luttmer, Erzo F. P.  and Monica Singhal (2014) ``Tax Morale'', Journal of Economic Perspectives 28(4), 149--168.
+\href{http://elsa.berkeley.edu/~saez/course/taxmorale.pdf} {(web)}
+
+Peacock, A. T. and Wiseman, J. (1961) The Growth of Government Expenditure in the United Kingdom, Princeton, NJ: Princeton University Press.
+
+\textbf{Pomeranz, Dina. 2015. "No Taxation without Information: Deterrence and Self-Enforcement in the Value Added Tax." American Economic Review, 105(8): 2539-69.
+\href{http://elsa.berkeley.edu/~saez/course/pomeranzAER15.pdf} {(web)}}
+
+Sanchez de la Sierra, Raul (2015) ``On the Origin of States: Stationary Bandits and Taxation in Eastern Congo''
+Working Paper. \href{http://elsa.berkeley.edu/~saez/course/sanchez15.pdf} {(web)}
+
+Shaw, J., J. Slemrod, and J. Whiting ``Administration \& Compliance'', in IFS, The Mirrlees Review: Reforming the Tax System for the 21st Century, Oxford University Press, 2009. \href{http://elsa.berkeley.edu/~saez/course/Shawetal_IFS(2009).pdf} {(web)}
+
+Slemrod, J. and S. Yitzhaki ``Tax Avoidance, Evasion and Administration'', in A. Auerbach and M. Feldstein (eds.), Handbook of Public Economics, Vol. 3 (Amsterdam: North-Holland, 2002), 1423-1470. \href{http://elsa.berkeley.edu/~saez/course/Slemrod,Yitzhaki PE Handbook chapter.pdf} {(web)}
+
+Slemrod, J., M. Blumenthal and C. Christian ``Taxpayer response to an increased probability of audit: evidence from a controlled experiment in Minnesota'', Journal of Public Economics, Vol. 79, 2001, 455-483. \href{http://elsa.berkeley.edu/~saez/course/Slemrodetal_JPubE(2001).pdf} {(web)}
+
+Webber, C., A. Wildavsky, A history of taxation and expenditure in the Western world. New York : Simon and Schuster, 1986.
+
+Yaniv, G. ``Collaborated Employee-Employer Tax Evasion'', Public Finance/ Finances Publiques, Vol. 47, 1992, 312-321. \href{http://elsa.berkeley.edu/~saez/course/Yaniv(1992).pdf} {(web)}
+
+Zucman, G. ``The Missing Wealth of Nations: Are Europe and the US Net
+Debtors or Net Creditors'', Quarterly Journal of Economics, 2013, 1321-1364. \href{http://elsa.berkeley.edu/~saez/course/zucmanQJE13.pdf} {(web)}
+
+Zucman, G. \emph{The Hidden Wealth of Nations}, September 2015, University of Chicago Press.
+\href{http://gabriel-zucman.eu/hidden-wealth/} {(web)}
+
+Zucman, G.  ``Taxing across Borders: Tracking
+Personal Wealth and Corporate Profits'' Journal of Economic Perspectives, 28(4), 2014, 121-148.
+\href{http://elsa.berkeley.edu/~saez/course/Zucman2014JEP.pdf} {(web)}
+
+
+}
+
+\end{slide}
+
+
+
+\end{document}

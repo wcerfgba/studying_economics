@@ -1,0 +1,1015 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+\title{Unemployment Insurance, Disability Insurance, and Workers' Compensation} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OUTLINE}
+%\end{center}
+%Chapter 14
+%
+%
+%14.1 Institutional Features of Unemployment Insurance, Disability Insurance, and Workers' Compensation
+%
+%14.2 Unemployment Insurance
+%
+%14.3 Disability Insurance
+%
+%14.4 Workers' Compensation
+%
+%\end{slide}
+
+%14.1 Institutional Features of Unemployment Insurance, Disability Insurance, and Workers' Compensation
+
+
+\begin{slide}
+\begin{center}
+{\bf INSTITUTIONAL FEATURES}
+\end{center}
+
+Unemployment insurance, workers' compensation, and disability insurance are three social insurance programs in the United States, and they share many common features.
+
+{\bf Unemployment insurance (UI)}:
+A federally mandated, state-run program in which payroll taxes are used to pay benefits to unemployed workers laid off by companies.
+
+{\bf Disability insurance (DI):} A federal program in which a portion
+of the Social Security payroll tax is used to pay benefits to
+workers who have suffered a medical impairment that leaves
+them permanently unable to work.
+
+{\bf Workers' compensation (WC):} State-mandated insurance, which
+firms generally buy from private insurers, that pays for medical
+costs and lost wages associated with an on-the-job injury.
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+% use Raj chetty UI lecture
+
+\begin{slide}
+\begin{center}
+{\bf Unemployment Insurance}
+\end{center}
+
+Unemployment insurance is a major social insurance program in the U.S.
+
+Spending size: \$50bn/year in normal times (up to \$150bn/year during Great Recession,
+around \$500bn in 2020 due to COVID)
+
+Macroeconomic importance in stabilization/stimulus
+
+Like other social programs, triggered by an event
+
+In this case, involuntary job loss
+
+Controversial debate about unemployment benefits
+
+Benefit: helps people in a time of need
+
+Cost: reduces incentive to search for work while unemployed
+
+%What is the optimal design of UI system given this tradeoff?
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={31}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Institutional Features of Unemployment Insurance}
+\end{center}
+
+UI is a federally mandated, state-run program
+
+Although UI is federally-mandated, each state sets its own parameters on the program.
+
+This creates a great deal of variation across states
+
+Useful as a ``laboratory'' for empirical work
+
+$\Rightarrow$ UI is a heavily studied program
+
+In 2020 crisis, most state systems unable to cope with volume and new expanded rules  $\Rightarrow$ Weakness of 
+decentralized system
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Financing of UI Benefits}
+\end{center}
+
+1) UI is financed through a payroll tax on employers:
+
+$\Rightarrow$ an employee will not see a deduction for UI on his or her paycheck.
+
+This payroll tax averages 1-2\% of earnings
+
+2) UI is partially experience-rated on firms
+
+$\Rightarrow$ the tax that finances the UI program rises as firms have more layoffs, but not on a one-for-one basis
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Eligibility Requirements and Benefits}
+\end{center}
+
+1) Individuals must have earned a minimum amount over the previous year.
+
+2) Unemployment spell must be a result of a layoff, rather than from quitting or getting fired for cause
+(easy to check)
+
+3) Individual must be actively seeking work and willing to accept a job comparable to the one lost
+(hard to check)
+
+These eligibility requirements mean that not all of the unemployed actually collect benefits.
+
+Even among eligible, 50\% do not takeup the UI benefit
+(Lack of information about eligibility, stigma from collecting a government handout, or transaction costs)
+
+Take-up typically lower in good times and depends on how hard
+states make enrollment (e.g. Florida makes it hard)
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={30}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf UI  Benefits}
+\end{center}
+
+UI benefits are a function of previous earnings
+
+These benefits vary by state.
+
+The replacement rate is the amount of previous earnings that is replaced by the UI system.
+
+$R = B/W$
+
+Replacement rates vary from 35\% to 55\% of earnings
+
+In 2020 coronavirus crisis, CARES increased weekly benefits by \$600 across the board for 4 months,
+and expands eligibility to self-employed and lower earners (+\$300 in Jan-Sep 2021)
+
+Average UI benefit jumped up from \$400 to \$1000/week. Person on \$10/hour wage making \$400/week now
+makes more on UI. Uniform \$600/week done bc of admin simplicity
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={2}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf UI  Benefits Duration}
+\end{center}
+
+In general, one can collect UI for 6 months.
+
+In recessions, benefits are automatically extended to 9 months or 12 months
+
+In deep recessions, benefits can be further extended (23 months in
+2008-13)
+
+Duration of UI benefits typically much higher in European countries
+
+In 2020 COVID crisis, UI extended to Sept 2021 for all the unemployed (including
+the previously self-employed).
+
+EU countries tend to have more generous and longer benefits
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={3}]{UIDIWC_ch14_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Analysis of Optimal Unemployment Insurance}
+\end{center}
+
+Optimal UI trades-off insurance value vs. efficiency costs
+
+In principle, provide full insurance (perfect consumption smoothing) with 100\% 
+replacement rate if there is no moral hazard
+
+With moral hazard, 100\% replacement rate would eliminate incentives to find a job
+
+$\Rightarrow$ Optimal replacement rate should be less than 100\% %(partial insurance)
+
+Optimal replacement rate depends negatively on the size of moral hazard and positively
+on how much people value insurance 
+
+Empirical work examines size of moral hazard and value of UI for consumption smoothing
+
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Expected Utility Model}
+\end{center}
+
+Individual's expected utility:
+\[ EU = (1-p) u(c_e) + p u(c_u) = (1-p)u(w-t) + p u(b) \]
+$p$: probability of being unemployed
+
+$c_e$ = consumption when employed,
+
+$c_u$ = consumption when unemployed
+
+$w$ = wage when working
+
+$t$ = tax used to finance program,
+
+$b$ = UI benefit
+
+Government needs to balance budget (taxes fund benefits):
+\[(1-p) \cdot t = p \cdot b \quad  \Rightarrow \quad t= (p/(1-p)) \cdot b \]
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Optimal UI with no moral hazard}
+\end{center}
+No moral hazard means that $p$ is not affected by UI
+
+Plugging in govt. budget constraint, rewrite individual's expected utility as:
+\[ EU = (1-p)u(w-(p/(1-p))b) + p u(b) \]
+
+Government's problem: find $b$ that maximizes $EU$.
+
+Optimal benefit $b^*$ will be $b$ such that: $c_u=c_e$
+
+This is \textbf{full insurance} (as we saw earlier in class)
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Optimal UI with moral hazard}
+\end{center}
+With moral hazard, $p$ increases with $b$ as more generous benefits
+deter job search and hence increase unemployment
+
+Government now chooses $b$ to maximize $EU$ but taking into account
+that $p$ is a function of $b$ in the budget constraint
+\[ EU = (1-p)u(w-[p(b)/(1-p(b))]b) + p u(b) \]
+Get new formula:
+\[ \frac{u'(c_u)-u'(c_e)}{u'(c_e)} = \frac{1}{1-p} \varepsilon_{p,b}   \text{ with }
+\varepsilon_{p,b}  = \frac{b}{p} \cdot \frac{dp}{db}\]
+$\varepsilon_{p,b}>0$ is the  elasticity of unemployment rate with respect to benefits (captures
+size of moral hazard effects)
+
+Now $0<c_u<c_e<w$: partial insurance is optimum. Optimum level increases with curvature of
+$u(.)$ but decreases with elasticity $\varepsilon_{p,b}$.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Empirical Estimation of Effects of UI}
+\end{center}
+
+Moral hazard in UI manifests itself in the duration of the unemployment spell
+
+Economists ask whether the unemployed find jobs more slowly when benefits are higher
+
+Key challenge: need to use quasi-experiments to identify these effects
+
+One common empirical approach (Meyer 1990): difference-in-difference
+
+Exploit changes in UI laws that affect a ``treatment'' group and compare to a ``control'' group
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={4}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Empirical Estimation of Effects of UI: Evidence}
+\end{center}
+
+Meyer (1990) and many other implement this method using data on unemployment durations in the U.S. and state-level reforms
+
+General finding: benefit elasticity of 0.4-0.6
+
+10\% rise in unemployment benefits leads to about a 4-6\% increase in unemployment durations.
+
+More recent empirical approach:
+\textbf{regression discontinuity}
+
+Card-Chetty-Weber (2007) use the fact that in Austria, you get up to 30 weeks of benefits when you have
+been employed for 36+ months in last 5 years (instead of up to 20 weeks)
+
+Can look at duration of unemployment based on how long you have worked in last 5 years
+$\Rightarrow$ Finds somewhat smaller elasticity around 0.3
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={5}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Evidence on Consumption-Smoothing}
+\end{center}
+
+Difference-in-difference strategy has been used to examine how UI benefits affects consumption
+
+Gruber (1997) finds that consumption falls on average when people lose their job by about 10-15\%
+
+\$1 increase in UI benefits increases consumption by 30 cents
+
+Much less than 1-1 because savings behavior changes, spousal labor supply, borrowing from friends, etc.
+(this is called self-insurance)
+
+Recent study by Ganong-Noel AER'19 uses bank account data to follow people through UI spell
+$\Rightarrow$ Finds big effects of UI benefit exhaustion on consumption especially for groups with high replacement rates or low wealth
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={21-23}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Does UI have Long-Term Benefits?}
+\end{center}
+
+Another potential benefit of UI, neglected in simple model above: improvements in \textbf{match quality}
+
+Are people forced to take worse jobs because they have to rush back to work to put food on the table?
+
+E.g. engineer starts working at McDonalds.
+
+Can examine this using similar data
+
+Look at whether people who got higher benefits and took longer to find a job are better off years later
+
+Card-Chetty-Weber (2007) exploit again the \textbf{regression discontinuity} and find no long-term match benefit
+on subsequent wage or subsequent job duration
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={6,7}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Summary of Empirical Findings on UI}
+\end{center}
+
+1. Higher benefit level $\Rightarrow$ longer unemployment durations (moral hazard cost)
+
+2. Higher benefit level $\Rightarrow$ more consumption while unemployed (consumption smoothing benefit)
+
+3. UI benefits have no beneficial effects on long-term job outcomes
+
+$\Rightarrow$ Model implies that providing some UI is desirable but UI replacement rate should
+be only around 50\% based on those empirical findings
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf UI and Firm Behavior: Experience Rating}
+%\end{center}
+%
+%Effect of UI on firms comes from experience rating
+%
+%Perfect experience rating for firms: if firm A lays a person off, firm A pays
+%taxes to make up for the costs firm A imposes on the UI system
+%
+%Employers with a lot of layoffs get taxed more
+%
+%In practice, we have partial experience rating
+%
+%Firm does not fully pay an additional tax each time it lays off a worker.
+%
+%Payroll taxes rise less than one-for-one with layoffs because of cap on UI tax
+%
+%$\Rightarrow$ Empirical studies find that imperfect experience rating leads to more
+%layoffs
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={8}]{UIDIWC_ch14_new_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Partial Experience Rating and Temporary Layoffs}
+%\end{center}
+%
+%Partial experience rating subsidizes firms with high layoff rates.
+%
+%Firms and workers may make a joint decision whether to place the worker on temporary layoff, with a promise of being hired back later.
+%
+%UI system makes this a partially paid vacation.
+%
+%With partial experience rating, government ends up sharing in the cost of the vacation.
+%\end{slide}
+%
+
+%\begin{slide}
+%\begin{center}
+%{\bf Experience Rating in Canada}
+%\end{center}
+%
+%UI systems in other countries create even more moral hazard inefficiency on the firm side than in the U.S.
+%
+%In Canada, UI is financed through a flat payroll tax, unrelated to actual layoff behavior.
+%
+%In Canada, workers only have to work 10 weeks to qualify for 42 weeks of UI with a replacement rate of 60\%.
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Example: Distortions in Canadian Fishing}
+%\end{center}
+%Consequences of imperfect experience rating:
+%
+%You and four friends buy a fishing boat, and can catch \$40,000 in fish over 10 weeks, or \$8,000 per person.
+%
+%In the absence of UI, \$8,000 is not enough for you or your friends to want to operate this business.
+%
+%With Canada's UI system, you work for 10 weeks and are then ``laid off''. Your earnings were \$800 per week, of which 60\% is replaced by UI for the remainder of the year.
+%
+%Your benefit from UI is 0.6*800*42, or \$20,160.
+%
+%With UI, each person gets \$28,160 for only 10 weeks of work.
+%
+%UI induces inefficiently large number of fisherman, construction workers, etc.
+%\end{slide}
+%
+
+%\begin{slide}
+%\begin{center}
+%{\bf Partial Experience Rating and Layoffs: Evidence}
+%\end{center}
+%
+%Empirical studies have examined state systems with different degrees of experience rating using difference-in-difference methods
+%
+%They find that partial experience rating increases the rate of temporary layoffs.
+%
+%Partial experience rating alone can account for one- third of all temporary layoffs in the U.S.
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf The Benefits of Partial Experience Rating}
+%\end{center}
+%
+%What is the benefit of partial experience rating?
+%
+%Fully experience rated UI would ``hit firms while they are down.''
+%
+%Similar to ``consumption smoothing'' for workers
+%
+%Conceptually, tradeoff is similar to that we discussed for individual workers
+%
+%But for firms, smoothing benefits are weaker
+%
+%Firms have collateral - should be easier to get a loan
+%
+%Most economists agree that UI should be fully
+%experience rated\end{slide}
+%
+
+\begin{slide}
+\begin{center}
+{\bf Should UI Benefits be Extended during Recessions?}
+\end{center}
+US extends UI benefits during recessions. Extensions ended in 2014 (controversial policy debate)
+
+\textbf{1) Social Justice:} Harder to find jobs in recessions $\Rightarrow$ being unemployed is less of a choice 
+
+$\Rightarrow$ Extending benefits is desirable for fairness
+
+\textbf{2)  Efficiency:} In recessions, the job market is too slack [harder to find jobs, easier for firms to find workers]
+$\Rightarrow$ discouraging search effort in recessions is not as problematic. 
+
+Furthermore, UI benefits support spending and hence the economy (through short-term macro effects) 
+
+$\Rightarrow$ Extending benefits is desirable for efficiency
+
+%If longer UI benefits decrease slack in labor market then longer UI benefits desirable [this is the case if UI benefits stimulate aggregate demand or if job seekers compete for a fixed number of jobs in recession, this is the left-wing view]
+
+%b) If longer UI benefits increase slack in labor market then shorter UI benefits desirable [this is the case if longer UI benefits
+%increase the bargaining power of workers and hence increase wages further reducing labor demand, this is the right-wing
+%view]
+
+%\normalsize
+%Economists try to tell apart a) from b) using empirical evidence
+
+
+
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf DISABILITY INSURANCE}
+\end{center}
+Disability is conceptually close to retirement: some people
+become unable to work before old age (due to accidents, medical
+conditions, etc.)
+
+All advanced countries offer public disability insurance almost
+always linked to the public retirement system
+
+Disability insurance allows people to get Social Security retirement benefits before the ``Early
+Retirement Age'' if they are unable to work due to disability
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf US DISABILITY INSURANCE}
+\end{center}
+1) Federal program funded by OASDI payroll tax, pays
+SS benefits to disabled workers under retirement age (similar computation
+of benefits based on past earnings)
+
+2) Program started in 1956 and became more generous overtime
+(age 50+ condition removed, definition of disability liberalized,
+replacement rate has grown)
+
+3) Eligibility: Medical proof of being unable to work for at least a year,
+Need some prior work experience, 5 months waiting period with no earnings
+required (screening device)
+
+4) Social security examiners rule on applications. Appeal possible
+for rejected applicants. Imperfect process with big type I and II errors
+(Parsons AER'91) $\Rightarrow$ Scope for Moral Hazard
+
+5) DI tends to be an absorbing state (most beneficiaries never leave DI program). Can earn up of \$1200/month while on DI.
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf US DISABILITY INSURANCE}
+\end{center}
+1) In 2018, about 10.2m DI beneficiaries (not counting
+widows+children), about 5-6\% of working age (20-64) population
+
+2) Very rapid growth: In 1960, less than 1\% of working age population was on DI
+
+3) Growth particularly strong during recessions: early 90s, late 00s.
+Slight decline from 11m in 2013 to 10.2m in 2018
+
+\textbf{Key empirical question:} Are DI beneficiaries unable to work? or are DI beneficiaries
+not working because of DI.
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={9,10}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf US DISABILITY INSURANCE}
+\end{center}
+
+Detecting disability is challenging, particularly for back injuries and mental health conditions
+
+One way to quantify difficulty in assessment: audit study
+
+Take a set of disability claims that was initially reviewed by a state panel
+
+One year later, resubmit them to the panel as anonymous new claims.
+
+Compare decisions on the \textbf{same} cases
+
+$\Rightarrow$ Substantial evidence of Type I errors (incorrect rejection of a disabled person) and Type II errors
+(letting a non-disabled person on the program)
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={11}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\includepdf[pages={12}]{UIDIWC_ch14_new_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf DI Empirical Effects: Observational Studies}
+%\end{center}
+%Parallel growth of DI recipients and non-participation rates among men aged 45-54
+%but causality link not clear
+%
+%\textbf{Cross-Sectional Evidence (Parsons '80):} Does potential DI replacement rate
+%have an impact on labor force participation (LFP) decision?
+%
+%Uses cross-sectional variation in potential replacement rates
+%
+%Survey data on men aged 45-59 from 1966-69
+%
+%OLS regression
+%\[ NLFP_i=\alpha+ \beta DIreprate_i + \varepsilon_i \]
+%Large effect that can fully explain decline in LFP among men 45+
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf DI EMPIRICAL EFFECTS: OBSERVATIONAL STUDIES}
+%\end{center}
+%\textbf{Issues with Cross-Sectional Evidence:}
+%
+%1) $DIreprate_i$ depends on wages (higher for low wage earners)
+%and likely to be correlated with $\varepsilon_i$ (likelihood to become truly disabled)
+%
+%2) Impossible to control fully for wages in regression because all variation
+%in $DIreprate_i$ is due to wages 
+%
+%3) Bound AER'89 replicates Parson's regression on sample that never applied to
+%DI and obtains similar effects implying that the OLS correlation not driven by UI
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf DI EMPIRICAL EFFECTS: REJECTED APPLICANTS}
+\end{center}
+Bound AER'89 proposes a technique to bound effect of DI on LFP rate
+
+Uses data on LFP on (small sample of) rejected applicants as a counterfactual
+
+\textbf{Idea:} If rejected applicants do not work, then surely DI recipients
+would not have worked
+$\Rightarrow$
+Rejected applicants' LFP rate is an upper bound for LFP rate of DI
+recipients absent DI
+
+\textbf{Results:} Only 30\% of rejected applicants return to work
+and they earn less than half of the mean non-DI wage
+
+$\Rightarrow$ at most 1/3 of the trend in male LFP decline can be
+explained by shift to DI
+
+Von Waechter-Manchester-Song AER'11 replicate Bound using full pop SSA admin data
+and confirm his results
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={13}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf DI EMPIRICAL EFFECTS: REJECTED APPLICANTS}
+\end{center}
+Maestas-Mullen-Strand AER'13 obtain causal effect of DI
+on LFP using natural variation in DI examiners' stringency and
+large SSA admin data linking DI applicants and examiners
+
+\textbf{Idea:} (a) Random assignment of DI appplicants to examiners and
+(b) examiners vary in the fraction of cases they reject $\Rightarrow$ Valid
+instrument of DI receipt
+
+\textbf{Result 1:} DI benefits reduce LFP of applicants by 28 points $\Rightarrow$ DI has an impact
+but fairly small (consistent with Bound AER'89)
+
+\textbf{Result 2:} DI has heterogeneous impact: small effect on
+those severely impaired but big effect on less severly impaired
+
+\small Tough judges marginal cases unlikely to work without DI, lenient
+judges marginal cases somewhat likely to work without DI
+
+% XX DI allowance rate means "fraction of applicants admitted in DI, high means DI is lenient"
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={20}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf DI Generosity Effects: Regression Kink Design (RKD)}
+\end{center}
+DI benefits calculated like SS benefits: AIME formula 
+based on average life-time earnings creates a ``kinked'' relationship 
+
+Ideal setting for an RKD (Card et al. 2015): test whether outcome such as earnings or mortality is also ``kinky''
+
+1) Test first for no sorting of DI recipients around kink to validate RKD design [similar to RDD validation]
+
+2) RKD estimate: Change in slope of outcome at kink / Change in slope of benefits at kink
+
+a) Gelber et al. '17 analyze effects on earnings of DI generosity and find
+an income effect of -\$0.2 per dollar of benefits
+
+b) Gelber et al. 18 analyze effects on mortality: at lower bend point, \$1K extra DI/year reduces annual mortality by .25 points (1 out of 400 lives saved)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={28, 27, 25, 24}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Moral Hazard in Disability Insurance}
+%\end{center}
+%Bound AER'89 evidence is suggestive that DI is not solely responsible for reduction in labor supply over time
+%
+%But does not tell us how big an effect DI has
+%
+%Strategy 3: Difference-in-difference
+%
+%Cannot be implement in U.S.
+%
+%Gruber (2000): studies Candian experience, comparing Quebec with the rest of Canada
+%
+%1987: reform that sharply increased benefit in rest of Canada while Quebec was unchanged
+%
+%Finds an elasticity of labor force participation w.r.t. DI benefit rate of 0.2
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={14,15}]{UIDIWC_ch14_new_attach.pdf}
+%\end{slide}
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Moral Hazard vs. Benefits of DI}
+%\end{center}
+%Gruber study finds an elasticity of labor force participation w.r.t. DI benefit rate of 0.2
+%
+%Important to note that this is not in itself evidence that DI is ``bad''
+%
+%May simply be helping people who have a very high disutility of labor and were forced to work to survive
+%
+%This is why it is critical to compare costs of taking people out of labor force with benefits (relieving need to work for those who are disabled)
+%
+%No good evidence on latter issue yet $\Rightarrow$ unclear whether DI benefit is too high or low.
+%
+%
+%\end{slide}
+
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Workers Compensation: Institutional Features}
+\end{center}
+
+Workers compensation is insurance
+for injuries on the job, mainly temporary injuries that prevent work (short-term)
+
+Workers Compensation is a state-level program
+
+Two components: medical and indemnity
+
+Indemnity payment replaces roughly two-thirds of lost wages.
+
+Unlike UI, WC payments are untaxed, leading to a higher replacement that is near 90\% on average.
+
+Substantial variation across states in benefit levels
+
+
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={16}]{UIDIWC_ch14_new_attach.pdf}
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Workers Compensation (WC): Institutional Features}
+\end{center}
+1) Workers comp is a mandated benefit; no explicit tax but firms required by law to provide this benefit to workers
+
+Most firms choose to buy coverage from private insurers
+
+Premiums are more tightly experience rated than UI because they are determined by private sector
+
+Insurance companies charge high-risk firms more.
+
+2) Important feature of WC: no-fault insurance.
+
+When there is a qualifying injury, WC benefits paid regardless of whether the injury was the worker's or the firm's fault.
+
+Idea: reduce inefficiency of tort system (legal costs) by having fixed rules and not worrying about liability
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Moral Hazard in Workers? Compensation}
+\end{center}
+Moral hazard in WC can manifest itself in reported injuries, injury durations, and types of injuries reported.
+
+E.g. easier to report back pain--very hard to verify
+
+Huge issue in CA--companies paid high workers comp rates
+
+Governor Schwarzenegger reform in 2004 cut benefits sharply, claiming to reduce injuries and ``open CA for business''
+
+Is it true that there is substantial moral hazard?
+
+Again, consider several pieces of evidence
+
+Strategy 1: Timing of injuries. ``Monday effect'' (faking week-end injuries into
+work injuries)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={17}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Moral Hazard in Workers? Compensation}
+\end{center}
+Strategy 2: examine effect of workers comp benefit levels on durations using a diff-in-diff strategy (Meyer, Viscusi, Durbin 1995)
+
+Reforms in Kentucky and Michigan that increased benefits for high-earning workers (but not low-earning workers) in late 1980s
+
+Compare changes in injury durations and medical costs for high-earners vs. low earners in those states before and after reform
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={29}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={18,19}]{UIDIWC_ch14_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Moral Hazard in Workers' Compensation}
+\end{center}
+Result: 10\% increase in WC benefit raises out-of-work duration due to injury by 4\%
+
+Again, need to weigh this against benefits to reach policy conclusions
+
+Give people more time to heal after injury without rushing them back to work
+
+Higher consumption while out of work
+
+No evidence yet on these issues
+
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf CONCLUSION}
+\end{center}
+
+Individuals clearly value the consumption smoothing provided by social insurance programs
+
+In each case there are moral hazard costs associated with the provision of the insurance
+
+Empirical analyses of all three programs can be used to inform policy makers' decisions as program reforms move forward
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber, Public Finance and Public Policy, Fifth Edition, 2016 Worth Publishers, Chapter 14
+
+Bound, John. ``The Health and Earnings of Rejected Disability Insurance Applicants.'' American Economic Review 79.3 (1989): 482-503.\href{http://www.jstor.org/stable/pdfplus/1806858.pdf}{(web)}
+
+Card, David, Raj Chetty, and Andrea Weber. ``The Spike at Benefit Exhaustion: Leaving the Unemployment System or Starting a New Job?.'' The American Economic Review 97.2 (2007): 113-118.\href{http://www.jstor.org/stable/pdfplus/30034431.pdf}{(web)}
+
+Card, David, David S. Lee, Zhuan Pei, and Andrea Weber. 2015. ``Inference on Causal Effects in a
+Generalized Regression Kink Design.'' Econometrica 83 (6): 2453-83.
+\href{https://www.jstor.org/stable/pdf/43866417.pdf} {(web)}
+
+
+Card, David, and Brian P. McCall. ``Is Workers' Compensation Covering Uninsured Medical Costs? Evidence from the`` Monday Effect''.'' Industrial and Labor Relations Review (1996): 690-706.\href{http://elsa.berkeley.edu/~saez/course131/Card-McCall96}{(web)}
+
+
+Ganong, Peter  and Pascal Noel. 2019. ``Consumer Spending During Unemployment: Positive and Normative Implications.''  American Economic Review
+\href{http://elsa.berkeley.edu/~saez/course131/ganong-noelAER19UI.pdf}{(web)}
+
+
+Gelber, Alex, Timothy Moore, and Alexander Strand. 2018. ``The Effect of Disability Insurance Payments on Beneficiaries' Earnings,'' American Economic Journal: Economic Policy, 9(3),  229-261
+\href{http://elsa.berkeley.edu/~saez/course/gelbermoorestrandDI17earnings.pdf} {(web)} 
+
+
+Gelber, Alex, Timothy Moore, and Alexander Strand. 2018
+``Disability Insurance Income Saves Lives'' UC Berkeley Working Paper
+\href{http://elsa.berkeley.edu/~saez/course/gelbermoorestrandDI18mortality.pdf} {(web)} 
+
+Gruber, Jonathan. ``The Consumption Smoothing Benefits of Unemployment Insurance.'' The American Economic Review (1997).\href{http://www.nber.org/papers/w4750.pdf}{(web)}
+
+Gruber, Jonathan. ``Disability Insurance Benefits and Labor Supply.'' The Journal of Political Economy 108.6 (2000): 1162-1183.\href{http://www.jstor.org/stable/pdfplus/10.1086/317682.pdf}{(web)}
+
+Gruber, Jonathan. ``Covering the Uninsured in the United States.'' Journal of Economic Literature, 43.3 (2008): 571-606.\href{http://www.nber.org/papers/w13758.pdf}{(web)}
+
+Maestas, Nicole, Kathleen Mullen and Alexander Strand
+``Does Disability Insurance Receipt Discourage Work?
+Using Examiner Assignment to Estimate Causal Effects of SSDI Receipt'', American Economic Review, 103(5), 2013,
+1797-1829.
+\href{http://elsa.berkeley.edu/~saez/course/maestas-mullen-strandAER13.pdf} {(web)} 
+
+Meyer, Bruce D. ``Unemployment Insurance and Unemployment Spells.'' Econometrica 58.4 (1990): 757-782.\href{http://www.jstor.org/stable/pdfplus/2938349.pdf}{(web)}
+
+Meyer, Bruce D., W. Kip Viscusi, and David L. Durbin. ``Workers' compensation and injury duration: evidence from a natural experiment.'' The American Economic Review (1995): 322-340.\href{http://www.jstor.org/stable/pdfplus/2118177.pdf}{(web)}
+
+Parsons, Donald O. ``The decline in male labor force participation.'' The Journal of Political Economy (1980): 117-134.\href{http://www.jstor.org/stable/pdfplus/1830962.pdf}{(web)}
+
+Parsons, Donald O. ``The health and earnings of rejected disability insurance applicants: comment.'' The American Economic Review 81.5 (1991): 1419-1426.\href{http://www.jstor.org/stable/pdfplus/2006930.pdf}{(web)}
+
+Smith, Richard Thomas, and Abraham M. Lilienfeld. ``The social security disability program: an evaluation study.''[Book] No. 39. US Social Security Administration, Office of Research and Statistics, 1971.
+
+Von Wachter, Till, Jae Song, and Joyce Manchester. ``Trends in employment and earnings of allowed and rejected applicants to the social security disability insurance program.'' American Economic Review 101.7 (2011): 3308.\href{http://elsa.berkeley.edu/~saez/course131/vonwachterAER11}{(web)}
+
+
+
+
+
+}
+\end{slide}
+
+
+
+\end{document}

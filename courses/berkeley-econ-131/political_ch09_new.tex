@@ -1,0 +1,652 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+\title{Political Economy} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Political Economy}
+\end{center}
+\textbf{Political Economy} is the positive analysis of government: why do governments do what they do?
+
+In democracies, citizens vote to elect politicians to run the government
+
+In principle, government decisions should reflect the will of citizens
+
+Even non-democratic rulers are in part subject to people's preferences 
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Political Economy: Direct vs. Indirect Democracy}
+%\end{center}
+%
+%\textbf{1) Direct Democracy:} In the case of \emph{direct democracy}, voters directly cast ballots in favor of or in opposition to particular public projects. Direct democracy takes two forms.
+%
+%\textbf{a) Referendum:} A measure placed on the ballot by the government allowing citizens to vote on state laws or constitutional amendments that have already been passed by the state legislature.
+%
+%\indent \textbf{b) Voter initiative:} The placement of legislation on the ballot by citizens (Propositions in California)
+%
+%\textbf{2) Indirect Democracy:}  In the case of \emph{representative democracy}, voters elect representatives, who in turn make decisions on public projects (example: US congress)
+%
+%\end{slide}
+
+%9.1 Unanimous Consent on Public Goods Levels
+
+%\begin{slide}
+%\begin{center}
+%{\bf UNANIMOUS CONSENT ON PUBLIC \\ GOODS LEVELS}
+%\end{center}
+%
+%{\bf Lindahl pricing}:
+%An approach to financing public goods in which individuals honestly reveal their willingness to pay and the government charges them that amount to finance the public good.
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf LINDAHL PRICING}
+%\end{center}
+%
+%{\bf marginal willingness to pay}:
+%The amount that individuals are willing to pay for the next unit of a good.
+%
+%Lindahl's procedure operates as follows:\\
+%1. The government announces a set of \emph{tax prices} for the public good.\\
+%2. Each individual announces how much of the public good he or she wants at those tax prices.\\
+%3. The government repeats these steps to construct a \emph{marginal willingness to pay} schedule for each individual.\\
+%4. The government adds up individual willingnesses to pay at each quantity of public good provided.\\
+%5. The government relates this overall demand curve to the marginal cost curve.\\
+%6. The government then finances this public good by charging individuals their willingnesses to pay for that quantity.
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={1-3}]{Gruber2e_ch09_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf PROBLEMS WITH LINDAHL PRICING}
+%\end{center}
+%
+%{\bf 1)Preference Revelation Problem}\\
+%The first problem is that individuals have an incentive to lie about their willingness to pay, since the amount of money they pay to finance the public good is tied to their stated willingness to pay.
+%
+%{\bf 2)Preference Knowledge Problem}\\
+%Even if individuals are willing to be honest about their valuation of a public good, they may have no idea of what that valuation actually is.
+%
+%{\bf 3)Preference Aggregation Problem}\\
+%Even if individuals are willing to be honest and even if they know their valuation of the public good, there is a final problem: How can the government aggregate individual values into a social value?
+%\end{slide}
+%
+%%9.2 Mechanisms for Aggregating Individual Preferences
+%
+%\begin{slide}
+%\includepdf[pages={4}]{Gruber2e_ch09_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MAJORITY VOTING: WHEN IT WORKS}
+\end{center}
+
+{\bf Majority voting}:
+Mechanism used to aggregate individual votes into a social decision: individual policy options are put to a vote and the option that receives the majority of votes is chosen
+
+Majority voting can produce a consistent aggregation of individual preferences only if preferences are restricted to take a certain form
+
+Example: funding for local public schools using property taxes
+could be chosen as high (H), medium (M), or low (L)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1}]{political_ch09_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MAJORITY VOTING: WHEN IT WORKS}
+\end{center}
+
+The town could proceed as follows:\\
+- Vote on funding level H versus funding level L: L wins H  \\
+- Vote on funding level H versus funding level M: M wins H \\
+- Vote on funding level L versus funding level M: M wins L
+
+M has beaten both H and L so M is the overall winner. 
+
+Majority voting has aggregated individual preferences to produce a preferred social outcome: medium school spending and taxes.
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={2}]{political_ch09_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MAJORITY VOTING: WHEN IT DOES NOT WORK}
+\end{center}
+
+- Vote on funding level H versus funding level L: L wins H  \\
+- Vote on funding level H versus funding level M: H wins M \\
+- Vote on funding level L versus funding level M: M wins L
+
+Cycle with no clear winner.
+
+Majority voting is unable to aggregate preferences in a meaningful way in that case
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={3}]{political_ch09_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MEDIAN VOTER THEOREM}
+\end{center}
+Consider choice along a single dimension (e.g., funding level)
+
+{\bf Single peaked preferences:} The preferences for funding increase and then decrease (always increasing,
+or always decreasing also considered single peaked). Peak is preferred funding level for the individual.
+
+{\bf Median voter} is
+the voter whose peak is at the median (half have lower peaks, half have higher peaks)
+
+{\bf Voting Equilibrium} (or Condorcet winner) is an outcome that wins in majority voting against
+any other alternative
+
+{\bf Median Voter Theorem}: Peak of median voter is a voting equilibrium
+
+%The Potential Inefficiency of the Median Voter Outcome (What's the inefficiency?)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf PROOF OF MEDIAN VOTER THEOREM}
+\end{center}
+Let $a_1<..<a_{median}<..<a_I$ be the peaks of individuals $1,..,I$
+
+Suppose vote between $a_{median}$ and $a^*$ with $a_{median}<a^*$
+
+$a_{median}$ wins because $i=1,..,median$ all prefer $a_{median}$ to $a^*$ (because
+they all have decreasing preferences for $a$ beyond $a_{median}$)
+
+Symmetrically $a_{median}$ wins against $a^*<a_{median}$ because $i=median,..,I$ prefer
+$a_{median}$ to $a^*$
+
+Median voter outcome from majority voting is very useful and a hugely influential result in the
+political economy literature
+
+%$\Rightarrow$ The government need find only the \emph{one voter} whose preferences for the public good are right in the middle of the distribution of social preferences and implement the level of public goods preferred by that voter.
+%
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={12, 13}]{political_ch09_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ABSTRACT SOCIAL CHOICE PROBLEM}
+\end{center}
+$n=1,..,N$ possible choices society can make
+
+$i=1,..,I$ individuals have preferences $<_i$ over the $N$ choices
+
+\textbf{Social decision rule:}
+It aggregates individuals preferences $(<_i)_{i=1,..,I}$ into a social preference $<_S$ over $N$ choices
+that satisfies 3 key properties:
+
+1) Pareto Dominance: if $a <_i b$ for all $i$ then $a <_S b$
+
+2) Transitivity: if $a <_S b$ and $b <_S c$ then $a <_S c$
+
+3) Independence of irrelevant alternatives: whether
+$a <_S b$ or $a>_S b$ depends only on how individuals rank $a$ vs. $b$
+(and not any other alternative). 
+
+Importantly, 3) rules out ``intensity of preferences effects'' (focus is solely on
+counting fraction who prefer $a$ to $b$) 
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ABSTRACT SOCIAL CHOICE PROBLEM}
+\end{center}
+
+{\bf ARROW'S IMPOSSIBILITY THEOREM}:
+There is no social decision rule that converts individual preferences into a consistent aggregate decision without
+either
+
+(a) restricting preferences or
+
+(b) imposing dictatorship (i.e. $<_S=<_i$ for some ``dictator'' $i$)
+
+Geanakoplos (2005) provides simple proofs
+
+This result was very influential and shows that the abstract social choice problem cannot have a general solution
+
+Most common solutions are to:
+\small
+
+(1) restrict preferences to single peaked preferences (median voter theorem)
+
+(2) let intensity of preferences play a role (social welfare function and Samuelson rule for efficiency)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf MEDIAN VOTER AND EFFICIENCY}
+\end{center}
+Efficiency requires 
+
+$\sum$ social marginal benefits = social marginal costs
+
+$\Rightarrow$ Public good is worth providing if $\sum$ benefits $>$ costs
+
+What matters for efficiency is the \textbf{average} marginal benefit across individuals
+and not the \textbf{median} marginal benefit
+
+$\Rightarrow$ Median outcome is not efficient unless Median = Average (not true in general)
+
+\small
+
+Example: bridge project would serve 10 people. 6 people value bridge at \$50, 4 people value bridge at \$100.
+Total social value of bridge is \$700 = $6\cdot 50 + 4 \cdot 100$
+
+Suppose cost is \$60 per person so total cost = \$600=\$60 $\cdot$ 10.
+
+Mean net benefit is 70-60=\$10 , median net benefit is 50-60=-\$10
+
+Project is socially desirable but is opposed by 6 people to 4 in majority voting
+$\Rightarrow$ Median voter leads to an inefficient outcome
+
+\end{slide}
+
+
+%9.3 Representative Democracy
+
+
+
+\begin{slide}
+\begin{center}
+{\bf ASSUMPTIONS OF THE MEDIAN VOTER MODEL}
+\end{center}
+
+Although the median voter model is a convenient way to predict outcomes of representative democracy, it does so by making a number of assumptions.
+
+{\bf 1) Single-dimensional Voting}
+
+The median voter model assumes that voters are basing their votes on a single issue.
+
+In reality, representatives are elected not based on a single issue but on a bundle of issues.
+
+Individuals may lie at different points of the voting spectrum on different issues, so appealing to one end of the spectrum or another on some issues may be vote-maximizing.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf ASSUMPTIONS OF THE MEDIAN VOTER MODEL}
+\end{center}
+
+{\bf 2) Only Two Candidates}
+
+The median voter model assumes that there are only two candidates for office.
+
+If there are more than two candidates, the simple predictions of the median voter model break down.
+
+Indeed, there is no stable equilibrium in the model with three or more candidates because there is always an incentive to move in response to your opponents' positions.
+
+In many nations, the possibility of three or more valid candidates for office is a real one.
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf ASSUMPTIONS OF THE MEDIAN VOTER MODEL}
+\end{center}
+
+{\bf 3) No Ideology or Influence}
+
+The median voter theory assumes that politicians care only about maximizing votes.
+
+Ideological convictions could lead politicians to position themselves away from the center of the spectrum and the median voter.
+
+{\bf 4) No Selective Voting}
+
+The median voter theory assumes that all people affected by public goods vote, but in fact, only a fraction of citizens vote in the United States. Appealing to the base (by moving away from median voter) is a way to increase turnout.
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf ASSUMPTIONS OF THE MEDIAN VOTER MODEL}
+\end{center}
+
+{\bf 5) No Money}
+
+The median voter theory ignores the role of money as a tool of influence in elections.
+
+If taking an extreme position on a given topic maximizes fundraising, even if it does not directly maximize votes on that topic, it may serve the long-run interests of overall vote maximization by allowing the candidate to advertise more strongly.
+
+
+{\bf 6) Full Information}
+
+The median voter model assumes perfect information along three dimensions: voter knowledge of the issues; politician knowledge of the issues; and politician knowledge of voter preferences.
+
+All these assumptions are unrealistic.
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LOBBYING}
+\end{center}
+
+{\bf Lobbying}: The expending of resources by certain individuals or groups in an attempt to influence a politician
+
+In principle, lobbying could correct inefficiencies due to median voter theorem: those who really want the bridge
+pay politicians who can provide transfers to those who don't want the bridge as much and get it built
+
+However, lobbying can also lead to inefficiencies if public does not have perfect information and hence does not
+care to pay attention
+
+Example: 5 people value bridge net of cost at \$100, 100 people value bridge net of cost at -\$6.
+Median voter does not produce the bridge (the socially desirable outcome)
+
+However, 5 people have strong incentives to lobby and may get the project approved (if the 100
+do not pay attention)
+
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={5,6}]{political_ch09_new_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf EVIDENCE ON THE MEDIAN VOTER MODEL FOR REPRESENTATIVE DEMOCRACY}
+\end{center}
+
+While the median voter model is a potentially powerful tool of political economy, its premise rests on some strong assumptions that may not be valid in the real world.
+
+A large political economy literature has tested the median voter model by assessing the role of voter preferences on legislative voting behavior relative to other factors such as party or personal ideology.
+
+In principle, candidates should adjust their position toward the median voter to win the election (see graph below)
+
+$\Rightarrow$ Elected officials should represent the view of the median voter in their district
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={4}]{political_ch09_new_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf TESTING THE MEDIAN VOTER MODEL (1)}
+%\end{center}
+%
+%Empirical evidence on the median voter model is mixed. Some studies find strong support for the model.
+%
+%There is also clear evidence that ``core constituencies,'' as opposed to just the median voter in a district, matter for legislator behavior.
+%
+%Direct evidence that ideology matters was also shown in a recent paper by Washington AER'08. She compares legislators who have daughters to those with the same family size who have sons 
+%
+%$\Rightarrow$ Finds that daughters increase a congressman's
+%propensity to vote liberally, particularly on reproductive rights issues.
+%
+%Washington's findings strongly support the notion that personal ideology matters: politicians are responding to their own experience, not just to the demands of the voters.
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf TESTING THE MEDIAN VOTER MODEL}
+\end{center}
+
+Evidence from US congress representatives:
+
+\textbf{1) Senate:} 2 senators for each state in US senate: represent the same constituency and hence should vote in the same way in the senate if median voter model is right (Poole and Rosenthal, '96)
+
+Yet, in the US, when a state has 1 republican senator and 1 democratic senator, those 2 senators vote very differently in the senate (contradicts the median voter model)
+
+Current 2021 example: Joe Manchin (D) and Shelley Capito (R) are senators from West Virginia and vote very differently
+
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf TESTING THE MEDIAN VOTER MODEL}
+\end{center}
+
+\textbf{2) House of Representatives:} Using close elections for US representatives (Lee, Moretti, Butler QJE'04):
+
+When a candidate crosses 50\%, he/she gets elected. However, the constituency is virtually the same whether a candidate gets 49.9\% or 50.1\% of the vote.
+
+Therefore, median voter implies that a Democratic representative elected with 50.1\% should vote similarly in congress to a Republican representative elected with 50.1\% of the votes.
+
+Yet, in reality, closely elected representatives vote very differently (measured by Americans for Democratic Action ADA scores) if they are Democratic vs. Republican
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={11}]{political_ch09_new_attach.pdf}
+\end{slide}
+
+
+
+%9.4 Public Choice Theory: The Foundations of Government Failure
+
+\begin{slide}
+\begin{center}
+{\bf PUBLIC CHOICE THEORY: THE FOUNDATIONS OF GOVERNMENT FAILURE}
+\end{center}
+
+{\bf Public choice theory}: Government may not act to maximize the well-being of its
+citizens.
+
+{\bf Government failure}:
+The inability or unwillingness of the government to act primarily in the interest of its citizens.
+
+Two examples: 
+
+{\bf 1) Dictatorship}: Dictator runs country for his (and family) benefits, not citizens 
+
+{\bf 2) Bureaucracies}:
+Organizations of civil servants that are in charge of carrying out the services of government but follow their self-interest
+
+%{\bf Leviathan Theory:} Under this theory, voters cannot trust the government to spend their tax dollars efficiently and must design ways to combat government greed.
+
+%This view of government can explain rules in place in the United States and elsewhere that explicitly tie the government's hands in terms of taxes and spending.
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf LEVIATHAN THEORY}
+\end{center}
+
+Under this theory, voters cannot trust the government to spend their tax dollars efficiently and must design ways to combat government greed.
+
+This view of government can explain the many rules in place in the United States and elsewhere that explicitly tie the government's hands in terms of taxes and spending.
+
+Famous example: Proposition 13 passed by voters in California  in 1978  sharply limits ability of CA legislature to increase taxes (needs a 2/3 super majority of both senate and assembly) and sets a 1\% cap on real estate property taxes
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf PUBLIC VS. PRIVATE PROVISION}
+\end{center}
+
+Are goods and services are provided more efficiently by the public or the private sector?
+
+1) For the production of most goods and services [such as steel, telecommunications, or banking] evidence suggests that private production is more efficient
+
+2) For goods the public does not understand well (pension funds, health insurance, education), private competition can
+lead to wasteful advertising
+
+\small
+Private firms compete using enticing and costly advertising rather than underlying product quality
+$\Rightarrow$ higher costs than public provision
+\normalsize
+
+3) In emergency situations (covid), govt command and control beats market to allocate resources (e.g. vaccine distribution)
+
+4) Not-for-profit is an intermediate solution (e.g. education) more innovative than govt and not as predatory as for-profit
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf PROBLEMS WITH PRIVATIZATION}
+\end{center}
+
+{\bf Natural monopoly}:
+A market in which, because of the uniformly decreasing marginal cost of production, there is a cost advantage to have only one firm provide the good to all consumers in a market 
+
+\small [e.g. Microsoft operating system, Google search, Facebook, Amazon online retail, xfinity/comcast high speed internet]
+\normalsize
+
+With \emph{economies of scale}, the average cost of production falls as the quantity of the output increases.
+
+Private monopoly maximizes profits and under-produces and over-prices relative to efficient outcome: if the government runs or regulates the monopoly, it can restore efficient quantity
+
+{\bf Contracting out}:
+Government retains responsibility for providing a good or service, but hires private sector firms to actually provide the good or service. Raises potential for corruption.
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={7,8,9}]{political_ch09_new_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf CORRUPTION}
+%\end{center}
+%
+%{\bf Corruption}:
+%The abuse of power by government officials in order to maximize their own personal wealth or that of their associates.
+%
+%\emph{Electoral accountability} is the ability of voters to throw out corrupt regimes.
+%
+%Corruption also appears more rampant in political systems that feature more \emph{red tape}, bureaucratic barriers that make it costly to do business in a country
+%
+%Bribes can be seen as ``informal taxes'' that need to be paid to access government services 
+%[corruption often arises when public servants are underpaid]
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={10}]{political_ch09_new_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf IMPLICATIONS OF GOVERNMENT FAILURE}
+%\end{center}
+%
+%Do these failures have important implications?
+%
+%Or can citizens use policies such as property tax limitations to limit harms imposed by government structure?
+%
+%Some evidence suggests that government failures can have long-lasting negative impacts on economic growth
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Do Government Failures Affect Economic Growth?}
+\end{center}
+Studies that suggest that poor government structure can have long-lasting negative impacts on economic growth
+
+\small
+1) Acemoglu-Robinson (2012) \emph{Why Nations Fail}: countries with ``inclusive governments'' (extending political and property rights broadly) grow faster than countries with ``extractive governments'' (power
+held by small self-serving elite)
+
+Striking example demonstrating role of political structure: North and South Korea had similar economies when they split in 1948 and have had dramatically different economic development (10 to 1 per capita income ratio today) $\Rightarrow$ Government policies/failures can have a huge impact
+
+2) Mauro (1995) uses data rating the quality of government along various dimensions (red tape, corruption, etc.): finds that countries with low quality government have lower growth
+
+The difficulty is that the nations with high-quality governments (the treatment group) may differ from those with low- quality governments (the control group) for other reasons as well, biasing the estimates of the effect of government quality.
+
+\end{slide}
+
+
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf CONCLUSION}
+%\end{center}
+%
+%The government is assumed to be a benign actor that serves only to implement the optimal policies to address externalities, to provide public goods and social insurance, and to develop equitable and efficient taxation. In reality, the government is a collection of individuals who have the difficult task of aggregating the preferences of a large set of citizens.
+%
+%The core model of representative democracy suggests that governments are likely to pursue the policies preferred by the median voter, which in most cases should fairly represent the demands of society on average. Yet, while that model has strong evidence to support it, there is offsetting evidence that politicians have other things on their mind.
+%
+%The extent to which government serves or fails to serve the interests of its citizens is a crucial one for future research in political economy.
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber, Public Finance and Public Policy, Fourth Edition, 2019 Worth Publishers, Chapter 9
+
+Acemoglu, Daron, and James Robinson. ``Why nations fail: the origins of power, prosperity, and poverty.''[Book] Random House Digital, Inc., 2012.
+
+Geanakoplos, John. ``Three brief proofs of Arrow's impossibility theorem.'' Economic Theory 26.1 (2005): 211-215. \href{http://elsa.berkeley.edu/~saez/course131/Geanakoplos05.pdf}{(web)}
+
+Lee, David S., Enrico Moretti, and Matthew J. Butler. ``Do voters affect or elect policies? Evidence from the US House.'' The Quarterly Journal of Economics 119.3 (2004):807-859. \href{http://elsa.berkeley.edu/~saez/course131/Butler-Lee-Moretti04.pdf}{(web)}
+
+Mauro, Paolo. ``Corruption and growth.'' The Quarterly Journal of Economics 110.3 (1995): 681-712.\href{http://elsa.berkeley.edu/~saez/course131/Mauro95.pdf}{(web)}
+
+Poole, Keith T.  and Howard Rosenthal,  ``Are legislators ideologues or the agents of constituents?'' European Economic Review,40(3-5), 1996, 707-717.\href{http://elsa.berkeley.edu/~saez/course131/poole-rosenthal.pdf}{(web)}
+
+Washington, Ebonya L. ``Female Socialization: How Daughters Affect Their Legislator Fathers.'' Voting on Women¡¯s Issues." American Economic Review 98.1 (2008): 311-332.\href{http://www.jstor.org/stable/pdfplus/29729973.pdf?&acceptTC=true&jpdConfirm=true}{(web)}
+
+}
+
+\end{slide}
+
+
+
+
+\end{document}

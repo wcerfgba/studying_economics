@@ -1,0 +1,3266 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{{hyperref}}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+\author{Emmanuel Saez}
+
+\date{Berkeley}
+
+\title{230B: Public Economics \\
+Labor Supply Responses to Taxes and Transfers} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf MOTIVATION}
+\end{center}
+1) Labor supply responses to taxation are of fundamental
+importance for income tax policy [efficiency costs and optimal tax
+formulas]
+
+2) Labor supply responses along many dimensions:
+
+(a) Intensive: hours of work on the job, intensity of work,
+occupational choice [including education]
+
+(b) Extensive: whether to work or not [e.g., single parent who needs child care, retirement and
+migration decisions]
+
+3) Reported earnings for tax purposes can also vary due to (a) tax
+avoidance [legal tax minimization], (b) tax evasion [illegal
+under-reporting]
+
+4) Different responses in short-run and long-run: long-run
+response most important for policy but hardest to estimate
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OUTLINE}
+%\end{center}
+%
+%1) Labor Supply Elasticity Estimation: Methodological Issues
+%
+%2) Estimates of hours/participation elasticities
+%
+%3) Responses to low-income transfer programs (EITC)
+%
+%4) Inter-temporal Models and Macro Estimates 
+%
+%5) Elasticity of\ Taxable Income (separate slides set)
+%
+%%7) Implications for Preference Parameters
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf REFERENCES}
+%\end{center}
+%{\bf 1. Surveys in labor economics:}
+%
+%a) Pencavel (1986) \textit{Handbook of Labor Economics} vol 1
+%
+%b) Heckman and Killingsworth (1986) \textit{Handbook of Labor
+%Econ} vol 1
+%
+%c) Blundell and MaCurdy (1999) \textit{Handbook of Labor
+%Economics} vol 3
+%
+%d) Keane JEL'2011 (structural)
+%
+%{\bf 2. Surveys in public economics:}
+%
+%a) Hausman (1985) \textit{Handbook of Public Economics} vol 1
+%
+%b) Moffitt (2003)\textit{\ Handbook of Public Economics} vol 4
+%
+%c) Saez, Slemrod, and Giertz JEL (2012) (reduced form)
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf STATIC MODEL: SETUP}
+\end{center}
+Baseline model:\ (a) static, (b) linearized tax system, (c) pure
+intensive margin choice, (d) single hours choice, (e) no frictions
+
+Let $c$ denote consumption and $l$ hours worked, utility $u(c,l)$
+increases in  $c$, and decreases in $l$
+
+Individual earns wage $w$ per hour (net of taxes) and has $y$ in
+non-labor income
+
+Key example: pre-tax wage rate $w^p$ and linear tax system with
+tax rate $\tau$ and demogrant $G$ $\Rightarrow$  $c=w^p (1-\tau)l +
+G$
+
+Individual solves \[ \max_{c,l} u(c,l) \quad \text{subject to} \quad c=wl+y \]
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf LABOR SUPPLY BEHAVIOR}
+\end{center}
+FOC: $w u_c + u_l =0$ defines uncompensated (Marshallian)  labor
+supply function $l^u(w,y)$
+
+Uncompensated elasticity of labor supply: $\varepsilon^u = (w/l)
+\partial l^u/ \partial w$ [\% change in hours when net wage $w
+\uparrow$ by 1\%]
+
+Income effect parameter: $\eta = w \partial l / \partial y \leq
+0$: \$ increase in earnings if person receives \$1 extra in
+non-labor income
+
+Compensated (Hicksian) labor supply function $l^c(w,u)$ which
+minimizes cost $ c - wl$ st to constraint $u(c,l) \geq u$.
+
+Compensated elasticity of labor supply: $\varepsilon^c = (w/l)
+\partial l^c/ \partial w>0$
+
+Slutsky equation: $\partial l/ \partial w = \partial l^c/ \partial
+w + l  \partial l /\partial y$ $\Rightarrow$ $\varepsilon^u =
+\varepsilon^c + \eta $
+
+\end{slide}
+
+
+\begin{slide}
+\includepdf[pages={108-112}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf IMPORTANT SPECIAL CASE: NO INCOME EFFECTS}
+%\end{center}
+%Quasi-linear utility function $u(c,l)=c - h(l)$
+%
+%$\max_l wl+y -h(l)$ $\Rightarrow$ $h'(l)=w$
+%
+%$\Rightarrow$ Marshallian $l^u(w,y)=l(w)$ labor supply independent
+%of $y$
+%
+%$\Rightarrow$ Hicksian  $l^c(w,u)=l(w)$ labor supply independent
+%of $y$ [parallel indifference curves]
+%
+%$\Rightarrow$ Identical uncompensated and compensated labor supply
+%
+%$\Rightarrow$  $\eta=0$ and $\epsilon^c = \epsilon^u >0$
+%
+%Iso-elastic utility function: $u(c,l)=c-a\frac{l^{1+1/\varepsilon }}{%
+%^{1+1/\varepsilon }}$ $\Rightarrow$ $w =C \cdot l^{\varepsilon}$
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BASIC CROSS SECTION ESTIMATION}
+\end{center}
+Data on hours or work, wage rates, non-labor income started
+becoming available in the 1960s when first micro surveys and
+computers appeared:
+
+Simple OLS regression:
+$$l_i = \alpha + \beta w_i + \gamma y_i + X_i \delta +
+\epsilon_i$$
+
+$w_i$ is the net-of-tax wage rate
+
+$y_i$ measures non-labor income [including spousal earnings for
+couples]
+
+$X_i$ are demographic controls [age, experience, education, etc.]
+
+$\beta$ measures uncompensated wage effects, and $\gamma$ income
+effects [can be converted to $\varepsilon^u$, $\eta$]
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf BASIC CROSS SECTION RESULTS}
+\end{center}
+
+{\bf 1. Male workers} [primary earners when married] (Pencavel,
+1986 survey):
+
+a) Small effects $\varepsilon^u=0$, $\eta=-0.1$, $\varepsilon^c=0.1$
+with some variation across estimates (sometimes $\varepsilon^c<0$).
+
+{\bf 2. Female workers} [secondary earners when married]
+(Killingsworth and Heckman, 1986):
+
+Much larger elasticities on average, with larger variations across
+studies. Elasticities go from zero to over one. Average around
+0.5. Significant income effects as well
+
+Female labor supply elasticities have declined overtime as women
+become more attached to labor market (Blau-Kahn JOLE'07)
+\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf PROBLEMS WITH OLS ESTIMATION OF LABOR SUPPLY EQUATION}
+%\end{center}
+%
+%1) Econometric issues
+%
+%a) Unobserved heterogeneity [tax instruments]
+%
+%b) Measurement error in wages and division bias [tax instruments]
+%
+%c) Selection into labor force [selection models]
+%
+%d) Endogenous tax rates [non-linear budget set methods]
+%
+%2) Extensive vs. intensive margin responses [participation models]
+%
+%3) Non-hours responses [taxable income]
+%
+%\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf KEY ISSUE: $w$ correlated with tastes for work}
+\end{center}
+\[l_i = \alpha + \beta w_i + \gamma  y_i + \epsilon_i\]
+Identification is based on cross-sectional variation in $w_i$:
+comparing hours of work of highly skilled individuals (high $w_i$)
+to hours of work of low skilled individuals (low $w_i$)
+
+If highly skilled workers have more taste for work (independent of
+the wage effect), then $\epsilon_i$ is positively correlated with
+$w_i$ leading to an upward bias in OLS
+
+Plausible scenario: hard workers acquire better education and
+hence have higher wages
+
+Controlling for $X_i$ can help but can never be sure that we have
+controlled for all the factors correlated with $w_i$ and tastes
+for work: {\bf Omitted variable bias} 
+
+$\Rightarrow$ Tax changes
+provide more compelling identification
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf ISSUE 2: Measurement error in hours}
+%\end{center}
+%In general $w$ computed as earnings / hours $\Rightarrow$ Can
+%create division bias
+%
+%Let $l^{\ast }$ denote true hours, $l$ observed hours
+%
+%Compute $w=z/l$ where $z$ is observed earnings%
+%\begin{eqnarray*}
+%&\Rightarrow &\log l=\log l^{\ast }+\mu \quad  \mathrm{measurement} \quad \mathrm{error} \\
+%&\Rightarrow &\log w=\log z-\log l=\log z-\log l^{\ast }-\mu =\log
+%w^{\ast }-\mu
+%\end{eqnarray*}%
+%Spurious negative correlation between $\log l$ and $\log w$ [e.g,
+%workers with high misreported hours also have low imputed wages]
+%biasing elasticity estimate downward
+%
+%Solution:\ tax instruments again
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf ISSUE 3: Non-participation}
+%\end{center}
+%Consider model with fixed costs of working, where some individuals
+%choose not to work
+%
+%Wages are unobserved for non-labor force participants
+%
+%Thus, OLS regression on workers only includes observations with $%
+%l_{i}>0$
+%
+%This can bias OLS\ estimates: low wage earners must have very high
+%unobserved propensity to work to find it worthwhile
+%
+%Requires a selection correction pioneered by Heckman in 1970s
+%(e.g. Heckit, Tobit, or ML estimation): problem is that
+%identification is based on strong functional form assumptions [See
+%Killingsworth and Heckman (1986) for implementation]
+%
+%Current approach: use tax instruments and look directly at participation
+%margin
+%\end{slide}
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Extensive vs. Intensive Margin}
+%\end{center}
+%
+%Related issue:\ want to understand effect of taxes on labor force
+%participation decision
+%
+%With fixed costs of work, individuals may jump from
+%non-participation to part time or full time work (non-convex
+%budget set)
+%
+%This can be handled using a discrete choice model:%
+%\[
+%P=\phi (\alpha +\varepsilon \log (1-\tau )-\eta y)
+%\]
+%where $P\in \{0,1\}$ is an indicator for whether the individual
+%works
+%
+%Function $\phi $ typically specified as logit, probit, or linear
+%prob model
+%
+%Note:\ here it is critical to have tax variation; regression
+%cannot be run with wage variation
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf  ISSUE 4: Non-hours responses}
+%\end{center}
+%Traditional literature focused purely on hours of work and labor
+%force participation
+%
+%Problem: income taxes distort many margins beyond hours of work
+%
+%a) Non-hours margins may be more important quantitatively
+%
+%b) Hours very hard to measure (most ppl report 40 hours per week)
+%
+%Two solutions in modern literature:
+%
+%a) Focus on total earnings ($z=wl$) [or taxable income]  as a
+%broader measure of labor supply
+%
+%b) Focus on subgroups of workers for whom hours are better
+%measured, e.g. taxi drivers
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf ISSUE 5: NON-LINEAR BUDGET SETS}
+%\end{center}
+%Actual tax system is not linear but piece-wise linear with varying
+%marginal tax rate $\tau$ due to (a) means-tested transfer
+%programs, (b) progressive individual income tax
+%
+%%Individual maximization problem:
+%%
+%%$\max u(w^pl-T(w^pl),l)$ $\Rightarrow$ FOC $u_c w^p(1-T')+u_l=0$
+%
+%Same theory applies when considering the linearized tax system
+%$c=wl+y$ with $w=w^p(1-T')$ and $y$ defined as virtual income
+%(intercept of budget with x-axis when setting $l=0$)
+%
+%Main complications: 
+%
+%(a) $w$ [and $y$] become endogenous to choice
+%of $l$
+%
+%(b) FOC may not hold if individual bunches at a kink
+%
+%(c) FOC may not characterize the optimum choice
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={1}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf ISSUE 5: NON-LINEAR BUDGET SETS}
+%\end{center}
+%
+%Non-linear budget set creates two econometric problems:
+%
+%1) Model mis-specification:\ OLS regression no longer recovers
+%structural elasticity parameter of interest
+%
+%2) Econometric bias: $\tau _{i}=T'(w_il_i)$ and $y_i$ depends on income $w_{i}l_{i}$
+%and hence on $l_{i}$ 
+%
+%Tastes for work are positively correlated with $\tau _{i}$ (due to progressive tax system) $%
+%\rightarrow $\ downward bias in OLS\ regression of hours worked on
+%net-of-tax rates
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf OLD NON-LINEAR BUDGET SET METHOD}
+%\end{center}
+%Issue addressed by non linear budget set studies pioneered by
+%Hausman in late 1970s (Hausman, 1985 PE handbook chapter)
+%
+%Method uses a structural model of labor supply to derive and estimate
+%labor supply function fully consistent with theory
+%
+%Key point: the method still uses the standard cross-sectional variation
+%in pre-tax wages $w^p$ for identification. Taxes are seen as a
+%problem to deal with rather than an opportunity for
+%identification.
+%
+%New literature identifying labor supply elasticities using tax
+%changes has a totally different perspective: taxes are seen as an
+%{\bf opportunity} to identify labor supply
+%\end{slide}
+%
+%
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf ISSUE 4: NON-LINEAR BUDGET SETS}
+%\end{center}
+%Actual tax system is not linear but piece-wise linear with varying
+%marginal tax rate $\tau$ due to (a) means-tested transfer
+%programs, (b) progressive individual income tax, (c) ceiling in
+%payroll tax
+%
+%Individual maximization problem:
+%
+%$\max u(w^pl-T(w^pl),l)$ $\Rightarrow$ FOC $u_c w^p(1-T')+u_l=0$
+%
+%Same theory applies when considering the linearized tax system
+%$c=wl+y$ with $w=w^p(1-T')$ and $y$ defined as virtual income
+%(intercept of budget with x-axis when setting $l=0$)
+%
+%Main complications: (a) $w$ [and $y$] become endogenous to choice
+%of $l$, (b) FOC may not hold if individual bunches at a kink, (c)
+%FOC may not characterize the optimum choice
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={1}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf ISSUE 4: NON-LINEAR BUDGET SETS}
+%\end{center}
+%
+%Non-linear budget set creates two problems:
+%
+%1) Model mis-specification:\ OLS regression no longer recovers
+%structural elasticity parameter $\varepsilon $ of interest
+%
+%Two reasons:\ (a)\ underestimate response because people pile up
+%at kink and (b) mis-estimate income effects
+%
+%2) Econometric bias: $\tau _{i}$ depends on income $w_{i}l_{i}$
+%and hence on $l_{i}$
+%
+%Tastes for work are positively correlated with $\tau _{i}$ $%
+%\rightarrow $\ downward bias in OLS\ regression of hours worked on
+%net-of-tax rates
+%
+%Solution to problem \#2:\ only use reform-based variation in tax
+%rates. But problem \#1 requires fundamentally different estimation method
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf NON-LINEAR BUDGET SET METHOD}
+%\end{center}
+%Issue addressed by non linear budget set studies pioneered by
+%Hausman in late 1970s (Hausman, 1985 PE handbook chapter)
+%
+%Method uses a structural model of labor supply
+%
+%Key point: the method uses the standard cross-sectional variation
+%in pre-tax wages $w^p$ for identification. Taxes are seen as a
+%problem to deal with rather than an opportunity for
+%identification.
+%
+%New literature identifying labor supply elasticities using tax
+%changes has a totally different perspective: taxes are seen as an
+%{\bf opportunity} to identify labor supply
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf NON-LINEAR BUDGET SET METHOD}
+%\end{center}
+%
+%1) Assume an\ uncompensated labor supply equation:%
+%\[
+%l=\alpha +\beta w(1-\tau )+\gamma y+\epsilon
+%\]
+%
+%2) Error term $\epsilon $ is normally distributed with variance
+%$\sigma ^{2}$
+%
+%3) Observed variables: $w_{i}$, $\tau _{i}$, $y_{i}$, and $l_{i}$
+%
+%4) Technique: (a) construct likelihood function given observed
+%labor supply choices on NLBS, (b) find parameters ($\alpha ,\beta
+%,\gamma $) that maximize likelihood
+%
+%5) Important insight:\ need to use \textquotedblleft virtual
+%incomes\textquotedblright\ in lieu of actual unearned income with
+%NLBS
+%
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf NLBS Likelihood Function (2 brackets)}
+%\end{center}
+%Individual can locate on first bracket, on second bracket, or at
+%the kink $l_{K}$
+%
+%Likelihood = probability that we see individual $i$ at labor supply $%
+%l_{i}$ given a parameter vector
+%
+%Decompose likelihood into three components
+%
+%Component 1:\ individual $i$ on first bracket: $0<l_{i}<l_{K}$%
+%$$l_{i}=\alpha +\beta w_{i}(1-\tau ^{1})+\gamma y^{1}+\epsilon
+%_{i}$$
+%
+%Error $\epsilon _{i}=l_{i}-(\alpha +\beta w_{i}(1-\tau
+%^{1})+\gamma y^{1})$. Likelihood:$ L_{i}=\phi ((l_{i}-(\alpha
+%+\beta w_{i}(1-\tau ^{1})+\gamma y^{1})/\sigma )$
+%
+%Component 2: individual $i$ on second bracket: $l_{K}<l_{i}$:
+%$L_{i}=\phi ((l_{i}-(\alpha +\beta w_{i}(1-\tau ^{2})+\gamma
+%y^{2})/\sigma )$
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf NLBS\ Likelihood Function}
+%\end{center}
+%Now consider individual $i$ located at the kink point
+%
+%1) If tax rate is $\tau ^{1}$ and virtual income $y^{1}$
+%individual wants to work $l>l_{K}$
+%
+%2) If tax is $\tau ^{2}$ and virtual income $y^{2}$ individual
+%wants to work $l<l_{K}$
+%
+%
+%3) These inequalities imply:%
+%\begin{eqnarray*}
+%\alpha +\beta w_{i}(1-\tau ^{1})+\gamma y^{1}+\epsilon _{i} &>&l_{K}>\alpha
+%+\beta w_{i}(1-\tau ^{2})+\gamma y^{2}+\epsilon _{i} \\
+%l_{K}-(\alpha +\beta w_{i}(1-\tau ^{1})+\gamma y^{1} &<&\epsilon
+%_{i}<l_{K}-(\alpha +\beta w_{i}(1-\tau ^{2})+\gamma y^{2})
+%\end{eqnarray*}
+%
+%4) Contribution to likelihood is probability that error lies in
+%this
+%range:%
+%\begin{eqnarray*}
+%L_{i} &=&\Psi \lbrack (l_{K}-(\alpha +\beta w_{i}(1-\tau ^{2})+\gamma
+%y^{2}))/\sigma ] \\
+%&&-\Psi \lbrack (l_{K}-(\alpha +\beta w_{i}(1-\tau ^{1})+\gamma
+%y^{1}))/\sigma ]
+%\end{eqnarray*}
+%
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Maximum Likelihood Estimation}
+%\end{center}
+%1) Log likelihood function is $L=\sum_{i}\log L_{i}$
+%
+%2) Final step is solving%
+%\[
+%\max L(\alpha ,\beta ,\gamma ,\sigma )
+%\]
+%
+%3) In practice, likelihood function much more complicated because
+%of more kinks, non-convexities, and covariates
+%
+%4) But basic technique remains the same
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Hausman (1981)\ Application}
+%\end{center}
+%1) Hausman applies method to 1975 PSID cross-section
+%
+%a) Finds significant compensated elasticities and large income
+%effects
+%
+%b) Elasticities larger for women than for men
+%
+%2) Shortcomings of this implementation
+%
+%a) Sensitivity to functional form choices, which is a larger issue
+%with structural estimation
+%
+%b) No tax reforms, so does not solve fundamental econometric
+%problem that\ tastes for work may be correlated with $w$
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf NLBS and Bunching at Kinks}
+%\end{center}
+%
+%Subsequent studies obtain different estimates (MaCurdy, Green, and
+%Paarsh 1990, Blomquist 1995)
+%
+%a) Several studies find \textbf{negative} compensated wage
+%elasticity estimates
+%
+%b) Debate:\ impose requirement that compensated elasticity is
+%positive or conclude that data rejects model?
+%
+%Fundamental source of problem: labor supply model predicts that
+%individuals should bunch at the kink points of the tax schedule
+%
+%a) But we observe very little bunching at kinks (Heckman vs.
+%Hausman), so model is rejected by the data
+%
+%b) Interest in NLBS\ models diminished despite their conceptual
+%advantages over OLS\ methods
+%\end{slide}
+%
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Natural Experiment Labor Supply Literature}
+%\end{center}
+%Literature exploits variation in taxes/transfers to estimate Hours
+%and Participation Elasticities
+%
+%%1) Return to simple model where we ignore non-linear budget set
+%%issues
+%
+%1) Large literature in labor/Public economics estimates effects of
+%taxes and wages on hours worked and participation
+%
+%2) Now discuss some estimates from this older literature
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Negative Income Tax (NIT) Experiments}
+\end{center}
+
+1) Best way to resolve identification problems: exogenously
+change taxes/transfers with a {\bf randomized experiment}
+
+2)  NIT experiment conducted in 1960s/70s in Denver, Seattle, and
+other cities
+
+3) First major social experiment in U.S. designed to test proposed
+transfer policy reform
+
+4) Provided lump-sum welfare grants $G$ combined with a steep
+phaseout rate $\tau $ (50\%-80\%) [based on family earnings]
+
+5) Analysis by Rees (1974), Munnell (1986) book, Ashenfelter and\
+Plant JOLE'90, and others
+
+6) Several groups, with randomization within each; approx. N = 75
+households in each group
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={43}]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={158}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf NIT Experiments: Ashenfelter and Plant JHR' 90}
+%\end{center}
+%1) Present non-parametric evidence of labor supply effects
+%
+%2) Compare actual benefit payments to treated household vs. hypothetical
+%benefit payments to control households
+%
+%3) Difference in benefit payments reflects aggregates hours and
+%participation responses
+%
+%4) This is the relevant parameter for expenditure calculations and
+%for welfare analysis
+%
+%5) Shortcoming: approach does not decompose estimates into income
+%and substitution effects and intensive vs. extensive margin
+%
+%$\Rightarrow$ Hard to identify the key elasticity relevant for policy
+%purposes and predict labor supply effect of other programs
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={44-45}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+
+\begin{slide}
+\begin{center}
+{\bf NIT Experiments: Findings}
+\end{center}
+See Ashenfelter and Plant JHR' 90 for non-parametric evidence. 
+More parametric evidence in earlier work. Key results:
+
+1) Significant labor supply response but small overall
+
+2) Implied earnings elasticity for males around 0.1
+
+3) Implied earnings elasticity for women around 0.5
+
+4) Academic literature not careful to decompose response along
+intensive and extensive margin
+
+5) Response of women is concentrated along the extensive margin
+(can only be seen in official govt. report)
+
+6) Earnings of treated women who were working before the
+experiment did not change much
+
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Problems with NIT Experimental Design}
+%\end{center}
+%Estimates from NIT\ not considered fully credible due to several
+%shortcomings:
+%
+%1) {\bf Self reported earnings:} Treatments had financial
+%incentives to under-report earnings $\Rightarrow$ Lesson: need to
+%match with administrative records [Greenberg and Halsey JOLE'83]
+%
+%2) {\bf Selective attrition:}
+%
+%After initial year, data collected based on voluntary income
+%reports by families $\Rightarrow$ Those in less generous
+%groups/far above break-even point had much less incentive to
+%report $\Rightarrow$ Attrition rates higher in these groups
+%$\Rightarrow$ No longer a random sample of treatment + controls
+%[Ashenfelter-Plant JOLE'90]
+%
+%3) Response might be smaller than real reform b/c of {\bf General
+%Equilibrium} effects
+%\end{slide}
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Social Experiments: Costs/Benefits}
+%\end{center}
+%1) Cost of NIT\ experiments: around \$1 billion (in today's
+%dollars)
+%
+%2) Huge cost for a social experiment but trivial relative to
+%budget of the US federal government (\$3 trillion)
+%
+%3) Should the government do more experimentation? Potential
+%benefits:
+%
+%a) Narrow the standard error around estimates
+%
+%b) Allow implementation of better tax and redistribution policy
+%
+%[Literature on optimal experimenting in engineering and
+%agriculture but never applied to economics, pb. is instability of
+%parameters]
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf From true experiment to ``natural experiments'': \\ income effects on lottery winners}
+\end{center}
+True experiments are costly to implement and hence rare
+
+Real economic world provides variation that can
+be exploited to estimate behavioral responses $\Rightarrow$
+\textbf{Natural Experiments}
+
+Natural experiments can come very close to true experiments:
+
+Imbens, Rubin, Sacerdote AER '01 did a survey of lottery winners
+and non-winners matched to Social Security administrative data to
+estimate income effects
+
+Lottery generates random assignment conditional on playing
+
+Find significant but relatively small income effects: $\eta = w
+\partial l/\partial y$ between -0.05 and -0.10
+
+Identification threat: differential response-rate among groups
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={46,47}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Difference-in-Difference (DD) methodology}
+\end{center}
+
+Two groups: Treatment group (T) which faces a change [lottery winners] and control group (C) which does not [non winners]
+
+Compare the evolution of T group (before and after change) to the evolution of the C group (before and after change)
+
+DD identifies the \textbf{treatment effect} if the \textbf{parallel trend assumption} holds:
+
+Absent the change, $T$ and $C$ would have evolved in parallel 
+
+DD most convincing when groups are very similar to start with
+
+Should always test DD using data from more periods and plot the two time
+series to check parallel trend assumption
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Labor supply and lotteries in Sweden}
+\end{center}
+Cesarini et al. (2017) use Swedish population wide administrative data with more
+compelling setting: (1) bank accounts with random prizes (PLS), (2) monthly lottery subscription (Kombi), 
+and (3) TV show participants (Triss)
+
+\textbf{Key results:}
+
+1) Effects on both extensive and intensive labor supply margin, time persistent
+
+2) Significant but small income effects: $\eta = w
+\partial l/\partial y \simeq -0.1$
+
+3) Effects on spouse but not as large as on winner 
+
+$\Rightarrow$ Rejects
+the \textbf{unitary} model of household labor supply: \\
+$\max u(c_1,c_2,l_1,l_2)$ st $c_1+c_2 \leq w_1 l_1 + w_2 l_2 +R$
+$\Rightarrow$ only household $R$ matters 
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={113}]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={114,115}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Instrumental Variable Methods}
+%\end{center}
+%1) Another strategy to overcome endogeneity is instrumenting for
+%wage rate
+%
+%2) Mroz (1987):\ often-cited survey/meta-analysis of earlier
+%studies
+%
+%3) Uses PSID to test widely-used IV's for married women's wage%
+%\begin{eqnarray*}
+%l_{i} &=&\alpha +\beta w+\gamma X+\varepsilon \\
+%w &=&\theta Z+\mu
+%\end{eqnarray*}
+%
+%4) Uses Hausman specification/overidentification test to show that
+%many instruments violate $EZ\varepsilon =0$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Hausman Test}
+%\end{center}
+%
+%1) Suppose you can divide instrument set into those that are
+%credibly exogenous ($Z$) and those that are questionable ($Z^{\ast
+%}$)
+%
+%2) Null hypothesis:\ both are exogenous
+%
+%3) Alternative hypothesis:\ $Z^{\ast }$ is endogenous
+%
+%4) Compute IV\ estimate of $\beta $ with small and large
+%instrument set and test for equality of the coefficients
+%
+%5) Note that is often a very low power test (accept validity if
+%instruments are weak)
+%\end{slide}
+%
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Mroz 1987: Setup and Results}
+%\end{center}
+%1) Uses background variables as ``credibly exogenous'' instruments
+%[Parents' education, age, education polynomials]
+%
+%2) Tests validity of labor market experience, average hourly
+%earnings, and previous reported wages
+%
+%3) Rejects validity of all three
+%
+%4) Shows that earlier estimates are highly fragile and unreliable
+%
+%5) Contributed to emerging view that policy variation (e.g.,
+%taxes)\ was necessary to really identify these elasticities
+%properly
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Tax Reform Variation (Eissa 1995)}
+%\end{center}
+%1) Modern studies use tax changes as \textquotedblleft natural
+%experiments\textquotedblright
+%
+%2) Representative pedagogical example:\ Eissa (1995)
+%
+%3) Uses the Tax Reform Act (TRA) of 1986 to identify the effect of MTRs
+%on labor force participation and hours of married women
+%
+%4) TRA 1986 cut top income MTR from 50\% to 28\% from 1986 to 1988
+%but did not significantly change tax rates for the middle class
+%
+%5) Substantially increased incentives to work of wives of high
+%income husbands relative wives of middle income husbands
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={48}]{laborsupply_attach.pdf}
+%\end{slide}
+
+
+
+%\begin{slide}
+%\includepdf[pages={49-51}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa 1995: Results}
+%\end{center}
+%1) Participation elasticity around 0.4 but large standard errors
+%
+%2) Hours elasticity of 0.6
+%
+%3) Total elasticity (unconditional hours) is $0.4+0.6=1$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Eissa 1995: Caveats}
+%\end{center}
+%1) Does the common trends assumption hold? Potential story biasing
+%the result:
+%
+%Trend toward \textquotedblleft power couples\textquotedblright\
+%could bias DD upward: In 1983-1985, high income husbands
+%had non-working spouses, In 1989-1991, high income husbands married to
+%professionals [and no change for middle class]
+%
+%2) $LFP$ before the reform is very different across $T$ and $C$
+%groups $\Rightarrow$ DD sensitive to functional form assumption
+%[such as levels vs logs]
+%
+%3) Liebman and Saez (2006) plot full time-series CPS plot and show
+%that Eissa's results are not robust using admin data (SSA\ matched
+%to\ SIPP) [unfortunately, IRS public tax data does not break down
+%earnings within couples]
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={52}]{laborsupply_attach.pdf}
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Labor Supply Substitution Effects: \\ Tax Free Second Jobs in Germany}
+\end{center}
+
+In 2003, Germany made secondary jobs (paying less than 400 Euros/month) tax free:
+amounts to a 20-60\% subsidy on second job earnings (depending on family marginal tax rate) $\Rightarrow$ almost pure substitution labor supply effect
+
+Tazhitdinova '20 uses social security admin monthly earnings data
+
+Fraction of population holding second jobs increased sharply (from 2.5\% to 6-7\%)
+with bigger response overtime
+
+Finds no offsetting effect on primary earnings $\Rightarrow$ People did work more
+
+Looks like a big labor supply response but likely happened because employers 
+willing to create lots of mini-jobs to accommodate supply
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={150-151}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+
+
+
+\begin{slide}%
+\begin{center}
+{\bf Married Women Elasticities:\ Blau and Kahn '07}
+\end{center}
+
+1) Identify elasticities from 1980-00 using grouping instrument
+
+a) Define cells (year$\times$age$\times$education) and compute mean wages
+
+b) Instrument for actual wage with mean wage in cell
+
+2) Identify purely from group-level variation, which is less
+contaminated by individual endogenous choice
+
+3) Results: (a) total hours elasticity for {\bf married women}
+(including intensive +\ extensive margin) shrank from 0.4 in 1980 to 0.2
+in early 2000s, (b) effect of husband earnings $\downarrow$ overtime
+
+4) Interpretation: elasticities shrink as women become more
+attached to the labor force
+
+\end{slide}
+
+
+\begin{slide}%
+\begin{center}
+{\bf Summary of Static Labor Supply Literature (SKIP)}
+\end{center}
+1) Small elasticities for prime-age males
+
+Probably institutional restrictions, need for at least one income,
+etc. prevent a short-run response
+
+2) Larger responses for workers who are less attached to labor
+force: Married women, low income earners, retirees
+
+3) Responses driven primarily by extensive margin
+
+a) Extensive margin (participation) elasticity around 0.2-0.5
+
+b) Intensive margin (hours)\ elasticity smaller
+\end{slide}
+
+
+
+
+\begin{slide}%
+\begin{center}
+{\bf Responses to Low-Income Transfer Programs}
+\end{center}
+
+1) Particular interest in treatment of low incomes in a
+progressive tax system: are they responsive to incentives?
+
+2) Complicated set of transfer programs in\ US
+
+a) In-kind: food stamps, Medicaid, public housing, job training,
+education subsidies
+
+b) Cash:\ TANF, EITC, SSI
+
+3) See Gruber undergrad textbook for details on institutions
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Overall Costs of Anti Poverty Programs}
+%\end{center}
+%1) US government (fed+state and local) spent \$800bn in 2013 on
+%income-tested programs
+%
+%a) About 4\% of GDP but 15\% of \$5 Trillion govt budget
+%(fed+state+local).
+%
+%b) About 50\% is health care (Medicaid)
+%
+%2) Only \$200 billion in cash (1\% of GDP, or 25\% of transfer
+%spending)
+%
+%\end{slide}
+
+
+
+
+\begin{slide}%
+\begin{center}
+{\bf 1996 US Welfare Reform}
+\end{center}
+%1) Largest change in welfare policy
+
+1) Reform modified AFDC\ cash welfare program to provide more
+incentives to work (renamed TANF)
+
+a) Requiring recipients to go to job training or work
+
+b) Limiting the duration for which families able to receive
+welfare
+
+c) Reducing phase-out rate of benefits
+
+2) Fed govt provided incentives for states to experiment
+with reforms in 1992-1995 (state waivers). Some did randomize
+experiments.
+%Variation across states because fed govt. gave block grants
+%with guidelines
+
+4) EITC\ also expanded during this period:\ general shift from
+welfare to \textquotedblleft workfare\textquotedblright
+
+Did welfare reform and EITC increase labor supply?
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={98}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Welfare Reform:\ Two Empirical Questions}
+%\end{center}
+%1) Incentives:\ did welfare reform actually increase labor supply?
+%
+%a) Test whether EITC\ expansions affect labor supply
+%
+%b) Use state welfare  randomized  experiments implemented before reform
+%to assess effects of switch from AFDC to TANF. Canada also experimented with
+%welfare reform (Card and Hyslop '05)
+%
+%2) Benefits:\ did removing many people from transfer system reduce
+%their welfare? How did consumption change?
+%
+%
+%Focus on single mothers, who were most impacted by reform
+%
+%\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Randomized welfare experiment: \\SSP Welfare Demonstration in Canada}
+\end{center}
+
+Canadian Self Sufficiency Project (SSP):
+randomized experiment that gave welfare recipients an earnings subsidy for 36 months in 1990s
+(but need to start working by month 12 to get it)
+
+3 year temporary participation tax rate cut from average rate of 74.3\% to 16.7\%
+[get to keep 83 cents for each \$ earned instead of 26 cents]
+
+Card and Hyslop (EMA 2005) provide classic analysis. Two results:
+
+1) Strong effect on employment rate during experiment (peaks at 14 points)
+
+2) Effect quickly vanishes when the subsidy stops after 36 months (entirely gone by month 52)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={84}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Earned Income Tax Credit (EITC) program}
+\end{center}
+Kleven (2019) provides comprehensive EITC re-analysis
+using women aged 20-50 and CPS data
+
+
+1) EITC started small in the 1970s but was expanded in 1986-88,
+1994-96, 2008-09: today, largest means-tested cash transfer
+program [\$75bn in 2019, 30m families recipients]
+
+2) Eligibility: families with kids and low earnings.
+
+3) Refundable Tax credit: administered as
+annual tax refund received in Feb-April, year $t+1$ (for earnings
+in year $t$)
+
+4) EITC has flat pyramid structure with phase-in (negative MTR),
+plateau, (0 MTR), and phase-out (positive MTR)
+
+5) States have added EITC components to their income taxes [in
+general a percentage of the Fed EITC, great source of natural
+experiments, understudied bc CPS too small]
+
+
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={54}]{laborsupply_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\includepdf[scale=1.0,pages={122-133}]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Welfare Reform and EITC Expansion: Labor supply}
+\end{center}
+
+Incredible increase in labor force participation of single mothers during the 1990s
+when welfare reform and EITC expansion happened
+
+Unlikely that the EITC can explain it because other EITC changes haven't generated
+such large effects
+
+Sociological evidence shows that welfare reform ``scared'' single mothers into working
+
+Single moms in the US were suddenly expected to work
+
+Kleven (2019): Maybe a unique combination of EITC reform, welfare reform,
+economic upturn, and changing social norms lead to this shift
+
+
+\end{slide}
+
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Theoretical Behavioral Responses to the EITC}
+%\end{center}
+%{\bf Extensive margin:} positive effect on Labor Force
+%Participation as EITC makes work more attractive
+%
+%%(Meyer-Rosebaum 2001 find that 60\% of the increase
+%%of LFP of single mothers in 1990s due to EITC expansion]
+%
+%{\bf Intensive margin:} earnings conditional on working, mixed
+%effects
+%
+%1) Phase in: (a) Substitution effect: work more due to wage
+%subsidy, (b) Income effect: work less $\Rightarrow$ Net
+%effect: ambiguous; probably work more
+%
+%2) Plateau: Pure income effect (no change in net wage)
+%$\Rightarrow$ Net effect: work less
+%
+%3) Phase out: (a) Substitution effect: work less, (b) Income
+%effect: also work less $\Rightarrow$ Net effect: work less
+%
+%Should expect bunching at the EITC kink points
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa and Liebman 1996}
+%\end{center}
+%1) Pioneering study of labor force participation of single mothers
+%before/after 1986-7 EITC expansion using CPS data
+%
+%2) Limitation: this expansion was relatively small
+%
+%3) Diff-in-Diff strategy:
+%
+%a) Treatment group: single women with kids
+%
+%b) Control group: single women without kids
+%
+%c) Comparison periods: 1984-1986 vs. 1988-1990
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={55}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Diff-in-Diff (DD) Methodology:}
+%\end{center}
+%{\bf Step 1: Simple Difference}
+%
+%Outcome: $LFP$ (labor force participation)
+%
+%Two groups: Treatment group (T) which faces a change [single women
+%with kids] and control group (C) which does
+%not [single women without kids]
+%
+%Simple Difference estimate: $D=LFP^T-LFP^C$ captures treatment
+%effect if absent the treatment, $LFP$ equal across 2 groups
+%
+%Note: this assumption always holds when $T$ and $C$ status is randomly
+%assigned
+%
+%Test for this assumption: Compare $LFP$ before treatment happened
+%$D_B=LFP_B^T-LFP_B^C$
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Diff-in-Diff (DD) Methodology:}
+%\end{center}
+%{\bf Step 2: Diff-in-Difference (DD)}
+%
+%If $D_B \neq 0$, can estimate DD: $$DD=D_A-D_B=LFP_A^T-LFP_A^C -
+%[LFP_B^T-LFP_B^C]$$ (A = after reform, B = before reform)
+%
+%DD is unbiased if {\bf parallel trend} assumption holds:
+%
+%Absent the change, difference across $T$ and $C$ would have stayed
+%the same before and after
+%
+%OLS Regression estimation of DD:
+%$$LFP_{it}=\beta_0 AFTER + \beta_1 TREAT + \gamma AFTER \cdot
+%TREAT + \varepsilon$$
+%\[ \hat{\gamma}_{OLS}=LFP_A^T-LFP_A^C - [LFP_B^T-LFP_B^C] \]
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={56}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Diff-in-Diff (DD) Methodology}
+%\end{center}
+%DD most convincing when groups are very similar to start with
+%[closer to randomized experiment]
+%
+%Should always test DD using data from more periods and plot the two time
+%series to check parallel trend assumption
+%
+%Use alternative control groups [not as convincing as potential
+%control groups are many]
+%
+%In principle, can create a DDD as the difference between actual DD
+%and $DD^{Placebo}$ (DD between 2 control groups). However, DDD of
+%limited interest in practice because
+%
+%(a) if $DD^{Placebo}\neq 0$, DD test fails, hard to believe DDD
+%removes bias
+%
+%(b) if $DD^{Placebo}= 0$, then DD=DDD but DDD has higher s.e.
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={57-58}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%
+%
+%
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Diff-in-Diff (DD) Methodology}
+%\end{center}
+%1) DD sensitive to functional form (e.g. log vs levels) when $D_{before} \neq 0$.
+%
+%\small
+%Example: $T$ $\uparrow$ from 40\% to 50\% and $C$ $\uparrow$ from 15\% to 20\%:
+%$DD_{level}=[50-40]-[20-15]=5$ but $DD_{log}=\log[50/40] - \log [20/15] = - .06$
+%\normalsize
+%
+%2) To obtain elasticity estimate, need to take ratio of $DD_{outcome}$ to $DD_{policy \:\: change}$ to
+%form the \textbf{Wald estimate}:
+%\[\hat{e} = \frac{ [ \log LFP_A^T- \log LFP_A^C ] - [\log LFP_B^T-\log LFP_B^C ] }{\log (1-\tau_A^T)- \log (1-\tau_A^C) ] - [\log (1-\tau_B^T)-\log (1-\tau_B^C) ] } \]
+%$DD_{policy \:\: change}$ is the \textbf{1st stage}, $DD_{outcome}$ is the \textbf{reduced form} effect, the ratio is the \textbf{2nd stage} estimate
+%
+%\small
+%Wald estimated with 2SLS regression:
+%\[LFP_{it}=\beta_0 AFTER + \beta_1 TREAT +e \cdot \log(1-\tau) + \varepsilon\]
+%where $\log(1-\tau)$ is instrumented with interaction
+%$AFTER \cdot TREAT$
+%
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa and Liebman 1996: Results}
+%\end{center}
+%1) Find a small but significant DD effect: 2.4\% (larger DD effect
+%4\% among women with low education) $\Rightarrow$ Translates into
+%substantial participation elasticities above 0.5
+%
+%2) Note the labor force participation for women with/without
+%children are not great comparison groups (70\% LFP vs. +90\%):
+%time series evidence is only moderately convincing
+%
+%3) Subsequent studies have used bigger 1990s EITC expansions and also find positive effects on labor force
+%participation of single women/single mothers (Meyer-Rosenbaum 2001) but contaminated
+%by AFDC/TANF transition
+%
+%4) Conventional standard errors probably overstate precision
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Bertrand-Duflo-Mullainathan QJE'04}
+%\end{center}
+%Show that conventional standard errors in fixed effects
+%regressions with state reform variation are too low
+%
+%Randomly generated placebo state laws: half the states pass law at
+%random date. $I_{st}$ is one if state $s$ has law in place at time
+%$t$.
+%
+%Use female wages $w_{ist}$ in CPS data and run OLS:
+%$$\log w_{ist} = A_s + B_t + b I_{st} + \varepsilon_{ist}$$
+%
+%$\hat{b}$ significant (at 5\% level) in 65\% of cases $\Rightarrow$
+%$\varepsilon_{ist}$ are not iid
+%
+%Clustering by state*year cells is not enough (significant 45\% of
+%the time)
+%
+%Need to cluster at state level to obtain reasonable s.e. because
+%of strong serial correlation within states
+%\end{slide}
+%
+
+%\begin{slide}
+%\begin{center}
+%{\bf Meyer and Rosenbaum 2001}
+%\end{center}
+%1) Exploit the much bigger 1990s expansion in EITC
+%
+%2) Document dramatic (6 pp, 10\%) increase in LFP\ for single
+%women with children around EITC expansion
+%
+%3) No change for women without children
+%
+%4) Problem: expansion took place at same time as welfare reform
+%
+%5) Try to disentangle effects of welfare waivers, changes in AFDC
+%and state taxes, etc. using state-level variation
+%
+%Bottom line: elasticity of participation w.r.t. tax/transfer
+%incentives is significant
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={59,60}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={61}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Meyer and Rosenbaum 2001}
+%\end{center}
+%
+%1)Analyze the introduction of EITC and Welfare waivers for the
+%period 1984-1996 using CPS data
+%
+%2) Identification strategy: compare single mothers to single women
+%without kids
+%
+%3) Key covariates in regression model: (a) EITC, (b) AFDC
+%benefits, (c) Medicaid, (d) Waivers, (e) Training, (f) Child Care
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Meyer and Rosenbaum 2001}
+%\end{center}
+%From 1984-1996, the extra increase in single mom's relative to
+%single women without kids is explained by:
+%
+%a) EITC expansion (60\%)
+%
+%b) Welfare max benefit reduction (AFDC and food stamps) (25\%)
+%
+%c) Medicaid if work (-10\%) (insignificant and wrong sign)
+%
+%d) Welfare waivers (time limits) 15\%
+%
+%e) Child care and training: 15\%
+%
+%\end{slide}%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa and Hoynes 2004}
+%\end{center}
+%
+%1) EITC\ based on family rather than individual income
+%
+%2) Study married couples with low earnings, recognizing that EITC\
+%\textit{reduces} their incentive to work
+%
+%3) Married women with husband earning \$10-15K are in the
+%phase-out range and face high MTR's
+%
+%a) Payroll tax 15\%
+%
+%b) EITC phase-out 20\%
+%
+%c) State and federal income tax 0-20\%
+%
+%3) Similar identification strategy:\ compare those with and
+%without kids
+%
+%\end{slide}
+%
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Eissa and Hoynes: Results}
+%\end{center}
+%1) Conclude that EITC expansions between 1984 and 1996:
+%
+%a) Increased married men's labor force participation by 0.2\%
+%
+%b) Reduced married women's labor force participation by about 1\%
+%
+%2) Implies that the EITC is effectively subsidizing married
+%mothers to stay at home and \textit{reducing} total labor supply
+%for married households
+%\end{slide}%
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Meyer and\ Sullivan 2004}
+%\end{center}
+%
+%1) Examine the consumption patterns of single mothers and their
+%families from 1984--2000 using CEX\ data
+%
+%2) Question:\ did single mothers' consumption fall because they
+%lost welfare benefits and were forced to work?
+%\end{slide}
+%
+%
+%\begin{slide}
+%\includepdf[pages={62, 63}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Welfare Reform Effects on Consumption}
+%\end{center}
+%Meyer and Sullivan '04 examine consumption of single mothers and their
+%families from 1984--2000 using CEX\ data
+%
+%1) Material conditions of single mothers did not decline in 1990s,
+%either in absolute terms or relative to single childless
+%women or married mothers
+%
+%2) In most cases, evidence suggests that the material conditions
+%of single mothers have improved slightly
+%
+%3) Question: is this because economy was booming in 1990s?
+%
+%4) Is workfare approach more problematic in current economy?
+%[SNAP households surged from 12M in '07 to 20M in '10 while TANF
+%households increased slightly from 1.7M in '07 to 1.85M in '10]
+%
+%\end{slide}%
+%
+
+\begin{slide}%
+\begin{center}
+{\bf Bunching at Kinks (Saez AEJ-EP'10)}
+\end{center}
+Key prediction of standard labor supply model: individuals should bunch
+at (convex) kink points of the budget set
+
+1) The only non-parametric source of identification for intensive
+elasticity in a single cross-section of earnings is amount of
+bunching at kinks creating by tax/transfer system
+
+%2) All other tax variation is contaminated by heterogeneity in
+%tastes
+
+2) Saez '10 develops method of using bunching at kinks to estimate the
+compensated income elasticity
+
+%4) Idea: if this non-parametric method does not recover
+%positive compensated elasticities, then little value in additional
+%structure of nonlinear budget set models
+
+Formula for elasticity: 
+$ \varepsilon ^{c}=\frac{dz/z^{\ast }}{dt/(1-t)}=$ excess mass at
+kink / change in NTR
+
+$\Rightarrow$ Amount of bunching proportional to compensated elasticity
+
+Blomquist et al. JPE'21: Bunching method requires making assumptions on counterfactual density 
+(but testable using tax changes see Londono-Avila '18 below)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={2,3}, scale=1.1]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={134}, scale=1.1]{laborsupply_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Bunching at Kinks (Saez AEJ-EP'10)}
+\end{center}
+
+1) Uses individual tax return micro
+data (IRS\ public use files) from 1960 to 2004
+
+2) Advantage of dataset over survey data: very little measurement error
+
+3) Finds bunching around:
+
+a) First kink point of the Earned Income Tax Credit (EITC),
+especially for self-employed
+
+b) At threshold of the first tax bracket where tax liability
+starts, especially in the 1960s when this point was very stable
+
+4) However, no bunching observed around all other kink points
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={4}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={19}]{pdf/chetty-harvard.pdf}
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={5}, scale=1.4]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={6}, scale=1.4]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={7-8}, scale=1.4]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={10}]{laborsupply_attach.pdf}
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Friedberg 2000: Social Security Earnings Test}
+%\end{center}
+%1) Uses CPS data on labor supply of retirees receiving Social
+%Security benefits
+%
+%2) Studies bunching based on responses to Social Security earnings
+%test
+%
+%3) Earnings test:\ phaseout of SS\ benefits with earnings above an
+%exempt amount around \$14K/year
+%
+%4) Today: Phaseout rate varies by age group: 50\% (below 66), 33\%
+%(age 66), 0 (above 66)
+%
+%5) Friedberg exploits 1983 reform (CPS age = age + 1):
+%
+%(a) Before: test up to age 71, no test at age 72+
+%
+%(b) After: test up to age 69, no test at age 70+
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={11}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={12}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Friedberg 2000: Estimates}
+%\end{center}
+%1) Estimates elasticities using Hausman method, finds relatively
+%large compensated and uncompensated elasticities
+%
+%2) Ironically, lost social security benefits are considered
+%delayed retirement with an actuarial adjustment of future benefits
+%$\Rightarrow$ (a) No kink if person has average life expectancy,
+%(b) kink if person has less than average life expectancy
+%
+%3) So the one kink where we do find real bunching is actually not
+%real! (people may not understand rules, or have myopia)
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Why not more bunching at kinks?}
+\end{center}
+1) True intensive elasticity of response may be small
+
+2) Randomness in income generation process: Saez (1999) shows that
+year-to-year income variation too small to erase bunching if
+elasticity is large
+
+3) Frictions: Adjustment costs and institutional constraints (Chetty, Friedman, Olsen, and Pistaferri QJE'11)
+
+4) Information and salience
+
+%Chetty-Friedman-Saez AER'13 show how information about EITC affects bunching at kink point
+
+
+\end{slide}
+
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Chetty, Friedman, Olsen, and Pistaferri QJE'11}
+%\end{center}
+%1) If workers face adjustment costs, may not reoptimize in
+%response to tax changes of small size and scope in short run
+%
+%a) Search costs, costs of acquiring information about taxes
+%
+%b) Institutional constraints imposed by firms (e.g. 40 hour week)
+%that does not apply to the self-employed or workers with more flexibility (e.g.
+%secondary earners)
+%
+%%2) Could explain why long-term macro studies find larger elasticities (see end of lecture)
+%
+%2) Question: How much are elasticity estimates affected by
+%frictions?
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Chetty et al. 2011: Model}
+%\end{center}
+%1) Firms post jobs with different hours offers
+%
+%2) Workers draw from this distribution and must pay search cost to
+%reoptimize
+%
+%3) Therefore not all workers locate at optimal choice
+%
+%4) Bunching at kink and observed responses to tax reforms
+%attenuated
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Chetty et al. 2011: Testable Predictions}
+%\end{center}
+%Model generates three predictions:
+%
+%1) \textbf{[Size]} Larger tax changes generate larger observed
+%elasticities
+%
+%Large tax changes are more likely to induce workers to search for
+%a different job
+%
+%2) \textbf{[Scope]} Tax changes that apply to a larger group of
+%workers generate larger observed elasticities
+%
+%Firms tailor jobs to preferences of common workers
+%
+%3) \textbf{[Search Costs]} Workers with lower search costs exhibit
+%larger elasticities from individual bunching
+%
+%\end{slide}
+
+%\begin{slide}
+%\includepdf[pages={13}]{laborsupply_attach.pdf}
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Chetty et al. 2011: Administrative data}
+%\end{center}
+%
+%Matched employer-employee panel data with admin tax records for
+%full population of Denmark matching employee-employer information
+%
+%Sample restriction: Wage-earners aged 15-70, 1994-2001
+%
+%Approximately 2.42 million people per year
+%
+%Important development in empirical micro in recent years: shift from survey
+%data to administrative data (Card-Chetty-Feldstein-Saez '10 and Einav and Levin NBER'13]
+%
+%\end{slide}
+%
+%
+
+%
+%
+%\begin{slide}
+%\includepdf[pages={14, 17,19,18,30,33,39-40}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Chetty et al. 2011: Results}
+%\end{center}
+%
+%1) Search costs attenuate observed behavioral responses
+%substantially: find larger elasticities around large kink points
+%
+%2) Groups with more flexibility respond more (secondary earners,
+%self-employed)
+%
+%3) Overall elasticities estimated from bunching are small in magnitude
+%perhaps because frictions prevent full response)
+%
+%$\Rightarrow$ Bunching methods are good to detect behavioral responses but
+%not necessarily to pin down magnitude of a long-run response to a large tax reform
+%
+%%3) Firm responses and coordination critical for understanding
+%%behavior: individual and group elasticities may differ
+%%significantly
+%
+%\end{slide}
+
+
+
+\begin{slide}%
+\begin{center}
+{\bf EITC Behavioral Studies}
+\end{center}
+Evidence of response along extensive margin but little
+evidence of response along intensive margin (except for
+self-employed) $\Rightarrow$ Possibly due to lack of understanding
+of the program
+
+Qualitative surveys show that:
+
+Low income families know about EITC and understand that they get a
+tax refund if they work
+
+However very few families know whether tax refund $\uparrow$ or
+$\downarrow$ with earnings
+
+Such confusion might be good for the government as the EITC
+induces work along participation margin without discouraging work
+along intensive margin (Liebman-Zeckhauser '04, Rees-Jones and Taubinsky '16)
+\end{slide}
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Chetty and Saez AEJ-AP'13 EITC INFO}
+%\end{center}
+%
+%1) Randomized experiment with tax preparer H\&R Block: tax pros
+%[H\&R Block employees] provide EITC information to half of 43,000
+%EITC filers in 2008 tax season
+%
+%2) Analyze whether earnings the following year are affected by the
+%information treatment
+%
+%{\bf Key results:}
+%
+%1) Half of the tax pros induce treated clients to increase their
+%EITC refunds by choosing an earnings level closer to the peak of
+%the EITC schedule
+%
+%2) Rest of tax professionals seem to increase earnings of their
+%treated clients across the board [possible
+%
+%3) Treatment effects are larger for the self-employed
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={65,66,67,68,69}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+
+\begin{slide}%
+\begin{center}
+{\bf Chetty, Friedman, Saez AER'13 EITC heterogeneity}
+\end{center}
+Use US population wide tax return data since 1996 (through IRS special contract)
+%\href{http://www.irs.gov/taxstats/article/0,,id=245237,00.html} {(weblink)}
+
+1) Substantial heterogeneity in fraction of EITC recipients bunching (using self-employment)
+across \textbf{geographical
+areas}
+
+$\Rightarrow$ Information on EITC varies across areas and grows overtime
+
+2) Places with high self-employment EITC bunching display
+{\bf wage earnings} distribution more concentrated around plateau
+
+3) Omitted variable test: use birth of first child to test
+causal eff`EITC on wage earnings
+
+$\Rightarrow$ Evidence of wage earnings response to EITC along intensive
+margin
+
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={91, 86-90, 92-95}]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}%
+\begin{center}
+{\bf IMPLICATIONS OF ROLE OF INFORMATION}
+\end{center}
+{\bf Empirical work:}
+
+Information should be a key explanatory variable in estimation of
+behavioral responses to govt programs
+
+When doing empirical project, always ask the question: did people affected
+understand incentives?
+
+Cannot identify structural parameters of preferences without
+modeling information and salience
+
+{\bf Normative analysis:}
+
+Information is a powerful and inexpensive policy tool to affect
+behavior
+
+Should be incorporated into optimal policy design problems 
+%(see e.g., Gabaix-Farhi '15)
+
+\end{slide}
+
+
+\begin{slide}%
+\begin{center}
+{\bf Value of Administrative data}
+\end{center}
+
+Key advantages of admin data (in most advanced countries such as Scandinavia):
+
+1) Size (often full population available)
+
+2) Longitudinal structure (can follow individual across years)
+
+3) Ability to match wide variety of data (tax records, earnings records, family records, health records, education records)
+
+US is lagging behind in terms of admin data access [hard to match across agencies]
+
+Private sector also generates valuable \textbf{big data} (Google, Credit Bureaus, personnel/health data from large companies) 
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf ADVANCE EITC}
+%\end{center}
+%Recipients get EITC with tax refund in a single annual refund in
+%Feb year $t+1$ which seems suboptimal: (a) free interest loan to
+%govt and (b) harder to smooth consumption [surveys show that
+%primary use of tax refund is to pay overdue bills]
+%
+%Tax filers have option to use Advance EITC to get part of EITC in
+%the paycheck by filing a W5 form with employer [reverse of tax
+%withholding]: take up extremely low ($<$2\%)
+%
+%Possible explanation: (a) Information, (b) Lack of employer
+%cooperation, (c) Risk of owing taxes if not EITC eligible, (d) Tax
+%filers like big refunds, (e) Inertia (default is no Advance EITC)
+%
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf ADVANCE EITC}
+%\end{center}
+%Jones AEJ-AP'10 carries a randomized experiment with large
+%employer to encourage take-up and gets significant but very small
+%take-up effect suggesting that (a) [Information] and (b) [Employer
+%cooperation] cannot explain low take-up
+%
+%(d) [Love of refunds] seems plausible but (1) not supplied by
+%market absent refunds [employers could also pay part of wages as
+%annual lumpsum], (2) A-EITC use has not $\uparrow$ with EITC
+%expansions
+%
+%(c) [Risk of owing taxes] and (e) [Inertia] are likely part of the
+%explanation
+%
+%Interesting research topic: Have big tax refunds fuelled low
+%income credit [tax refund loans, payday loans, etc.]? Are big
+%refunds useful forced saving mechanisms?
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Other Behavioral Responses to Transfer Programs}
+%\end{center}
+%
+%1)  Bitler, Gelbach, and Hoynes (2005), Kline and Tartari (2013) use
+%randomized welfare experiments (pre-welfare reform) where
+%control group had AFDC and treatment group had a TANF type welfare
+%
+%$\Rightarrow$ Shift in budget set has different effects on different people
+%(some induced to work more, some less) consistent with standard labor
+%supply model
+%
+%2) Other studies have examined effects of low-income assistance
+%programs on other margins such as family structure (divorce rate,
+%number of kids) and find limited effects
+%
+%3) Empirical work on tagging and in-kind programs is more limited
+%and is an important area for further research
+%
+%\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Bunching at Notches: Kleven and Waseem '13}
+\end{center}
+Taxes and transfers sometimes also generate \textbf{notches} (=discontinuities) in the budget set
+
+Such discontinuities should create bunching (and gaps) in the resulting distributions
+
+Kleven and Waseem QJE'13 pioneered tax notch analysis in the case of the Pakistani
+income tax where \textbf{average} tax rate jumps
+
+$\Rightarrow$ Bunching below the notch and gap in density just above the notch
+
+Recently Londono-Velez and Avila (2018) use notch analysis to study wealth tax in Columbia
+
+They show clean prior-year counterfactual overcoming the Blomquist et al. '21 critique
+
+%Example: Pakistani income tax creates notches because \textbf{average} tax rate jumps
+%$\Rightarrow$ Bunching below the notch and gap in density just above the notch
+%
+%\textbf{Empirically:} Kleven and Waseem QJE'13 find
+%evidence of bunching (primarily among self-employed)
+%but size of the response is quantitatively small
+%
+%Large fraction of taxpayers are unresponsive to notch likely  due to lack of information
+
+\end{slide}
+
+
+
+
+\begin{slide}
+\includepdf[pages={103,104}]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={118, 116, 117}]{laborsupply_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Bunching at notches: elasticity estimation}
+\end{center}
+With optimization frictions (lack of information, costs of adjustment),
+a fraction of individuals fail to respond to notch
+
+Kleven-Waseem use empirical density in the theoretical gap area to measure the fraction
+of unresponsive individuals
+
+This allows them to back up the frictionless elasticity (i.e. the elasticity
+among responsive individuals)
+
+The frictionless elasticity is much higher than the reduced form elasticity
+but remains still relatively modest
+
+%Additional notch studies: Best and Kleven '14 on UK housing purchase tax (stamp duty), Kopczuk-Munroe AEJ'15
+%on NY-NJ Mansion tax [also find evidence of bunching responses]
+
+\end{slide}
+
+
+
+\begin{slide}%
+\begin{center}
+{\bf Many Recent Bunching Studies}
+\end{center}
+
+Bunching method applied to many settings with nonlinear budgets with convex kink points or notches (Kleven '16 survey):
+
+\small
+
+$\bullet$ Individual tax (Bastani-Selin '14 Sweden, Mortenson-Whitten '16 US) 
+
+$\bullet$ Payroll tax (Tazhidinova '15 on UK)
+
+$\bullet$ Corporate tax (Devereux-Liu-Loretz '14, Bachas-Soto '17)
+
+$\bullet$ Wealth tax (Seim '17, Jakobsen et al. '17, Londono-Velez and Avila '18)
+
+$\bullet$ Health spending (Einav-Finkelstein-Schrimpf '13 on Medicare Part D)
+
+$\bullet$ Retirement savings (401(k) matches)
+
+$\bullet$ Retirement age (Brown '13 on California Teachers)
+
+$\bullet$ Housing transactions (Best and Kleven, 2017)
+
+General findings: 
+
+(1) clear bunching when information is salient and outcome easily manipulable.
+Bunching comes most often from avoidance/evasion rather than real behavior.
+
+(2) bunching is almost always small relative to conventional
+elasticity estimates
+
+%\small
+%Extension: notches in budget sets have also been used to estimate behavioral responses
+%(see Kleven-Waseem QJE'13). 
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Responses to Corporate Tax Notches: Bachas-Soto '18}
+\end{center}
+Bachas and Soto '18 exploit the notched Costa Rica corporate tax system
+to estimate compellingly the effects of the corporate tax rate on reported profits
+
+Corporate tax applies to profits = revenue minus costs
+
+But tax rate depends on size of revenue with 3 rates: 10\%, 20\%, 30\%
+
+1) Firms bunch at the notches to benefit from the lower rates
+
+2) Most importantly: clear evidence that profit rates (profits/revenue) is strongly affected
+by the corporate tax rate
+
+
+
+\end{slide}
+
+
+
+
+\begin{slide}
+\includepdf[pages={119, 120, 121}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Intertemporal Labor Supply}
+%\end{center}
+%
+%
+%1) What parameter do reduced-form regressions of labor supply on
+%wages or taxes identify?
+%
+%2) MaCurdy critique: reduced-form studies did not identify any
+%parameter of interest in a dynamic model
+%
+%3) Instead, estimate a mix of income effects, intertemporal
+%substitution effects, and compensated wage elasticities
+%
+%4) MaCurdy (1981) develops a structural estimation method (two
+%stage budgeting) to identify preference parameters in a life-cycle
+%model of labor supply (see Chetty '06 for simple exposition)
+%\end{slide}
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Life Cycle Model of Labor Supply}
+%\end{center}
+%General model is of the form:
+%\begin{eqnarray*}
+%&&U(c_{0},..,c_{T},l_{0},..,l_{T}) \\
+%&& s.t. \:\:\: A_{0}+\sum w_{t}l_{t}/(1+r)^{t}\geq \sum
+%c_{t}/(1+r)^{t} \:\:\: (\lambda )
+%\end{eqnarray*}
+%Key Assumption for inter-temporal budget is {\bf no credit
+%constraints}
+%
+%$\Rightarrow$ First order conditions:%
+%\begin{eqnarray*}
+%U_{l_{t}}(c_{0},..,c_{T},l_{0},..,l_{T})+\lambda w_{t}/(1+r)^{t} &=&0 \\
+%U_{c_{t}}(c_{0},..,c_{T},l_{0},..,l_{T})-\lambda /(1+r)^{t} &=&0
+%\end{eqnarray*}
+%In the general case, $l_{t}(A_{0},w_{0},..,w_{T})$ same as the
+%multi-good choice -- no generic results
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Life Cycle Model with Time Separability}
+%\end{center}
+%Assuming time separability, the individual maximizes:
+%\[
+%U=\sum_{t=0}^{T}\beta ^{t}u(c_{t},l_{t})
+%\]
+%\[ s.t. \:\:\: \sum_{t=0}^{T}
+%c_{t}/(1+r)^{t}  \leq A_{0}+\sum_{t=0}^{T} w_{t}l_{t}/(1+r)^{t} \:\:\: (\lambda ) \]
+%
+%Leads to first order conditions%
+%\begin{eqnarray*}
+%l_{t} &:&\beta ^{t}u_{l_{t}}+\lambda w_{t}/(1+r)^{t}=0 \\
+%c_{t} &:&\beta ^{t}u_{c_{t}}-\lambda /(1+r)^{t}=0
+%\end{eqnarray*}
+%%Combining yields: $-u_{l}=w_{t}u_{c}$
+%
+%Intratemporal FOC same as in static model: $-u_{l}=w_{t}u_{c}$
+%
+%Intertemporal FOC: $u_{c_{t}}/u_{c_{t+1}}=\beta (1+r)$ [called Euler equation]
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Dynamic Life Cycle Model: Policy Rules}
+%\end{center}
+%1) $\lambda =u_{c_{0}}$ is the marginal utility of initial
+%consumption
+%
+%2) The two first order conditions imply that%
+%\begin{eqnarray*}
+%l_{t} &=&l(w_{t},\lambda /(\beta (1+r))^{t}) \\
+%c_{t} &=&c(w_{t},\lambda /(\beta (1+r))^{t})
+%\end{eqnarray*}
+%3) Current labor and consumption choice depends on current $w_{t}$
+%
+%4) All other wage rates and initial wealth enter only through the
+%budget constraint multiplier $\lambda $ (MaCurdy 1981)
+%
+%%5) Easy to see for separable utility [$u(c)$ concave, $v(l)$
+%%convex]:
+%%\begin{eqnarray*}
+%%u(c,l) &=&u(c)-v(l) \\
+%%\Rightarrow v^{\prime }(l_{t}) &=&\lambda w_{t}/[\beta (1+r)]^{t} \\
+%%\Rightarrow l_{t} &=&v^{\prime -1}(\lambda w_{t}/[\beta (1+r)]^{t})
+%%\end{eqnarray*}
+%5) Sufficiency of $\lambda $ greatly simplifies solution to ITLS\
+%model
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Dynamic Life Cycle Model: Frisch Elasticity}
+%\end{center}
+%Frisch intertemporal labor supply elasticity defined as:
+%\[
+%\delta =\left (\frac{w_{t}}{l_{t}} \right )\frac{\partial l}{\partial w_{t}}|_{\lambda }
+%\]
+%
+%Experiment: change wage rate in one period only, holding all other
+%wages constant [so that $\lambda$ stays constant]
+%
+%Can show that $\delta >0$: work more today to take advantage of
+%temporarily higher wage
+%
+%%In separable case:
+%%\begin{eqnarray*}
+%%v'(l_{t}) &=&\lambda w_{t}/[\beta (1+r)]^{t} \\
+%%&\Rightarrow &\frac{\partial l}{\partial w_{t}}|_{\lambda }=\frac{\lambda }{%
+%%[\beta (1+r)]^{t}v^{\prime \prime }(l_{t})}>0
+%%\end{eqnarray*}
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Frisch vs Hicksian Elasticity:\ Illustrative Example}
+%\end{center}
+% Suppose that you are paid a piece rate
+%
+% It takes 1 hour of work to make a piece
+%
+% You usually work from 8am-12pm and 1pm-5pm.
+%
+% Suppose your employer tells you that the piece rate will be twice
+%as high only during the 12pm-1pm time slot
+%
+% What do you do?
+%
+%$\rightarrow $Have lunch earlier at 11am-12pm and work from
+%12pm-1pm
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf ITLS and Income Effects}
+%\end{center}
+%Single inter-temporal budget constraint: $$ \sum c_{t}/(1+r)^{t} \leq A_{0}+\sum
+%w_{t}l_{t}/(1+r)^{t}$$ $\Rightarrow$
+%Receiving \$ $M$ in year $0$ vs. \$ $(1+r)^t \cdot M$ in year $t$
+%has the same impact on labor supply
+%
+%Temporary transfer has a small effect on labor in {\bf all}
+%periods
+%
+%In reality, temporary transfers seem to have large effects on
+%labor supply [e.g., severance payments, Card-Chetty-Weber QJE'08]
+%$\Rightarrow$
+%
+%(1) Many people are credit constrained: static labor supply model
+%might be a better depiction of reality
+%
+%(2) People might not make intertemporal choices as in ITLS model
+%[behavioral economics]
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Dynamic Life Cycle Model: Three Types of Wage Changes}
+%\end{center}
+%1) Evolutionary change:\ movements along profile (life-cycle)
+%
+%2) Parametric change: temporary tax cut
+%
+%3) Profile shift: changing the wage rate in all periods
+%
+%a) Equivalent to a permanent parametric change
+%
+%b) Implicitly the elasticity that static studies estimate with
+%unanticipated tax changes
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={70}]{laborsupply_attach.pdf}
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Intertemporal Labor Supply: High Frequency}
+\end{center}
+Frisch elasticity $e^F$: changing wages in a single period and keeping
+marginal utility of income $\lambda$ constant
+
+Compensated static elasticity $e^C$: changing wages in all periods but
+keeping utility constant
+
+Uncompensated static elasticity $e^U$: changing wages in all periods
+with no compensation
+\[ \text{Theoretically: } e^F > e^C > e^U \]
+
+Frisch elasticity is of central interest for calibration of macro
+business cycle models: 
+
+Real business cycle model requires huge
+elasticity to generate realistic employment fluctuations
+
+\end{slide}
+
+
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Frisch vs. Compensated vs. Uncompensated Elasticities}
+%\end{center}
+%Intertemporal substitution: Frisch elasticity $\geq$ Compensated
+%static elasticity
+%
+%Income effects: Compensated static elasticity $\geq$ Uncompensated
+%static elasticity
+%
+%Difference in Frisch and Compensated elasticities also loosely
+%related to anticipated vs. unanticipated changes
+%
+%Looney and Singhal (2007) exploit this reasoning to identify
+%Frisch elasticity [MTR changes predictably when filers loose a
+%child exemption]
+%
+%Frisch elasticity is of central interest for calibration of macro
+%business cycle models
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Intertemporal substitution: Tax Holiday in Iceland}
+\end{center}
+
+In 1987, Iceland transitioned from paying taxes on previous year's income to current income
+
+To avoid double taxation during transition, no tax charged over 1987 incomes
+
+Average tax rate of 14.5\% in 1986, 0\% in 1987, 8\% in 1988
+
+Reform announced in late 1986 $\Rightarrow$ unanticipated temporary tax change
+
+Temporary change in incentives $\Rightarrow$ ideal quasi-experiment to intertemporal substitution elasticity
+(work hard in 1987, take a break in 1986 or 1988)
+
+\small
+Bianchi et al. AER'01 look at employment effects [hard to know what counterfactual is]
+
+Siggurdsson (2019) compares high (big tax cut) vs. low earners (small tax cut) and finds larger response among high earners [but possible
+that high earners are more elastic to start with]
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={83}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Tax Holiday in Swiss Cantons}
+\end{center}
+Martinez, Saez, Siegenthaler '21 study tax holidays in Swiss cantons also created by
+a transition to pay-as-you earn
+
+Key advantage: different cantons transitioned at different times (creating staggered tax holidays across cantons)
+
+Key findings: 
+
+(a) precise zero effect on extensive margin
+
+(b) some effects on intensive margin for high wage earners and self-employed (possibly avoidance rather than real)
+
+Why smaller effects in Switzerland than Iceland? Iceland sold tax holiday as opportunity to work more (Switzerland did not)
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={135-142}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Income Tax Holiday for High Earners in Argentina}
+%\end{center}
+%
+%In late August 2013, Argentina implemented an income tax holiday for wage earners with
+%monthly earnings below \$15K in Jan-Aug 2013 (predetermined), lasted until Feb 2016
+%
+%Tortarolo (2019) proposes an \textbf{Regression Discontinuity (RD)} design using monthly
+%social security admin earnings data
+%
+%Compares workers with earnings just below \$15K (treatment) vs. workers with earnings
+%just above \$15K
+%
+%Evidence shows a pretty precisely estimated zero but some small significant effect on overtime hours
+%
+%$\Rightarrow$ High wage earners cannot respond by themselves without help from employers
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={143-149}, scale=1.03]{laborsupply_attach.pdf}
+%\end{slide}
+%
+
+
+
+
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf MaCurdy 1983}
+%\end{center}
+%1) Structural estimate using panel data for men and within-person
+%wage variation
+%
+%2) Find both Frisch and compensated wage elasticity of around 0.15
+%
+%3) But his wage variation is not exogenous
+%
+%\end{slide}
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Pencavel 2002}
+%\end{center}
+%1) Instruments with trade balance interacted with schooling and
+%age
+%
+%2) Frisch elasticity: 0.2
+%
+%3) Uncompensated wage elasticity: 0-0.2
+%
+%Instruments not credibly exogenous but results closer to
+%structurally interpretable parameters
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Critique of ITLS\ models}
+%\end{center}
+%$\bullet$ Card critique of value of ITLS\ model
+%
+%a) Fails to explain most variation in hours over lifecycle
+%
+%b) Sheds little light on profile-shift elasticities that we care
+%about for policy
+%
+%$\bullet$ Core \textquotedblleft structural vs.
+%reduced-form\textquotedblright\ divide in applied microeconomics:
+%Trade off between credible identification and well defined
+%theoretical framework
+%\end{slide}
+
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Blundell, Duncan, and Meghir 1998}
+%\end{center}
+%1) Good combination of structural and reduced form methods on
+%labor supply
+%
+%2) Argue against standard DD approach, where treatment/control
+%groups are endogenously defined
+%
+%a) Reduced tax rate may pull households from low income group to
+%high income group
+%
+%b) Need group definitions that are stable over time
+%
+%3) Use birth cohort (decade) interacted with education (e.g. high
+%school or more)
+%
+%\end{slide}
+%
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Blundell, Duncan, and Meghir 1998}
+%\end{center}
+%
+%1) Construct group-level labor supply measures for women in
+%couples
+%
+%2) Measure how labor supply co-varies with wages rates net of
+%taxes in the UK in 1980s
+%
+%3) Importantly, tax reforms during this period affected groups
+%very differently
+%
+%4) Use consumption data as a control for permanent income
+%
+%5) Can therefore obtain a structurally interpretable ($\lambda $
+%constant) estimate
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={71}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Blundell, Duncan, and Meghir: Results}
+%\end{center}
+%1) Compensated wage elasticities: 0.15-0.3, depending on number of
+%kids
+%
+%2) No income effects when no kids, moderate income effects when
+%kids present
+%
+%3) Identification assumption is common trends across
+%cohort/education groups
+%
+%4) However, reforms in 80s went in opposite directions at
+%different times $\rightarrow$ Secular trends cannot explain
+%everything
+%
+%5) See Blundell and MaCurdy (1999) for additional ITLS estimates
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Intertemporal Substitution: High Frequency Studies}
+%\end{center}
+%1) Recent literature focuses on high frequency substitution
+%
+%2) Focus on groups with highly flexible and well measured labor
+%supply such as:
+%
+%a) cab drivers [Camerer et al. QJE'97, Farber JPE'05, AER-PP'08,
+%Crawford-Meng '09]: debate on whether cab drivers are rational
+%or have a daily income target
+%
+%b) stadium vendors [Oettinger JPE'99]
+%
+%c) cycling messengers randomized experiment [Fehr-Goette AER'07]
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Camerer et al. QJE'97}
+%\end{center}
+%Examine how variation across days in wage rate for cab drivers
+%(arising from variation in waiting times) correlates with hours
+%worked
+%
+%a) Striking finding: strong negative effect
+%
+%b) Interpret this as \textquotedblleft target
+%earning\textquotedblright\ -- strongly contradicts standard
+%intertemporal labor supply model
+%
+%c) Would suggest very counter intuitive effects for temporary tax
+%changes, etc.
+%
+%\end{slide}%
+%%EndExpansion
+%
+%\begin{slide}
+%\includepdf[pages={72,73}]{laborsupply_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Farber: Division Bias}
+%\end{center}
+%Argues that Camerer et al. evidence of target earning behavior is
+%driven by econometric problems
+%
+%Camerer et al. regression specification:%
+%\[
+%h_{it}=\alpha +\beta e_{it}/h_{it}+\varepsilon _{it}
+%\]
+%
+%Camerer et al. recognize this and try to instrument using average
+%daily wage $\bar{w}_t$ across all drivers
+%
+%But there may be a random component to hours at the group level
+%(e.g., good weather makes job more pleasant $\Rightarrow$ more
+%hours and smaller wages at the group level)
+%
+%$\Rightarrow$ Spuriously find a negative association between
+%average daily wage and average hours
+%\end{slide}
+
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Farber: Within-Day Volatility}
+%\end{center}
+%Farber's alternative test for target earnings: hazard model
+%$Quit=f(cum\_hours,cum\_inc)$
+%
+%Result: main determinant of quitting is hours worked (fatigue),
+%NOT cumulative income $\Rightarrow$ Rejects target earning, but
+%does not yield ITLS\ estimate
+%
+%Two other studies find positive ITLS:
+%
+%a) Bicycle messengers (randomized experiment with 25\% wage
+%subsidy for 4 weeks): work more days and earn more when wages
+%higher but effort per day $\downarrow$ [fatigue effect]
+%
+%b) Baseball stadium vendors (work more in high attendance games)
+%
+%But such structural parameters are not of
+%direct interest to public finance because they are too high
+%frequency
+%\end{slide}
+
+%\begin{slide}%
+%\begin{center}
+%{\bf Use of Frisch elasticity in RBC macro models}
+%\end{center}
+%
+%Real business cycle (RBC) models motivated by the fact
+%that output fluctuates more than hours worked
+%
+%{\bf Short-Run:} Hours worked are strongly pro-cyclical
+%[unemployment in recessions and overtime in booms]
+%
+%RBC models do not have involuntary unemployment
+%[questionable assumption]
+%
+%Shock in technology affects wages
+%$\Rightarrow$ Variation in hours due to labor supply $\Rightarrow$ Output 
+%varies more than hours
+%
+%$\Rightarrow $ Frisch elasticity must be very large (above 1.5)
+%for Real business cycle macro-models to work [Prescott Nobel lecture JPE'06]
+%
+%Micro labor supply evidence does not support such a high Frisch elasticity
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf SOCIAL DETERMINANTS OF LABOR SUPPLY}
+\end{center}
+Concern that taxes funding social state could discourage work
+
+\textbf{Standard econ view:} labor supply $l(w,R)$ coming out of \\ $\max u(\underset{+}{c},\underset{-}{l})$ st $c=wl+R$
+is highly incomplete
+
+\textbf{Social determinants of labor supply:}
+
+a) Youth labor is regulated by labor laws/education
+
+b) Old age labor regulated by retirement programs
+
+c) Female market labor driven by norms + child care policy
+
+d) Hours of work regulated by overtime + vacation mandates
+
+Social labor supply with disutility for youth, old, overtime labor
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={152-153, 155-157}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Macro Long-Run Evidence}
+%\end{center}
+%1) Macroeconomists also estimate elasticities by examining
+%long-term trends/cross-country comparisons\bigskip
+%
+%2) Identification more questionable but estimates perhaps more
+%relevant to long-run policy questions of interest\bigskip
+%
+%3) Use aggregate hours data and aggregate measures of taxes
+%(average tax rates)\bigskip
+%
+%4) Highly influential in calibration of macroeconomic
+%models\bigskip
+%\end{slide}
+%
+%\begin{slide}%
+%\begin{center}
+%{\bf Trend-based Estimates and Macro Evidence}
+%\end{center}
+%{\bf Long-Run:} US real wage rates multiplied by about 5 from 1900 to
+%present due to economic growth
+%
+%Aged 25-54 male hours have fallen 25\% and then stabilized (Ramey and Francis AEJ-macro '09)
+%
+%$\Rightarrow$ Uncompensated hours of work elasticity is small ($<.1$)
+%
+%However, taxes are rebated as transfers so can still have labor
+%supply effects if large compensated elasticity/income effects
+%
+%Alternative more plausible story: utility depends on relative consumption and labor supply is a social norm
+%(reference point labor supply theory)
+%\end{slide}
+
+\begin{slide}
+\includepdf[pages={85}]{laborsupply_attach.pdf}
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Long-run cross-country panel: Prescott 2004}
+%\end{center}
+%Uses data on hours worked by country in 1970 and 1995 for 7 OECD\
+%countries [total hours/people age 15-64]
+%
+%Technique to identify elasticity:\ calibration of GE\ model
+%
+%Rough intuition: posit a labor supply model, e.g.%
+%\[
+%u(c,l)=c-\frac{l^{1+1/\varepsilon }}{1+1/\varepsilon }
+%\]
+%
+%Finds that elasticity of $\varepsilon =1.2$ best matches time
+%series and cross-sectional patterns
+%
+%Note that this is analogous to a regression without controls for
+%other variables
+%
+%Results developed in subsequent calibrations by
+%Ohanina-Raffo-Rogerson JME'08 and others using more data
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={74}]{laborsupply_attach.pdf}
+%\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Davis and Henrekson 2005}
+%\end{center}
+%Run regressions of hours worked on tax variables with various
+%controls
+%
+%Some panel evidence, but primarily cross-sectional
+%
+%Separate intensive and extensive margin responses
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={75,76}]{laborsupply_attach.pdf}
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Reconciling Micro and Macro Estimates}
+%\end{center}
+%
+%Recent interest in reconciling micro and macro elasticity
+%estimates (see Chetty-Guren-Manoli-Weber '13)
+%
+%Three potential explanations
+%
+%a)  Statistical Bias: culture differs in countries
+%with higher tax rates [Alesina, Glaeser, Sacerdote 2005, Steinhauer 2018 for
+%Swiss communities by language]
+%
+%b) Macro-elasticity captures long-term response which could be larger than
+%short-term response (frictions, etc. Chetty '12).
+%
+%c) Other programs: retirement, education affect labor supply at
+%beginning and end of working life (Blundell-Bozio-Laroque '13) and child
+%care affecting mothers (Kleven JEP'14)
+%
+%\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Blundell-Bozio-Laroque '13}
+%\end{center}
+%
+%Strong evidence that variation in aggregate hours of work across
+%countries happens among the young and the old: (a) schooling-work
+%margin (b) presence of young children (for women), (c) early
+%retirement
+%
+%Serious cross-country time series analysis would require to put
+%together a better tax wedge by age groups which includes all those
+%additional govt programs [welfare, retirement, child care]
+%
+%This has been done quite successfully in the case of retirement by
+%series of books by Gruber and Wise, {\em Retirement around the
+%world}
+%
+%$\Rightarrow$ Need to develop a more comprehensive international /
+%time series database of tax wedges by age and family types
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={77,78}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={79}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={80,82}]{laborsupply_attach.pdf}
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={81}]{laborsupply_attach.pdf}
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Long-term effects: Evidence from the Israeli Kibbutz}
+\end{center}
+Abramitzky '18 book based on series of academic papers
+
+Kibbutz are egalitarian and socialist communities in Israel, thrived for 
+almost a century within a more capitalist society
+
+1) Social sanctions on shirkers effective in small communities with limited privacy
+
+2) Deal with brain drain exit using communal property as bond 
+
+3) Deal with adverse selection in entry with screening and trial period 
+
+4) Perfect sharing in Kibbutz has negative effects on high school students performance
+but effect is small in magnitude (concentrated among kids with low education parents)
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Long-term effects: Evidence from the Israeli Kibbutz}
+\end{center}
+Abramitzky-Lavy ECMA'14 show that 
+high school students study harder once their 
+kibbutz shifts away from equal sharing
+
+Uses a DD strategy: pre-post reform and comparing reform Kibbutz to non-reform Kibbutz.
+Finds that
+
+1) Students are 3\% points more likely to graduate
+
+2)  Students are 6\% points more likely to achieve a matriculation 
+certificate that meets university entrance requirements
+
+3)  Students get an average of 3.6 more points in their exams
+
+Effect is driven by students whose parents have 
+low schooling; larger for males; stronger in 
+kibbutz that reformed to greater degree
+
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Culture of Welfare across Generations}
+\end{center}
+Conservative concern that welfare promotes a culture of dependency: kids growing up
+in welfare supported families are more likely to use welfare
+
+Correlation in welfare use across generations is obviously not necessarily causal 
+
+Dahl, Kostol, Mogstad QJE'2014 analyze causal effect of parental use of Disability Insurance (DI)
+on children use (as adults) of DI in Norway
+
+Identification uses random assignment of judges to denied DI applicants who appeal [some judges are severe, some lenient] 
+
+Find evidence of causality: parents on DI increases odds of kids on DI over next 5 years by 6 percentage points
+
+\small
+Mechanism seems to be learning about DI availability rather than reduced stigma from using DI [because no effect on other
+welfare programs use]
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={101}]{laborsupply_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Social Determinants of Labor Supply}
+%\end{center}
+%Strong evidence that labor supply is not purely an individual decision based on
+%standard invariant utility $u(c,l)$
+%
+%Firms cooperation needed in most cases 
+%
+%Social norms play large role: e.g. women's market labor supply
+%
+%US women labor force participation during World War II: 50\% increase from '40 to '45
+%(2/3 reversed afterwards)
+%
+%Child penalties in female earnings vary a lot across countries (Kleven et al. AEA PP'19) and are not due solely
+%to monetary incentives
+%
+%Responses to taxes and transfers likely affected by social norms
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Abramitzky, Ran \emph{The Mystery of the Kibbutz: How Socialism Succeeded}, Princeton: Princeton University Press,
+2018 \href{http://elsa.berkeley.edu/~saez/course/Abramitzky_book_presentation.pdf} {(web)}
+
+Abramitzky, Ran and Victor Lavy, 2014 ``How Responsive is Investment in Schooling to Changes in Redistributive Policies 
+and in Returns?'', Econometrica, 82(4), 1241-1272 \href{http://elsa.berkeley.edu/~saez/course/Abramitzky-Lavy14.pdf} {(web)}
+
+Alesina, A., E. Glaeser, and B. Sacerdote ``Work and Leisure in the U.S. and Europe: Why So Different?'', NBER Macroeconomics Annual 2005. \href{http://www.nber.org/papers/w11278.pdf} {(web)}
+
+Ashenfelter, O. and M. Plant ``Non-Parametric Estimates of the Labor Supply Effects of Negative Income Tax Programs'', Journal of Labor Economics, Vol. 8, 1990, 396-415. \href{http://links.jstor.org/stable/pdfplus/2535218.pdf} {(web)} 
+
+Bachas, Pierre and Mauricio Soto. ``Not(ch) Your Average Tax System: Corporate Taxation Under Weak Enforcement,'' World Bank Policy Research Working Paper 8524, 2018.
+\href{http://elsa.berkeley.edu/~saez/course/bachas-soto18notch.pdf} {(web)}
+
+Bastani, Spencer and Hakan Selin, ``Bunching and non-bunching at kink points of the Swedish tax schedule,'' Journal of Public Economics, 109, 2014, 36-49. 
+\href{http://elsa.berkeley.edu/~saez/course/bastani-selin14.pdf} {(web)}
+
+Bertrand, M., E. Duflo and S. Mullainhatan ``How Much Should we Trust Differences-in-Differences Estimates?'', Quarterly Journal of Economics, Vol. 119, 2004, 249-275. \href{http://links.jstor.org/stable/pdfplus/25098683.pdf} {(web)}
+
+Best, Michael and Henrik Kleven ``Housing Market Responses to Transaction Taxes: Evidence from Notches and Stimulus in the UK,'' Review of Economic Studies 2017 forthcoming
+\href{http://elsa.berkeley.edu/~saez/course/best-kleven_landnotches_may2014.pdf} {(web)}
+
+Bianchi, M., B. R. Gudmundsson, and G. Zoega. 2001. ``Iceland's Natural
+Experiment in Supply-Side Economics,'' American Economic Review, 91(5), 1564-79.
+\href{http://www.jstor.org/stable/pdfplus/2677941.pdf} {(web)}
+
+Bitler, M. J. Gelbach and H. Hoynes ``What Mean Impacts Miss: Distributional Effects of Welfare Reform Experiments'', American Economic Review, Vol. 96, 2006, 988-1012. \href{http://links.jstor.org/stable/pdfplus/30034327.pdf} {(web)}
+
+Bitler, M.  and H. Hoynes ``The State of the Safety Net in the Post-Welfare Reform Era''  Brookings Papers on Economic Activity Fall 2010, 71-127  \href{http://elsa.berkeley.edu/~saez/course/bitler-hoynesBPEA11.pdf} {(web)}
+
+Blau, F. and L. Kahn ``Changes in the Labor Supply Behavior of Married Women: 1980-2000'', Journal of Labor Economics, Vol. 25, 2007, 393-438. \href{http://www.jstor.org/stable/pdfplus/10.1086/513416.pdf} {(web)}
+
+Blomquist, S. ``Restrictions in labor supply estimation: Is the MaCurdy critique correct?'', Economics Letters, Vol. 47, 1995, 229-235 \href{http://elsa.berkeley.edu/~saez/course/Blomquist_EL(1995).pdf} {(web)}
+
+Blomquist, Soren,Whitney Newey, Anil Kumar, Che-Yuan Liang ``On Bunching and Identification of the Taxable Income Elasticity'', Journal of Political Economy 2021 \href{http://elsa.berkeley.edu/~saez/course/blomquist-newey-etalJPE21.pdf} {(web)} 
+
+Blundell, Richard, Antoine Bozio, and Guy Laroque. 2013. ``Extensive and Intensive Margins of Labour Supply: Work and Working Hours in the US, UK and France,'' Fiscal Studies, 34(1), 1-29 \href{http://elsa.berkeley.edu/~saez/course/blundell-bozio-laroque11labor.pdf} {(web)}
+
+Blundell, R., A. Duncan and C. Meghir ``Estimating Labor Supply Responses Using Tax Reforms'', Econometrica, Vol. 66, 1998, 827-862. \href{http://links.jstor.org/stable/pdfplus/2999575.pdf} {(web)}
+
+Blundell, R. and T. MaCurdy ``Labor supply: a review of alternative approaches'', in the Handbook of Labor Economics, Vol. 3A, O. Ashenfelter and D. Card, eds. Amsterdam: Elsevier Science 1999. \href{http://elsa.berkeley.edu/~saez/course/Blundell-MaCurdy_Handbook.pdf} {(web)}
+
+Brown, K. ``The Link between Pensions and Retirement Timing: Lessons from California Teachers'', 
+Journal of Public Economics, 98, 2013, 1--14.
+2007 \href{http://elsa.berkeley.edu/~saez/course/brown_jpube13.pdf} {(web)}
+
+Camerer, C., L. Babcock, G. Loewenstein and R. Thaler ``Labor Supply of New York City Cabdrivers: One Day at a Time'', Quarterly Journal of Economics, Vol. 112, 1997, 407-441. \href{http://links.jstor.org/stable/pdfplus/2951241.pdf} {(web)}
+
+Card, David, Raj Chetty, Martin Feldstein, and Emmanuel Saez ``Expanding Access to Administrative Data for Research in the United States,'' White Paper for NSF 10-069 call for papers on "Future Research in the Social, Behavioral, and Economic Sciences" September 2010. \href{http://elsa.berkeley.edu/~saez/card-chetty-feldstein-saezNSF10dataaccess.pdf} {(web)}
+
+Card, D.,R. Chetty, and A. Weber, ``Cash-on-Hand and Competing Models of Intertemporal Behavior: New Evidence from the Labor Market'', Quarterly Journal of Economics, Vol. 122, 2007, 1511-1560. \href{http://elsa.berkeley.edu/~saez/course/Card,Chetty,Weber_QJE(2007).pdf} {(web)}
+
+Card, David, and Dean R. Hyslop. 2005. ``Estimating the Effects of a Time-Limited
+Earnings Subsidy for Welfare-Leavers'' Econometrica, 73(6), 1723-70.
+\href{http://www.jstor.org/stable/pdfplus/3598750.pdf} {(web)}
+
+Cesarini, David, Erik Lindqvist, Matthew J. Notowidigdo, Robert Ostling. 2017 ``The Effect of Wealth on Individual and Household Labor Supply: Evidence from Swedish Lotteries'', American Economic Review
+\href{http://elsa.berkeley.edu/~saez/course/cesarinietalAER17.pdf} {(web)} 
+
+Chetty, R. ``A New Method of Estimating Risk Aversion'', The American Economic Review, Vol. 96, 2006, 1821-1834. \href{http://www.jstor.org/stable/pdfplus/30034997.pdf} {(web)}
+
+Chetty, Raj. 2012. ``Bounds on Elasticities with Optimization Frictions: A Synthesis of Micro
+and Macro Evidence on Labor Supply,'' Econometrica 80(3), 969--1018.
+\href{http://elsa.berkeley.edu/~saez/course/chettyEMA12.pdf} {(web)} 
+
+Chetty, R., Adam Guren, Day Manoli, and Andrea Weber. 2013 ``Does Indivisible Labor Explain the Difference between Micro and Macro Elasticities? A Meta-Analysis of Extensive Margin Elasticities'',
+NBER Macroeconomics Annual, University of Chicago Press, 27(1), 1--56.
+\href{http://elsa.berkeley.edu/~saez/course/chettyetal2013NBERmacro.pdf} {(web)}
+
+Chetty, R., J. Friedman, T. Olsen and L. Pistaferri ``Adjustment Costs, Firms
+Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax
+Records'', Quarterly Journal of Economics,  126(2), 2011, 749-804. \href{http://elsa.berkeley.edu/~saez/course/chettyetalQJE2011denmark.pdf} {(web)} 
+
+\textbf{Chetty, R., J. Friedman and E. Saez ``Using Differences in Knowledge Across Neighborhoods
+to Uncover the Impacts of the EITC on Earnings'', 
+American Economic Review, 2013, 103(7), 2683-2721 \href{http://eml.berkeley.edu/~saez/chetty-friedman-saezAER13EITC.pdf} {(web)} }
+
+Chetty, R. and E. Saez ``Teaching the Tax Code: Earnings Responses to an Experiment with Recipients'', American Economic Journal: Applied Economics 5(1), 2013, 1-31. \href{http://elsa.berkeley.edu/~saez/chetty-saezAEJ13EITC.pdf} {(web)}
+
+Crawford, V. and J. Meng ``New York City Cabdrivers' Labor Supply Revisited: Reference-Dependence Preferences with Rational-Expectations Targets for Hours and Income'', University of California at San Diego, Economics Working Paper Series: 2008-03, 2008. \href{http://elsa.berkeley.edu/~saez/course/Crawford,Meng(2009).pdf} {(web)}
+
+\textbf{Dahl, Gordon B., Andreas Ravndal Kostol, Magne Mogstad ``Family Welfare Cultures''
+Quarterly Journal of Economics, 129(4), 2014, 1711-52 \href{http://elsa.berkeley.edu/~saez/course/dahl-kostol-mogstadQJE14.pdf} {(web)} }
+
+Davis, J. and M. Henrekson, ``Tax Effects on Work Activity, Industry Mix and Shadow Economy Size: Evidence from Rich Country Comparisons'', in R. Gomez-Salvador, A. Lamo, B. Petrongolo, M. Ward and E. Wasmer eds., Labour Supply and Incentives to Work in Europe, 2005, 44-104. \href{http://www.nber.org/papers/w10509.pdf} {(web)}
+
+Devereux, Michael P, Li Liu and Simon Loretz. 2014. "The Elasticity of Corporate Taxable Income: New Evidence from UK Tax Records." American Economic Journal: Economic Policy, 6(2): 19-53.
+\href{http://elsa.berkeley.edu/~saez/course/devereuxetal13.pdf} {(web)}
+
+Einav, Liran, Amy Finkelstein, Paul Schrimpf ``The Data Revolution and Economic Analysis', NBER Working Paper 19035, 2013. \href{http://www.nber.org/papers/w19035.pdf} {(web)}
+
+Einav, Liran and Jonathan Levin ``The Data Revolution and Economic Analysis'', NBER Working Paper No. 19035, 2013 \href{http://www.nber.org/papers/w19035.pdf} {(web)}
+
+%Eissa, N. ``Taxation and Labor Supply of Married Women: The Tax Reform Act of 1986 as a Natural Experiment'', NBER Working Paper No. 5023, 1995. \href{http://www.nber.org/papers/w5023} {(web)}
+
+Eissa, N. and H. Hoynes ``Taxes and the labor market participation of married couples: the earned income tax credit'', Journal of Public Economics, Vol. 88, 2004, 1931-1958. \href{http://elsa.berkeley.edu/~saez/course/Eissa and Hoynes_JPubE(2004).pdf} {(web)}
+
+Eissa, N. and J. Liebman ``Labor Supply Response to the Earned Income Tax Credit'', Quarterly Journal of Economics, Vol. 111, 1996, 605-637. \href{http://links.jstor.org/stable/pdfplus/2946689.pdf} {(web)} 
+
+Farber, H. ``Is Tomorrow Another Day? The Labor Supply of New York City Cab Drivers'', Journal of Political Economy, Vol. 113, 2005, 46-82. \href{http://links.jstor.org/stable/pdfplus/3555297.pdf} {(web)}
+
+Farber, H. ``Reference-Dependent Preferences and Labor Supply: The Case of New York City Taxi Drivers'', The American Economic Review, Vol. 98, 2008, 1069-1082. \href{http://www.jstor.org/stable/pdfplus/29730106.pdf} {(web)}
+
+Fehr, E. and L. Goette ``Do Workers Work More if Wages Are High? Evidence from a Randomized Field Experiment'', American Economic Review, Vol. 97, 2007, 298-317. \href{http://links.jstor.org/stable/pdfplus/30034396.pdf} {(web)}
+
+Friedberg, L. ``The Labor Supply Effects of the Social Security Earnings Test'', Review of Economics and Statistics, Vo. 82, 2000, 48-63. \href{http://links.jstor.org/stable/pdfplus/2646671.pdf} {(web)}
+
+Greenberg, D. and H. Hasley, ``Systematic Misreporting and Effects of Income Maintenance Experiments on Work Effort: Evidence from the Seattle-Denver Experiment'', Journal of Labor Economics, Vol. 1, 1983, 380-407. \href{http://www.jstor.org/stable/pdfplus/2534861.pdf} {(web)}
+
+Hausman, J. ``Stochastic Problems in the Simulation of Labor Supply'', NBER Working Paper No. 0788, 1981. \href{http://www.nber.org/papers/w0788.pdf} {(web)}
+
+Hausman, J. ``Taxes and Labor Supply'', in A. Auerbach and M. Feldstein, eds, Handbook of Public Finance, Vol I, North Holland 1987. \href{http://elsa.berkeley.edu/~saez/course/Hausman_Handbook.pdf} {(web)}
+
+Heckman, J. ``What Has Been Learned About Labor Supply in the Past Twenty Years?'', American Economic Review, Vol. 83, 1993, 116-121. \href{http://links.jstor.org/stable/pdfplus/2117650.pdf} {(web)}
+
+Heckman, J. and M. Killingsworth ``Female Labor Supply: A Survey'' Handbook of Labor Economics, Vol. I, Chapter 2, 1986. \href{http://elsa.berkeley.edu/~saez/course/Heckman and Killingsworth_Handbook.pdf} {(web)}
+
+%Hotz, J. and K. Scholz ``The Earned Income Tax Credit'', NBER Working Paper No. 8078, 2001. \href{http://www.nber.org/papers/w8078.pdf} {(web)}
+
+\textbf{Imbens, G.W., D.B. Rubin and B.I. Sacerdote ``Estimating the Effect of Unearned Income on Labor Earnings, Savings, and Consumption: Evidence from a Survey of Lottery'', American Economic Review, Vol. 91, 2001, 778-794. \href{http://links.jstor.org/stable/pdfplus/2677812.pdf} {(web)} }
+
+Jakobsen, Kristian, Katrine Jakobsen, Henrik Kleven and Gabriel Zucman. 2018. ÒWealth
+Accumulation and Wealth Taxation: Theory and Evidence from DenmarkÓ NBER working
+paper No. 24371, forthcoming Quarterly Journal of Economics
+\href{http://www.nber.org/papers/w24371.pdf} {(web)}
+
+Jones, Damon ``Information, Inertia and Public Benefit Participation: Experimental Evidence from the Advance EITC and 401(k) Savings``, AEJ: Applied Economics, Vol. 2, 2010, 147-163. \href{http://elsa.berkeley.edu/~saez/course/Jones_AEJ.pdf} {(web)}
+
+Keane, Michael ``Labor Supply and Taxes: A Survey?'', Journal of Economic Literature,
+Vol. 49(4), 2011, 961-1075. \href{http://elsa.berkeley.edu/~saez/course/keaneJEL11laborsupply.pdf} {(web)}
+
+Kleven, Henrik  ``How Can Scandinavians Tax So Much?'', 
+Journal of Economic Perspectives 28(4), 77-98, 2014
+ \href{http://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.28.4.77} {(web)}
+ 
+\textbf{Kleven, Henrik 2019. ``The EITC and the Extensive Margin: A Reappraisal'', NBER working
+paper No. 26405.
+\href{http://www.nber.org/papers/w26405.pdf} {(web)} }
+
+\textbf{Kleven, Henrik ``Bunching'', Annual Review of Economics, 8, 2016, 435-464.
+\href{http://elsa.berkeley.edu/~saez/course/kleven_annualreview.pdf} {(web)} }
+
+Kleven, Henrik, Camille Landais, Johanna Posch, Andreas Steinhauer, and Josef Zweimuller. 2019 ``Child penalties across countries: Evidence and explanations.'' AEA Papers and Proceedings, 109, 122-26. 
+\href{https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.20191078} {(web)}
+
+Kleven, Henrik and Mazhar Waseem, 2013``Using notches to uncover optimization frictions and structural elasticities: Theory and evidence from Pakistan'', Quarterly Journal of Economics 2013, 669-723.
+\href{http://elsa.berkeley.edu/~saez/course/kleven-waseemQJE13.pdf} {(web)}
+
+Kline, Patrick and Melissa Tartari, 2016. "Bounding the Labor Supply Responses to a Randomized Welfare Experiment: A Revealed Preference Approach," American Economic Review, 106(4), 972-1014. 
+\href{http://elsa.berkeley.edu/~saez/course/klinetkopartari13.pdf} {(web)}
+
+Kopczuk, Wojciech  and David J. Munroe, 2015 ``Mansion Tax: The Effect of Transfer Taxes on the Residential Real Estate Market'', American Economic Journal: Economic Policy, 7(2), 214-57
+\href{http://elsa.berkeley.edu/~saez/course/kopczuk-munroe15.pdf} {(web)}
+
+%Liebman, J. and E. Saez ``Earnings Responses to Increases in Payroll Taxes'', University of California Berkeley, mimeo, 2006. \href{http://elsa.berkeley.edu/~saez/liebman-saezSSA06.pdf} {(web)}
+
+Liebman, J. and R. Zeckhauser ``Schmeduling'', Harvard University working paper, October 2004. \href{http://elsa.berkeley.edu/~saez/course/schmeduling-zeckhauser.pdf} {(web)}
+
+Londono-Velez, Juliana and Javier Avila. ``Can Wealth Taxation Work in Developing
+Countries? Quasi-Experimental Evidence from Colombia", UC Berkeley working paper,
+2018. \href{http://elsa.berkeley.edu/~saez/course/londono-wealth2018.pdf} {(web)}
+
+MaCurdy, T. ``An Empirical Model of Labor Supply in a Life-Cycle Setting'', Journal of Political Economy, Vol. 89, 1981, 1059-1085. \href{http://www.jstor.org/stable/pdfplus/1837184.pdf} {(web)}
+
+MaCurdy, T. ``A Simple Scheme for Estimating an Intertemporal Model of Labor Supply and Consumption in the Presence of Taxes and Uncertainty'', International Economic Review, Vol. 24, 1983, 265-289. \href{http://links.jstor.org/stable/pdfplus/2648746.pdf} {(web)}
+
+MaCurdy, T., D. Green and H. Paarsch ``Assessing Empirical Approaches for Analyzing Taxes and Labor Supply'' Journal of Human Resources, Vol. 25, 1990, 415-490. \href{http://links.jstor.org/stable/pdfplus/145990.pdf} {(web)}
+
+\textbf{Martinez, Isabel, Emmanuel Saez, and Michael Siegenthaler. 2021. ``Intertemporal Labor Supply Substitution? Evidence from the Swiss Income Tax Holidays,'' American Economic Review 111(2), 506-546. \href{http://elsa.berkeley.edu/~saez/martinez-saez-siegenthalerAER21.pdf} {(web)} }
+
+Meyer, B. and D. Rosenbaum ``Welfare, the Earned Income Tax Credit, and the Labor Supply of Single Mothers'', Quarterly Journal of Economics, Vol. 116, August 2001, 1063-1114. \href{http://links.jstor.org/stable/pdfplus/2696426.pdf} {(web)}
+
+%Meyer, B. and X. Sullivan ``The effects of welfare and tax reform: the material well-being of single mothers in the 1980s and 1990s'', Journal of Public Economics, Vol. 88, 2004, 1387-1420. \href{http://elsa.berkeley.edu/~saez/course/Meyer and Sullivan_JPubE(2004).pdf} {(web)}
+
+Moffitt, R. ``Welfare Programs and Labor Supply'', in A. Auerbach and M. Feldstein, Handbook of Public Economics, Volume 4, Chapter 34, Amsterdam: North Holland, 2003.  \href{http://elsa.berkeley.edu/~saez/course/Moffitt_Handbook.pdf} {(web)}
+
+Mortenson, Jacob A. and Andrew Whitten. 2016. ``Bunching to Maximize Tax Credits: Evidence from Kinks in the U.S. Tax Schedule'', OTA-JCT working paper  \href{http://elsa.berkeley.edu/~saez/course/mortenson-whitten16bunching.pdf} {(web)}
+
+Mroz, T. ``The Sensitivity of An Empirical Model of Married Women's Hours of 	Work to Economic and Statistical Assumptions'', Econometrica, Vol. 55, 1987, 765-799. \href{http://links.jstor.org/stable/pdfplus/1911029.pdf} {(web)}
+
+Munnell, A., Lessons from the income maintenance experiments : proceedings of a conference held at Melvin Village, New Hampshire, September 1986. Boston: Federal Reserve Bank of Boston, 1986. \href{http://elsa.berkeley.edu/~saez/course/Munnell(1986)book.pdf} {(web)}
+
+Nichols, Austin and Jesse	Rothstein 2015. ``The	Earned	Income	Tax	Credit'',
+forthcoming in Volume on US Transfer Programs edited by R. Moffitt
+\href{http://elsa.berkeley.edu/~saez/course/nichols-rothstein-draft_Nov2014.pdf} {(web)}
+
+Oettinger, G. ``An Empirical Analysis of the Daily Labor Supply of Stadium Vendors'', Journal of Political Economy, Vol. 107, 1999, 360-392. \href{http://links.jstor.org/stable/pdfplus/2990813.pdf} {(web)}
+
+Ohanian, L., A. Raffo, and R. Rogerson ``Long-Term Changes in Labor Supply and Taxes: Evidence from OECD Countries, 1956-2004'', Journal of Monetary Economics, Vol. 55, 2008, 1353-1362. \href{http://elsa.berkeley.edu/~saez/course/Ohanianetal(2008).pdf} {(web)}
+
+Pencavel, J. ``Labor Supply of Men: A Survey'', Handbook of Labor Economics, vol. 1, chapter 1, 1986. \href{http://elsa.berkeley.edu/~saez/course/Pencavel_Handbook.pdf} {(web)}
+
+Pencavel, J. ``A Cohort Analysis of the Association between Work Hours and Wages among Men'', The Journal of Human Resources, Vol. 37, 2002, 251-274. \href{http://www.jstor.org/stable/pdfplus/3069647.pdf} {(web)}
+
+Prescott, E. ``Why Do Americans Work So Much More Than Europeans?'',  NBER Working Paper No. 10316, 2004, published in FRB Minneapolis - Quarterly Review, 2004, 28(1), 2-14. \href{http://www.nber.org/papers/w10316} {(web)}
+
+Prescott, E. ``Nobel Lecture: The Transformation of Macroeconomic Policy and Research'', Journal of Political Economy, 114, 2006, 203-235. \href{http://links.jstor.org/stable/pdfplus/3840344.pdf}{(web)}
+
+Ramey, Valerie A. and Neville Francis, 2009. ``A Century of Work and Leisure,'' American Economic Journal: Macroeconomics, 1(2), 189-224.
+\href{http://elsa.berkeley.edu/~saez/course/ramey-francisAEJ09laborsupply.pdf} {(web)}
+
+Rees, A. ``An Overview of the Labor-Supply Results'', The Journal of Human Resources, Vol. 9, 1974, 158-180. \href{http://www.jstor.org/stable/pdfplus/144971.pdf} {(web)}
+
+Rees-Jones, Alex and Dmitry Taubinsky. 2016 ``Measuring ``Schmeduling'' '', NBER Working Paper
+No. 22884.\href{http://www.nber.org/papers/w22884} {(web)}
+
+
+Rogerson, R. and J. Wallenius ``Micro and Macro Elasticities in a Life Cycle Model with Taxes'', Journal of Economic Theory, Vol. 144, 2009, 2277-2292. \href{http://elsa.berkeley.edu/~saez/course/Rogerson_JET(2009).pdf} {(web)}
+
+Rothstein, J. `Is the EITC as Good as an NIT? Conditional Cash Transfers and Tax Incidence.'' American Economic Journal: Economic Policy 2 (1), February 2010, 177-208. \href{http://elsa.berkeley.edu/~saez/course/rothsteinAEJ10.pdf} {(web)}
+
+Saez, E. ``Do Taxpayers Bunch at Kink Points?'', NBER Working Paper No. 7366, 1999. \href{http://www.nber.org/papers/w7366} {(web)}
+
+\textbf{Saez, E. ``Do Taxpayers Bunch at Kink Points?'', AEJ: Economic Policy, Vol. 2, 2010, 180-212. \href{http://elsa.berkeley.edu/~saez/course/Saez_AEJ(2010).pdf} {(web)}}
+
+\textbf{Saez, Emmanuel  ``Public Economics and Inequality: Uncovering Our Social Nature'', AEA Papers and Proceedings, 121, 2021
+\href{https://eml.berkeley.edu/~saez/saez-AEAlecture.pdf} {(web)} }
+
+
+Saez, E., J. Slemrod, and S. Giertz ``The Elasticity of Taxable Income with Respect to Marginal Tax Rates: A Critical Review'', Journal of Economic Literature 50(1), 2012, 3-50. \href{http://elsa.berkeley.edu/~saez/saez-slemrod-giertzJEL12.pdf} {(web)}
+
+Seim, David. 2017. "Behavioral Responses to an Annual Wealth Tax: Evidence from
+Sweden", American Economic Journal: Economic Policy, 9(4), 395-421.
+\href{http://elsa.berkeley.edu/~saez/course/seimAEJ17wealth.pdf} {(web)}
+
+Sigurdsson, Josef. 2019. ``Labor Supply Responses and Adjustment Frictions: A Tax-Free Year in Iceland'', 
+Working Paper, September 2019.
+\href{http://elsa.berkeley.edu/~saez/course/sigurdsson2019taxholiday.pdf} {(web)}
+
+Steinhauer, Andreas. 2018 ``Working Moms, Childlessness, and Female Identity'',
+CEPR Discussion Paper No. 12929.\href{http://elsa.berkeley.edu/~saez/course/steinhauerDP2018.pdf} {(web)}
+
+Tazhitdinova, Alisa. 2020 ``Increasing Hours Worked: Moonlighting Responses to a Large Tax Reform'',
+NBER Working Paper No. 27726, forthcoming AEJ: Economic Policy. \href{http://www.nber.org/papers/w27726.pdf} {(web)}
+
+Tortarolo, Dario, Guillermo Cruces, and Victoria Castillo. 2019 ``It takes two to tango: labor responses to an
+income tax holiday in Argentina'', UC Berkeley working paper \href{http://elsa.berkeley.edu/~saez/course/tortarolo19argentina.pdf} {(web)}
+
+}
+\end{slide}
+
+
+\end{document}

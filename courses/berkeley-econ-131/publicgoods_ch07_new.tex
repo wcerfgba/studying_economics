@@ -1,0 +1,688 @@
+\documentclass[landscape]{slides}
+
+\usepackage[landscape]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\topmargin=-1.8cm \textheight=17cm \oddsidemargin=0cm
+\evensidemargin=0cm \textwidth=22cm
+
+
+\author{131 Undergraduate Public Economics \\ Emmanuel Saez \\ UC Berkeley}
+\date{}
+
+\title{Public Goods} \onlyslides{1-300}
+
+\newenvironment{outline}{\renewcommand{\itemsep}{}}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf OUTLINE}
+%\end{center}
+%Chapter 7
+%
+%7.1 Optimal Provision of Public Goods
+%
+%7.2 Private Provision of Public Goods
+%
+%7.3 Public Provision of Public Goods
+%
+%7.4 Conclusion
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf PUBLIC GOODS: INTRODUCTION}
+%\end{center}
+%
+%Private trash collection, financed by a voluntary fee paid by neighborhood residents, faces the classic {\bf free rider problem}.
+%
+%Goods that suffer from this free rider problem are known in economics as {\bf public goods}.
+%\end{slide}
+
+
+%7.1 Optimal Provision of Public Goods
+
+\begin{slide}
+\begin{center}
+{\bf PUBLIC GOODS: DEFINITIONS}
+\end{center}
+
+{\bf Pure public goods}:
+Goods that are perfectly \textbf{non-rival in consumption} and are \textbf{non-excludable}
+
+{\bf Non-rival in consumption}:
+One individual's consumption of a good does not affect another's opportunity to consume the good.
+
+{\bf Non-excludable}:
+Individuals cannot deny each other the opportunity to consume a good.
+
+{\bf Impure public goods}:
+Goods that satisfy the two public good conditions (non-rival in consumption and non-excludable) to some extent, but not fully.
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={1}]{publicgoods_ch07_new_attach.pdf}
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf 	OPTIMAL PROVISION OF PRIVATE GOODS}
+%\end{center}
+%
+%{\bf numeraire good}:
+%A good for which the price is set at \$1 in order to model choice between goods, which depends on relative, not absolute, prices.
+%
+%A convenient modeling tool in economics is the numeraire good, a good for which the price is set at \$1. What matters for modeling the demand for any good is its price relative to other goods, not the absolute level of its price.
+%\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL PROVISION OF PRIVATE GOODS}
+\end{center}
+Two goods: $ic$ (ice-cream) and $c$ (cookies) with prices $P_{ic}, P_c$
+
+$P_c=1$ is normalized to one (num\'eraire good):
+
+Two individuals $B$ and $J$ demand different quantities of the good at the same market price.
+
+$MRS_{ic,c}=MU_{ic}/MU_c$ = \# cookies the consumer is willing to give up for 1 ice-cream
+
+The optimality condition for the consumption of private goods is written as:
+$MRS_{ic,c}^B=MRS_{ic,c}^J=P_{ic}/P_c=P_{ic}$ 
+
+Equilibrium on the supply side requires: $MC_{ic}=P_{ic}$
+
+In equilibrium, therefore: $MRS_{ic,c}^B=MRS_{ic,c}^J=MC_{ic}$
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={3}]{publicgoods_ch07_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf OPTIMAL PROVISION OF PUBLIC GOODS}
+\end{center}
+Replace private good ice-cream $ic$ by a public good missiles $m$
+
+$MRS_{m,c}^B$ = \# cookies B is willing to give up for 1 missile
+
+$MRS_{m,c}^J$ = \# cookies J is willing to give up for 1 missile
+
+In net, society is willing to give up $MRS_{m,c}^B+MRS_{m,c}^J$ cookies for 1 missile
+
+Social-efficiency-maximizing condition for the public good is:
+\[MRS_{m,c}^B+MRS_{m,c}^J=MC_m \]
+Social efficiency is maximized when the marginal cost is set equal to the \emph{sum of the $MRS$s, rather than being set equal to each individual $MRS$}.
+
+This is called the \textbf{Samuelson rule} (Samuelson, 1954)
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={4}]{publicgoods_ch07_new_attach.pdf}
+\end{slide}
+
+
+%7.2 Private Provision of Public Goods
+\begin{slide}
+\begin{center}
+{\bf PRIVATE-SECTOR UNDERPROVISION}
+\end{center}
+
+Private sector provision such that $MRS^i_{mc} = MC_m$ for each
+individual $i$ so that $\sum_i MRS^i_{mc} > MC_m \Rightarrow$ Outcome is not
+efficient, could improve the welfare of everybody by having
+more missiles (and less cookies)
+
+
+{\bf Free rider problem}:
+When an investment has a personal cost but a common benefit, selfish individuals will underinvest.
+
+
+Because of the \textbf{free rider} problem, the private market undersupplies
+public goods
+
+Another way to see it: private provision of a public good creates
+a positive externality (as everybody else benefits) $\Rightarrow$ Goods with
+positive externalities are under-supplied by the market
+
+\end{slide}
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf PRIVATE PROVISION OF PUBLIC GOOD}
+\end{center}
+
+2 individuals with identical utility functions defined on $X$ private good
+(cookies) and $F$ public good (fireworks)
+
+$F=F_1+F_2$ where $F_i$ is contribution of individual $i$
+
+Utility of individual $i$ is $U_i=2\log(X_i)+\log(F_1+F_2)$ with budget $X_i+F_i=100$
+
+Individual 1 chooses $F_1$ to maximize $2\log(100-F_1)+\log(F_1+F_2)$ taking
+$F_2$ as given
+
+First order condition: $-2/(100-F_1)+1/(F_1+F_2)=0 \Rightarrow F_1=(100-2F_2)/3$
+
+Note that $F_1$ goes down with $F_2$ due to the free rider problem (called the
+reaction curve, show graph)
+
+Symmetrically, we have $F_2=(100-2F_1)/3$
+
+
+\end{slide}
+
+
+
+\begin{slide}
+\includepdf[pages={16, 17, 18}]{publicgoods_ch07_new_attach.pdf}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf PRIVATE PROVISION OF PUBLIC GOOD}
+\end{center}
+
+\textbf{Nash equilibrium definition:} Each agent maximizes his objective
+taking as given the actions of the other agents
+
+At the Nash equilibrium, the two reaction curves intersect:
+
+$F_1=(100-2F_2)/3$ and $F_2=(100-2F_1)/3$
+
+$\Rightarrow F_1+F_2=(200-2(F_1+F_2))/3 \Rightarrow F=F_1+F_2=200/5=40 \Rightarrow F_1=F_2=20$
+
+What is the Social Optimum? $\sum_i MRS^i = MC = 1$
+
+$MRS_{FX}^i= MU^i_F/MU^i_X = (1/(F_1+F_2)) / (2/X_i) = X_i/(2F)$
+
+$\Rightarrow \sum_i MRS^i = (X_1+X_2)/(2F)=(200-F)/(2 F)$
+
+$\Rightarrow \sum_i MRS^i = 1 \Rightarrow 200-F=2F \Rightarrow F=200/3=66.6 > 40$
+
+\textbf{Public good is under-provided by the market}
+
+\end{slide}
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Can Private Provision Overcome Free Rider Problem?}
+\end{center}
+The free rider problem does not lead to a complete absence of private provision of public goods.
+Private provision works better when:
+
+1) Some Individuals Care More than Others:
+
+\small
+Private provision is particularly likely to surmount the free rider problem when individuals are not identical, and when some individuals have an especially high demand for the public good.
+
+\normalsize
+2) Altruism:
+
+\small
+When individuals value the benefits and costs to others in making their consumption choices.
+\normalsize
+
+3) Warm Glow:
+
+\small
+Model of public goods provision in which individuals care about both the total amount of the public good and their particular contributions as well.
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Experimental evidence on free riding}
+\end{center}
+\small
+Laboratory experiments are a great device to test economic theories
+
+Subjects (often students) are brought to the lab where
+they sit through a computer team game and get paid based on the game outcomes
+
+Many public good lab experiments. Example (Marwell and Ames 1981):
+
+- 10 repetitions for each game
+
+- In each game, group of 5 people, each with 10 tokens to allocate
+between cash and public good.
+
+- If take token in cash, get \$1 in cash for yourself. If contribute to common
+good, get \$.5 to each of all five players.
+
+Nash equilibrium: get everything in cash
+
+Socially optimal equilibrium: contribute everything to public good
+
+In the lab, subjects contribute about 50\% to public good, but public good contributions
+fall as game is repeated (Isaac, McCue, and Plott, 1985)
+
+Explanations: people are willing to cooperate at first but get upset and retaliate if others take
+advantage of them
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Why Do People Cooperate?}
+\end{center}
+In standard economic model, individuals are selfish and hence play Nash
+and don't cooperate
+
+Yet obvious that humans are social beings that constantly interact and cooperate
+at many levels (family, work, friends, community, nation, etc.)
+
+Cooperation is innate and supported by sense of fairness and willingness to punish
+non-cooperators (altruistic punishment)  
+
+Likely due to evolutionary adaptation 
+
+Many lab experiments have explored ``fairness'' aspects of human behavior (Fair and Schmidt, 1999)
+
+But these ``social'' aspects haven't integrated mainstream economics much yet, a serious limitation
+especially for public economics
+
+\end{slide}
+
+
+
+%7.3 Public Provision of Public Goods
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Crowding out of private contributions by govt provision}
+\end{center}
+\small
+
+Suppose government forces each individual to provide 5 so that now
+$F=F_1+F_2+10$ where $F_i$ is voluntary contribution of individual $i$
+
+Utility of individual $i$ is $U_i=2 \log(X_i)+\log(F_1+F_2+10)$ with budget $X_i+F_i=95$
+
+You will find that the private optimum is such that $F_1=F_2=15$ so that
+government forced contribution crowds out one-to-one private
+contributions
+
+\textbf{Why?} Rename $F'_i=F_i+5$. Choosing $F'_i$ is equivalent to choosing $F_i$:
+$U_i=2\log(X_i)+\log(F'_1+F'_2)$ with budget $X_i+F'_i=100$
+
+$\Rightarrow$ Equivalent to our initial problem with no government provision hence
+the solution in $F'_i$ must be the same
+
+However, government forced contributions will have an effect as soon
+as private contributions fall to zero (as individuals cannot contribute
+negative amounts and undo government provision)
+
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf EMPIRICAL EVIDENCE ON CROWD-OUT}
+\end{center}
+
+Crowd-out: Reduction in private contributions to a public good due to an increase
+in goverment provision of the public good.
+
+Two strands of empirical literature
+
+1) Field evidence (observational studies)
+
+2) Lab and field experiments 
+
+%Traditionally, lab experiments have been more influential but recent field studies may change this
+
+Lab experiments show imperfect crowd-out in public good games (where you compare
+situation with no forced public goods contributions and with forced public good contributions), see
+Andreoni (1993).
+
+Lab experiment may not capture important motives for giving: warm glow, prestige, solicitations from fund raisers
+\end{slide}
+
+
+
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf CHARITABLE GIVING}
+\end{center}
+
+Charitable giving is one form of private public good  provision 
+
+\small
+Big in the US, 1.5\% of National Income given to charities, but still much
+less than gap in govt spending between US = 30\% of national income vs. EU = 45\% of national income).
+\normalsize
+
+Funds (1) religious activities, (2) education, (3) human services, (4) health,
+(5) arts, (6) various causes (environment, animal protection, etc.)
+
+Encouraged by government: giving can be deducted from income for income tax purposes
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={19}, scale=.9]{publicgoods_ch07_new_attach.pdf}
+\end{slide}
+
+
+
+\begin{slide}
+\begin{center}
+{\bf CHARITABLE GIVING}
+\end{center}
+People give out of :
+
+(1) warm-glow (name on building)
+
+(2) reciprocity (alumni)
+
+(3) social pressure
+(churches)
+
+(4) altruism (poverty relief)
+
+Those effects are not captured in basic economic model
+
+Charities have big fund-raising operations to induce people to give based on those social/psychological effects
+
+%Charities could not cover all public good needs so govt is needed to supply public goods
+\end{slide}
+
+%\begin{slide}
+%\begin{center}
+%{\bf Empirical Evidence on Crowd-Out: Hungerman 2005}
+%\end{center}
+%
+%Studies crowdout of church-provided welfare (soup kitchens, etc.) by government welfare.
+%
+%Uses 1996 Clinton welfare reform act as an instrument for welfare spending cuts.
+%
+%One aspect of reform: reduced/eliminated welfare for non-citizens
+%
+%Motivates a diff-in-diff strategy: compare churches in high non-citizen areas with churches in low non-citizen areas
+%before/after 1996 reform
+%
+%Estimates imply that total church expenditures in a state increase by 40 cents when welfare spending is cut by
+%\$1
+%
+%\end{slide}
+%
+%\begin{slide}
+%\includepdf[pages={10}]{publicgoods_ch07_new_attach.pdf}
+%\end{slide}
+%
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Empirical Evidence on Crowd-Out: Andreoni-Payne '03}
+\end{center}
+
+Government spending crowds out private donations through two channels: willingness to donate + fundraising
+
+Use tax return data on arts and social service organizations
+
+Panel study: follows the same organizations overtime
+\small
+
+\textbf{Results:} \$1000 increase in government grant leads to \$250 reduction in private fundraising
+
+Suggests that crowdout could be non-trivial if fundraising is a powerful source of generating private contributions
+
+Subsequent study by Andreoni and Payne confirms this
+
+Find that \$1 more of government grant to a charity leads to 56 cents less private contributions
+
+70 percent (\$0.40) due to the fundraising channel
+
+Suggests that individuals are relatively passive actors
+
+
+\end{slide}
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf Reverse Crowd-out}
+%\end{center}
+%
+%Interesting to also consider opposite channel: crowdout of government programs by individual donations.
+%
+%``In its 2007 budget proposal, the Bush administration eliminated a \$93.5 million program to underwrite the development of smaller schools, specifically citing the increase in support for those schools from nonfederal funds from the Gates Foundation and the Carnegie Corporation.''
+%
+%Source: New York Times.\href{http://www.nytimes.com/2006/08/13/us/13gates.html}{(Link)}
+%
+%Implication: Gates foundation funding military instead of teachers?
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Randomized field experiment to test reciprocity}
+\end{center}
+
+Falk (2007) conducted a field experiment to investigate the relevance of reciprocity in charitable giving
+
+In collaboration with a charitable organization, sent 10,000 Christmas solicitation letters for funding schools
+for street children in Bengladesh to potential donors (in Switzerland) randomized into 3 groups
+
+\small
+1) 1/3 of letters contained no gift (control group)
+
+2) 1/3 contained a small gift: one post-card (children drawings)+one-envelope (treatment 1)
+
+3) 1/3 contained a larger gift: 4 post-cards (children drawings)+4-envelopes (treatment 2)
+\normalsize
+
+Likelihood of giving: 12\% in control, 14\% in treatment 1, 21\% in treatment 2
+
+``large gift'' was very effective (even relative to cost)
+\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf Empirical Evidence on Social Pressure}
+\end{center}
+Dellavigna-List-Malmendier '12 design a door-to-door fundraiser randomized experiment:
+
+\small
+Control: no advance warning of fund-raiser visit
+ 
+Treatment group 1: flyer at doorknob informs about the exact time of solicitation (hence can seek/avoid fund-raiser)
+
+Treatment group 2: same as treatment 1 but flyer has a check box ``Do not disturb''
+
+Results (relative to control):
+
+Treatment group 1: 9-25\% less likely to open door for fund-raiser, same (unconditional) giving
+
+Treatment group 2: a number of people opt out and (unconditional) giving is 28-42\% lower 
+
+\normalsize
+
+$\Rightarrow$ Social pressure is an important determinant of door-to-door giving and door-to-door
+fund-raising campaigns lower utility of potential donors
+
+\end{slide}
+
+
+
+
+
+
+\begin{slide}
+\begin{center}
+{\bf Social Prices as a Policy Instrument}
+\end{center}
+
+Traditional focus in economics is on changing prices of economic goods
+
+Different set of policy instruments: ``social prices''
+
+Suppose people care about social norms and policy maker can manipulate social norms
+
+
+\small
+Should make status good one that generates positive externalities.
+
+E.g. large SUVs are frowned upon as gas guzzlers contributing to global warming
+while electric cars are admired
+
+Creates another set of policy instruments to explore (Butera et al. 2019) 
+\normalsize
+
+Recent examples from psychology and political science suggest that social price elasticities can be large
+
+Example: Gerber, Green, Larimer '08: randomized experiment using social pressure via letters to increase voter turnout or Allcott '11 on energy conservation
+
+\end{slide}
+
+\begin{slide}
+\includepdf[pages={11-15}]{publicgoods_ch07_new_attach.pdf}
+\end{slide}
+
+
+\begin{slide}
+\begin{center}
+{\bf Welfare Analysis of Social Pricing}
+\end{center}
+Should social pricing be used on top of standard pricing through corrective taxes (or tradable permits)? 
+
+1) Making people feel bad about driving an SUV is inefficient relative to gas tax: destroys welfare without bringing tax revenue
+
+Could still be desirable if imposing a gas tax is impossible. Some negative actions (such as littering) are hard to enforce with 
+fines so social norm on feeling bad about littering is desirable.
+
+2) Making people feel good about driving an energy efficient car is efficient relative to gas tax: adds to welfare as driving an energy efficient car becomes more enjoyable
+
+%In reality shame and praise are positional goods: with social ranking, esteem for some comes at the expense of others (Butera et al. 2019) 
+\end{slide}
+
+
+
+%\begin{slide}
+%\begin{center}
+%{\bf MEASURING THE COSTS AND BENEFITS OF PUBLIC GOODS}
+%\end{center}
+%
+%Should the government undertake highway improvements?
+%
+%Measuring costs and benefits can be complicated.
+%
+%What if, without this highway project, half of the workers on the project would be unemployed? How can the government take into account that it is not only paying wages but also providing a new job opportunity for these workers?
+%
+%What is the value of the time saved for commuters due to reduced traffic jams? And what is the value to society of the reduced number of deaths if the highway is improved?
+%
+%We will cover this in the cost-benefit lecture
+%\end{slide}
+%
+%\begin{slide}
+%\begin{center}
+%{\bf Difficulties in Measuring Preferences for Public Goods}
+%\end{center}
+%
+%\emph{Preference revelation}: individuals may not be willing to tell the government their true valuation because the government might charge them more for the good if they say that they value it highly.
+%
+%\emph{Preference knowledge}: even if individuals are willing to be honest about their valuation of a public good, they may not know what their valuation is, since they have little experience pricing public goods such as highways or national defense.
+%
+%\emph{Preference aggregation}: how can the government effectively put together the preferences of millions of citizens in order to decide on the value of a public project?
+%
+%These difficult problems are addressed by the field of \emph{political economy}, the study of how governments go about making public policy decisions, such as the appropriate level of public goods.
+%\end{slide}
+%
+%
+%
+%%7.4 Conclusion
+%
+%\begin{slide}
+%\begin{center}
+%{\bf CONCLUSION}
+%\end{center}
+%
+%A major function of governments at all levels is the provision of public goods.
+%In some cases, the private sector can provide public goods, but in general it will not achieve the optimal level of provision.
+%
+%When there are problems with private market provision of public goods, government intervention can potentially increase efficiency. Whether that potential will be achieved is a function of both the ability of the government to appropriately measure the costs and benefits of public projects and the ability of the government to carry out the socially efficient decision.
+%
+%\end{slide}
+
+\begin{slide}
+\begin{center}
+{\bf REFERENCES}
+\end{center}
+{\small
+
+Jonathan Gruber, Public Finance and Public Policy, Fifth Edition, 2016 Worth Publishers, Chapter 7
+
+Allcott. Hunt. 2011. ``Social norms and energy conservation''
+Journal of public Economics 95(9-10), 1082-1095.\href{http://elsa.berkeley.edu/~saez/course131/allcott2011.pdf}{(web)}
+
+Andreoni, James. ``An experimental test of the public-goods crowding-out hypothesis.'' The American Economic Review (1993): 1317-1327.\href{http://elsa.berkeley.edu/~saez/course131/Andreoni93.pdf}{(web)}
+
+Andreoni, James, and A. Abigail Payne. ``Do government grants to private charities crowd out giving or fund-raising?.'' American Economic Review (2003): 792-812.\href{http://www.jstor.org/stable/pdfplus/3132117.pdf}{(web)}
+
+Butera, Luigi , Robert Metcalfe, William Morrison, and Dmitry Taubinsky. ``The Deadweight Loss of Social Recognition'', NBER Working Paper No. 25637,
+March 2019. \href{https://www.nber.org/papers/w25637.pdf}{(web)}
+
+Dellavigna, Stefano, John A. List and Ulrike Malmendier, ``Testing for Altruism and Social Pressure in Charitable Giving,'' Quarterly Journal of Economics,  2012, 127(1), 1-56.
+\href{http://elsa.berkeley.edu/~saez/course131/Dellavigna12.pdf}{(web)}
+
+Falk, Armin. ``Gift exchange in the field.'' Econometrica 75.5 (2007): 1501-1511.\href{http://www.jstor.org/stable/pdfplus/4502037.pdf?&acceptTC=true&jpdConfirm=true}{(web)}
+
+Fehr, Ernst, and Klaus M. Schmidt. ``A theory of fairness, competition, and cooperation.'' Quarterly journal of economics 114, no. 3 (1999): 817-868.
+\href{https://www.jstor.org/stable/pdf/2586885.pdf}{(web)}
+
+Gerber, Alan S., Donald P. Green, and Christopher W. Larimer. ``Social pressure and vote turnout: Evidence from a large-scale field experiment.'' American Political Science Review 102.1 (2008): 33. \href{http://www.jstor.org/stable/pdfplus/27644496.pdf?&acceptTC=true&jpdConfirm=true}{(web)}
+
+%Hungerman, Daniel M. ``Are church and state substitutes? Evidence from the 1996 welfare reform.'' Journal of Public Economics 89.11 (2005): 2245-2267.\href{http://elsa.berkeley.edu/~saez/course131/Hungerman05.pdf}{(web)}
+
+Isaac, Mark R., Kenneth F. McCue, and Charles R. Plott. ``Public goods provision in an experimental environment.'' Journal of Public Economics 26.1 (1985): 51-74.\href{http://elsa.berkeley.edu/~saez/course131/Isaac-McCue-Plott85.pdf}{(web)}
+
+Marwell, Gerald, and Ruth E. Ames. ``Economists free ride, does anyone else?: Experiments on the provision of public goods.'' Journal of Public Economics 15.3 (1981): 295-310. \href{http://elsa.berkeley.edu/~saez/course131/Marwell-Ames81.pdf}{(web)}
+
+}
+
+\end{slide}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
